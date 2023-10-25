@@ -6,6 +6,8 @@ int main() {
     double x = 10;
     double y = 1;
     double z;
+    z = x + (x + 1);
+    z = z / x;
     z  = x / (y - 1);
 //    assert(z == 30);
     return z;

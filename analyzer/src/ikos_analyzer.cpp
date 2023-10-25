@@ -1021,7 +1021,8 @@ int main(int argc, char** argv) {
 
       // Add save-to-file code here. By zoush99
       // Begin
-      std::string filename = fun->name() + "-ar.txt";
+      std::string filename = "output-ar.txt";
+      const boost::filesystem::path directory("."); // current directory
       boost::filesystem::path filepath = directory / filename;
       analyzer::log::debug("Creating " +
                            ((directory == ".") ? filename : filepath.string()));
@@ -1029,10 +1030,9 @@ int main(int argc, char** argv) {
 
       if (!output.is_open()) {
         analyzer::log::error(filepath.string() + ": " + strerror(errno));
-        return;
       }
       
-      formatter.format(output, fun);
+      formatter.format(output, bundle);
       // End
 
     }

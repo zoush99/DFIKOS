@@ -11,4 +11,3 @@ define si32 @main() {
   return %3
 }
 }
-
