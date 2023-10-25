@@ -62,7 +62,7 @@ namespace analyzer {
 class SettingsTable;
 
 /// \brief Machine integer abstract domain
-enum class MachineIntDomainOption {
+enum class MachineIntDomainOption { // Add abstract domains that support floating point. By zoush99
   Interval,
   Congruence,
   IntervalCongruence,

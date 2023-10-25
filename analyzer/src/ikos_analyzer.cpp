@@ -217,9 +217,11 @@ static llvm::cl::list< analyzer::CheckerName > Analyses(
                    checker_long_name(analyzer::CheckerName::MemoryWatch))),
     llvm::cl::cat(AnalysisCategory));
 
+// Abstract domain option for machine integers,
+// where a call entry into the abstract domain can be added subsequently. By zoush99
 static llvm::cl::opt< analyzer::MachineIntDomainOption > Domain(
     "d",
-    llvm::cl::desc("Available abstract domains:"),
+    llvm::cl::desc("Available abstract domains for machine integer:"), //By zoush99
     llvm::cl::values(
         clEnumValN(analyzer::MachineIntDomainOption::Interval,
                    machine_int_domain_option_str(
@@ -319,6 +321,7 @@ static llvm::cl::opt< analyzer::MachineIntDomainOption > Domain(
                            VarPackApronPkgridPolyhedraLinearCongruences),
                    "APRON Pkgrid Polyhedra and Linear Congruences domain with "
                    "variable packing")),
+    llvm::cl::desc("Available abstract domains for float point number: zoush99 adds "), //By zoush99
     llvm::cl::init(analyzer::MachineIntDomainOption::Interval),
     llvm::cl::cat(AnalysisCategory));
 
@@ -576,6 +579,7 @@ static llvm::cl::opt< bool > DisplayFixpointParameters(
     llvm::cl::desc("Display fixpoint parameters"),
     llvm::cl::cat(DebugCategory));
 
+// Further, save the information to a file for inspection. By zoush99
 static llvm::cl::opt< bool > DisplayAR(
     "display-ar",
     llvm::cl::desc("Display the Abstract Representation as text"),
@@ -839,6 +843,7 @@ static void generate_dot(ar::Bundle* bundle,
     return;
   }
 
+  // Generate files into the current directory. By zoush99
   for (auto it = bundle->function_begin(), et = bundle->function_end();
        it != et;
        ++it) {
@@ -1008,10 +1013,28 @@ int main(int argc, char** argv) {
     // Display the abstract representation
     if (DisplayAR) {
       analyzer::log::info("Printing Abstract Representation");
+      // compute for time consuming. By zoush99
       analyzer::ScopeTimerDatabase t(output_db.times,
                                      "ikos-analyzer.display-ar");
       ar::TextFormatter formatter(make_format_options());
       formatter.format(analyzer::log::msg().stream(), bundle);
+
+      // Add save-to-file code here. By zoush99
+      // Begin
+      std::string filename = fun->name() + "-ar.txt";
+      boost::filesystem::path filepath = directory / filename;
+      analyzer::log::debug("Creating " +
+                           ((directory == ".") ? filename : filepath.string()));
+      boost::filesystem::ofstream output(filepath);
+
+      if (!output.is_open()) {
+        analyzer::log::error(filepath.string() + ": " + strerror(errno));
+        return;
+      }
+      
+      formatter.format(output, fun);
+      // End
+
     }
 
     // Generate .dot files
