@@ -1158,6 +1158,7 @@ inline std::istream& operator>>(std::istream& i, ZNumber& n) {
 /// @}
 
 /// \brief Return the hash of a ZNumber
+// I can't understand what this function does, so I'll come back to it later. zoush99
 inline std::size_t hash_value(const ZNumber& n) {
   const mpz_class& m = n.mpz();
   std::size_t result = 0;

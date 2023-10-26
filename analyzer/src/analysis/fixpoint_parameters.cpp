@@ -50,7 +50,7 @@ namespace analyzer {
 
 // WideningHints
 
-boost::optional< const MachineInt& > WideningHints::get(
+boost::optional< const MachineInt& > WideningHints::get(  // Return the widening hint for the given cycle head, if any. By zoush99
     ar::BasicBlock* head) const {
   auto it = this->_map.find(head);
   if (it != this->_map.end()) {
@@ -60,6 +60,7 @@ boost::optional< const MachineInt& > WideningHints::get(
   }
 }
 
+// Add a widening hint for the given cycle head. By zoush99
 void WideningHints::add(ar::BasicBlock* head, const MachineInt& hint) {
   this->_map.try_emplace(head, hint);
 }

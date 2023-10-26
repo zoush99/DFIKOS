@@ -1012,7 +1012,7 @@ int main(int argc, char** argv) {
 
     // Display the abstract representation
     if (DisplayAR) {
-      analyzer::log::info("Printing Abstract Representation");
+      analyzer::log::info("Printing and Storing Abstract Representation");
       // compute for time consuming. By zoush99
       analyzer::ScopeTimerDatabase t(output_db.times,
                                      "ikos-analyzer.display-ar");

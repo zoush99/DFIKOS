@@ -195,7 +195,7 @@ void UnnamedShadowVariable::dump(std::ostream& o) const {
 
 // VariableFactory
 
-VariableFactory::VariableFactory(ar::Bundle* bundle)
+VariableFactory::VariableFactory(ar::Bundle* bundle)  // Only cared about the integer type. By zoush99
     : _ar_context(bundle->context()),
       _size_type(ar::IntegerType::size_type(bundle)) {}
 

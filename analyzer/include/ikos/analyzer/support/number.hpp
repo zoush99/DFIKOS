@@ -66,6 +66,7 @@ using ikos::core::Signed;
 using ikos::core::Unsigned;
 
 /// \brief Empty class that represents a number
+// dummy number: It just acts as a placeholder. By zoush99
 using DummyNumber = ikos::core::DummyNumber;
 
 /// \brief Class for unlimited precision integers
@@ -73,6 +74,8 @@ using ZNumber = ikos::core::ZNumber;
 
 /// \brief Class for arbitrary precision machine integers
 using MachineInt = ikos::core::MachineInt;
+
+// Floating point data types are not taken into account. By zoush99
 
 } // end namespace analyzer
 } // end namespace ikos
