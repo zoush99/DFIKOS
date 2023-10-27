@@ -1171,6 +1171,7 @@ inline std::size_t hash_value(const ZNumber& n) {
 }
 
 /// \brief Return a mask with size bits starting at 0.
+// How is this mask calculated? By zoush99
 inline ZNumber single_mask(const ZNumber& size) {
   ZNumber pow2 = ZNumber(1) << size;
   ZNumber mask = pow2 - 1;

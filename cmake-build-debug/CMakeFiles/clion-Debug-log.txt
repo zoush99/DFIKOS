@@ -1,16 +1,4 @@
 /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/zou/Documents/DFIKOS -B /home/zou/Documents/DFIKOS/cmake-build-debug
--- The C compiler identification is GNU 9.4.0
--- The CXX compiler identification is GNU 9.4.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
 -- Install prefix: /home/zou/Documents/DFIKOS/install
 -- Build type: Debug
 -- CMake version: 3.26.4
@@ -19,7 +7,6 @@
 Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0 (found version "1.55.0")
 Found Boost components:
    unit_test_framework
--- Found GMP: /usr/include/x86_64-linux-gnu (found version "6.2.0") 
 CMake Error at /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
   Could NOT find TBB.  Please provide -DTBB_ROOT=/path/to/tbb (missing:
   TBB_INCLUDE_DIRS) (Required is at least version "2")

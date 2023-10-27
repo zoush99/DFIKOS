@@ -62,6 +62,13 @@
 #include <ikos/core/number/z_number.hpp>
 #include <ikos/core/support/assert.hpp>
 
+
+/*
+This is the supported rational numbers, mainly using gmpxx,
+which are wrapped into ikos to be used directly. Modeled after
+rational numbers and, I can do support for floating point numbers. By zoush99
+*/
+
 namespace ikos {
 namespace core {
 

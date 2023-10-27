@@ -1020,7 +1020,7 @@ int main(int argc, char** argv) {
       formatter.format(analyzer::log::msg().stream(), bundle);
 
       // Add save-to-file code here. By zoush99
-      // Begin
+      // _Begin
       std::string filename = "output-ar.txt";
       const boost::filesystem::path directory("."); // current directory
       boost::filesystem::path filepath = directory / filename;
@@ -1033,7 +1033,7 @@ int main(int argc, char** argv) {
       }
       
       formatter.format(output, bundle);
-      // End
+      // _End
 
     }
 

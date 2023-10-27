@@ -5,9 +5,8 @@ target-triple = x86_64-pc-linux-gnu
 
 define si32 @main() {
 #1 !entry !exit {
-  double %1 = 1.0E+0 fsub 1.0E+0
-  double %2 = 1.0E+1 fdiv %1
-  si32 %3 = fptosi %2
-  return %3
+  si32 %1 = 1 ssub.nw 1
+  si32 %2 = 10 sdiv %1
+  return %2
 }
 }
