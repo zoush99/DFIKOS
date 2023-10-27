@@ -56,6 +56,9 @@
 #include <ikos/core/number/z_number.hpp>
 #include <ikos/core/support/assert.hpp>
 
+// Parameters of integer and Number types are supported,
+// and we can add a floating point type. By zoush99
+
 namespace ikos {
 namespace core {
 
@@ -481,6 +484,7 @@ inline std::ostream& operator<<(std::ostream& o, const Bound< Number >& bound) {
 using ZBound = Bound< ZNumber >;
 
 /// \brief Bound on unlimited precision rationals
+// Support for interval representation of rational numbers. By zoush99
 using QBound = Bound< QNumber >;
 
 } // end namespace core

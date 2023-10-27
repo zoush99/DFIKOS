@@ -83,6 +83,7 @@ struct IsSupportedIntegralOrZNumber< const ZNumber& > : public std::true_type {
 namespace detail {
 
 /// \brief Helper that returns either an integral type or a mpz_class
+//
 template < typename T >
 struct ZNumberAdapter : public MpzAdapter< T > {};
 

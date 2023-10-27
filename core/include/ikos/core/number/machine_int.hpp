@@ -325,6 +325,8 @@ public:
   }
 
   /// \brief Assignment for integral types
+  // Use the additional template IsSupportedIntegral
+  // for checking for subtype cannot match errors. By zoush99
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegral< T >::value > >
   MachineInt& operator=(T n) {
