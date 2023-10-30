@@ -56,6 +56,10 @@
 namespace ikos {
 namespace core {
 
+// There are two classes: variable expressions and linear expressions.
+// The variable expression class has only variable symbols, whereas the linear
+// expression class contains coefficients and variable symbols. By zoush99
+
 /// \brief Represents a typed variable
 ///
 /// This is just a thin wrapper on VariableRef.

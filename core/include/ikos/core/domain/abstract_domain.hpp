@@ -81,6 +81,13 @@ public:
                   "Derived::name() does not exist");
   }
 
+  // These methods and interfaces provide basic operations for abstract analysis,
+  // allowing the execution of abstract value normalization, comparison, setting
+  // to bottom or top, and abstract operations such as upper bounds, lower bounds,
+  // widening and narrowing. Concrete abstract domain classes should inherit from
+  // the class and implement these methods, adapting them to the needs of the
+  // particular abstract domain. By zoush99
+
   /// \brief Create the top abstract value
   AbstractDomain() = default;
 

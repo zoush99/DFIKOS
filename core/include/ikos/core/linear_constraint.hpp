@@ -210,9 +210,11 @@ public:
   void dump(std::ostream& o) const {
     if (this->is_contradiction()) {
       o << "false";
-    } else if (this->is_tautology()) {
+    } else if (this->is_tautology()) {  // Convey the same meaning. By zoush99
       o << "true";
     } else {
+      // Split the constraint into a linear part and a constant part. By zoush99
+      // eg. 2 <= 3 --> x + 2 - 2 <= 3 - 2 --> x <= 1
       LinearExpressionT e = this->_expr - this->_expr.constant();
       Number c = -this->_expr.constant();
 

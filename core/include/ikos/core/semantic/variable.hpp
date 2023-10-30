@@ -70,6 +70,8 @@ namespace core {
 /// VariableRef implements IndexableTraits
 ///
 /// The VariableRef type should be cheap to copy.
+
+// Such type checking makes for greater reliability, but how is it written? By zoush99
 template < typename VariableRef >
 struct IsVariable
     : conjunction< std::is_nothrow_copy_constructible< VariableRef >,
