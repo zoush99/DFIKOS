@@ -40,7 +40,6 @@
  * UNILATERAL TERMINATION OF THIS AGREEMENT.
  *
  ******************************************************************************/
-
 #pragma once
 
 #include <type_traits>
@@ -68,6 +67,9 @@ namespace core {
 ///   * Machine integer variable
 ///   * Floating point variable
 ///   * Pointer variable
+
+// I need to add all the operations on the text of the floating point. By zoush99
+
 template < typename VariableRef, typename MemoryLocationRef >
 class Literal {
 public:
@@ -85,6 +87,7 @@ private:
     bool operator==(const MachineIntLit& o) const { return value == o.value; }
   };
 
+  // I'll have to add it. By zoush99
   struct FloatingPointLit {
     // TODO(marthaud): Add a class to represent floating points
     DummyNumber value;
@@ -175,6 +178,7 @@ public:
     return Literal(Lit(MachineIntLit{std::move(v)}));
   }
 
+  // I'll have to add it. By zoush99
   /// \brief Create a constant floating point literal
   static Literal floating_point(DummyNumber) {
     return Literal(Lit(FloatingPointLit{DummyNumber{}}));

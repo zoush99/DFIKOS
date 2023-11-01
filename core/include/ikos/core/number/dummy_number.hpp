@@ -49,7 +49,7 @@ namespace ikos {
 namespace core {
 
 struct DummyNumber {};
-
+// Empty operation: placeholder operation. By zoush99
 inline std::ostream& operator<<(std::ostream& o, const DummyNumber&) {
   o << "dummy";
   return o;

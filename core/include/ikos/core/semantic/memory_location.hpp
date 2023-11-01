@@ -71,6 +71,7 @@ namespace core {
 /// MemoryLocationRef implements IndexableTraits
 ///
 /// The MemoryLocationRef type should be cheap to copy.
+// Such type checking makes for greater reliability, but how is it written? By zoush99
 template < typename MemoryLocationRef >
 struct IsMemoryLocation
     : conjunction< std::is_nothrow_copy_constructible< MemoryLocationRef >,
