@@ -70,6 +70,7 @@ template < typename VariableRef,
            typename = void >
 struct IsVariable : std::false_type {};
 
+// Determine if it is signed long int type. By zoush99
 template < typename VariableRef, typename VariableTrait >
 struct IsVariable<
     VariableRef,

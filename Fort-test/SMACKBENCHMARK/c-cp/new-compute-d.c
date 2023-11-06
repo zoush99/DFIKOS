@@ -3,9 +3,9 @@
 // #include "smack.h" //<assert.h>
 #include <stdio.h>
 int main() {
-    double x = 10;
-    double y = 1;
-    double z;
+    float x = 10;
+    float y = 1;
+    float z;
     z = x + (x + 1);
     z = z / x;
     z  = x / (y - 1);
