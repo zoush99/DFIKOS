@@ -15,6 +15,7 @@
 
 #include <gmpxx.h>
 // Floating point numbers used to implement the IEEE754 standard. By zoush99
+#include <mpf2mpfr.h>
 #include <mpfr.h>
 
 #include <boost/functional/hash.hpp>
@@ -46,20 +47,54 @@ struct MpfFits;
 template < typename T >
 struct MpfTo;
 
-// GMP Only functions that return double types are defined. By zoush99
+// MPFR functions that return float.
 template <>
-struct MpfTo< double > {
-  double operator()(const mpf_class& n) {
-    return static_cast< double >(n.get_d());
-  }
+struct MpfTo< float > {
+  float operator()(const mpfr_t& n) { return mpfr_get_flt(n, MPFR_RNDN); }
 };
 
+// MPFR functions that return double.
+template <>
+struct MpfTo< double > {
+  double operator()(const mpfr_t& n) { return mpfr_get_d(n, MPFR_RNDN); }
+};
+
+// MPFR functions that return long double.
+template <>
+struct MpfTo< long double > {
+  long double operator()(const mpfr_t& n) { return mpfr_get_ld(n, MPFR_RNDN); }
+};
+
+template <>
+struct MpfFrom;
+
+/// I'm going to merge three functions into one,
+/// starting with determining the input data type. By zoush99
+
+template <typename T, class = std::enable_if_t< IsSupportedFloat< T >::value > >
+struct MpfFrom<T>{
+  mpfr_t& operator()(const T& f){
+    int temp;
+    mpfr_t rop;
+    mpfr_init(rop);
+    if(std::is_same<T,float>::value){
+      temp=mpfr_set_flt(rop,f,MPFR_RNDN);
+    }
+    else if (std::is_same<T,double>::value){
+      temp=mpfr_set_d(rop,f,MPFR_RNDN);
+    }
+    else{ // long double. By zoush99
+      temp=mpfr_set_ld(rop,f,MPFR_RNDN);
+    }
+    return rop;
+  }
+};
 } // end namespace detail
 
 /// \brief Class for unlimited precision floating point number
 class FNumber {
 private:
-  mpf_class _n; // Curious if it works like that? By zoush99
+  mpfr_t _n; // It needs to be initialized. By zoush99
 
 public:
   /// \brief Create a FNumber from a string representation
@@ -72,7 +107,7 @@ public:
   /// @{
 
   /// \brief Default constructor that creates a FNumber equals to 0
-  FNumber() = default;
+  FNumber() { mpfr_init(this->_n); }
 
   /// \brief Copy constructor
   FNumber(const FNumber&) = default;
@@ -80,11 +115,17 @@ public:
   /// \brief Move constructor
   FNumber(FNumber&&) = default;
 
-  /// \brief Create a FNumber from a mpf_class
-  explicit FNumber(const mpf_class& n) : _n(n) {}
+  /// \brief Create a FNumber from a mpfr_t
+  explicit FNumber(const mpfr_t& f) {
+    mpfr_init(this->_n);
+    this->_n = mpfr_get_d(f, MPFR_RNDN);
+  }
 
-  /// \brief Create a FNumber from a mpf_class
-  explicit FNumber(mpf_class&& n) : _n(std::move(n)) {}
+  /// \brief Create a FNumber from a mpfr_t
+  explicit FNumber(mpfr_t&& n) {
+    mpfr_init(this->_n);
+    this->_n = mpfr_get_d(std::move(n), MPFR_RNDN);
+  }
 
   /// \brief Create a FNumber from an floating point type
   template < typename T,
@@ -101,7 +142,7 @@ public:
   FNumber& operator=(const FNumber&) = default;
 
   /// \brief Move assignment
-  FNumber& operator=(FNumber&&) noexcept=default;
+  FNumber& operator=(FNumber&&) noexcept = default;
 
   /// \brief Assignments for floating point types
   template < typename T,
@@ -112,22 +153,26 @@ public:
   }
 
   /// \brief Addition assignment
-  FNumber& operator+=(const FNumber& x){
-    this->_n+=x._n;
+  FNumber& operator+=(const FNumber& x) {
+    int temp;
+    temp = mpfr_add(this->_n, this->_n, x._n, MPFR_RNDN);
     return *this;
   }
 
   /// \brief Addition assignment with floating point types
+  // Arithmetic operations with floating-point and mpfr types. By zoush99
   template < typename T,
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   FNumber& operator+=(T x) {
-    this->_n += detail::MpfAdapter< T >()(x);
+    int temp;
+    temp= mpfr_add(this->_n,detail::MpfFrom(x),MPFR_RNDN);
     return *this;
   }
 
   /// \brief Subtraction assignment
   FNumber& operator-=(const FNumber& x) {
-    this->_n -= x._n;
+    int temp;
+    temp = mpfr_sub(this->_n, this->_n, x._n, MPFR_RNDN);
     return *this;
   }
 
@@ -135,7 +180,24 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   FNumber& operator-=(T x) {
-    this->_n -= detail::MpfAdapter< T >()(x);
+    int temp;
+    temp= mpfr_sub(this->_n,detail::MpfFrom(x),MPFR_RNDN);
+    return *this;
+  }
+
+  /// \brief Multiplication assignment
+  FNumber& operator*=(const FNumber& x) {
+    int temp;
+    temp= mpfr_mul(this->_n,detail::MpfFrom(x),MPFR_RNDN);
+    return *this;
+  }
+
+  /// \brief Multiplication assignment with floating point types
+  template < typename T,
+             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+  FNumber& operator*=(T x) {
+    int temp;
+    temp= mpfr_mul(this->_n,detail::MpfFrom(x),MPFR_RNDN);
     return *this;
   }
 }; // class FNumber
