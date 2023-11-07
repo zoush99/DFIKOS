@@ -162,6 +162,8 @@ public:
   /// \brief Create a QNumber from a mpq_class
   explicit QNumber(const mpq_class& n) : _n(n) {
     ikos_assert_msg(this->_n.get_den() != 0, "denominator is zero");
+    // Ensure that the numerators and denominators of rational
+    // numbers do not have common factors
     this->_n.canonicalize();
   }
 
