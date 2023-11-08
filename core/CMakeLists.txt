@@ -94,6 +94,8 @@ include_directories(SYSTEM ${GMPXX_INCLUDE_DIR})
 find_package(TBB 2 REQUIRED)
 include_directories(SYSTEM ${TBB_INCLUDE_DIRS})
 
+## need to add MPFR. By zoush99
+
 find_package(APRON)
 if (APRON_FOUND)
   include_directories(SYSTEM ${APRON_INCLUDE_DIRS})
