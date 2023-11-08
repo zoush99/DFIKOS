@@ -111,3 +111,4 @@ add_custom_target(check
 
 # Doxygen
 add_custom_target(doc DEPENDS doxygen-ar doxygen-core doxygen-analyzer)
+
