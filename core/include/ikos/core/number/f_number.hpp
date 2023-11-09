@@ -64,18 +64,18 @@ struct MpfFrom< T > {
   // Curious if this should be a variable representation or
   // a reference representation? By zoush99
   mpfr_t operator()(const T& f) {
-    mpfr_t rop;
-    mpfr_init(rop);
+    mpfr_t n;
+    mpfr_init(n);
     if (std::is_same< T, float >::value) { // Determining if a variable's data
                                            // type is float?
-      mpfr_set_flt(rop, f, MPFR_RNDN);
+      mpfr_set_flt(n, f, MPFR_RNDN);
     } else if (std::is_same< T, double >::
                    value) { // Determining if a variable's data type is double?
-      mpfr_set_d(rop, f, MPFR_RNDN);
+      mpfr_set_d(n, f, MPFR_RNDN);
     } else { // Determining if a variable's data type is long double? By zoush99
-      mpfr_set_ld(rop, f, MPFR_RNDN);
+      mpfr_set_ld(n, f, MPFR_RNDN);
     }
-    return rop;
+    return n;
   }
 };
 
@@ -201,7 +201,7 @@ public:
   }
 
   /// @}
-  /// \name Unary Operatiors
+  /// \name Unary Operators
   /// @{
 
   /// \brief Unary plus
@@ -387,7 +387,7 @@ inline FNumber& operator/(T lhs, const FNumber& rhs) {
 }
 
 /// @}
-/// \name Comparision Operators
+/// \name Comparison Operators
 /// @{
 
 /// \brief Equality operators
@@ -567,7 +567,7 @@ inline FNumber& abs(const FNumber& n) {
 // All by zoush99
 
 /// \brief Return the logarithm of the given number. log2(antilogarithm)
-FNumber& log2(const FNumber& antilogarithm){
+inline FNumber& log2(const FNumber& antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log2(n,antilogarithm.mpfvalue(),MPFR_RNDN);
@@ -580,7 +580,7 @@ FNumber& log2(const FNumber& antilogarithm){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-FNumber& log2(T antilogarithm){
+inline FNumber& log2(T antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log2(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
@@ -590,7 +590,7 @@ FNumber& log2(T antilogarithm){
 }
 
 /// \brief Return the natural logarithm of the given number. ln(antilogarithm)
-FNumber& ln(const FNumber& antilogarithm){
+inline FNumber& ln(const FNumber& antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log(n,antilogarithm.mpfvalue(),MPFR_RNDN);
@@ -603,7 +603,7 @@ FNumber& ln(const FNumber& antilogarithm){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-FNumber& ln(T antilogarithm){
+inline FNumber& ln(T antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
@@ -613,7 +613,7 @@ FNumber& ln(T antilogarithm){
 }
 
 /// \brief Return the logarithm of the given number. log10(antilogarithm)
-FNumber& log10(const FNumber& antilogarithm){
+inline FNumber& log10(const FNumber& antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log10(n,antilogarithm.mpfvalue(),MPFR_RNDN);
@@ -626,7 +626,7 @@ FNumber& log10(const FNumber& antilogarithm){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-FNumber& log10(T antilogarithm){
+inline FNumber& log10(T antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log10(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
@@ -636,7 +636,7 @@ FNumber& log10(T antilogarithm){
 }
 
 /// \brief Return the exponential of the given number. 2(exponent)
-FNumber& exp2(const FNumber& exponent){
+inline FNumber& exp2(const FNumber& exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp2(n,exponent,MPFR_RNDN);
@@ -649,7 +649,7 @@ FNumber& exp2(const FNumber& exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-FNumber& exp2(T exponent){
+inline FNumber& exp2(T exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp2(n,detail::MpfFrom(exponent),MPFR_RNDN);
@@ -659,7 +659,7 @@ FNumber& exp2(T exponent){
 }
 
 /// \brief Return the exponential of the given number. e(exponent)
-FNumber& exp(const FNumber& exponent){
+inline FNumber& exp(const FNumber& exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp(n,exponent,MPFR_RNDN);
@@ -672,7 +672,7 @@ FNumber& exp(const FNumber& exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-FNumber& log10(T exponent){
+inline FNumber& log10(T exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp(n,detail::MpfFrom(exponent),MPFR_RNDN);
@@ -682,7 +682,7 @@ FNumber& log10(T exponent){
 }
 
 /// \brief Return the exponential of the given number. 10(exponent)
-FNumber& exp10(const FNumber& exponent){
+inline FNumber& exp10(const FNumber& exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp10(n,exponent,MPFR_RNDN);
@@ -695,7 +695,7 @@ FNumber& exp10(const FNumber& exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-FNumber& exp10(T exponent){
+inline FNumber& exp10(T exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp10(n,detail::MpfFrom(exponent),MPFR_RNDN);
@@ -704,6 +704,206 @@ FNumber& exp10(T exponent){
   return f;
 }
 
+/// \brief Return the power of the given number. base**(exponent)
+inline FNumber& pow(FNumber& base,FNumber& exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_pow(n,base,exponent,MPFR_RNDN);  // Result difference between mpfr_powr? By zoush99
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the power of the given number. base**(exponent)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber& pow(FNumber& base,T exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_pow(n,base,detail::MpfFrom(exponent),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the power of the given number. base**(exponent)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber& pow(T base,FNumber& exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_pow(n,detail::MpfFrom(base),exponent,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the power of the given number. base**(exponent)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber& pow(T base,T exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_pow(n,detail::MpfFrom(base),detail::MpfFrom(exponent),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the sin of the given curve number. sin(n): sin(pi/3)
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber& sin(FNumber& f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_sin(n,f.mpfvalue(),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the sin of the given curve number. sin(n): sin(pi/3)
+/// with Floating point number
+inline FNumber& sin(T f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_sin(n,detail::MpfFrom(f),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the cos of the given curve number. cos(n): cos(pi/3)
+inline FNumber& cos(FNumber& f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_cos(n,f.mpfvalue(),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the cos of the given curve number. cos(n): cos(pi/3)
+/// with Floating point number
+inline FNumber& cos(T f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_cos(n,detail::MpfFrom(f),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the tan of the given curve number. tan(n): tan(pi/3)
+inline FNumber& tan(FNumber& f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_tan(n,f.mpfvalue(),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the tan of the given curve number. tan(n): tan(pi/3)
+/// with Floating point number
+inline FNumber& tan(T f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_tan(n,detail::MpfFrom(f),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brirf Return the sin of the given degree number. sin(n): sin(120)
+inline FNumber& sinu(FNumber& f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_sinu(n,f.mpfvalue(),360,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brirf Return the sin of the given degree number. sin(n): sin(120)
+/// with Floating point number
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber& sinu(T f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_sinu(n,detail::MpfFrom(f),360,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brirf Return the cos of the given degree number. cos(n): cos(120)
+inline FNumber& cosu(FNumber& f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_cosu(n,f.mpfvalue(),360,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brirf Return the cos of the given degree number. cos(n): cos(120)
+/// with Floating point number
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber& cosu(T f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_cosu(n,detail::MpfFrom(f),360,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brirf Return the tan of the given degree number. tan(n): tan(120)
+inline FNumber& tanu(FNumber& f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_tanu(n,f.mpfvalue(),360,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brirf Return the tan of the given degree number. tan(n): tan(120)
+/// with Floating point number
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber& tanu(T f){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_tanu(n,detail::MpfFrom(f),360,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief If you need other trigonometric functions later,
+/// add them separately. By zoush99
+// sec, csc, cot, acos, asin, atan, cosh, sinh, tanh, sech, csch, coth
+
+/// @}
+/// \name Constrant
+/// @{
+
+/// \brief Return the value of pi
+inline FNumber& retp(){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_const_pi(n,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
 
 /// @}
 /// \name Input / Output
