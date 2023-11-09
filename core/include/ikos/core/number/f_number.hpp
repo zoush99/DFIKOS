@@ -562,6 +562,150 @@ inline FNumber& abs(const FNumber& n) {
 }
 
 /// @}
+/// \name mathematical function
+/// @{
+// All by zoush99
+
+/// \brief Return the logarithm of the given number. log2(antilogarithm)
+FNumber& log2(const FNumber& antilogarithm){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_log2(n,antilogarithm.mpfvalue(),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);  // clear temporary variables. By zoush99
+  return f;
+}
+
+/// \brief Return the logarithm of the given number. log2(antilogarithm)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+FNumber& log2(T antilogarithm){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_log2(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the natural logarithm of the given number. ln(antilogarithm)
+FNumber& ln(const FNumber& antilogarithm){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_log(n,antilogarithm.mpfvalue(),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);  // clear temporary variables. By zoush99
+  return f;
+}
+
+/// \brief Return the natural logarithm of the given number. log2(antilogarithm)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+FNumber& ln(T antilogarithm){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_log(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the logarithm of the given number. log10(antilogarithm)
+FNumber& log10(const FNumber& antilogarithm){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_log10(n,antilogarithm.mpfvalue(),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the logarithm of the given number. log10(antilogarithm)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+FNumber& log10(T antilogarithm){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_log10(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the exponential of the given number. 2(exponent)
+FNumber& exp2(const FNumber& exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_exp2(n,exponent,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the logarithm of the given number. 2(exponent)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+FNumber& exp2(T exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_exp2(n,detail::MpfFrom(exponent),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the exponential of the given number. e(exponent)
+FNumber& exp(const FNumber& exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_exp(n,exponent,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the logarithm of the given number. e(exponent)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+FNumber& log10(T exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_exp(n,detail::MpfFrom(exponent),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the exponential of the given number. 10(exponent)
+FNumber& exp10(const FNumber& exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_exp10(n,exponent,MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+/// \brief Return the logarithm of the given number. 10(exponent)
+/// with Floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+FNumber& exp10(T exponent){
+  mpfr_t n;
+  mpfr_init(n);
+  mpfr_exp10(n,detail::MpfFrom(exponent),MPFR_RNDN);
+  FNumber f(n);
+  mpfr_clear(n);
+  return f;
+}
+
+
+/// @}
 /// \name Input / Output
 /// @{
 
