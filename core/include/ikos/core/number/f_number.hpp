@@ -523,6 +523,14 @@ inline const FNumber& min(const FNumber& a,
   return min(min(a, b), c);
 }
 
+/// \brief Return the smaller of the given numbers
+inline const FNumber& min(const FNumber& a,
+                          const FNumber& b,
+                          const FNumber& c,
+                          const FNumber& d) {
+  return min(min(min(a, b), c), d);
+}
+
 /// \brief Return the greater of the given numbers
 inline const FNumber& max(const FNumber& a, const FNumber& b) {
   if (a < b)
@@ -538,6 +546,13 @@ inline const FNumber& max(const FNumber& a,
   return max(max(a, b), c);
 }
 
+/// \brief Return the greater of the given numbers
+inline const FNumber& max(const FNumber& a,
+                          const FNumber& b,
+                          const FNumber& c,
+                          const FNumber& d) {
+  return max(max(max(a, b), c), d);
+}
 /// \brief Return the absolute value of the given number
 inline FNumber& abs(const FNumber& n) {
   mpfr_t f;
@@ -546,5 +561,33 @@ inline FNumber& abs(const FNumber& n) {
   return FNumber(f);
 }
 
-} // namespace core
-} // namespace ikos
+/// @}
+/// \name Input / Output
+/// @{
+
+/// \brief Write a FNumber on a stream, in base 10
+inline std::ostream& operator<<(std::ostream& o, const FNumber& n) {
+  o << n.mpfvalue();
+  return o;
+}
+
+/// \brief Read a FNumber from a stream, in base 10
+inline std::istream& operator>>(std::istream& i, FNumber& n) {
+  i >> n._n;
+  return i;
+}
+
+/// @}
+
+/// \brief Return the hash of a FNumber
+/// \todo(zoush99) It seems useful
+// I can't understand what this function does, so I'll come back to it later.
+// zoush99
+
+} // end namespace core
+} // end namespace ikos
+
+namespace std {
+/// \brief std::hash implementation for FNumber
+/// \todo(zoush99) It seems useful
+} // end namespace std
