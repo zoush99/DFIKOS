@@ -53,7 +53,7 @@ namespace core {
 /// Supported floating point types are:
 ///   * float, double
 ///   * long double, and so on
-/// \todo
+/// \todo(zoush99)
 ///   * I still need to add the 80 bits after that. By zoush99
 template < typename T >
 struct IsSupportedFloat : public std::false_type {};
