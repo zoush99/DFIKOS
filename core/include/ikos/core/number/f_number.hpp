@@ -24,6 +24,7 @@
 #include <ikos/core/number/supported_integral.hpp>
 #include <ikos/core/number/z_number.hpp>
 #include <ikos/core/support/assert.hpp>
+#include <ikos/core/number/supported_float.hpp>
 
 namespace ikos {
 namespace core {
@@ -63,16 +64,14 @@ struct MpfTo< long double > {
 /// \example
 /// long double result = MpfTo<long double>()(myNumber);
 
-template <>
-struct MpfFrom;
-
 /// \brief I'm going to merge three functions into one,
 /// starting with determining the input data type. By zoush99
-template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
-struct MpfFrom< T > {
+class MpfFrom{
   // Curious if this should be a variable representation or
   // a reference representation? By zoush99
+public:
+  template < typename T,
+             class = std::enable_if_t< IsSupportedFloat< T >::value > >
   mpfr_t operator()(const T f) {
     mpfr_t n;
     // I need to declare precision when I initialize the variable,
@@ -136,7 +135,7 @@ public:
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   explicit FNumber(T n) {
     mpfr_init(this->_n);
-    mpfr_set(this->_n, detail::MpfFrom<T>()(n), MPFR_RNDN);
+    mpfr_set(this->_n, detail::MpfFrom(n), MPFR_RNDN);
   }
 
   /// \brief Destructor
@@ -156,7 +155,7 @@ public:
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   FNumber& operator=(T n) {
     mpfr_init(this->_n);
-    mpfr_set(this->_n, detail::MpfFrom<T>()(n), MPFR_RNDN);
+    mpfr_set(this->_n, detail::MpfFrom(n), MPFR_RNDN);
     return *this;
   }
 
@@ -171,7 +170,7 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   FNumber& operator+=(T x) {
-    mpfr_add(this->_n, detail::MpfFrom<T>()(x), MPFR_RNDN);
+    mpfr_add(this->_n, detail::MpfFrom(x), MPFR_RNDN);
     return *this;
   }
 
@@ -185,13 +184,13 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   FNumber& operator-=(T x) {
-    mpfr_sub(this->_n, detail::MpfFrom<T>()(x), MPFR_RNDN);
+    mpfr_sub(this->_n, detail::MpfFrom(x), MPFR_RNDN);
     return *this;
   }
 
   /// \brief Multiplication assignment
   FNumber& operator*=(const FNumber& x) {
-    mpfr_mul(this->_n, detail::MpfFrom<T>()(x), MPFR_RNDN);
+    mpfr_mul(this->_n,this->_n,x._n, MPFR_RNDN);
     return *this;
   }
 
@@ -199,7 +198,7 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   FNumber& operator*=(T x) {
-    mpfr_mul(this->_n, detail::MpfFrom<T>()(x), MPFR_RNDN);
+    mpfr_mul(this->_n,this->_n, detail::MpfFrom(x), MPFR_RNDN);
     return *this;
   }
 
@@ -217,9 +216,9 @@ public:
   /// Floating point division with rounding towards nearest.
   template < typename T,
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
-  ZNumber& operator/=(T x) {
+  FNumber& operator/=(T x) {
     ikos_assert_msg(x != 0, "division by zero");
-    mpfr_div(this->_n, detail::MpfFrom<T>()(x), MPFR_RNDN);
+    mpfr_div(this->_n,this->_n, detail::MpfFrom(x), MPFR_RNDN);
     return *this;
   }
 
@@ -252,10 +251,10 @@ public:
   }
 
   /// \brief Unary minus
-  const FNumber operator-() const {
+  FNumber operator-() const {
     FNumber r(*this);
     mpfr_neg(r._n, this->_n, MPFR_RNDN);
-    return r._n;
+    return r;
   }
 
   /// \brief Prefix decrement
@@ -280,7 +279,7 @@ public:
   }
 
   /// \brief Get the internal representation
-  const mpfr_t mpfvalue() const { return this->_n; }
+  const mpfr_t& mpfvalue() const { return this->_n; }
 
   friend class QNumber;
 }; // class FNumber
@@ -289,7 +288,7 @@ public:
 /// @{
 
 /// \brief Addition
-inline FNumber& operator+(const FNumber& lhs, const FNumber& rhs) {
+inline FNumber operator+(const FNumber& lhs, const FNumber& rhs) {
   mpfr_t f;
   mpfr_init(f);
   mpfr_add(f, lhs.mpfvalue(), rhs.mpfvalue(), MPFR_RNDN);
@@ -299,25 +298,25 @@ inline FNumber& operator+(const FNumber& lhs, const FNumber& rhs) {
 /// \brief Addition with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& operator+(const FNumber& lhs, T rhs) {
+inline FNumber operator+(const FNumber& lhs, T rhs) {
   mpfr_t f;
   mpfr_init(f);
-  mpfr_add(f, lhs.mpfvalue(), detail::MpfFrom<T>()(rhs), MPFR_RNDN);
+  mpfr_add(f, lhs.mpfvalue(), detail::MpfFrom(rhs), MPFR_RNDN);
   return FNumber(f);
 }
 
 /// \brief Addition with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& operator+(T lhs, const FNumber& rhs) {
+inline FNumber operator+(T lhs, const FNumber& rhs) {
   mpfr_t f;
   mpfr_init(f);
-  mpfr_add(f, rhs.mpfvalue(), detail::MpfFrom<T>()(lhs), MPFR_RNDN);
+  mpfr_add(f, rhs.mpfvalue(), detail::MpfFrom(lhs), MPFR_RNDN);
   return FNumber(f);
 }
 
 /// \brief Subtraction
-inline FNumber& operator-(const FNumber& lhs, const FNumber& rhs) {
+inline FNumber operator-(const FNumber& lhs, const FNumber& rhs) {
   mpfr_t f;
   mpfr_init(f);
   mpfr_sub(f, lhs.mpfvalue(), rhs.mpfvalue(), MPFR_RNDN);
@@ -327,25 +326,25 @@ inline FNumber& operator-(const FNumber& lhs, const FNumber& rhs) {
 /// \brief Subtraction with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& operator-(const FNumber& lhs, T rhs) {
+inline FNumber operator-(const FNumber& lhs, T rhs) {
   mpfr_t f;
   mpfr_init(f);
-  mpfr_sub(f, lhs.mpfvalue(), detail::MpfFrom<T>()(rhs), MPFR_RNDN);
+  mpfr_sub(f, lhs.mpfvalue(), detail::MpfFrom(rhs), MPFR_RNDN);
   return FNumber(f);
 }
 
 /// \brief Subtraction with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& operator-(T lhs, const FNumber& rhs) {
+inline FNumber operator-(T lhs, const FNumber& rhs) {
   mpfr_t f;
   mpfr_init(f);
-  mpfr_sub(f, rhs.mpfvalue(), detail::MpfFrom<T>()(lhs), MPFR_RNDN);
+  mpfr_sub(f, rhs.mpfvalue(), detail::MpfFrom(lhs), MPFR_RNDN);
   return FNumber(f);
 }
 
 /// \brief Multiplication
-inline FNumber& operator*(const FNumber& lhs, const FNumber& rhs) {
+inline FNumber operator*(const FNumber& lhs, const FNumber& rhs) {
   mpfr_t f;
   mpfr_init(f);
   mpfr_mul(f, lhs.mpfvalue(), rhs.mpfvalue(), MPFR_RNDN);
@@ -355,27 +354,27 @@ inline FNumber& operator*(const FNumber& lhs, const FNumber& rhs) {
 /// \brief Multiplication with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& operator*(const FNumber& lhs, T rhs) {
+inline FNumber operator*(const FNumber& lhs, T rhs) {
   mpfr_t f;
   mpfr_init(f);
-  mpfr_mul(f, lhs.mpfvalue(), detail::MpfFrom<T>()(rhs), MPFR_RNDN);
+  mpfr_mul(f, lhs.mpfvalue(), detail::MpfFrom(rhs), MPFR_RNDN);
   return FNumber(f);
 }
 
 /// \brief Multiplication with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& operator*(T lhs, const FNumber& rhs) {
+inline FNumber operator*(T lhs, const FNumber& rhs) {
   mpfr_t f;
   mpfr_init(f);
-  mpfr_mul(f, rhs.mpfvalue(), detail::MpfFrom<T>()(lhs), MPFR_RNDN);
+  mpfr_mul(f, rhs.mpfvalue(), detail::MpfFrom(lhs), MPFR_RNDN);
   return FNumber(f);
 }
 
 /// \brief Floating point division
 ///
 /// Floating point division with rounding towards nearest
-inline FNumber& operator/(const FNumber& lhs, const FNumber& rhs) {
+inline FNumber operator/(const FNumber& lhs, const FNumber& rhs) {
   mpfr_t f;
   mpfr_init(f);
   ikos_assert_msg(!mpfr_zero_p(rhs.mpfvalue()), "division by zero");
@@ -388,11 +387,11 @@ inline FNumber& operator/(const FNumber& lhs, const FNumber& rhs) {
 /// Floating point division with rounding towards nearest
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& operator/(const FNumber& lhs, T rhs) {
+inline FNumber operator/(const FNumber& lhs, T rhs) {
   mpfr_t f;
   mpfr_init(f);
   ikos_assert_msg(rhs != 0, "division by zero");
-  mpfr_div(f, lhs.mpfvalue(), detail::MpfFrom<T>()(rhs), MPFR_RNDN);
+  mpfr_div(f, lhs.mpfvalue(), detail::MpfFrom(rhs), MPFR_RNDN);
   return FNumber(f);
 }
 
@@ -401,11 +400,11 @@ inline FNumber& operator/(const FNumber& lhs, T rhs) {
 /// Floating point division with rounding towards nearest
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& operator/(T lhs, const FNumber& rhs) {
+inline FNumber operator/(T lhs, const FNumber& rhs) {
   mpfr_t f;
   mpfr_init(f);
   ikos_assert_msg(!mpfr_zero_p(rhs.mpfvalue()), "division by zero");
-  mpfr_div(f, detail::MpfFrom<T>()(lhs), rhs.mpfvalue(), MPFR_RNDN);
+  mpfr_div(f, detail::MpfFrom(lhs), rhs.mpfvalue(), MPFR_RNDN);
   return FNumber(f);
 }
 
@@ -422,14 +421,14 @@ inline bool operator==(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator==(const FNumber& lhs, T rhs) {
-  return mpfr_equal_p(lhs.mpfvalue(), detail::MpfFrom<T>()(rhs));
+  return mpfr_equal_p(lhs.mpfvalue(), detail::MpfFrom(rhs));
 }
 
 /// \brief Equality operator with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator==(T lhs, const FNumber& rhs) {
-  return mpfr_equal_p(rhs.mpfvalue(), detail::MpfFrom<T>()(lhs));
+  return mpfr_equal_p(rhs.mpfvalue(), detail::MpfFrom(lhs));
 }
 
 /// \brief Inequality operator
@@ -441,14 +440,14 @@ inline bool operator!=(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator!=(const FNumber& lhs, T rhs) {
-  return mpfr_lessgreater_p(lhs.mpfvalue(), detail::MpfFrom<T>()(rhs));
+  return mpfr_lessgreater_p(lhs.mpfvalue(), detail::MpfFrom(rhs));
 }
 
 /// \brief Inequality operator with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator!=(T lhs, const FNumber& rhs) {
-  return mpfr_lessgreater_p(rhs.mpfvalue(), detail::MpfFrom<T>()(lhs));
+  return mpfr_lessgreater_p(rhs.mpfvalue(), detail::MpfFrom(lhs));
 }
 
 /// \brief Less than comparison
@@ -460,14 +459,14 @@ inline bool operator<(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator<(const FNumber& lhs, T rhs) {
-  return mpfr_less_p(lhs.mpfvalue(), detail::MpfFrom<T>()(rhs));
+  return mpfr_less_p(lhs.mpfvalue(), detail::MpfFrom(rhs));
 }
 
 /// \brief Less than comparison with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator<(T lhs, const FNumber& rhs) {
-  return mpfr_less_p(detail::MpfFrom<T>()(lhs), rhs.mpfvalue());
+  return mpfr_less_p(detail::MpfFrom(lhs), rhs.mpfvalue());
 }
 
 /// \brief Less or equal comparison
@@ -479,14 +478,14 @@ inline bool operator<=(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator<=(const FNumber& lhs, T rhs) {
-  return mpfr_less_p(lhs.mpfvalue(), detail::MpfFrom<T>()(rhs));
+  return mpfr_less_p(lhs.mpfvalue(), detail::MpfFrom(rhs));
 }
 
 /// \brief Less or equal comparison with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator<=(T lhs, const FNumber& rhs) {
-  return mpfr_lessequal_p(detail::MpfFrom<T>()(lhs), rhs.mpfvalue());
+  return mpfr_lessequal_p(detail::MpfFrom(lhs), rhs.mpfvalue());
 }
 
 /// \brief Greater than comparison
@@ -498,14 +497,14 @@ inline bool operator>(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator>(const FNumber& lhs, T rhs) {
-  return mpfr_greater_p(lhs.mpfvalue(), detail::MpfFrom<T>()(rhs));
+  return mpfr_greater_p(lhs.mpfvalue(), detail::MpfFrom(rhs));
 }
 
 /// \brief Greater than comparison with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator>(T lhs, const FNumber& rhs) {
-  return mpfr_greater_p(detail::MpfFrom<T>()(lhs), rhs.mpfvalue());
+  return mpfr_greater_p(detail::MpfFrom(lhs), rhs.mpfvalue());
 }
 
 /// \brief Greater or equal comparison
@@ -517,14 +516,14 @@ inline bool operator>=(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator>=(const FNumber& lhs, T rhs) {
-  return mpfr_greaterequal_p(lhs.mpfvalue(), detail::MpfFrom<T>()(rhs));
+  return mpfr_greaterequal_p(lhs.mpfvalue(), detail::MpfFrom(rhs));
 }
 
 /// \brief Greater or equal comparison with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline bool operator>=(T lhs, const FNumber& rhs) {
-  return mpfr_greaterequal_p(detail::MpfFrom<T>()(lhs), rhs.mpfvalue());
+  return mpfr_greaterequal_p(detail::MpfFrom(lhs), rhs.mpfvalue());
 }
 
 /// @}
@@ -577,7 +576,7 @@ inline const FNumber& max(const FNumber& a,
   return max(max(max(a, b), c), d);
 }
 /// \brief Return the absolute value of the given number
-inline FNumber& abs(const FNumber& n) {
+inline FNumber abs(const FNumber& n) {
   mpfr_t f;
   mpfr_init(f);
   mpfr_abs(f, n.mpfvalue(), MPFR_RNDN);
@@ -590,7 +589,7 @@ inline FNumber& abs(const FNumber& n) {
 // All by zoush99
 
 /// \brief Return the logarithm of the given number. log2(antilogarithm)
-inline FNumber& log2(const FNumber& antilogarithm){
+inline FNumber log2(const FNumber& antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log2(n,antilogarithm.mpfvalue(),MPFR_RNDN);
@@ -603,17 +602,17 @@ inline FNumber& log2(const FNumber& antilogarithm){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& log2(T antilogarithm){
+inline FNumber log2(T antilogarithm){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_log2(n,detail::MpfFrom<T>()(antilogarithm),MPFR_RNDN);
+  mpfr_log2(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the natural logarithm of the given number. ln(antilogarithm)
-inline FNumber& ln(const FNumber& antilogarithm){
+inline FNumber ln(const FNumber& antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log(n,antilogarithm.mpfvalue(),MPFR_RNDN);
@@ -626,17 +625,17 @@ inline FNumber& ln(const FNumber& antilogarithm){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& ln(T antilogarithm){
+inline FNumber ln(T antilogarithm){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_log(n,detail::MpfFrom<T>()(antilogarithm),MPFR_RNDN);
+  mpfr_log(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the logarithm of the given number. log10(antilogarithm)
-inline FNumber& log10(const FNumber& antilogarithm){
+inline FNumber log10(const FNumber& antilogarithm){
   mpfr_t n;
   mpfr_init(n);
   mpfr_log10(n,antilogarithm.mpfvalue(),MPFR_RNDN);
@@ -649,17 +648,17 @@ inline FNumber& log10(const FNumber& antilogarithm){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& log10(T antilogarithm){
+inline FNumber log10(T antilogarithm){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_log10(n,detail::MpfFrom<T>()(antilogarithm),MPFR_RNDN);
+  mpfr_log10(n,detail::MpfFrom(antilogarithm),MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the exponential of the given number. 2(exponent)
-inline FNumber& exp2(const FNumber& exponent){
+inline FNumber exp2(const FNumber& exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp2(n,exponent,MPFR_RNDN);
@@ -672,17 +671,17 @@ inline FNumber& exp2(const FNumber& exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& exp2(T exponent){
+inline FNumber exp2(T exponent){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_exp2(n,detail::MpfFrom<T>()(exponent),MPFR_RNDN);
+  mpfr_exp2(n,detail::MpfFrom(exponent),MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the exponential of the given number. e(exponent)
-inline FNumber& exp(const FNumber& exponent){
+inline FNumber exp(const FNumber& exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp(n,exponent,MPFR_RNDN);
@@ -695,17 +694,17 @@ inline FNumber& exp(const FNumber& exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& log10(T exponent){
+inline FNumber log10(T exponent){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_exp(n,detail::MpfFrom<T>()(exponent),MPFR_RNDN);
+  mpfr_exp(n,detail::MpfFrom(exponent),MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the exponential of the given number. 10(exponent)
-inline FNumber& exp10(const FNumber& exponent){
+inline FNumber exp10(const FNumber& exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_exp10(n,exponent,MPFR_RNDN);
@@ -718,17 +717,17 @@ inline FNumber& exp10(const FNumber& exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& exp10(T exponent){
+inline FNumber exp10(T exponent){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_exp10(n,detail::MpfFrom<T>()(exponent),MPFR_RNDN);
+  mpfr_exp10(n,detail::MpfFrom(exponent),MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the power of the given number. base**(exponent)
-inline FNumber& pow(FNumber& base,FNumber& exponent){
+inline FNumber pow(FNumber& base,FNumber& exponent){
   mpfr_t n;
   mpfr_init(n);
   mpfr_pow(n,base,exponent,MPFR_RNDN);  // Result difference between mpfr_powr? By zoush99
@@ -741,10 +740,10 @@ inline FNumber& pow(FNumber& base,FNumber& exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& pow(FNumber& base,T exponent){
+inline FNumber pow(FNumber& base,T exponent){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_pow(n,base,detail::MpfFrom<T>()(exponent),MPFR_RNDN);
+  mpfr_pow(n,base,detail::MpfFrom(exponent),MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
@@ -754,10 +753,10 @@ inline FNumber& pow(FNumber& base,T exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& pow(T base,FNumber& exponent){
+inline FNumber pow(T base,FNumber& exponent){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_pow(n,detail::MpfFrom<T>()(base),exponent,MPFR_RNDN);
+  mpfr_pow(n,detail::MpfFrom(base),exponent,MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
@@ -767,78 +766,83 @@ inline FNumber& pow(T base,FNumber& exponent){
 /// with Floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& pow(T base,T exponent){
+inline FNumber pow(T base,T exponent){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_pow(n,detail::MpfFrom<T>()(base),detail::MpfFrom<T>()(exponent),MPFR_RNDN);
+  mpfr_pow(n,detail::MpfFrom(base),detail::MpfFrom(exponent),MPFR_RNDN);
   FNumber f(n);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the sin of the given curve number. sin(n): sin(pi/3)
-template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
-inline FNumber& sin(FNumber& f){
+inline FNumber sin(FNumber& f){
   mpfr_t n;
   mpfr_init(n);
   mpfr_sin(n,f.mpfvalue(),MPFR_RNDN);
-  FNumber f(n);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brief Return the sin of the given curve number. sin(n): sin(pi/3)
 /// with Floating point number
-inline FNumber& sin(T f){
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+
+inline FNumber sin(T f){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_sin(n,detail::MpfFrom<T>()(f),MPFR_RNDN);
-  FNumber f(n);
+  mpfr_sin(n,detail::MpfFrom(f),MPFR_RNDN);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brief Return the cos of the given curve number. cos(n): cos(pi/3)
-inline FNumber& cos(FNumber& f){
+inline FNumber cos(FNumber& f){
   mpfr_t n;
   mpfr_init(n);
   mpfr_cos(n,f.mpfvalue(),MPFR_RNDN);
-  FNumber f(n);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brief Return the cos of the given curve number. cos(n): cos(pi/3)
 /// with Floating point number
-inline FNumber& cos(T f){
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber cos(T f){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_cos(n,detail::MpfFrom<T>()(f),MPFR_RNDN);
-  FNumber f(n);
+  mpfr_cos(n,detail::MpfFrom(f),MPFR_RNDN);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brief Return the tan of the given curve number. tan(n): tan(pi/3)
-inline FNumber& tan(FNumber& f){
+inline FNumber tan(FNumber& f){
   mpfr_t n;
   mpfr_init(n);
   mpfr_tan(n,f.mpfvalue(),MPFR_RNDN);
-  FNumber f(n);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brief Return the tan of the given curve number. tan(n): tan(pi/3)
 /// with Floating point number
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
 inline FNumber& tan(T f){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_tan(n,detail::MpfFrom<T>()(f),MPFR_RNDN);
-  FNumber f(n);
+  mpfr_tan(n,detail::MpfFrom(f),MPFR_RNDN);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brirf Return the sin of the given degree number. sin(n): sin(120)
@@ -846,9 +850,9 @@ inline FNumber& sinu(FNumber& f){
   mpfr_t n;
   mpfr_init(n);
   mpfr_sinu(n,f.mpfvalue(),360,MPFR_RNDN);
-  FNumber f(n);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brirf Return the sin of the given degree number. sin(n): sin(120)
@@ -858,10 +862,10 @@ template < typename T,
 inline FNumber& sinu(T f){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_sinu(n,detail::MpfFrom<T>()(f),360,MPFR_RNDN);
-  FNumber f(n);
+  mpfr_sinu(n,detail::MpfFrom(f),360,MPFR_RNDN);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brirf Return the cos of the given degree number. cos(n): cos(120)
@@ -869,9 +873,9 @@ inline FNumber& cosu(FNumber& f){
   mpfr_t n;
   mpfr_init(n);
   mpfr_cosu(n,f.mpfvalue(),360,MPFR_RNDN);
-  FNumber f(n);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brirf Return the cos of the given degree number. cos(n): cos(120)
@@ -881,10 +885,10 @@ template < typename T,
 inline FNumber& cosu(T f){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_cosu(n,detail::MpfFrom<T>()(f),360,MPFR_RNDN);
-  FNumber f(n);
+  mpfr_cosu(n,detail::MpfFrom(f),360,MPFR_RNDN);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brirf Return the tan of the given degree number. tan(n): tan(120)
@@ -892,9 +896,9 @@ inline FNumber& tanu(FNumber& f){
   mpfr_t n;
   mpfr_init(n);
   mpfr_tanu(n,f.mpfvalue(),360,MPFR_RNDN);
-  FNumber f(n);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brirf Return the tan of the given degree number. tan(n): tan(120)
@@ -904,10 +908,10 @@ template < typename T,
 inline FNumber& tanu(T f){
   mpfr_t n;
   mpfr_init(n);
-  mpfr_tanu(n,detail::MpfFrom<T>()(f),360,MPFR_RNDN);
-  FNumber f(n);
+  mpfr_tanu(n,detail::MpfFrom(f),360,MPFR_RNDN);
+  FNumber e(n);
   mpfr_clear(n);
-  return f;
+  return e;
 }
 
 /// \brief If you need other trigonometric functions later,
@@ -940,7 +944,7 @@ inline std::ostream& operator<<(std::ostream& o, const FNumber& n) {
 
 /// \brief Read a FNumber from a stream, in base 10
 inline std::istream& operator>>(std::istream& i, FNumber& n) {
-  i >> n._n;
+  i >> n.mpfvalue();
   return i;
 }
 

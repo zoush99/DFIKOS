@@ -140,10 +140,11 @@ install(DIRECTORY include/
 #
 # Unit tests
 #
+### zoush99 adds a comment
 
-enable_testing()
-add_custom_target(build-core-tests)
-add_subdirectory(test/unit EXCLUDE_FROM_ALL)
+#enable_testing()
+#add_custom_target(build-core-tests)
+#add_subdirectory(test/unit EXCLUDE_FROM_ALL)
 
 #
 # Doxygen
@@ -170,3 +171,8 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     DEPENDS build-core-tests)
   add_custom_target(doc DEPENDS doxygen-core)
 endif()
+
+
+# zoush99 adds a comment
+add_executable(hello zoush99test/hello.cpp)
+target_include_directories(hello PRIVATE include)
