@@ -174,5 +174,6 @@ endif()
 
 
 # zoush99 adds a comment
-add_executable(hello zoush99test/hello.cpp)
-target_include_directories(hello PRIVATE include)
+add_executable(test-f_number-hpp zoush99test/test-f_number-hpp.cpp)
+target_include_directories(test-f_number-hpp PRIVATE include)
+target_link_libraries(test-f_number-hpp mpfr)
