@@ -65,15 +65,16 @@ void testOverwriteOperator(){
   //N.display();
 }
 
+/// \brief a+b, a-b, a*b, a/b, a==b, a>=b and so on
 void testTwoFNoperator(){
-  float b=3.6;
+  float b=0;
   mpfr_t m;
   mpfr_init2(m,53);
-  mpfr_set_flt(m,1.5,MPFR_RNDN);
+  mpfr_set_flt(m,0.1,MPFR_RNDN);
 
   mpfr_t n;
   mpfr_init2(n,24);
-  mpfr_set_d(n,2,MPFR_RNDN);
+  mpfr_set_d(n,0.1,MPFR_RNDN);
 
   F M(m,MPFR_RNDN);
   F N(n,MPFR_RNDN);
@@ -81,15 +82,17 @@ void testTwoFNoperator(){
 //  f.setFN(n,24,MPFR_RNDA);
 //  f.display();
   F temp;
-  temp=M+N;
+  temp=M-N;
   temp.display();
-  temp=N+M;
+  temp=N-M;
   temp.display();
-  temp=b+M;
+  temp=b-M;
   temp.display();
-  temp=M+b;
+  temp=M-b;
   temp.display();
-
+  std::cout<<(M==N)<<std::endl;
+  std::cout<<(N<=N)<<std::endl;
+  std::cout<<(N<N)<<std::endl;
 }
 
 int main() {
