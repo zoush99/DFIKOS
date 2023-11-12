@@ -45,7 +45,6 @@ void testOverwriteOperator(){
   F M(m,MPFR_RNDN); // 24
   F N(n,MPFR_RNDN); // 53
   F O(o,MPFR_RNDN); // 113
-
 //  M+=N;
 //  M.display();
 //  N+=M;
@@ -66,7 +65,34 @@ void testOverwriteOperator(){
   //N.display();
 }
 
+void testTwoFNoperator(){
+  float b=3.6;
+  mpfr_t m;
+  mpfr_init2(m,53);
+  mpfr_set_flt(m,1.5,MPFR_RNDN);
+
+  mpfr_t n;
+  mpfr_init2(n,24);
+  mpfr_set_d(n,2,MPFR_RNDN);
+
+  F M(m,MPFR_RNDN);
+  F N(n,MPFR_RNDN);
+//  f.display();
+//  f.setFN(n,24,MPFR_RNDA);
+//  f.display();
+  F temp;
+  temp=M+N;
+  temp.display();
+  temp=N+M;
+  temp.display();
+  temp=b+M;
+  temp.display();
+  temp=M+b;
+  temp.display();
+
+}
+
 int main() {
-  testOverwriteOperator();
+  testTwoFNoperator();
   return 0;
 }

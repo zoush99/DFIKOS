@@ -153,7 +153,7 @@ public:
   // This operation assumes that the accuracies are all equal,
   // otherwise it converts them to high accuracy. By zoush99
   FNumber& operator+=(const FNumber& x) {
-    if (x._prec == this->_prec) { // ()=this
+    if (x._prec == this->_prec) { // ()=this means precision is same
       mpfr_add(this->_n, this->_n, x._n, this->_rnd);
     } else if (x._prec > this->_prec) { // ()>this
       mpfr_t _temp;                     // temporary variable
@@ -335,38 +335,166 @@ public:
   }
 
   /// @}
+  /// {@
+  /// \brief Some function about class FNumber
 
-  /// \brief Get the internal representation
-  const mpfr_t& mpfrvalue() const { return this->_n; }
+  /// \brief Get the internal value of FNumber
+  const mpfr_t& FNvalue() const { return this->_n; }
 
+  /// \brief Get the precision of FNumber
+  const mpfr_prec_t& FNprec() const{
+    return this->_prec;
+  }
+
+  /// \brief Get the round mode of FNumber
+  const mpfr_rnd_t& FNrnd() const{
+    return this->_rnd;
+  }
+
+  /// \brief Change the infomation of FNumber
+  void setFN(mpfr_t m,mpfr_prec_t p,mpfr_rnd_t r){
+    mpfr_set_prec(this->_n,p);
+    mpfr_set(this->_n,m,MPFR_RNDN);
+    this->_prec=p;
+    this->_rnd=r;
+  }
+
+  /// @}
   friend class QNumber;
   friend class ZNumber;
 }; // end class FNumber
 
 /// \brief Addition
-//inline FNumber operator+(const FNumber& lhs, const FNumber& rhs) {
-//  if (lhs.mpfrvalue() == rhs.mpfrvalue()) { //
-//    mpfr_add(this->_n, this->_n, x._n, this->_rnd);
-//  } else if (x._prec > this->_prec) { // ()>this
-//    mpfr_t _temp;                     // temporary variable
-//    mpfr_init2(_temp, x._prec);
-//    mpfr_set(_temp, this->_n, MPFR_RNDN);
-//    this->_prec = x._prec;
-//    mpfr_set_prec(this->_n, x._prec); // Set _n=nan
-//    mpfr_set(this->_n, _temp, MPFR_RNDN);
-//    mpfr_add(this->_n, this->_n, x._n, this->_rnd);
-//    mpfr_clear(_temp);
-//  } else {             // ()<this
-//    mpfr_t _temp;      // temporary variable
-//    FNumber _tempF(x); // temporary FNumber
-//    mpfr_init2(_temp, this->_prec);
-//    mpfr_set(_temp, _tempF._n, MPFR_RNDN);
-//    _tempF._prec = this->_prec;
-//    mpfr_set_prec(_tempF._n, x._prec);
-//    mpfr_set(_tempF._n, _temp, MPFR_RNDN);
-//    mpfr_add(this->_n, this->_n, _tempF._n, this->_rnd);
-//    mpfr_clear(_temp);
-//}
+inline FNumber operator+(const FNumber& lhs, const FNumber& rhs) {
+  if(lhs.FNprec()==rhs.FNprec()){ // left=right
+    FNumber _tempF(lhs);
+    _tempF+=rhs;
+    return _tempF;
+  }
+  else if(lhs.FNprec()<rhs.FNprec()){  // left<right
+    FNumber _tempF(rhs);
+    _tempF+=lhs;
+    return _tempF;
+  }else{  // left>right
+    FNumber _tempF(lhs);
+    _tempF+=rhs;
+    return _tempF;
+  }
+}
+
+/// \brief Addition with floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber operator+(T lhs, const FNumber& rhs) {
+  FNumber _tempF(lhs);
+  mpfr_t _temp;
+  mpfr_init2(_temp, rhs.FNprec());
+  mpfr_set(_temp, _tempF.FNvalue(), MPFR_RNDN);
+  FNumber lhsFN(_temp, MPFR_RNDN);
+  _tempF=lhsFN+rhs;
+  return _tempF;
+}
+
+/// \brief Addition with floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber operator+(const FNumber& lhs,T rhs) {
+  FNumber _tempF(rhs);
+  mpfr_t _temp;
+  mpfr_init2(_temp, lhs.FNprec());
+  mpfr_set(_temp, _tempF.FNvalue(), MPFR_RNDN);
+  FNumber rhsFN(_temp, MPFR_RNDN);
+  _tempF=rhsFN+lhs;
+  return _tempF;
+}
+
+/// \brief Subtraction
+inline FNumber operator-(const FNumber& lhs, const FNumber& rhs) {
+  if(lhs.FNprec()==rhs.FNprec()){ // left=right
+    FNumber _tempF(lhs);
+    _tempF-=rhs;
+    return _tempF;
+  }
+  else if(lhs.FNprec()<rhs.FNprec()){  // left<right
+    FNumber _tempF(rhs);
+    _tempF-=lhs;
+    return _tempF;
+  }else{  // left>right
+    FNumber _tempF(lhs);
+    _tempF-=rhs;
+    return _tempF;
+  }
+}
+
+/// \brief Subtraction with floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber operator-(T lhs, const FNumber& rhs) {
+  FNumber _tempF(lhs);
+  mpfr_t _temp;
+  mpfr_init2(_temp, rhs.FNprec());
+  mpfr_set(_temp, _tempF.FNvalue(), MPFR_RNDN);
+  FNumber lhsFN(_temp, MPFR_RNDN);
+  _tempF=lhsFN-rhs;
+  return _tempF;
+}
+
+/// \brief Subtraction with floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber operator-(const FNumber& lhs,T rhs) {
+  FNumber _tempF(rhs);
+  mpfr_t _temp;
+  mpfr_init2(_temp, lhs.FNprec());
+  mpfr_set(_temp, _tempF.FNvalue(), MPFR_RNDN);
+  FNumber rhsFN(_temp, MPFR_RNDN);
+  _tempF=rhsFN-lhs;
+  return _tempF;
+}
+
+/// \brief Multiplication
+inline FNumber operator*(const FNumber& lhs, const FNumber& rhs) {
+  if(lhs.FNprec()==rhs.FNprec()){ // left=right
+    FNumber _tempF(lhs);
+    _tempF*=rhs;
+    return _tempF;
+  }
+  else if(lhs.FNprec()<rhs.FNprec()){  // left<right
+    FNumber _tempF(rhs);
+    _tempF*=lhs;
+    return _tempF;
+  }else{  // left>right
+    FNumber _tempF(lhs);
+    _tempF*=rhs;
+    return _tempF;
+  }
+}
+
+/// \brief Multiplication with floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber operator*(T lhs, const FNumber& rhs) {
+  FNumber _tempF(lhs);
+  mpfr_t _temp;
+  mpfr_init2(_temp, rhs.FNprec());
+  mpfr_set(_temp, _tempF.FNvalue(), MPFR_RNDN);
+  FNumber lhsFN(_temp, MPFR_RNDN);
+  _tempF=lhsFN*rhs;
+  return _tempF;
+}
+
+/// \brief Addition with floating point types
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber operator*(const FNumber& lhs,T rhs) {
+  FNumber _tempF(rhs);
+  mpfr_t _temp;
+  mpfr_init2(_temp, lhs.FNprec());
+  mpfr_set(_temp, _tempF.FNvalue(), MPFR_RNDN);
+  FNumber rhsFN(_temp, MPFR_RNDN);
+  _tempF=rhsFN*lhs;
+  return _tempF;
+}
 
 } // namespace core
 } // namespace ikos
