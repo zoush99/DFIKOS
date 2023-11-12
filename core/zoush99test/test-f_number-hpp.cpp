@@ -28,7 +28,7 @@ void testConstruct(){
 
 /// \brief +=, -+, +, -, *, / and so on
 void testOverwriteOperator(){
-  float f=0.1;
+  float f=1;
   mpfr_t m;
   mpfr_init2(m,24);
   mpfr_set_flt(m,0.5,MPFR_RNDN);
@@ -54,6 +54,16 @@ void testOverwriteOperator(){
   N.display();
   N-=f;
   N.display();
+  N*=f;
+  N.display();
+  N/=f;
+  N.display();
+
+  float b=0;
+  N/=b;
+  N.display();
+  //N++;
+  //N.display();
 }
 
 int main() {
