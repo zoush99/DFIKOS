@@ -85,16 +85,16 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   explicit FNumber(T n){
-    if (std::is_same< T, float >::value){
+    if (std::is_same< T, float >::value){ // float type
       mpfr_init2(this->_n,24);
       mpfr_set_flt(this->_n,n,MPFR_RNDN);
       this->_prec=24;
     }else if(std::is_same< T, double >::
-                   value){
+                   value){  // double type
       mpfr_init2(this->_n,53);
       mpfr_set_d(this->_n,n,MPFR_RNDN);
       this->_prec=53;
-    }else{
+    }else{  // long double type
       mpfr_init2(this->_n,113);
       mpfr_set_ld(this->_n,n,MPFR_RNDN);
       this->_prec=113;
@@ -135,16 +135,16 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedFloat< T >::value > >
   FNumber& operator=(T n) {
-    if (std::is_same< T, float >::value){
+    if (std::is_same< T, float >::value){ // float type
       mpfr_init2(this->_n,24);
       mpfr_set_flt(this->_n,n,MPFR_RNDN);
       this->_prec=24;
     }else if(std::is_same< T, double >::
-                   value){
+                   value){  // double type
       mpfr_init2(this->_n,53);
       mpfr_set_d(this->_n,n,MPFR_RNDN);
       this->_prec=53;
-    }else{
+    }else{  // long double type
       mpfr_init2(this->_n,113);
       mpfr_set_ld(this->_n,n,MPFR_RNDN);
       this->_prec=113;
@@ -154,8 +154,98 @@ public:
   }
 
   /// \brief Addition assignment
+  // This operation assumes that the accuracies are all equal,
+  // otherwise it converts them to high accuracy. By zoush99
   FNumber& operator+=(const FNumber& x) {
-    mpfr_add(this->_n, this->_n, x._n, this->_rnd);
+    if(x._prec== this->_prec){  // ()=this
+      mpfr_add(this->_n, this->_n, x._n, this->_rnd);
+    }
+    else if(x._prec> this->_prec){ // ()>this
+      mpfr_t _temp; // temporary variable
+      mpfr_init2(_temp,x._prec);
+      mpfr_set(_temp,this->_n,MPFR_RNDN);
+      this->_prec=x._prec;
+      mpfr_set_prec(this->_n,x._prec);  // Set _n=nan
+      mpfr_set(this->_n,_temp,MPFR_RNDN);
+      mpfr_add(this->_n, this->_n, x._n, this->_rnd);
+      mpfr_clear(_temp);
+    }
+    else{ // ()<this
+      mpfr_t _temp; // temporary variable
+      FNumber _tempF(x);  // temporary FNumber
+      mpfr_init2(_temp,this->_prec);
+      mpfr_set(_temp,_tempF._n,MPFR_RNDN);
+      _tempF._prec=this->_prec;
+      mpfr_set_prec(_tempF._n,x._prec);
+      mpfr_set(_tempF._n,_temp,MPFR_RNDN);
+      mpfr_add(this->_n, this->_n, _tempF._n, this->_rnd);
+      mpfr_clear(_temp);
+    }
+    return *this;
+  }
+
+  /// \brief Addition assignment with floating point types
+  // Arithmetic operations with floating-point and mpfr types. By zoush99
+  template < typename T,
+             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+  FNumber& operator+=(T x) {
+    FNumber f(x);
+    mpfr_t _temp;
+    mpfr_init2(_temp, this->_prec);
+    mpfr_set(_temp,this->_n,MPFR_RNDN);
+    FNumber t(_temp,MPFR_RNDN);
+    t+=f;
+    this->_prec=t._prec;
+    mpfr_set(this->_n,t._n,MPFR_RNDN);
+    mpfr_clear(_temp);
+    return *this;
+  }
+
+  /// \brief Subtraction assignment
+  // This operation assumes that the accuracies are all equal,
+  // otherwise it converts them to high accuracy. By zoush99
+  FNumber& operator-=(const FNumber& x) {
+    if(x._prec== this->_prec){  // ()=this
+      mpfr_sub(this->_n, this->_n, x._n, this->_rnd);
+    }
+    else if(x._prec> this->_prec){ // ()>this
+      mpfr_t _temp; // temporary variable
+      mpfr_init2(_temp,x._prec);
+      mpfr_set(_temp,this->_n,MPFR_RNDN);
+      this->_prec=x._prec;
+      mpfr_set_prec(this->_n,x._prec);  // Set _n=nan
+      mpfr_set(this->_n,_temp,MPFR_RNDN);
+      mpfr_sub(this->_n, this->_n, x._n, this->_rnd);
+      mpfr_clear(_temp);
+    }
+    else{ // ()<this
+      mpfr_t _temp; // temporary variable
+      FNumber _tempF(x);  // temporary FNumber
+      mpfr_init2(_temp,this->_prec);
+      mpfr_set(_temp,_tempF._n,MPFR_RNDN);
+      _tempF._prec=this->_prec;
+      mpfr_set_prec(_tempF._n,x._prec);
+      mpfr_set(_tempF._n,_temp,MPFR_RNDN);
+      mpfr_sub(this->_n, this->_n, _tempF._n, this->_rnd);
+      mpfr_clear(_temp);
+    }
+    return *this;
+  }
+
+  /// \brief Subtraction assignment with floating point types
+  // Arithmetic operations with floating-point and mpfr types. By zoush99
+  template < typename T,
+             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+  FNumber& operator-=(T x) {
+    FNumber f(x);
+    mpfr_t _temp;
+    mpfr_init2(_temp, this->_prec);
+    mpfr_set(_temp,this->_n,MPFR_RNDN);
+    FNumber t(_temp,MPFR_RNDN);
+    t-=f;
+    this->_prec=t._prec;
+    mpfr_set(this->_n,t._n,MPFR_RNDN);
+    mpfr_clear(_temp);
     return *this;
   }
 }; // end class FNumber
