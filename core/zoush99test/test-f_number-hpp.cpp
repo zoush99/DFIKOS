@@ -104,16 +104,17 @@ void testMathFunction(){
   F FNu(f);
   F HNu(h);
   FNu.display();
-  log2(FNu).display();
-  log10(FNu).display();
-  exp2(FNu).display();
-  exp(FNu).display();
-  exp10(FNu).display();
-  pow(FNu,HNu).display();
-  sin(FNu).display();
-  cos(FNu).display();
-  tan(FNu).display();
-//  retp().display();
+//  log2(FNu).display();
+//  log10(FNu).display();
+//  exp2(FNu).display();
+//  exp(FNu).display();
+//  exp10(FNu).display();
+//  pow(FNu,HNu).display();
+//  sin(FNu).display();
+//  cos(FNu).display();
+//  tan(FNu).display();
+  ikos::core::retPi(f).display();
+  FNu.display();
 
 }
 

@@ -513,11 +513,10 @@ inline FNumber operator/(const FNumber& lhs,T rhs) {
 /// \name Comparison Operators
 /// @{
 
-/// \brief Equality operators
+/// \brief Equality operators 1->true, 0->false
 inline bool operator==(const FNumber& lhs, const FNumber& rhs) {
   return mpfr_equal_p(lhs.FNvalue(), rhs.FNvalue());
 }
-
 
 /// \brief Equality operator with floating point types
 template < typename T,
@@ -675,7 +674,7 @@ inline FNumber log10(const FNumber& antilogarithm){
   return f;
 }
 
-///// \brief Return the exponential of the given number. 2(exponent)
+/// \brief Return the exponential of the given number. 2(exponent)
 inline FNumber exp2(const FNumber& exponent){
   mpfr_t n;
   mpfr_init2(n,exponent.FNprec()); // default
@@ -784,13 +783,16 @@ inline FNumber tanu(FNumber& f){
 /// @{
 
 /// \brief Return the value of pi
-inline FNumber retpi(){
+template < typename T,
+           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+inline FNumber retPi(T f){
+  FNumber Pi(f);
   mpfr_t n;
-  mpfr_init2(n,53);
+  mpfr_init2(n,Pi.FNprec());
   mpfr_const_pi(n,MPFR_RNDN);
-  FNumber f(n,MPFR_RNDN);
+  Pi.setFN(n,Pi.FNprec(),MPFR_RNDN);
   mpfr_clear(n);
-  return f;
+  return Pi;
 }
 
 /// @}
@@ -802,7 +804,6 @@ inline std::ostream& operator<<(std::ostream& o, const FNumber& n) {
   o << n.FNvalue();
   return o;
 }
-
 /// @}
 } // namespace core
 } // namespace ikos
