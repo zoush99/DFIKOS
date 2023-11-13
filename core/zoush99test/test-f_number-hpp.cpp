@@ -95,7 +95,29 @@ void testTwoFNoperator(){
   std::cout<<(N<N)<<std::endl;
 }
 
+/// \brief
+void testMathFunction(){
+  long double f;
+  double h;
+  f = 32;
+  h = 10;
+  F FNu(f);
+  F HNu(h);
+  FNu.display();
+  log2(FNu).display();
+  log10(FNu).display();
+  exp2(FNu).display();
+  exp(FNu).display();
+  exp10(FNu).display();
+  pow(FNu,HNu).display();
+  sin(FNu).display();
+  cos(FNu).display();
+  tan(FNu).display();
+//  retp().display();
+
+}
+
 int main() {
-  testTwoFNoperator();
+  testMathFunction();
   return 0;
 }
