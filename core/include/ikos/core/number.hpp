@@ -12,6 +12,8 @@
  *   * ikos/core/number/signedness.hpp
  *   * ikos/core/number/supported_integral.hpp
  *   * ikos/core/number/z_number.hpp
+ *   * ikos/core/number/supported_float.hpp     // Byzoush99
+ *   * ikos/core/number/f_number.hpp        // By zoush99
  *
  * Author: Maxime Arthaud
  *
