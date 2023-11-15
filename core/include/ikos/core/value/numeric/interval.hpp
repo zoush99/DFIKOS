@@ -99,6 +99,9 @@ public:
   /// \brief Create the interval [n, n]
   explicit Interval(int n) : _lb(n), _ub(n) {}
 
+  /// \brief Create the interval [n, n], float. By zoush99
+  explicit Interval(float n) : _lb(n), _ub(n) {}
+
   /// \brief Create the interval [n, n]
   explicit Interval(const Number& n) : _lb(n), _ub(n) {}
 
@@ -381,6 +384,9 @@ public:
 
   /// \brief Return true if the interval contains n
   bool contains(int n) const { return this->contains(Number(n)); }
+
+  /// \brief Return true if the interval contains n, float. By zoush99
+  bool contains(float n) const { return this->contains(Number(n)); }
 
   /// \brief Return true if the interval contains n
   bool contains(Number n) const {

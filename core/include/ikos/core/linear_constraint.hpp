@@ -273,6 +273,15 @@ inline LinearConstraint< Number, VariableRef > operator<=(
 
 template < typename Number, typename VariableRef >
 inline LinearConstraint< Number, VariableRef > operator<=(
+    LinearExpression< Number, VariableRef > e, float n) {
+  return LinearConstraint<
+      Number,
+      VariableRef >(std::move(e) - n,
+                    LinearConstraint< Number, VariableRef >::Inequality);
+}
+
+template < typename Number, typename VariableRef >
+inline LinearConstraint< Number, VariableRef > operator<=(
     LinearExpression< Number, VariableRef > x,
     VariableExpression< Number, VariableRef > y) {
   return LinearConstraint<
@@ -293,6 +302,15 @@ inline LinearConstraint< Number, VariableRef > operator<=(
 template < typename Number, typename VariableRef >
 inline LinearConstraint< Number, VariableRef > operator<=(
     VariableExpression< Number, VariableRef > x, int n) {
+  return LinearConstraint<
+      Number,
+      VariableRef >(std::move(x) - n,
+                    LinearConstraint< Number, VariableRef >::Inequality);
+}
+
+template < typename Number, typename VariableRef >
+inline LinearConstraint< Number, VariableRef > operator<=(
+    VariableExpression< Number, VariableRef > x, float n) {
   return LinearConstraint<
       Number,
       VariableRef >(std::move(x) - n,
@@ -353,6 +371,15 @@ inline LinearConstraint< Number, VariableRef > operator>=(
 
 template < typename Number, typename VariableRef >
 inline LinearConstraint< Number, VariableRef > operator>=(
+    LinearExpression< Number, VariableRef > e, float n) {
+  return LinearConstraint<
+      Number,
+      VariableRef >(n - std::move(e),
+                    LinearConstraint< Number, VariableRef >::Inequality);
+}
+
+template < typename Number, typename VariableRef >
+inline LinearConstraint< Number, VariableRef > operator>=(
     LinearExpression< Number, VariableRef > x,
     VariableExpression< Number, VariableRef > y) {
   return LinearConstraint<
@@ -373,6 +400,15 @@ inline LinearConstraint< Number, VariableRef > operator>=(
 template < typename Number, typename VariableRef >
 inline LinearConstraint< Number, VariableRef > operator>=(
     VariableExpression< Number, VariableRef > x, int n) {
+  return LinearConstraint<
+      Number,
+      VariableRef >(n - std::move(x),
+                    LinearConstraint< Number, VariableRef >::Inequality);
+}
+
+template < typename Number, typename VariableRef >
+inline LinearConstraint< Number, VariableRef > operator>=(
+    VariableExpression< Number, VariableRef > x, float n) {
   return LinearConstraint<
       Number,
       VariableRef >(n - std::move(x),
@@ -433,6 +469,15 @@ inline LinearConstraint< Number, VariableRef > operator==(
 
 template < typename Number, typename VariableRef >
 inline LinearConstraint< Number, VariableRef > operator==(
+    LinearExpression< Number, VariableRef > e, float n) {
+  return LinearConstraint<
+      Number,
+      VariableRef >(std::move(e) - n,
+                    LinearConstraint< Number, VariableRef >::Equality);
+}
+
+template < typename Number, typename VariableRef >
+inline LinearConstraint< Number, VariableRef > operator==(
     LinearExpression< Number, VariableRef > x,
     VariableExpression< Number, VariableRef > y) {
   return LinearConstraint<
@@ -453,6 +498,15 @@ inline LinearConstraint< Number, VariableRef > operator==(
 template < typename Number, typename VariableRef >
 inline LinearConstraint< Number, VariableRef > operator==(
     VariableExpression< Number, VariableRef > x, int n) {
+  return LinearConstraint<
+      Number,
+      VariableRef >(std::move(x) - n,
+                    LinearConstraint< Number, VariableRef >::Equality);
+}
+
+template < typename Number, typename VariableRef >
+inline LinearConstraint< Number, VariableRef > operator==(
+    VariableExpression< Number, VariableRef > x, float n) {
   return LinearConstraint<
       Number,
       VariableRef >(std::move(x) - n,
@@ -513,6 +567,15 @@ inline LinearConstraint< Number, VariableRef > operator!=(
 
 template < typename Number, typename VariableRef >
 inline LinearConstraint< Number, VariableRef > operator!=(
+    LinearExpression< Number, VariableRef > e, float n) {
+  return LinearConstraint<
+      Number,
+      VariableRef >(std::move(e) - n,
+                    LinearConstraint< Number, VariableRef >::Disequation);
+}
+
+template < typename Number, typename VariableRef >
+inline LinearConstraint< Number, VariableRef > operator!=(
     LinearExpression< Number, VariableRef > x,
     VariableExpression< Number, VariableRef > y) {
   return LinearConstraint<
@@ -533,6 +596,15 @@ inline LinearConstraint< Number, VariableRef > operator!=(
 template < typename Number, typename VariableRef >
 inline LinearConstraint< Number, VariableRef > operator!=(
     VariableExpression< Number, VariableRef > x, int n) {
+  return LinearConstraint<
+      Number,
+      VariableRef >(std::move(x) - n,
+                    LinearConstraint< Number, VariableRef >::Disequation);
+}
+
+template < typename Number, typename VariableRef >
+inline LinearConstraint< Number, VariableRef > operator!=(
+    VariableExpression< Number, VariableRef > x, float n) {
   return LinearConstraint<
       Number,
       VariableRef >(std::move(x) - n,

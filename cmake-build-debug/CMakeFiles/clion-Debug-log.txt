@@ -7,13 +7,18 @@
 Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0 (found version "1.55.0")
 Found Boost components:
    unit_test_framework
-CMake Error at /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
-  Could NOT find TBB.  Please provide -DTBB_ROOT=/path/to/tbb (missing:
-  TBB_INCLUDE_DIRS) (Required is at least version "2")
-Call Stack (most recent call first):
-  /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake:600 (_FPHSA_FAILURE_MESSAGE)
-  cmake/FindTBB.cmake:264 (find_package_handle_standard_args)
-  core/CMakeLists.txt:94 (find_package)
-
-
--- Configuring incomplete, errors occurred!
+-- Including ar
+Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0 (found version "1.55.0")
+-- Including frontend/llvm
+Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0 (found version "1.55.0")
+Found Boost components:
+   filesystem;system
+-- Building with -fPIC
+-- Including analyzer
+Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0 (found version "1.55.0")
+Found Boost components:
+   filesystem;system;thread
+-- Building with -fPIC
+-- Configuring done (1.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/zou/Documents/DFIKOS/cmake-build-debug

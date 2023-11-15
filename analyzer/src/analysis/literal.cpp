@@ -194,8 +194,8 @@ public:
     return Literal(ScalarLit::machine_int(c->value()));
   }
 
-  Literal operator()(ar::FloatConstant* /*f*/) {
-    return Literal(ScalarLit::floating_point(DummyNumber{}));
+  Literal operator()(ar::FloatConstant* c) {
+    return Literal(ScalarLit::floating_point(c->value()));
   }
 
   Literal operator()(ar::NullConstant* /*n*/) {

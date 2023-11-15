@@ -140,6 +140,9 @@ public:
   /// \brief Create a constant expression
   explicit LinearExpression(int n) : _cst(n) {}
 
+  /// \brief Create a constant expression, float. By zoush99
+  explicit LinearExpression(float n) : _cst(n) {}
+
   /// \brief Create a variable expression
   explicit LinearExpression(VariableRef var) {
     this->_map.emplace(var, Number(1));
@@ -159,6 +162,13 @@ public:
 
   /// \brief Create the expression cst * var
   LinearExpression(int cst, VariableRef var) {
+    if (cst != 0) {
+      this->_map.emplace(var, Number(cst));
+    }
+  }
+
+  /// \brief Create the expression cst * var, float. By zoush99
+  LinearExpression(float cst, VariableRef var) {
     if (cst != 0) {
       this->_map.emplace(var, Number(cst));
     }
@@ -191,6 +201,9 @@ public:
   /// \brief Add a constant
   void add(int n) { this->_cst += n; }
 
+  /// \brief Add a constant, float. By zoush99
+  void add(float n) { this->_cst += n; }
+
   /// \brief Add a variable
   void add(VariableRef var) { this->add(1, var); }
 
@@ -213,6 +226,23 @@ public:
 
   /// \brief Add a term cst * var
   void add(int cst, VariableRef var) {
+    auto it = this->_map.find(var);
+    if (it != this->_map.end()) {
+      Number r = it->second + cst;
+      if (r == 0) {
+        this->_map.erase(it);
+      } else {
+        it->second = r;
+      }
+    } else {
+      if (cst != 0) {
+        this->_map.emplace(var, Number(cst));
+      }
+    }
+  }
+
+  /// \brief Add a term cst * var, float. By zoush99
+  void add(float cst, VariableRef var) {
     auto it = this->_map.find(var);
     if (it != this->_map.end()) {
       Number r = it->second + cst;
@@ -263,6 +293,9 @@ public:
   /// \brief Add a number
   void operator+=(int n) { this->_cst += n; }
 
+  /// \brief Add a number, float. By zoush99
+  void operator+=(float n) { this->_cst += n; }
+
   /// \brief Add a variable
   void operator+=(VariableRef var) { this->add(var); }
 
@@ -279,6 +312,9 @@ public:
 
   /// \brief Substract a number
   void operator-=(int n) { this->_cst -= n; }
+
+  /// \brief Substract a number, float. By zoush99
+  void operator-=(float n) { this->_cst -= n; }
 
   /// \brief Substract a variable
   void operator-=(VariableRef var) { this->add(-1, var); }
@@ -313,6 +349,19 @@ public:
 
   /// \brief Multiply by a constant
   void operator*=(int n) {
+    if (n == 0) {
+      this->_map.clear();
+      this->_cst = 0;
+    } else {
+      for (auto& term : this->_map) {
+        term.second *= n;
+      }
+      this->_cst *= n;
+    }
+  }
+
+  /// \brief Multiply by a constant, float. By zoush99
+  void operator*=(float n) {
     if (n == 0) {
       this->_map.clear();
       this->_cst = 0;
@@ -395,6 +444,12 @@ inline LinearExpression< Number, VariableRef > operator*(
 
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator*(
+    VariableExpression< Number, VariableRef > e, float n) {
+  return LinearExpression< Number, VariableRef >(n, e.var());
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator*(
     Number n, VariableExpression< Number, VariableRef > e) {
   return LinearExpression< Number, VariableRef >(std::move(n), e.var());
 }
@@ -402,6 +457,12 @@ inline LinearExpression< Number, VariableRef > operator*(
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator*(
     int n, VariableExpression< Number, VariableRef > e) {
+  return LinearExpression< Number, VariableRef >(n, e.var());
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator*(
+    float n, VariableExpression< Number, VariableRef > e) {
   return LinearExpression< Number, VariableRef >(n, e.var());
 }
 
@@ -421,6 +482,13 @@ inline LinearExpression< Number, VariableRef > operator*(
 
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator*(
+    LinearExpression< Number, VariableRef > e, float n) {
+  e *= n;
+  return e;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator*(
     const Number& n, LinearExpression< Number, VariableRef > e) {
   e *= n;
   return e;
@@ -429,6 +497,13 @@ inline LinearExpression< Number, VariableRef > operator*(
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator*(
     int n, LinearExpression< Number, VariableRef > e) {
+  e *= n;
+  return e;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator*(
+    float n, LinearExpression< Number, VariableRef > e) {
   e *= n;
   return e;
 }
@@ -455,6 +530,14 @@ inline LinearExpression< Number, VariableRef > operator+(
 
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator+(
+    VariableExpression< Number, VariableRef > e, float n) {
+  LinearExpression< Number, VariableRef > r(e.var());
+  r += n;
+  return r;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator+(
     const Number& n, VariableExpression< Number, VariableRef > e) {
   LinearExpression< Number, VariableRef > r(e.var());
   r += n;
@@ -464,6 +547,14 @@ inline LinearExpression< Number, VariableRef > operator+(
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator+(
     int n, VariableExpression< Number, VariableRef > e) {
+  LinearExpression< Number, VariableRef > r(e.var());
+  r += n;
+  return r;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator+(
+    float n, VariableExpression< Number, VariableRef > e) {
   LinearExpression< Number, VariableRef > r(e.var());
   r += n;
   return r;
@@ -494,6 +585,13 @@ inline LinearExpression< Number, VariableRef > operator+(
 
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator+(
+    LinearExpression< Number, VariableRef > e, float n) {
+  e += n;
+  return e;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator+(
     const Number& n, LinearExpression< Number, VariableRef > e) {
   e += n;
   return e;
@@ -502,6 +600,13 @@ inline LinearExpression< Number, VariableRef > operator+(
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator+(
     int n, LinearExpression< Number, VariableRef > e) {
+  e += n;
+  return e;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator+(
+    float n, LinearExpression< Number, VariableRef > e) {
   e += n;
   return e;
 }
@@ -552,6 +657,14 @@ inline LinearExpression< Number, VariableRef > operator-(
 
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator-(
+    VariableExpression< Number, VariableRef > e, float n) {
+  LinearExpression< Number, VariableRef > r(e.var());
+  r -= n;
+  return r;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator-(
     const Number& n, VariableExpression< Number, VariableRef > e) {
   LinearExpression< Number, VariableRef > r(-1, e.var());
   r += n;
@@ -561,6 +674,14 @@ inline LinearExpression< Number, VariableRef > operator-(
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator-(
     int n, VariableExpression< Number, VariableRef > e) {
+  LinearExpression< Number, VariableRef > r(-1, e.var());
+  r += n;
+  return r;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator-(
+    float n, VariableExpression< Number, VariableRef > e) {
   LinearExpression< Number, VariableRef > r(-1, e.var());
   r += n;
   return r;
@@ -591,6 +712,13 @@ inline LinearExpression< Number, VariableRef > operator-(
 
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator-(
+    LinearExpression< Number, VariableRef > e, float n) {
+  e -= n;
+  return e;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator-(
     LinearExpression< Number, VariableRef > x,
     VariableExpression< Number, VariableRef > y) {
   x -= y.var();
@@ -608,6 +736,14 @@ inline LinearExpression< Number, VariableRef > operator-(
 template < typename Number, typename VariableRef >
 inline LinearExpression< Number, VariableRef > operator-(
     int n, LinearExpression< Number, VariableRef > e) {
+  e *= -1;
+  e += n;
+  return e;
+}
+
+template < typename Number, typename VariableRef >
+inline LinearExpression< Number, VariableRef > operator-(
+    float n, LinearExpression< Number, VariableRef > e) {
   e *= -1;
   e += n;
   return e;

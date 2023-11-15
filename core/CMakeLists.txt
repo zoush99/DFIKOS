@@ -142,9 +142,9 @@ install(DIRECTORY include/
 #
 ### zoush99 adds a comment
 
-#enable_testing()
-#add_custom_target(build-core-tests)
-#add_subdirectory(test/unit EXCLUDE_FROM_ALL)
+enable_testing()
+add_custom_target(build-core-tests)
+add_subdirectory(test/unit EXCLUDE_FROM_ALL)
 
 #
 # Doxygen
@@ -181,6 +181,6 @@ endif()
 #target_link_libraries(test-f_number-hpp mpfr)
 
 # zoush99 tests bound.hpp
-add_executable(test-bound-hpp zoush99test/test-bound-hpp.cpp)
-target_include_directories(test-bound-hpp PRIVATE include)
-target_link_libraries(test-bound-hpp gmp gmpxx mpfr)
+#add_executable(test-bound-hpp zoush99test/test-bound-hpp.cpp)
+#target_include_directories(test-bound-hpp PRIVATE include)
+#target_link_libraries(test-bound-hpp gmp gmpxx mpfr)

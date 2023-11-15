@@ -90,10 +90,9 @@ private:
 
   // I'll have to add it. By zoush99
   struct FloatingPointLit {
-    // TODO(marthaud): Add a class to represent floating points
-    DummyNumber value;
+    FNumber value;
 
-    bool operator==(const FloatingPointLit&) const { return true; }
+    bool operator==(const FloatingPointLit& o) const { return value==o.value; }
   };
 
   struct MemoryLocationLit {
@@ -181,8 +180,9 @@ public:
 
   // I'll have to add it. By zoush99
   /// \brief Create a constant floating point literal
-  static Literal floating_point(DummyNumber) {
-    return Literal(Lit(FloatingPointLit{DummyNumber{}}));
+  /// \todo(bugs here!!!)
+  static Literal floating_point(FNumber v) {
+    return Literal(Lit(FloatingPointLit{std::move(v)}));
   }
 
   /// \brief Create a constant memory location literal
@@ -362,45 +362,45 @@ public:
 
 private:
   /// \brief Visitor that returns the floating point
-  struct GetFloatingPoint : public boost::static_visitor< const DummyNumber& > {
-    const DummyNumber& operator()(const MachineIntLit&) const {
+  struct GetFloatingPoint : public boost::static_visitor< const FNumber& > {
+    const FNumber& operator()(const MachineIntLit&) const {
       ikos_unreachable("trying to call floating_point() on a machine integer");
     }
 
-    const DummyNumber& operator()(const FloatingPointLit& lit) const {
+    const FNumber& operator()(const FloatingPointLit& lit) const {
       return lit.value;
     }
 
-    const DummyNumber& operator()(const MemoryLocationLit&) const {
+    const FNumber& operator()(const MemoryLocationLit&) const {
       ikos_unreachable("trying to call floating_point() on a memory location");
     }
 
-    const DummyNumber& operator()(const NullLit&) const {
+    const FNumber& operator()(const NullLit&) const {
       ikos_unreachable("trying to call floating_point() on null");
     }
 
-    const DummyNumber& operator()(const UndefinedLit&) const {
+    const FNumber& operator()(const UndefinedLit&) const {
       ikos_unreachable("trying to call floating_point() on undefined");
     }
 
-    const DummyNumber& operator()(const MachineIntVarLit&) const {
+    const FNumber& operator()(const MachineIntVarLit&) const {
       ikos_unreachable(
           "trying to call floating_point() on a machine integer variable");
     }
 
-    const DummyNumber& operator()(const FloatingPointVarLit&) const {
+    const FNumber& operator()(const FloatingPointVarLit&) const {
       ikos_unreachable(
           "trying to call floating_point() on a floating point variable");
     }
 
-    const DummyNumber& operator()(const PointerVarLit&) const {
+    const FNumber& operator()(const PointerVarLit&) const {
       ikos_unreachable("trying to call floating_point() on a pointer variable");
     }
   };
 
 public:
   /// \brief Get the floating point
-  const DummyNumber& floating_point() const {
+  const FNumber& floating_point() const {
     return boost::apply_visitor(GetFloatingPoint(), this->_lit);
   }
 
