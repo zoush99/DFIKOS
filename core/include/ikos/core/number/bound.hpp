@@ -52,9 +52,9 @@
 #include <boost/optional.hpp>
 
 #include <ikos/core/exception.hpp>
+#include <ikos/core/number/f_number.hpp> // By zoush99
 #include <ikos/core/number/q_number.hpp>
 #include <ikos/core/number/z_number.hpp>
-#include <ikos/core/number/f_number.hpp> // By zoush99
 #include <ikos/core/support/assert.hpp>
 
 // Parameters of integer and Number types are supported,
@@ -70,13 +70,18 @@ template < typename Number >
 class Bound {
 private:
   bool _is_infinite;
-  Number _n;  // z_number, f_number, q_number. By zoush99
+  Number _n; // int, float, z_number, f_number, q_number. By zoush99
 
   // Invariant: _is_infinite => (_n == 1 or _n == -1)
 
 private:
-  /// \brief Private constructor
+  /// \brief Private constructor, int
   Bound(bool is_infinite, int n) : _is_infinite(is_infinite), _n(n) {
+    this->normalize();
+  }
+
+  /// \brief Private constructor, float. By zoush99
+  Bound(bool is_infinite, float n) : _is_infinite(is_infinite), _n(n) {
     this->normalize();
   }
 
@@ -100,6 +105,9 @@ public:
   /// \brief Create a bound
   explicit Bound(int n) : _is_infinite(false), _n(n) {}
 
+  /// \brief Create a bound, float. By zoush99
+  explicit Bound(float n) : _is_infinite(false), _n(n) {}
+
   /// \brief Create a bound
   explicit Bound(Number n) : _is_infinite(false), _n(std::move(n)) {}
 
@@ -113,6 +121,13 @@ public:
 
   /// \brief Assign a number
   Bound& operator=(int n) {
+    this->_is_infinite = false;
+    this->_n = n;
+    return *this;
+  }
+
+  /// \brief Assign a number, float
+  Bound& operator=(float n) {
     this->_is_infinite = false;
     this->_n = n;
     return *this;
@@ -261,27 +276,15 @@ public:
   }
 
   /// \brief Print out the bound of a Bound. By zoush99
-  void display() const{
+  void display() const {
     if (this->is_plus_infinity()) {
-      std::cout << "+oo"<<std::endl;
+      std::cout << "+oo" << std::endl;
     } else if (this->is_minus_infinity()) {
-      std::cout << "-oo"<<std::endl;
+      std::cout << "-oo" << std::endl;
     } else {
-      std::cout<<this->_n<<std::endl;
+      std::cout << "finite" << std::endl;
     }
   }
-
-  /// \todo(zoush99)
-  /// \brief Print out the bound of a FNumber Bound. By zoush99
-//  void displayF() const{
-//    if (this->is_plus_infinity()) {
-//      std::cout << "+oo"<<std::endl;
-//    } else if (this->is_minus_infinity()) {
-//      std::cout << "-oo"<<std::endl;
-//    } else {
-//      this->_n.display();
-//    }
-//  }
 
   // Friends
 

@@ -21,8 +21,7 @@
 #include <boost/functional/hash.hpp>
 
 #include <ikos/core/number/exception.hpp>
-#include <ikos/core/number/supported_float.hpp>
-#include <ikos/core/number/supported_integral.hpp>
+#include <ikos/core/number/supported_integral_float.hpp>
 #include <ikos/core/number/z_number.hpp>
 #include <ikos/core/support/assert.hpp>
 
@@ -83,37 +82,21 @@ public:
   /// I'm going to merge three functions into one,
   /// starting with determining the input data type. By zoush99
   template < typename T,
-             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+             class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   explicit FNumber(T n) {
-    if (std::is_same< T, float >::value) { // float type
+    if (std::is_same< T, int >::value) { // int type->float
       mpfr_init2(this->_n, 24);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
       this->_prec = 24;
+    }else if (std::is_same< T, float >::value) { // float type
+      mpfr_init2(this->_n, 24);
+      mpfr_set_flt(this->_n,n, MPFR_RNDN);
+      this->_prec = 24;
     } else if (std::is_same< T, double >::value) { // double type
       mpfr_init2(this->_n, 53);
-      mpfr_set_d(this->_n, n, MPFR_RNDN);
+      mpfr_set_d(this->_n,n, MPFR_RNDN);
       this->_prec = 53;
     } else { // long double type
-      mpfr_init2(this->_n, 113);
-      mpfr_set_ld(this->_n, n, MPFR_RNDN);
-      this->_prec = 113;
-    }
-    this->_rnd = MPFR_RNDN;
-  }
-
-  /// \brief transform from integral to FNumber
-  template < typename T,
-             class = std::enable_if_t< IsSupportedIntegral< T >::value > >
-  explicit FNumber(T n){
-    if (std::is_same< T, int >::value) { // int type-> float
-      mpfr_init2(this->_n, 24);
-      mpfr_set_flt(this->_n, (float)n, MPFR_RNDN);
-      this->_prec = 24;
-    } else if (std::is_same< T, long >::value) { // long type-> double
-      mpfr_init2(this->_n, 53);
-      mpfr_set_d(this->_n, (double)n, MPFR_RNDN);
-      this->_prec = 53;
-    } else if(std::is_same< T, long int >::value) { // long int type->long double
       mpfr_init2(this->_n, 113);
       mpfr_set_ld(this->_n, n, MPFR_RNDN);
       this->_prec = 113;
@@ -150,9 +133,13 @@ public:
 
   /// \brief Assignments for floating point types
   template < typename T,
-             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+             class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator=(T n) {
-    if (std::is_same< T, float >::value) { // float type
+    if (std::is_same< T, int >::value) { // int type->float
+      mpfr_init2(this->_n, 24);
+      mpfr_set_flt(this->_n, n, MPFR_RNDN);
+      this->_prec = 24;
+    }else if (std::is_same< T, float >::value) { // float type
       mpfr_init2(this->_n, 24);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
       this->_prec = 24;
@@ -201,7 +188,7 @@ public:
   /// \brief Addition assignment with floating point types
   // Arithmetic operations with floating-point and mpfr types. By zoush99
   template < typename T,
-             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+             class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator+=(T x) {
     FNumber f(x);
     mpfr_t _temp;
@@ -247,7 +234,7 @@ public:
   /// \brief Subtraction assignment with floating point types
   // Arithmetic operations with floating-point and mpfr types. By zoush99
   template < typename T,
-             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+             class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator-=(T x) {
     FNumber f(x);
     mpfr_t _temp;
@@ -292,7 +279,7 @@ public:
   /// \brief Multiplication assignment with floating point types
   // Arithmetic operations with floating-point and mpfr types. By zoush99
   template < typename T,
-             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+             class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator*=(T x) {
     FNumber f(x);
     mpfr_t _temp;
@@ -339,7 +326,7 @@ public:
   /// \brief Division assignment with floating point types
   // Arithmetic operations with floating-point and mpfr types. By zoush99
   template < typename T,
-             class = std::enable_if_t< IsSupportedFloat< T >::value > >
+             class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator/=(T x) {
     ikos_assert_msg(x != 0, "division by zero");
     FNumber f(x);
@@ -404,7 +391,7 @@ inline FNumber operator+(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Addition with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator+(T lhs, const FNumber& rhs) {
   FNumber _tempF(lhs);
   _tempF=_tempF+rhs;
@@ -413,7 +400,7 @@ inline FNumber operator+(T lhs, const FNumber& rhs) {
 
 /// \brief Addition with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator+(const FNumber& lhs,T rhs) {
   FNumber _tempF(rhs);
   _tempF=_tempF+lhs;
@@ -440,7 +427,7 @@ inline FNumber operator-(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Subtraction with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator-(T lhs, const FNumber& rhs) {
   FNumber _tempF(lhs);
   _tempF=_tempF-rhs;
@@ -449,7 +436,7 @@ inline FNumber operator-(T lhs, const FNumber& rhs) {
 
 /// \brief Subtraction with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator-(const FNumber& lhs,T rhs) {
   FNumber _tempF(rhs);
   _tempF=lhs-_tempF;
@@ -476,7 +463,7 @@ inline FNumber operator*(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Multiplication with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator*(T lhs, const FNumber& rhs) {
   FNumber _tempF(lhs);
   _tempF=_tempF*rhs;
@@ -485,7 +472,7 @@ inline FNumber operator*(T lhs, const FNumber& rhs) {
 
 /// \brief Multiplication with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator*(const FNumber& lhs,T rhs) {
   FNumber _tempF(rhs);
   _tempF=_tempF*lhs;
@@ -513,7 +500,7 @@ inline FNumber operator/(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Division with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator/(T lhs, const FNumber& rhs) {
   FNumber _tempF(lhs);
   _tempF=_tempF/rhs;
@@ -522,7 +509,7 @@ inline FNumber operator/(T lhs, const FNumber& rhs) {
 
 /// \brief Division with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator/(const FNumber& lhs,T rhs) {
   FNumber _tempF(rhs);
   _tempF=lhs/_tempF;
@@ -540,7 +527,7 @@ inline bool operator==(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Equality operator with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator==(const FNumber& lhs, T rhs) {
   FNumber rhsFN(rhs);
   return mpfr_equal_p(lhs.FNvalue(), rhsFN.FNvalue());
@@ -548,7 +535,7 @@ inline bool operator==(const FNumber& lhs, T rhs) {
 
 /// \brief Equality operator with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator==(T lhs, const FNumber& rhs) {
   FNumber lhsFN(lhs);
   return mpfr_equal_p(rhs.FNvalue(), lhsFN.FNvalue());
@@ -561,7 +548,7 @@ inline bool operator!=(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Inequality operator with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator!=(const FNumber& lhs, T rhs) {
   FNumber rhsFN(rhs);
   return mpfr_lessgreater_p(lhs.FNvalue(), rhsFN.FNvalue());
@@ -569,7 +556,7 @@ inline bool operator!=(const FNumber& lhs, T rhs) {
 
 /// \brief Inequality operator with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator!=(T lhs, const FNumber& rhs) {
   FNumber lhsFN(lhs);
   return mpfr_lessgreater_p(rhs.FNvalue(), lhsFN.FNvalue());
@@ -582,7 +569,7 @@ inline bool operator<(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Less than comparison with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator<(const FNumber& lhs, T rhs) {
   FNumber rhsFN(rhs);
   return mpfr_less_p(lhs.FNvalue(), rhsFN.FNvalue());
@@ -590,7 +577,7 @@ inline bool operator<(const FNumber& lhs, T rhs) {
 
 /// \brief Less than comparison with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator<(T lhs, const FNumber& rhs) {
   FNumber lhsFN(lhs);
   return mpfr_less_p(lhsFN.FNvalue(), rhs.FNvalue());
@@ -603,7 +590,7 @@ inline bool operator<=(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Less or equal comparison with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator<=(const FNumber& lhs, T rhs) {
   FNumber rhsFN(rhs);
   return mpfr_less_p(lhs.FNvalue(), rhsFN.FNvalue());
@@ -611,7 +598,7 @@ inline bool operator<=(const FNumber& lhs, T rhs) {
 
 /// \brief Less or equal comparison with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator<=(T lhs, const FNumber& rhs) {
   FNumber lhsFN(lhs);
   return mpfr_lessequal_p(lhsFN.FNvalue(), rhs.FNvalue());
@@ -624,7 +611,7 @@ inline bool operator>(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Greater than comparison with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator>(const FNumber& lhs, T rhs) {
   FNumber rhsFN(rhs);
   return mpfr_greater_p(lhs.FNvalue(), rhsFN.FNvalue());
@@ -632,7 +619,7 @@ inline bool operator>(const FNumber& lhs, T rhs) {
 
 /// \brief Greater than comparison with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator>(T lhs, const FNumber& rhs) {
   FNumber lhsFN(lhs);
   return mpfr_greater_p(lhsFN.FNvalue(), rhs.FNvalue());
@@ -645,7 +632,7 @@ inline bool operator>=(const FNumber& lhs, const FNumber& rhs) {
 
 /// \brief Greater or equal comparison with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator>=(const FNumber& lhs, T rhs) {
   FNumber rhsFN(rhs);
   return mpfr_greaterequal_p(lhs.FNvalue(), rhsFN.FNvalue());
@@ -653,7 +640,7 @@ inline bool operator>=(const FNumber& lhs, T rhs) {
 
 /// \brief Greater or equal comparison with floating point types
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator>=(T lhs, const FNumber& rhs) {
   FNumber lhsFN(lhs);
   return mpfr_greaterequal_p(lhsFN.FNvalue(), rhs.FNvalue());
@@ -804,7 +791,7 @@ inline FNumber tanu(FNumber& f){
 
 /// \brief Return the value of pi
 template < typename T,
-           class = std::enable_if_t< IsSupportedFloat< T >::value > >
+           class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber retPi(T f){
   FNumber Pi(f);
   mpfr_t n;

@@ -176,11 +176,11 @@ endif()
 # cmake -DAPRON_ROOT=/usr/local/apron -DTBB_ROOT=/usr/local/tbb/ -DTBB_INCLUDE_DIRS=/usr/local/tbb/include ..
 
 # zoush99 tests f_number.hpp
-add_executable(test-f_number-hpp zoush99test/test-f_number-hpp.cpp)
-target_include_directories(test-f_number-hpp PRIVATE include)
-target_link_libraries(test-f_number-hpp mpfr)
+#add_executable(test-f_number-hpp zoush99test/test-f_number-hpp.cpp)
+#target_include_directories(test-f_number-hpp PRIVATE include)
+#target_link_libraries(test-f_number-hpp mpfr)
 
-## zoush99 tests bound.hpp
-#add_executable(test-bound-hpp zoush99test/test-bound-hpp.cpp)
-#target_include_directories(test-bound-hpp PRIVATE include)
-#target_link_libraries(test-bound-hpp gmp gmpxx mpfr)
+# zoush99 tests bound.hpp
+add_executable(test-bound-hpp zoush99test/test-bound-hpp.cpp)
+target_include_directories(test-bound-hpp PRIVATE include)
+target_link_libraries(test-bound-hpp gmp gmpxx mpfr)

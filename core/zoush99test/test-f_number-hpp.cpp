@@ -123,6 +123,8 @@ void testSupportBound(){
   i=10;
   F f(i);
   f.display();
+  f=20;
+  f.display();
 }
 
 int main() {

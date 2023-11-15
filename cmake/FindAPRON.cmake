@@ -41,7 +41,7 @@
 ###############################################################################
 
 if (NOT APRON_FOUND)
-  set(APRON_ROOT "" CACHE PATH "Path to apron install directory")
+  set(APRON_ROOT "/usr/local/apron" CACHE PATH "Path to apron install directory")
 
   set(APRON_INCLUDE_SEARCH_DIRS "")
   set(APRON_LIBRARY_SEARCH_DIRS "")
