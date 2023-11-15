@@ -95,7 +95,7 @@ void testTwoFNoperator(){
   std::cout<<(N<N)<<std::endl;
 }
 
-/// \brief
+/// \brief sin, cos, tan, log2(), log10(), pow(), and so on.
 void testMathFunction(){
   long double f;
   double h;
@@ -115,10 +115,17 @@ void testMathFunction(){
 //  tan(FNu).display();
   ikos::core::retPi(f).display();
   FNu.display();
+}
 
+/// \brief
+void testSupportBound(){
+  int i;
+  i=10;
+  F f(i);
+  f.display();
 }
 
 int main() {
-  testMathFunction();
+  testSupportBound();
   return 0;
 }

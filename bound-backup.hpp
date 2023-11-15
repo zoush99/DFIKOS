@@ -70,7 +70,7 @@ template < typename Number >
 class Bound {
 private:
   bool _is_infinite;
-  Number _n;  // z_number, f_number, q_number. By zoush99
+  Number _n;
 
   // Invariant: _is_infinite => (_n == 1 or _n == -1)
 
@@ -259,29 +259,6 @@ public:
       o << this->_n;
     }
   }
-
-  /// \brief Print out the bound of a Bound. By zoush99
-  void display() const{
-    if (this->is_plus_infinity()) {
-      std::cout << "+oo"<<std::endl;
-    } else if (this->is_minus_infinity()) {
-      std::cout << "-oo"<<std::endl;
-    } else {
-      std::cout<<this->_n<<std::endl;
-    }
-  }
-
-  /// \todo(zoush99)
-  /// \brief Print out the bound of a FNumber Bound. By zoush99
-//  void displayF() const{
-//    if (this->is_plus_infinity()) {
-//      std::cout << "+oo"<<std::endl;
-//    } else if (this->is_minus_infinity()) {
-//      std::cout << "-oo"<<std::endl;
-//    } else {
-//      this->_n.display();
-//    }
-//  }
 
   // Friends
 

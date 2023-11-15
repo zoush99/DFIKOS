@@ -101,6 +101,26 @@ public:
     this->_rnd = MPFR_RNDN;
   }
 
+  /// \brief transform from integral to FNumber
+  template < typename T,
+             class = std::enable_if_t< IsSupportedIntegral< T >::value > >
+  explicit FNumber(T n){
+    if (std::is_same< T, int >::value) { // int type-> float
+      mpfr_init2(this->_n, 24);
+      mpfr_set_flt(this->_n, (float)n, MPFR_RNDN);
+      this->_prec = 24;
+    } else if (std::is_same< T, long >::value) { // long type-> double
+      mpfr_init2(this->_n, 53);
+      mpfr_set_d(this->_n, (double)n, MPFR_RNDN);
+      this->_prec = 53;
+    } else if(std::is_same< T, long int >::value) { // long int type->long double
+      mpfr_init2(this->_n, 113);
+      mpfr_set_ld(this->_n, n, MPFR_RNDN);
+      this->_prec = 113;
+    }
+    this->_rnd = MPFR_RNDN;
+  }
+
   /// \brief Destructor
   ~FNumber() { mpfr_clear(this->_n); }
 

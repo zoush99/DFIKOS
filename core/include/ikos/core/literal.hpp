@@ -52,6 +52,7 @@
 #include <ikos/core/semantic/dumpable.hpp>
 #include <ikos/core/semantic/memory_location.hpp>
 #include <ikos/core/semantic/variable.hpp>
+#include <ikos/core/number/f_number.hpp>  // By zoush99
 
 namespace ikos {
 namespace core {
