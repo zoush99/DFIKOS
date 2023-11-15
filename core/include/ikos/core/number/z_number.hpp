@@ -401,7 +401,7 @@ public:
   }
 
   /// \brief Multiplication assignment
-  ZNumber& operator*=(const ZNumber& x) {
+  auto operator*=(const ZNumber& x) -> ZNumber& {
     this->_n *= x._n;
     return *this;
   }

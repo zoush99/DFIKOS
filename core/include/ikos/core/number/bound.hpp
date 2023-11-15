@@ -50,6 +50,7 @@
 #include <type_traits>
 
 #include <boost/optional.hpp>
+#include <iostream> //By zoush99
 
 #include <ikos/core/exception.hpp>
 #include <ikos/core/number/f_number.hpp> // By zoush99
@@ -282,7 +283,7 @@ public:
     } else if (this->is_minus_infinity()) {
       std::cout << "-oo" << std::endl;
     } else {
-      std::cout << "finite" << std::endl;
+      this->_n.display();
     }
   }
 
@@ -513,6 +514,9 @@ using ZBound = Bound< ZNumber >;
 /// \brief Bound on unlimited precision rationals
 // Support for interval representation of rational numbers. By zoush99
 using QBound = Bound< QNumber >;
+
+/// \brief Bound on unlimited precision floating points
+using FBound = Bound< FNumber >;  // By zoush99
 
 } // end namespace core
 } // end namespace ikos

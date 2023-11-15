@@ -108,7 +108,7 @@ public:
   ~FNumber() { mpfr_clear(this->_n); }
 
   /// \brief Display the information of FNumber
-  void display() {
+  void display() const {
     mpfr_printf("\n_n value: %Rf\n", this->_n);
     mpfr_printf("_prec value: %lu\n", this->_prec);
     mpfr_printf("_rnd value: ");
@@ -801,6 +801,10 @@ inline FNumber retPi(T f){
   mpfr_clear(n);
   return Pi;
 }
+
+/// \todo(zoush99)
+/// transform from ZNumber to FNumber
+
 
 /// @}
 /// \name Input / Output

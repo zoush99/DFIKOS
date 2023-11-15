@@ -43,6 +43,9 @@
 if (NOT LLVM_FOUND)
   find_program(LLVM_CONFIG_EXECUTABLE CACHE NAMES llvm-config DOC "Path to llvm-config binary")
 
+  # By zoush99
+  set(LLVM_CONFIG_EXECUTABLE "/usr/bin/llvm-config-14")
+
   if (LLVM_CONFIG_EXECUTABLE)
     function(run_llvm_config FLAG OUTPUT_VAR)
       execute_process(

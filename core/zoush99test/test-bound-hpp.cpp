@@ -1,45 +1,55 @@
 //
 // Created by zou on 11/15/23.
 //
-#include <iostream>
 #include <ikos/core/number/bound.hpp>
+#include <ikos/core/number/f_number.hpp> // By zoush99
 #include <ikos/core/number/q_number.hpp>
 #include <ikos/core/number/z_number.hpp>
-#include <ikos/core/number/f_number.hpp> // By zoush99
+#include <iostream>
 
-using z_number=ikos::core::ZNumber;
-using f_number=ikos::core::FNumber;
-using Bound=ikos::core::Bound<f_number>;
+using ZNumber = ikos::core::ZNumber;
+using f_number = ikos::core::FNumber;
+using Bound = ikos::core::Bound< f_number >;
 
 /// \brief Bound b(a)
-void testConstructor()
-{
+void testConstructor() {
   float f;
-  f=1.2;
-  int a =0;
+  f = 1.2;
+  int a = 5;
   f_number F(f);
   Bound b(F);
   Bound bb(f);
   f_number A(a);
   Bound AA(a);
-//  f_number G;
-//  G=f;
-//  G.display();
-//  b.displayF();
+  AA.display();
 }
 
-/// \brief
-void testMemberFunc(){
-  double d;
-  d=3;
+/// \brief +=,
+void testMemberFunc() {
+  long double d;
+  d = 3;
   f_number F(d);
   Bound B(F);
-  B=4;
+//  B.display();  // 3
+  Bound A(4);
+//  B +=A;
+//  B.display();  // 7 53'
+//  B=4;
+//  B.display();  // 4
+//  B+=B;
+//  B.display();  // 8
+//  B=A.plus_infinity();
+//  B.display();  // +oo
+//  std::cout<<B.is_finite()<<std::endl;  // 0
+//  B=A.minus_infinity();
+//  B.display();  // -oo
+//  std::cout<<B.is_finite()<<std::endl;  // 0
+  B=A+B;
   B.display();
+  std::cout<<(A<=B)<<std::endl;
 }
 
-int main()
-{
+int main() {
   testMemberFunc();
   return 0;
 }

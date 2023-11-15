@@ -44,6 +44,8 @@
 #include <ikos/core/support/assert.hpp>
 #include <ikos/core/support/compiler.hpp>
 
+// Machine integer compatibility check:
+// same bit widths and signs. By zoush99
 namespace ikos {
 namespace core {
 
