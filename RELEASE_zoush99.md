@@ -1,6 +1,10 @@
 # Release notes By zoush99
 
-## 2032-11-13
+## 2023-11-16
+
+The code written for floating point compiles with the original project.
+
+## 2023-11-13
 
 Basically finished writing the f_number.hpp file and completed the unit tests.
 
