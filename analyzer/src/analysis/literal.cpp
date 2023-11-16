@@ -195,7 +195,7 @@ public:
   }
 
   Literal operator()(ar::FloatConstant* c) {
-    return Literal(ScalarLit::floating_point(c->value()));
+    return Literal(ScalarLit::floating_point(c->value()));  // By zoush99
   }
 
   Literal operator()(ar::NullConstant* /*n*/) {

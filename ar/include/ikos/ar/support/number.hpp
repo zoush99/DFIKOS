@@ -67,5 +67,8 @@ using ZNumber = ikos::core::ZNumber;
 /// \brief Class for arbitrary precision machine integers
 using MachineInt = ikos::core::MachineInt;
 
+/// \brief Class for unlimited precision floating points. By zoush99
+using FNumber=ikos::core::FNumber;
+
 } // end namespace ar
 } // end namespace ikos

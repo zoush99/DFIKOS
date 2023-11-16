@@ -44,14 +44,65 @@ private:
   mpfr_rnd_t _rnd;   // round mode of FNumber.
 
 public:
+
+  /// \brief Create a FNumber from a string representation
+  ///
+  /// Interpret the null-terminated string `str` in the given base.
+  ///
+  /// If the string contains unsuitable characters for the given base, throw
+  /// an exception NumberError.
+  ///
+  /// The base may vary from 2 to 36.
+  static FNumber from_string(const char* str, int base=10){
+    try{
+      mpfr_t strF;
+      mpfr_init2(strF,Fpre::dou);  // 53 bits
+      mpfr_set_str(strF,str,base,MPFR_RNDN);
+      FNumber F(strF,MPFR_RNDN);
+      F._prec=Fpre::dou;
+      F._rnd=MPFR_RNDN;
+      mpfr_clear(strF);
+      return F;
+    }catch (std::invalid_argument&){
+      std::ostringstream buf;
+      buf << "FNumber: invalid conversion from string '" << str << "'";
+      throw NumberError(buf.str());
+    }
+  }
+
+  /// \brief Create a FNumber from a string representation
+  ///
+  /// Interpret the null-terminated string `str` in the given base.
+  ///
+  /// If the string contains unsuitable characters for the given base, throw
+  /// an exception NumberError.
+  ///
+  /// The base may vary from 2 to 36.
+  static FNumber from_string(const std::string& str,int base=10){
+    try {
+      mpfr_t strF;
+      mpfr_init2(strF,Fpre::dou);  // 53 bits
+      mpfr_set_str(strF,str.c_str(),base,MPFR_RNDN);
+      FNumber F(strF,MPFR_RNDN);
+      F._prec=Fpre::dou;
+      F._rnd=MPFR_RNDN;
+      mpfr_clear(strF);
+      return F;
+    }catch (std::invalid_argument&){
+      std::ostringstream buf;
+      buf << "FNumber: invalid conversion from string '" << str << "'";
+      throw NumberError(buf.str());
+    }
+  }
+
   /// \name Constructors
   /// @{
 
   /// \brief Default: double, nearest, 1.0
   FNumber() {
-    mpfr_init2(this->_n, 53);
+    mpfr_init2(this->_n, Fpre::dou);
     mpfr_set_d(this->_n, 1.0, MPFR_RNDN);
-    this->_prec = 53;
+    this->_prec = Fpre::dou;
     this->_rnd = MPFR_RNDN;
   }
 
@@ -85,21 +136,21 @@ public:
              class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   explicit FNumber(T n) {
     if (std::is_same< T, int >::value) { // int type->float
-      mpfr_init2(this->_n, 24);
+      mpfr_init2(this->_n, Fpre::fl);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
-      this->_prec = 24;
+      this->_prec = Fpre::fl;
     }else if (std::is_same< T, float >::value) { // float type
-      mpfr_init2(this->_n, 24);
+      mpfr_init2(this->_n, Fpre::fl);
       mpfr_set_flt(this->_n,n, MPFR_RNDN);
-      this->_prec = 24;
+      this->_prec = Fpre::fl;
     } else if (std::is_same< T, double >::value) { // double type
-      mpfr_init2(this->_n, 53);
+      mpfr_init2(this->_n, Fpre::dou);
       mpfr_set_d(this->_n,n, MPFR_RNDN);
-      this->_prec = 53;
+      this->_prec = Fpre::dou;
     } else { // long double type
-      mpfr_init2(this->_n, 113);
+      mpfr_init2(this->_n, Fpre::ld);
       mpfr_set_ld(this->_n, n, MPFR_RNDN);
-      this->_prec = 113;
+      this->_prec = Fpre::ld;
     }
     this->_rnd = MPFR_RNDN;
   }
@@ -136,21 +187,21 @@ public:
              class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator=(T n) {
     if (std::is_same< T, int >::value) { // int type->float
-      mpfr_init2(this->_n, 24);
+      mpfr_init2(this->_n, Fpre::fl);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
-      this->_prec = 24;
+      this->_prec = Fpre::fl;
     }else if (std::is_same< T, float >::value) { // float type
-      mpfr_init2(this->_n, 24);
+      mpfr_init2(this->_n, Fpre::fl);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
-      this->_prec = 24;
+      this->_prec = Fpre::fl;
     } else if (std::is_same< T, double >::value) { // double type
-      mpfr_init2(this->_n, 53);
+      mpfr_init2(this->_n, Fpre::dou);
       mpfr_set_d(this->_n, n, MPFR_RNDN);
-      this->_prec = 53;
+      this->_prec = Fpre::dou;
     } else { // long double type
-      mpfr_init2(this->_n, 113);
+      mpfr_init2(this->_n, Fpre::ld);
       mpfr_set_ld(this->_n, n, MPFR_RNDN);
-      this->_prec = 113;
+      this->_prec = Fpre::ld;
     }
     this->_rnd = MPFR_RNDN;
     return *this;

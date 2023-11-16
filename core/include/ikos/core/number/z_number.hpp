@@ -60,6 +60,7 @@
 #include <ikos/core/number/exception.hpp>
 #include <ikos/core/number/supported_integral.hpp>
 #include <ikos/core/support/assert.hpp>
+#include "f_number.hpp"
 
 namespace ikos {
 namespace core {
@@ -286,7 +287,7 @@ struct MpzTo< long long >
 } // end namespace detail
 
 /// \brief Class for unlimited precision integers
-class ZNumber {
+class ZNumber : public ::ikos::core::FNumber {
 private:
   mpz_class _n;
 

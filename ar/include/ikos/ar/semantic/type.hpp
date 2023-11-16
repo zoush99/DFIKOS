@@ -319,7 +319,7 @@ private:
 
 public:
   /// \brief Static constructor
-  static FloatType* get(Context& ctx, FloatSemantic float_sem);
+  static FloatType* get(Context& ctx, FloatSemantic float_sem); // By zoush99
 
   /// \brief Get the bit width
   uint64_t bit_width() const { return this->_bit_width; }

@@ -127,7 +127,16 @@ void testSupportBound(){
   f.display();
 }
 
+/// \brief string->FNumber
+void testStringToFNumber(){
+  std::string s="1.244";
+  F f;
+  f.display();
+  f=F::from_string(s,10);
+  f.display();
+}
+
 int main() {
-  testSupportBound();
+  testStringToFNumber();
   return 0;
 }

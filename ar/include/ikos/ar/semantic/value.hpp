@@ -309,7 +309,7 @@ public:
   FloatType* type() const { return cast< FloatType >(this->_type); }
 
   /// \brief Get the decimal representation, in scientific notation
-  const std::string& value() const { return this->_value; }
+  const FNumber value() const { return this->_value; }
 
   /// \brief Dump the value for debugging purpose
   void dump(std::ostream&) const override;
