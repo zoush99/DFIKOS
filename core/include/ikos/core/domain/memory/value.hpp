@@ -989,7 +989,7 @@ private:
 
     Signedness machine_int(const MachineInt& i) const { return i.sign(); }
 
-    Signedness floating_point(const DummyNumber&) const { return Signed; }
+    Signedness floating_point(const FNumber&) const { return Signed; }  // By zoush99
 
     Signedness memory_location(MemoryLocationRef) const { return Unsigned; }
 
@@ -1272,7 +1272,7 @@ private:
       }
     }
 
-    void floating_point(const DummyNumber&) {
+    void floating_point(const FNumber&) { // By zoush99
       this->_scalar.dynamic_write_nondet_float(this->_lhs);
     }
 
@@ -1322,7 +1322,7 @@ private:
       ikos_unreachable("trying to assign a machine integer");
     }
 
-    void floating_point(const DummyNumber&) {
+    void floating_point(const FNumber&) { // By zoush99
       ikos_unreachable("trying to assign a floating point");
     }
 

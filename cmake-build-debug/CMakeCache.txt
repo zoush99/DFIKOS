@@ -550,7 +550,7 @@ ikos-analyzer_IS_TOP_LEVEL:STATIC=OFF
 ikos-analyzer_SOURCE_DIR:STATIC=/home/zou/Documents/DFIKOS/analyzer
 
 //Dependencies for the target
-ikos-ar_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libgmp.so;general;/usr/lib/x86_64-linux-gnu/libgmpxx.so;
+ikos-ar_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libgmp.so;general;/usr/lib/x86_64-linux-gnu/libgmpxx.so;general;/usr/local/lib/libmpfr.so;
 
 //Value Computed by CMake
 ikos-core_BINARY_DIR:STATIC=/home/zou/Documents/DFIKOS/cmake-build-debug/core

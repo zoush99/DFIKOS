@@ -76,6 +76,7 @@ using ZNumber = ikos::core::ZNumber;
 using MachineInt = ikos::core::MachineInt;
 
 // Floating point data types are not taken into account. By zoush99
+using FNumber=ikos::core::FNumber;
 
 } // end namespace analyzer
 } // end namespace ikos

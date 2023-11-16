@@ -440,7 +440,7 @@ private:
       this->_inv.normal().int_assign(this->_lhs, rhs);
     }
 
-    void floating_point(const DummyNumber&) { ikos_unreachable("unreachable"); }
+    void floating_point(const FNumber&) { ikos_unreachable("unreachable"); }
 
     void memory_location(MemoryLocation*) { ikos_unreachable("unreachable"); }
 
@@ -470,7 +470,7 @@ private:
 
     void machine_int(const MachineInt&) { ikos_unreachable("unreachable"); }
 
-    void floating_point(const DummyNumber&) {
+    void floating_point(const FNumber&) {
       this->_inv.normal().float_assign_nondet(this->_lhs);
     }
 
@@ -501,7 +501,7 @@ private:
 
     void machine_int(const MachineInt&) { ikos_unreachable("unreachable"); }
 
-    void floating_point(const DummyNumber&) { ikos_unreachable("unreachable"); }
+    void floating_point(const FNumber&) { ikos_unreachable("unreachable"); }
 
     void memory_location(MemoryLocation* addr) {
       this->_inv.normal().pointer_assign(this->_lhs, addr, Nullity::non_null());
@@ -568,7 +568,7 @@ private:
       }
     }
 
-    void floating_point(const DummyNumber&) { ikos_unreachable("unreachable"); }
+    void floating_point(const FNumber&) { ikos_unreachable("unreachable"); }
 
     void memory_location(MemoryLocation*) { ikos_unreachable("unreachable"); }
 
@@ -608,7 +608,7 @@ private:
 
     void machine_int(const MachineInt&) { ikos_unreachable("unreachable"); }
 
-    void floating_point(const DummyNumber&) {
+    void floating_point(const FNumber&) {
       this->_inv.normal().float_assign_nondet(this->_lhs);
     }
 
@@ -641,7 +641,7 @@ private:
 
     void machine_int(const MachineInt&) { ikos_unreachable("unreachable"); }
 
-    void floating_point(const DummyNumber&) { ikos_unreachable("unreachable"); }
+    void floating_point(const FNumber&) { ikos_unreachable("unreachable"); }
 
     void memory_location(MemoryLocation* addr) {
       this->_inv.normal().pointer_assign(this->_lhs, addr, Nullity::non_null());

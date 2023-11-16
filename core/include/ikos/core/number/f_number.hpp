@@ -95,6 +95,15 @@ public:
     }
   }
 
+  std::string to_string(int base=10) const {
+    int size = mpfr_snprintf(nullptr, 0, "%.*Rg", base, this->_n);
+    char* buffer = new char[size + 1];
+    mpfr_snprintf(buffer, size + 1, "%.*Rg", base, this->_n);
+    std::string result(buffer);
+    delete[] buffer;
+    return result;
+  }
+
   /// \name Constructors
   /// @{
 
@@ -114,13 +123,20 @@ public:
     this->_rnd = f._rnd;
   }
 
-  //  /// \brief Move constructor
-  //  // I don't know how to construct
-  //  FNumber(const FNumber&& f){
-  //
-  //  }
+    /// \brief Move constructor
+    FNumber(FNumber&& f){
+    if(this!=&f){
+      mpfr_swap(this->_n,f._n);
+      this->_prec=f._prec;
+      this->_rnd=f._rnd;
+      // Getting rid of pointing relationships
+      mpfr_init2(f._n,Fpre::fl);
+      f._prec=0;
+      f._rnd=MPFR_RNDN;
+    }
+    }
 
-  /// \brief Create a FNumber from a mpft_t
+        /// \brief Create a FNumber from a mpft_t
   explicit FNumber(const mpfr_t m, mpfr_rnd_t r) {
     mpfr_init2(this->_n, mpfr_get_prec(m));
     mpfr_set(this->_n, m, r);
@@ -181,6 +197,23 @@ public:
 
   /// \brief Move assignment
   /// \todo(zoush99)
+  FNumber& operator=(FNumber&& f){
+    if(this!=&f){
+      // Move the resource from f to this object
+      mpfr_swap(this->_n, f._n);
+
+      // Transfer other necessary members
+      this->_prec = f._prec;
+      this->_rnd = f._rnd;
+
+      // Reset the original object to a valid but unspecified state
+      mpfr_init2(f._n,Fpre::fl);   // Ensure the original object doesn't own the resource anymore
+      f._prec = 0;      // Reset other members as needed
+      f._rnd = MPFR_RNDN;
+    }
+    return *this;
+  }
+
 
   /// \brief Assignments for floating point types
   template < typename T,

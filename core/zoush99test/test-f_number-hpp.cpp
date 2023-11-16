@@ -10,20 +10,31 @@ using F = ikos::core::FNumber;
 /// \brief Constructor
 void testConstruct(){
   float b=12.3;
-  mpfr_t m;
-  mpfr_init2(m,24);
-  mpfr_set_flt(m,12.4,MPFR_RNDA);
+//  mpfr_t m;
+//  mpfr_init2(m,24);
+//  mpfr_set_flt(m,12.4,MPFR_RNDA);
   // From float
-  F f(b);
+//  F f(b);
   // From mpfr_t
-  F g(m,MPFR_RNDA);
+//  F g(m,MPFR_RNDA);
   // From FNumber
-  F h(g);
+//  F h(g);
   // FNumber=FNumber
-  h=f;
-  f.display();
-  g.display();
-  h.display();
+//  h=f;
+//  f.display();
+//  g.display();
+//  h.display();
+  F A(b);
+//  A.display();
+
+  F B(std::move(A));
+  B.display();
+  B+=B;
+  A.display();
+  B.display();
+//  F C=std::move(B);
+//  C.display();
+//  B.display();
 }
 
 /// \brief +=, -+, +, -, *, / and so on
@@ -137,6 +148,6 @@ void testStringToFNumber(){
 }
 
 int main() {
-  testStringToFNumber();
+  testConstruct();
   return 0;
 }
