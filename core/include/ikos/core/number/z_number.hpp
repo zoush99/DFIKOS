@@ -287,7 +287,7 @@ struct MpzTo< long long >
 } // end namespace detail
 
 /// \brief Class for unlimited precision integers
-class ZNumber : public ::ikos::core::FNumber {
+class ZNumber/* : public ::ikos::core::FNumber */{  // By zoush99
 private:
   mpz_class _n;
 

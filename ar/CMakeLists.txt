@@ -152,6 +152,7 @@ add_library(ikos-ar
 target_link_libraries(ikos-ar
   ${GMP_LIB}
   ${GMPXX_LIB}
+  ${MPFR_LIB}   # By zoush99
 )
 install(TARGETS ikos-ar
   ARCHIVE DESTINATION lib

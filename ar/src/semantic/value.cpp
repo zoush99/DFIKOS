@@ -109,7 +109,7 @@ void IntegerConstant::dump(std::ostream& o) const {
 // FloatConstant
 
 FloatConstant::FloatConstant(FloatType* type, std::string value)
-    : Constant(FloatConstantKind, type), _value(std::move(value)) {}
+    : Constant(FloatConstantKind, type), _value(FNumber::from_string(value.c_str(),10)) {}   // No design move. By zoush99
 
 FloatConstant* FloatConstant::get(Context& ctx,
                                   FloatType* type,

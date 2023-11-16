@@ -47,7 +47,7 @@
 #include <boost/variant.hpp>
 #include <boost/version.hpp>
 
-#include <ikos/core/number/dummy_number.hpp>
+// #include <ikos/core/number/dummy_number.hpp>
 #include <ikos/core/number/f_number.hpp>  // By zoush99
 #include <ikos/core/number/machine_int.hpp>
 #include <ikos/core/semantic/dumpable.hpp>
@@ -495,7 +495,7 @@ public:
   /// Visitors should implement the following methods:
   ///
   /// R machine_int(const MachineInt&);
-  /// R floating_point(const DummyNumber&);
+  /// R floating_point(const FNumber&);
   /// R memory_location(MemoryLocationRef);
   /// R null();
   /// R undefined();

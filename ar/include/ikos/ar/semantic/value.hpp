@@ -286,7 +286,7 @@ private:
   // Decimal representation, in scientific notation
   // TODO(marthaud): use a better representation (see llvm::APFloat for example)
   // Note: QNumber cannot be used (no representation for +Inf, -Inf, NaN, etc.)
-  std::string _value;
+  FNumber _value;
 
 private:
   /// \brief Private constructor

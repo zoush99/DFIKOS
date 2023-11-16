@@ -62,6 +62,7 @@
 #include <ikos/analyzer/support/assert.hpp>
 #include <ikos/analyzer/support/cast.hpp>
 
+// Need to be modified. By zoush99
 namespace ikos {
 namespace analyzer {
 
