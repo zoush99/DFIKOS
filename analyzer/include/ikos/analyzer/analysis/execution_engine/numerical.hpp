@@ -428,7 +428,7 @@ private:
   /// @{
 
   /// \brief Integer variable assignment
-  class IntegerAssign : public ScalarLit::template Visitor<> {
+  class IntegerAssign : public ScalarLit::template Visitor<> {  /// \todo(todo by zoush99)
   private:
     Variable* _lhs;
     AbstractDomain& _inv;

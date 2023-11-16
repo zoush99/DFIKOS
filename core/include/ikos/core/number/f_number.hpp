@@ -95,10 +95,13 @@ public:
     }
   }
 
+  /// \brief Tranform a FNumber to a string representation
+  ///
+  /// The base may vary from 2 to 36.
   std::string to_string(int base=10) const {
     int size = mpfr_snprintf(nullptr, 0, "%.*Rg", base, this->_n);
     char* buffer = new char[size + 1];
-    mpfr_snprintf(buffer, size + 1, "%.*Rg", base, this->_n);
+    mpfr_snprintf(buffer, size + 1, "%.*Rg", base, this->_n); // %e, %f, %.10Rf et al.
     std::string result(buffer);
     delete[] buffer;
     return result;

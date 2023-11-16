@@ -51,6 +51,7 @@
 #pragma once
 
 #include <ikos/core/number/dummy_number.hpp>
+#include <ikos/core/number/f_number.hpp>  // By zoush99
 #include <ikos/core/number/machine_int.hpp>
 #include <ikos/core/number/signedness.hpp>
 #include <ikos/core/number/supported_integral.hpp>
