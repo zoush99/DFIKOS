@@ -45,6 +45,7 @@
 
 #include <type_traits>
 
+#include "ikos/core/domain/numeric/operator.hpp"
 #include <ikos/core/domain/memory/abstract_domain.hpp>
 
 namespace ikos {
@@ -82,6 +83,16 @@ public:
   using PointerAbsValueT = PointerAbsValue< MemoryLocationRef >;
   using PointerSetT = PointerSet< MemoryLocationRef >;
   using LiteralT = Literal< VariableRef, MemoryLocationRef >;
+
+  using FloatLineaExpression=LinearExpression<FNumber,VariableRef>; // By zoush99
+  using FloatBinaryOperator=numeric::BinaryOperator;
+  using FloatUnaryOperator = numeric::UnaryOperator;
+  using FloatInterval = machine_int::Interval;
+  using FloatCongruence = machine_int::Congruence;
+  using FloatIntervalCongruence = machine_int::IntervalCongruence;
+
+
+
 
 private:
   using ScalarVariableTrait = scalar::VariableTraits< VariableRef >;
@@ -378,6 +389,25 @@ public:
   /// \name Implement floating point abstract domain methods
   /// @{
 
+//  void float_assign_undef(VariableRef x) override {
+//    this->_scalar.float_assign_undef(x);
+//  }
+//
+//  void float_assign_nondet(VariableRef x) override {
+//    this->_scalar.float_assign_nondet(x);
+//  }
+//
+//  void float_assign(VariableRef x, VariableRef y) override {
+//    this->_scalar.float_assign(x, y);
+//  }
+//
+//  void float_forget(VariableRef x) override { this->_scalar.float_forget(x); }
+
+  /// \brief By zoush99
+  void float_assign(VariableRef x, const FNumber& n) override {
+    this->_scalar.int_assign(x, n);
+  }
+
   void float_assign_undef(VariableRef x) override {
     this->_scalar.float_assign_undef(x);
   }
@@ -390,9 +420,100 @@ public:
     this->_scalar.float_assign(x, y);
   }
 
+  void float_assign(VariableRef x, const FloatLineaExpression & e) override {
+    this->_scalar.float_assign(x, e);
+  }
+
+//  void float_apply(IntUnaryOperator op, VariableRef x, VariableRef y) override {
+//    this->_scalar.float_apply(op, x, y);
+//  }
+
+  void float_apply(FloatBinaryOperator op,
+                 VariableRef x,
+                 VariableRef y,
+                 VariableRef z) override {
+    this->_scalar.float_apply(op, x, y, z);
+  }
+
+  void float_apply(FloatBinaryOperator op,
+                 VariableRef x,
+                 VariableRef y,
+                 const FNumber& z) override {
+    this->_scalar.float_apply(op, x, y, z);
+  }
+
+  void float_apply(FloatBinaryOperator op,
+                 VariableRef x,
+                 const FNumber& y,
+                 VariableRef z) override {
+    this->_scalar.float_apply(op, x, y, z);
+  }
+
+  void float_add(IntPredicate pred, VariableRef x, VariableRef y) override {
+    this->_scalar.float_add(pred, x, y);
+  }
+
+  void float_add(IntPredicate pred, VariableRef x, const FNumber& y) override {
+    this->_scalar.float_add(pred, x, y);
+  }
+
+  void float_add(IntPredicate pred, const FNumber& x, VariableRef y) override {
+    this->_scalar.float_add(pred, x, y);
+  }
+
+  void float_set(VariableRef x, const IntInterval& value) override {
+    this->_scalar.float_set(x, value);
+  }
+
+  void float_set(VariableRef x, const IntCongruence& value) override {
+    this->_scalar.float_set(x, value);
+  }
+
+  void float_set(VariableRef x, const IntIntervalCongruence& value) override {
+    this->_scalar.float_set(x, value);
+  }
+
+  void float_refine(VariableRef x, const IntInterval& value) override {
+    this->_scalar.float_refine(x, value);
+  }
+
+  void float_refine(VariableRef x, const IntCongruence& value) override {
+    this->_scalar.float_refine(x, value);
+  }
+
+  void float_refine(VariableRef x, const IntIntervalCongruence& value) override {
+    this->_scalar.float_refine(x, value);
+  }
+
   void float_forget(VariableRef x) override { this->_scalar.float_forget(x); }
 
-  /// @}
+  IntInterval float_to_interval(VariableRef x) const override {
+    return this->_scalar.float_to_interval(x);
+  }
+
+  IntInterval float_to_interval(const FloatLineaExpression& e) const override {
+    return this->_scalar.float_to_interval(e);
+  }
+
+  IntCongruence float_to_congruence(VariableRef x) const override {
+    return this->_scalar.float_to_congruence(x);
+  }
+
+  IntCongruence float_to_congruence(const FloatLineaExpression& e) const override {
+    return this->_scalar.float_to_congruence(e);
+  }
+
+  IntIntervalCongruence float_to_interval_congruence(
+      VariableRef x) const override {
+    return this->_scalar.float_to_interval_congruence(x);
+  }
+
+  IntIntervalCongruence float_to_interval_congruence(
+      const FloatLineaExpression& e) const override {
+    return this->_scalar.float_to_interval_congruence(e);
+  }
+  /// @}  By zoush99
+
   /// \name Implement nullity abstract domain methods
   /// @{
 

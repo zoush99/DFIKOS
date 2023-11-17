@@ -45,12 +45,21 @@
 
 #include <type_traits>
 
+#include <ikos/core/number/f_number.hpp>  // By zoush99
 #include <ikos/core/number/q_number.hpp>
 #include <ikos/core/number/z_number.hpp>
 
 namespace ikos {
 namespace core {
 namespace numeric {
+
+/// \brief Unary floating point operations
+enum class UnaryOperator {
+  Trunc,
+  Ext,
+  SignCast,
+  Cast,
+};
 
 /// \brief Binary arithmetic operations
 enum class BinaryOperator {
@@ -111,6 +120,16 @@ enum class BinaryOperator {
   /// On integers (Z), this is the bitwise XOR, see operator^ on ZNumber.
   /// This is undefined on rationals.
   Xor,
+};
+
+/// \brief Predicate on floating point integers
+enum class Predicate {
+  EQ,
+  NE,
+  GT,
+  GE,
+  LT,
+  LE,
 };
 
 /// \brief Get a textual representation of the given binary operator
