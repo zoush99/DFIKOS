@@ -59,6 +59,8 @@ using MemoryAbstractDomain =
     core::memory::PolymorphicDomain< Variable*, MemoryLocation* >;
 
 /// \brief Abstract domain for the value analysis
+// Tracking exceptions in program state and representing memory state and
+// variable information in an abstract way. By zoush99
 using AbstractDomain = core::exception::ExceptionDomain< MemoryAbstractDomain >;
 
 /// \brief Create the bottom abstract value

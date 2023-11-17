@@ -86,7 +86,7 @@ public:
   using Iterator = typename SeparateDomainT::Iterator;
 
 private:
-  SeparateDomainT _inv;
+  SeparateDomainT _inv; // non-relational domain. By zoush99
 
 private:
   /// \brief Private constructor
