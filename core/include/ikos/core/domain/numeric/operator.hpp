@@ -49,17 +49,20 @@
 #include <ikos/core/number/q_number.hpp>
 #include <ikos/core/number/z_number.hpp>
 
+// zoush99 has modified.
+
 namespace ikos {
 namespace core {
 namespace numeric {
 
-/// \brief Unary floating point operations
-enum class UnaryOperator {
-  Trunc,
-  Ext,
-  SignCast,
-  Cast,
-};
+///// \brief Unary floating point operations
+//enum class UnaryOperator {
+//  // Truncation, Extension, Symbol Conversion, Type Conversion. By zoush99
+//  Trunc,
+//  Ext,
+//  SignCast,
+//  Cast,
+//};
 
 /// \brief Binary arithmetic operations
 enum class BinaryOperator {
@@ -76,24 +79,28 @@ enum class BinaryOperator {
   ///
   /// On integers (Z), this is the integer division with rounding towards zero.
   /// On rationals (Q), this is the exact division.
+  /// On floating point number(F), this is the float division with rounding towards nearest. By zoush99
   Div,
 
   /// \brief Remainder
   ///
   /// On integers (Z), this is the integer remainder, see operator% on ZNumber.
   /// This is undefined on rationals.
+  /// This is undefined on floating points. By zoush99
   Rem,
 
   /// \brief Modulo
   ///
   /// On integers (Z), this is the integer modulo, see mod() on ZNumber.
   /// This is undefined on rationals.
+  /// This is undefined on floating points. By zoush99
   Mod,
 
   /// \brief Left binary shift
   ///
   /// On integers (Z), this is the left binary shift, see operator<< on ZNumber.
   /// This is undefined on rationals.
+  /// This is undefined on floating points. By zoush99
   Shl,
 
   /// \brief Right binary shift
@@ -101,28 +108,32 @@ enum class BinaryOperator {
   /// On integers (Z), this is the right binary shift, see operator>> on
   /// ZNumber.
   /// This is undefined on rationals.
+  /// This is undefined on floating points. By zoush99
   Shr,
 
   /// \brief Bitwise AND
   ///
   /// On integers (Z), this is the bitwise AND, see operator& on ZNumber.
   /// This is undefined on rationals.
+  /// This is undefined on floating points. By zoush99
   And,
 
   /// \brief Bitwise OR
   ///
   /// On integers (Z), this is the bitwise OR, see operator| on ZNumber.
   /// This is undefined on rationals.
+  /// This is undefined on floating points. By zoush99
   Or,
 
   /// \brief Bitwise XOR
   ///
   /// On integers (Z), this is the bitwise XOR, see operator^ on ZNumber.
   /// This is undefined on rationals.
+  /// This is undefined on floating points. By zoush99
   Xor,
 };
 
-/// \brief Predicate on floating point integers
+/// \brief Predicate on floating point numbers. By zoush99
 enum class Predicate {
   EQ,
   NE,
@@ -181,7 +192,7 @@ namespace detail {
 template < typename T >
 struct ApplyBinOperator<
     T,
-    std::enable_if_t< std::is_same< typename T::NumberT, ZNumber >::value > > {
+    std::enable_if_t< std::is_same< typename T::NumberT, ZNumber >::value > >{
   inline T operator()(BinaryOperator op, const T& lhs, const T& rhs) const {
     switch (op) {
       case BinaryOperator::Add:
@@ -233,10 +244,50 @@ struct ApplyBinOperator<
   }
 };
 
-/// \todo(todo by zoush99)
+/// \brief Implementation for abstract values on FNumber
+// By zoush99
+template < typename T >
+struct ApplyBinOperator<
+    T,
+    std::enable_if_t< std::is_same< typename T::NumberT, FNumber >::value > > {
+  inline T operator()(BinaryOperator op, const T& lhs, const T& rhs) const {
+    switch (op) {
+      case BinaryOperator::Add:
+        return lhs + rhs;
+      case BinaryOperator::Sub:
+        return lhs - rhs;
+      case BinaryOperator::Mul:
+        return lhs * rhs;
+      case BinaryOperator::Div:
+        return lhs / rhs;
+      default:
+        ikos_unreachable("unsupported operator");
+    }
+  }
+};
 
 } // end namespace detail
 
+/// \brief Compare the given operands with the given predicate
+template < typename T >
+bool compare(Predicate pred, const T& lhs, const T& rhs) {
+  switch (pred) {
+    case Predicate::EQ:
+      return lhs == rhs;
+    case Predicate::NE:
+      return lhs != rhs;
+    case Predicate::GT:
+      return lhs > rhs;
+    case Predicate::GE:
+      return lhs >= rhs;
+    case Predicate::LT:
+      return lhs < rhs;
+    case Predicate::LE:
+      return lhs <= rhs;
+    default:
+      ikos_unreachable("unreachable");
+  }
+}
 } // end namespace numeric
 } // end namespace core
 } // end namespace ikos

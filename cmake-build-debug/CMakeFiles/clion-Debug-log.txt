@@ -19,6 +19,6 @@ Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0 (found version "1.55.0
 Found Boost components:
    filesystem;system;thread
 -- Building with -fPIC
--- Configuring done (1.6s)
--- Generating done (0.2s)
+-- Configuring done (2.3s)
+-- Generating done (0.3s)
 -- Build files have been written to: /home/zou/Documents/DFIKOS/cmake-build-debug

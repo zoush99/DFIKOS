@@ -8,18 +8,18 @@
 #include <iostream>
 
 using ZNumber = ikos::core::ZNumber;
-using f_number = ikos::core::FNumber;
-using Bound = ikos::core::Bound< f_number >;
+using FNumber = ikos::core::FNumber;
+using Bound = ikos::core::Bound< FNumber >;
 
 /// \brief Bound b(a)
 void testConstructor() {
   float f;
   f = 1.2;
   int a = 5;
-  f_number F(f);
+  FNumber F(f);
   Bound b(F);
   Bound bb(f);
-  f_number A(a);
+  FNumber A(a);
   Bound AA(a);
   AA.display();
 }
@@ -28,7 +28,7 @@ void testConstructor() {
 void testMemberFunc() {
   long double d;
   d = 3;
-  f_number F(d);
+  FNumber F(d);
   Bound B(F);
 //  B.display();  // 3
   Bound A(4);

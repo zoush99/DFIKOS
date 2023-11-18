@@ -184,3 +184,8 @@ endif()
 #add_executable(test-bound-hpp zoush99test/test-bound-hpp.cpp)
 #target_include_directories(test-bound-hpp PRIVATE include)
 #target_link_libraries(test-bound-hpp gmp gmpxx mpfr)
+
+# zoush99 tests numeric/opeator.hpp
+add_executable(test-numeric-operator-hpp zoush99test/domain/test-numeric-operator-hpp.cpp)
+target_include_directories(test-numeric-operator-hpp PRIVATE include)
+target_link_libraries(test-numeric-operator-hpp gmp gmpxx mpfr)
