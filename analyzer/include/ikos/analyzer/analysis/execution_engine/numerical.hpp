@@ -472,7 +472,7 @@ private:
 
     void floating_point(const FNumber& rhs) { // By zoush99
       // float_assign_nondet needs to be defined in the floating point abstract domain. By zoush99
-      this->_inv.normal().float_assign_nondet(this->_lhs,rhs);
+      this->_inv.normal().float_assign(this->_lhs,rhs);
     }
 
     void memory_location(MemoryLocation*) { ikos_unreachable("unreachable"); }

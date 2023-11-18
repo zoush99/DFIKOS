@@ -55,14 +55,14 @@ namespace ikos {
 namespace core {
 namespace numeric {
 
-///// \brief Unary floating point operations
-//enum class UnaryOperator {
-//  // Truncation, Extension, Symbol Conversion, Type Conversion. By zoush99
-//  Trunc,
-//  Ext,
-//  SignCast,
-//  Cast,
-//};
+/// \brief Unary floating point operations
+enum class UnaryOperator {
+  // Truncation, Extension, Symbol Conversion, Type Conversion. By zoush99
+  Trunc,
+  Ext,
+  SignCast,
+  Cast,
+};
 
 /// \brief Binary arithmetic operations
 enum class BinaryOperator {
@@ -142,6 +142,26 @@ enum class Predicate {
   LT,
   LE,
 };
+
+/// \brief Apply a floating point unary operator on the given operands
+//template < typename T >
+//T apply_unary_operator(UnaryOperator op,
+//                       const T& operand,
+//                       uint64_t result_bit_width,
+//                       Signedness result_sign) {
+//  switch (op) {
+//    case UnaryOperator::Trunc:
+//      return operand.trunc(result_bit_width);
+//    case UnaryOperator::Ext:
+//      return operand.ext(result_bit_width);
+//    case UnaryOperator::SignCast:
+//      return operand.sign_cast(result_sign);
+//    case UnaryOperator::Cast:
+//      return operand.cast(result_bit_width, result_sign);
+//    default:
+//      ikos_unreachable("unreachable");
+//  }
+//}
 
 /// \brief Get a textual representation of the given binary operator
 inline const char* bin_operator_text(BinaryOperator op) {

@@ -45,8 +45,8 @@
 
 #include <type_traits>
 
-#include "ikos/core/domain/numeric/operator.hpp"
 #include <ikos/core/domain/memory/abstract_domain.hpp>
+#include <ikos/core/domain/numeric/operator.hpp>  // By zoush99
 
 namespace ikos {
 namespace core {
@@ -86,7 +86,7 @@ public:
 
   using FloatLineaExpression=LinearExpression<FNumber,VariableRef>; // By zoush99
   using FloatBinaryOperator=numeric::BinaryOperator;
-  using FloatUnaryOperator = numeric::UnaryOperator;
+//  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating ponit unary operator
   using FloatInterval = machine_int::Interval;
   using FloatCongruence = machine_int::Congruence;
   using FloatIntervalCongruence = machine_int::IntervalCongruence;

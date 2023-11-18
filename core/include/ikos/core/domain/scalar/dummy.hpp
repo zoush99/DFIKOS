@@ -70,6 +70,16 @@ public:
   using PointerAbsValueT = PointerAbsValue< MemoryLocationRef >;
   using PointerSetT = PointerSet< MemoryLocationRef >;
 
+  using FloatLinearExpression =
+      LinearExpression< FNumber, VariableRef >; // By zoush99
+  using FloatBinaryOperator = numeric::BinaryOperator;
+  //  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating point
+  //  unary operator
+  using FloatInterval = numeric::Interval< FNumber >;
+  using FloatCongruence = numeric::Congruence< FNumber >;
+  using FloatIntervalCongruence = numeric::IntervalCongruence< FNumber >;
+  using FloatPredicate = numeric::Predicate;
+
 private:
   using IntVariableTrait = machine_int::VariableTraits< VariableRef >;
   using ScalarVariableTrait = scalar::VariableTraits< VariableRef >;
@@ -335,13 +345,123 @@ public:
   /// \name Implement floating point abstract domain methods
   /// @{
 
-  void float_assign_undef(VariableRef) override {}
+  //  void float_assign_undef(VariableRef) override {}
+  //
+  //  void float_assign_nondet(VariableRef) override {}
+  //
+  //  void float_assign(VariableRef, VariableRef) override {}
+  //
+  //  void float_forget(VariableRef) override {}
 
-  void float_assign_nondet(VariableRef) override {}
+  void float_assign(VariableRef x, const FNumber& n) override{}
 
-  void float_assign(VariableRef, VariableRef) override {}
+  void float_assign_undef(VariableRef x) override{}
 
-  void float_forget(VariableRef) override {}
+  void float_assign_nondet(VariableRef x) override{}
+
+  void float_assign(VariableRef x, VariableRef y) override{}
+
+  void float_assign(VariableRef x, const FloatLinearExpression& e) override{}
+
+  void float_apply(FloatBinaryOperator op,
+                   VariableRef x,
+                   VariableRef y,
+                   VariableRef z) override{}
+
+  void float_apply(FloatBinaryOperator op,
+                   VariableRef x,
+                   VariableRef y,
+                   const FNumber& z) override{}
+
+  void float_apply(FloatBinaryOperator op,
+                   VariableRef x,
+                   const FNumber& y,
+                   VariableRef z) override{}
+
+  void float_add(FloatPredicate pred, VariableRef x, VariableRef y) override{}
+
+  void float_add(FloatPredicate pred,
+                 VariableRef x,
+                 const FNumber& y) override{}
+
+  void float_add(FloatPredicate pred,
+                 const FNumber& x,
+                 VariableRef y) override{}
+
+  void float_set(VariableRef x, const FloatInterval& value) override{
+    if (value.is_bottom()) {
+      this->_is_bottom = true;
+    }
+  }
+
+  /// \todo(bugs here!!!) By zoush99
+void float_set(VariableRef x, const FloatCongruence& value) override{
+    if (value.is_bottom()) {
+      this->_is_bottom = true;
+    }
+  }
+
+void float_set(VariableRef x,const FloatIntervalCongruence& value) override{
+    if (value.is_bottom()) {
+      this->_is_bottom = true;
+    }
+}
+
+ void float_refine(VariableRef x, const FloatInterval& value) override{
+    if (value.is_bottom()) {
+      this->_is_bottom = true;
+    }
+}
+
+ void float_refine(VariableRef x, const FloatCongruence& value) override{
+    if (value.is_bottom()) {
+      this->_is_bottom = true;
+    }
+ }
+
+virtual void float_refine(VariableRef x,const FloatIntervalCongruence& value) {
+    if (value.is_bottom()) {
+      this->_is_bottom = true;
+    }
+ }
+
+void float_forget(VariableRef x) override{}
+
+/// \todo(need to be done here!!!) By zoush99
+FloatInterval float_to_interval(VariableRef x) const override{
+    ikos_assert(ScalarVariableTrait::is_float(x));
+
+    if (this->_is_bottom) {
+      return FloatInterval::bottom(IntVariableTrait::bit_width(x),
+                                 IntVariableTrait::sign(x));
+    } else {
+      return IntInterval::top(IntVariableTrait::bit_width(x),
+                              IntVariableTrait::sign(x));
+    }
+}
+
+FloatInterval float_to_interval(const FloatLinearExpression& e) const override{
+
+}
+
+FloatCongruence float_to_congruence(VariableRef x) const override{
+
+}
+
+FloatCongruence float_to_congruence(
+      const FloatLinearExpression& e) const override{
+
+}
+
+FloatIntervalCongruence float_to_interval_congruence(
+      VariableRef x) const override{
+
+}
+
+FloatIntervalCongruence float_to_interval_congruence(
+      const FloatLinearExpression& e) const override{
+
+}
 
   /// @}
   /// \name Implement nullity abstract domain methods

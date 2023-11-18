@@ -45,6 +45,8 @@
 
 #include <ikos/core/domain/abstract_domain.hpp>
 #include <ikos/core/domain/machine_int/operator.hpp>
+#include <ikos/core/domain/numeric/interval.hpp>  // By zoush99
+#include <ikos/core/domain/numeric/operator.hpp> // By zoush99
 #include <ikos/core/domain/pointer/operator.hpp>
 #include <ikos/core/linear_expression.hpp>
 #include <ikos/core/number/machine_int.hpp>
@@ -56,6 +58,8 @@
 #include <ikos/core/value/machine_int/interval.hpp>
 #include <ikos/core/value/machine_int/interval_congruence.hpp>
 #include <ikos/core/value/nullity.hpp>
+#include <ikos/core/value/numeric/interval.hpp> // By zoush99
+#include <ikos/core/value/numeric/interval_congruence.hpp>  // By zoush99
 #include <ikos/core/value/pointer/pointer.hpp>
 #include <ikos/core/value/pointer/pointer_set.hpp>
 #include <ikos/core/value/pointer/points_to_set.hpp>
@@ -94,6 +98,15 @@ public:
   using PointsToSetT = PointsToSet< MemoryLocationRef >;
   using PointerAbsValueT = PointerAbsValue< MemoryLocationRef >;
   using PointerSetT = PointerSet< MemoryLocationRef >;
+
+  using FloatLinearExpression=LinearExpression<FNumber,VariableRef>; // By zoush99
+  using FloatBinaryOperator=numeric::BinaryOperator;
+//  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating point unary operator
+  using FloatInterval = numeric::Interval<FNumber>;
+  using FloatCongruence = numeric::Congruence<FNumber>;
+  using FloatIntervalCongruence = numeric::IntervalCongruence<FNumber>;
+  using FloatPredicate = numeric::Predicate;
+
 
 public:
   /// \brief Perform the widening of two abstract values with a threshold
@@ -290,17 +303,139 @@ public:
   /// \name Floating point abstract domain methods
   /// @{
 
+  /// \brief Modified by zoush99
+
+//  /// \brief Assign `x = undefined`
+//  virtual void float_assign_undef(VariableRef x) = 0;
+//
+//  /// \brief Assign `x` to a non deterministic floating point
+//  virtual void float_assign_nondet(VariableRef x) = 0;
+//
+//  /// \brief Assign `x = y`
+//  virtual void float_assign(VariableRef x, VariableRef y) = 0;
+//
+//  /// \brief Forget a floating point variable
+//  virtual void float_forget(VariableRef x) = 0;
+
+  /// \brief Assign `x = n`
+  virtual void float_assign(VariableRef x, const FNumber& n) = 0;
+
   /// \brief Assign `x = undefined`
   virtual void float_assign_undef(VariableRef x) = 0;
 
-  /// \brief Assign `x` to a non deterministic floating point
+  /// \brief Assign `x` to a non deterministic integer
   virtual void float_assign_nondet(VariableRef x) = 0;
 
   /// \brief Assign `x = y`
   virtual void float_assign(VariableRef x, VariableRef y) = 0;
 
-  /// \brief Forget a floating point variable
+  /// \brief Assign `x = e`
+  ///
+  /// Note that it wraps on integer overflow.
+  /// Note that it will automatically cast variables to the type of `x`.
+  virtual void float_assign(VariableRef x, const FloatLinearExpression& e) = 0;
+
+//  /// \brief Apply `x = op y`
+//  virtual void float_apply(FloatUnaryOperator op, VariableRef x, VariableRef y) = 0;
+
+  /// \brief Apply `x = y op z`
+  virtual void float_apply(FloatBinaryOperator op,
+                         VariableRef x,
+                         VariableRef y,
+                         VariableRef z) = 0;
+
+  /// \brief Apply `x = y op z`
+  virtual void float_apply(FloatBinaryOperator op,
+                         VariableRef x,
+                         VariableRef y,
+                         const FNumber& z) = 0;
+
+  /// \brief Apply `x = y op z`
+  virtual void float_apply(FloatBinaryOperator op,
+                         VariableRef x,
+                         const FNumber& y,
+                         VariableRef z) = 0;
+
+  // \brief Add the constraint `x pred y`
+  virtual void float_add(FloatPredicate pred, VariableRef x, VariableRef y) = 0;
+
+  // \brief Add the constraint `x pred y`
+  virtual void float_add(FloatPredicate pred,
+                       VariableRef x,
+                       const FNumber& y) = 0;
+
+  // \brief Add the constraint `x pred y`
+  virtual void float_add(FloatPredicate pred,
+                       const FNumber& x,
+                       VariableRef y) = 0;
+
+  /// \brief Set the interval value of a variable
+  virtual void float_set(VariableRef x, const FloatInterval& value) = 0;
+
+  /// \brief Set the congruence value of a variable
+  virtual void float_set(VariableRef x, const FloatCongruence& value) = 0;
+
+  /// \brief Set the interval-congruence value of a variable
+  virtual void float_set(VariableRef x, const FloatIntervalCongruence& value) = 0;
+
+  /// \brief Refine the value of a variable with an interval
+  virtual void float_refine(VariableRef x, const FloatInterval& value) = 0;
+
+  /// \brief Refine the value of a variable with a congruence
+  virtual void float_refine(VariableRef x, const FloatCongruence& value) = 0;
+
+  /// \brief Refine the value of a variable with an interval-congruence
+  virtual void float_refine(VariableRef x,
+                          const FloatIntervalCongruence& value) = 0;
+
+  /// \brief Forget an integer variable
   virtual void float_forget(VariableRef x) = 0;
+
+  /// \brief Projection to an interval
+  ///
+  /// Return an overapproximation of the value of `x` as an interval
+  virtual FloatInterval float_to_interval(VariableRef x) const = 0;
+
+  /// \brief Projection to an interval
+  ///
+  /// Return an overapproximation of the linear expression `e` as an interval
+  ///
+  /// Note that it wraps on integer overflow.
+  /// Note that it will automatically cast variables to the type of
+  /// `e.constant()`.
+  virtual FloatInterval float_to_interval(const FloatLinearExpression& e) const = 0;
+
+  /// \brief Projection to a congruence
+  ///
+  /// Return an overapproximation of the value of `x` as a congruence
+  virtual FloatCongruence float_to_congruence(VariableRef x) const = 0;
+
+  /// \brief Projection to a congruence
+  ///
+  /// Return an overapproximation of the linear expression `e` as a congruence
+  ///
+  /// Note that it wraps on integer overflow.
+  /// Note that it will automatically cast variables to the type of
+  /// `e.constant()`.
+  virtual FloatCongruence float_to_congruence(
+      const FloatLinearExpression& e) const = 0;
+
+  /// \brief Projection to an interval-congruence
+  ///
+  /// Return an overapproximation of the value of `x` as an interval-congruence
+  virtual FloatIntervalCongruence float_to_interval_congruence(
+      VariableRef x) const = 0;
+
+  /// \brief Projection to an interval-congruence
+  ///
+  /// Return an overapproximation of the linear expression `e` as an
+  /// interval-congruence
+  ///
+  /// Note that it wraps on integer overflow.
+  /// Note that it will automatically cast variables to the type of
+  /// `e.constant()`.
+  virtual FloatIntervalCongruence float_to_interval_congruence(
+      const FloatLinearExpression& e) const = 0;
 
   /// @}
   /// \name Nullity abstract domain methods
