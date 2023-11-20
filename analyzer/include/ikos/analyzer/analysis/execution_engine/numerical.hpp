@@ -471,7 +471,6 @@ private:
     void machine_int(const MachineInt&) { ikos_unreachable("unreachable"); }
 
     void floating_point(const FNumber& rhs) { // By zoush99
-      // float_assign_nondet needs to be defined in the floating point abstract domain. By zoush99
       this->_inv.normal().float_assign(this->_lhs,rhs);
     }
 
@@ -609,8 +608,8 @@ private:
 
     void machine_int(const MachineInt&) { ikos_unreachable("unreachable"); }
 
-    void floating_point(const FNumber&) { // By zoush99
-      this->_inv.normal().float_assign_nondet(this->_lhs);
+    void floating_point(const FNumber& rhs) { // By zoush99
+      this->_inv.normal().float_assign(this->_lhs,rhs);
     }
 
     void memory_location(MemoryLocation*) { ikos_unreachable("unreachable"); }
@@ -621,7 +620,7 @@ private:
 
     void machine_int_var(Variable*) { ikos_unreachable("unreachable"); }
 
-    void floating_point_var(Variable* rhs) {
+    void floating_point_var(Variable* rhs) {  // By zoush99
       this->_inv.normal().uninit_assert_initialized(rhs);
       this->_inv.normal().float_assign(this->_lhs, rhs);
     }
@@ -1030,6 +1029,8 @@ private:
   }
 
   /// \brief Execute a floating point conversion
+  /// \todo (By zoush99)
+  // Modified by zoush99
   void exec_float_conv(const ScalarLit& lhs, const ScalarLit& rhs) {
     ikos_assert_msg(lhs.is_floating_point_var(),
                     "left hand side is not a floating point variable");
@@ -1037,7 +1038,7 @@ private:
     if (rhs.is_floating_point_var()) {
       this->_inv.normal().uninit_assert_initialized(rhs.var());
     }
-    this->_inv.normal().float_assign_nondet(lhs.var());
+    this->_inv.normal().float_assign(lhs.var(),rhs);
   }
 
   /// \brief Execute a conversion from floating point to integer
