@@ -143,7 +143,8 @@ enum class Predicate {
   LE,
 };
 
-/// \brief Apply a floating point unary operator on the given operands
+/// \todo(Addition of unary arithmetic operations) By zoush99
+///// \brief Apply a floating point unary operator on the given operands
 //template < typename T >
 //T apply_unary_operator(UnaryOperator op,
 //                       const T& operand,

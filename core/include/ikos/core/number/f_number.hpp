@@ -430,7 +430,7 @@ public:
 
   /// @}
   /// {@
-  /// \brief Some function about class FNumber
+  /// \brief The information about class FNumber
 
   /// \brief Get the internal value of FNumber
   const mpfr_t& FNvalue() const { return this->_n; }
@@ -452,6 +452,18 @@ public:
     this->_prec=p;
     this->_rnd=r;
   }
+
+  /// @}
+  /// {@
+  /// \brief Addition of unary arithmetic operations
+  /// \todo(zoush99)
+  FNumber& trunc();
+
+  FNumber& ext();
+
+  FNumber& signcast();
+
+  FNumber& cast();
 
   /// @}
   friend class QNumber;
