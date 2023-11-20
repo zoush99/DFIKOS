@@ -59,7 +59,7 @@
 #include <ikos/core/value/machine_int/interval_congruence.hpp>
 #include <ikos/core/value/nullity.hpp>
 #include <ikos/core/value/numeric/interval.hpp> // By zoush99
-#include <ikos/core/value/numeric/interval_congruence.hpp>  // By zoush99
+//#include <ikos/core/value/numeric/interval_congruence.hpp>  // By zoush99
 #include <ikos/core/value/pointer/pointer.hpp>
 #include <ikos/core/value/pointer/pointer_set.hpp>
 #include <ikos/core/value/pointer/points_to_set.hpp>
@@ -323,7 +323,7 @@ public:
   /// \brief Assign `x = undefined`
   virtual void float_assign_undef(VariableRef x) = 0;
 
-  /// \brief Assign `x` to a non deterministic integer
+  /// \brief Assign `x` to a non deterministic floating point
   virtual void float_assign_nondet(VariableRef x) = 0;
 
   /// \brief Assign `x = y`
@@ -388,7 +388,7 @@ public:
   virtual void float_refine(VariableRef x,
                           const FloatIntervalCongruence& value) = 0;
 
-  /// \brief Forget an integer variable
+  /// \brief Forget an floating point variable
   virtual void float_forget(VariableRef x) = 0;
 
   /// \brief Projection to an interval

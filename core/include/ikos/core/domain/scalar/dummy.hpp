@@ -344,7 +344,7 @@ public:
   /// @}
   /// \name Implement floating point abstract domain methods
   /// @{
-
+  /// Modified by zoush99
   //  void float_assign_undef(VariableRef) override {}
   //
   //  void float_assign_nondet(VariableRef) override {}
@@ -394,18 +394,20 @@ public:
     }
   }
 
-  /// \todo(bugs here!!!) By zoush99
-void float_set(VariableRef x, const FloatCongruence& value) override{
-    if (value.is_bottom()) {
-      this->_is_bottom = true;
-    }
-  }
-
-void float_set(VariableRef x,const FloatIntervalCongruence& value) override{
-    if (value.is_bottom()) {
-      this->_is_bottom = true;
-    }
-}
+/// \todo(bugs here!!!) By zoush99
+/// \brief For the time being, only the correctness of the interval
+/// abstraction domain is considered. By zoush99
+//void float_set(VariableRef x, const FloatCongruence& value) override{
+//    if (value.is_bottom()) {
+//      this->_is_bottom = true;
+//    }
+//  }
+//
+//void float_set(VariableRef x,const FloatIntervalCongruence& value) override{
+//    if (value.is_bottom()) {
+//      this->_is_bottom = true;
+//    }
+//}
 
  void float_refine(VariableRef x, const FloatInterval& value) override{
     if (value.is_bottom()) {
@@ -413,55 +415,56 @@ void float_set(VariableRef x,const FloatIntervalCongruence& value) override{
     }
 }
 
- void float_refine(VariableRef x, const FloatCongruence& value) override{
-    if (value.is_bottom()) {
-      this->_is_bottom = true;
-    }
- }
-
-virtual void float_refine(VariableRef x,const FloatIntervalCongruence& value) {
-    if (value.is_bottom()) {
-      this->_is_bottom = true;
-    }
- }
+// void float_refine(VariableRef x, const FloatCongruence& value) override{
+//    if (value.is_bottom()) {
+//      this->_is_bottom = true;
+//    }
+// }
+//
+//virtual void float_refine(VariableRef x,const FloatIntervalCongruence& value) {
+//    if (value.is_bottom()) {
+//      this->_is_bottom = true;
+//    }
+// }
 
 void float_forget(VariableRef x) override{}
 
-/// \todo(need to be done here!!!) By zoush99
 FloatInterval float_to_interval(VariableRef x) const override{
     ikos_assert(ScalarVariableTrait::is_float(x));
 
     if (this->_is_bottom) {
-      return FloatInterval::bottom(IntVariableTrait::bit_width(x),
-                                 IntVariableTrait::sign(x));
+      return FloatInterval::bottom();
     } else {
-      return IntInterval::top(IntVariableTrait::bit_width(x),
-                              IntVariableTrait::sign(x));
+      return FloatInterval::top();
     }
 }
 
 FloatInterval float_to_interval(const FloatLinearExpression& e) const override{
-
+    if (this->_is_bottom) {
+      return FloatInterval::bottom();
+    } else {
+      return FloatInterval::top();
+    }
 }
 
-FloatCongruence float_to_congruence(VariableRef x) const override{
-
-}
-
-FloatCongruence float_to_congruence(
-      const FloatLinearExpression& e) const override{
-
-}
-
-FloatIntervalCongruence float_to_interval_congruence(
-      VariableRef x) const override{
-
-}
-
-FloatIntervalCongruence float_to_interval_congruence(
-      const FloatLinearExpression& e) const override{
-
-}
+//FloatCongruence float_to_congruence(VariableRef x) const override{
+//
+//}
+//
+//FloatCongruence float_to_congruence(
+//      const FloatLinearExpression& e) const override{
+//
+//}
+//
+//FloatIntervalCongruence float_to_interval_congruence(
+//      VariableRef x) const override{
+//
+//}
+//
+//FloatIntervalCongruence float_to_interval_congruence(
+//      const FloatLinearExpression& e) const override{
+//
+//}
 
   /// @}
   /// \name Implement nullity abstract domain methods
