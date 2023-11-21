@@ -514,25 +514,26 @@ public:
 
 //  FNumber& cast();
 
+  /// \todo(bugs here!!!) By zoush99
+//  MachineInt& applyfltoin(FNumber& n){
+//    mpz_t res;
+//    mpz_init(res);
+//    mpfr_get_z(res,n.FNvalue(),MPFR_RNDN);
+//    ZNumber Z(res);
+//  }
+//
+//
+//  FNumber& applyintofl(MachineInt& n){
+//
+//
   /// @}
-
+  ZNumber f(1);
   friend class QNumber;
   friend class ZNumber;
 }; // end class FNumber
 
 /// {@
 /// \brief Transform between floating point and integer. By zoush99
-
-//ikos::core::MachineInt& applyfltoin(FNumber& n){
-//  mpz_t res;
-//  mpz_init(res);
-//  mpfr_get_z(res,n.FNvalue(),MPFR_RNDN);
-//}
-
-
-//FNumber& applyintofl(ikos::core::MachineInt& n){
-//
-//}
 
 /// @}
 /// \brief Addition

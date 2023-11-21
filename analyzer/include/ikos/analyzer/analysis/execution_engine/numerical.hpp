@@ -1058,7 +1058,7 @@ private:
                     "left hand side is not an integer variable");
     if(rhs.is_floating_point()){
       auto type = cast< ar::IntegerType >(lhs.var()->type());
-      this->_inv.normal().int_assign(lhs.var(),core::numeric::);  // floating point->integer
+      this->_inv.normal().int_assign(lhs.var(),rhs.floating_point());  // floating point->integer
     }else if(rhs.is_floating_point_var()){
 
     }else{

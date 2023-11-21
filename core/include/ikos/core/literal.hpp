@@ -317,7 +317,8 @@ private:
       return lit.value;
     }
 
-    const MachineInt& operator()(const FloatingPointLit&) const {
+    const MachineInt& operator()(const FloatingPointLit& lit) const { // By zoush99
+
       ikos_unreachable("trying to call machine_int() on a floating point");
     }
 
@@ -363,7 +364,7 @@ public:
 private:
   /// \brief Visitor that returns the floating point
   struct GetFloatingPoint : public boost::static_visitor< const FNumber& > {
-    const FNumber& operator()(const MachineIntLit&) const {
+    const FNumber& operator()(const MachineIntLit& lit) const { // By zoush99
       ikos_unreachable("trying to call floating_point() on a machine integer");
     }
 
