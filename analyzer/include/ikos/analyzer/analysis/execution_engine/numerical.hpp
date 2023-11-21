@@ -107,6 +107,9 @@ private:
   using IntPredicate = core::machine_int::Predicate;
   using PointerPredicate = core::pointer::Predicate;
 
+  using FloatUnaryOperator=core::numeric::UnaryOperator;  // By zoush99
+  using FloatBinaryOperator=core::numeric::BinaryOperator;  // By zoush99
+  using FloatPredicate=core::numeric::Predicate;  // By zoush99
 private:
   /// \brief Current invariant
   AbstractDomain _inv;
@@ -1031,14 +1034,22 @@ private:
   /// \brief Execute a floating point conversion
   /// \todo (By zoush99)
   // Modified by zoush99
-  void exec_float_conv(const ScalarLit& lhs, const ScalarLit& rhs) {
+  void exec_float_conv(FloatUnaryOperator op,const ScalarLit& lhs, const ScalarLit& rhs) {
     ikos_assert_msg(lhs.is_floating_point_var(),
                     "left hand side is not a floating point variable");
 
     if (rhs.is_floating_point_var()) {
-      this->_inv.normal().uninit_assert_initialized(rhs.var());
+      auto type = cast< ar::FloatType >(lhs.var()->type());
+      this->_inv.normal()
+          .float_assign(lhs.var(),
+                      core::numeric::apply_unary_operator(op,rhs.floating_point()));
+//      this->_inv.normal().uninit_assert_initialized(rhs.var());
+    }else if (rhs.is_floating_point_var()) {
+      this->_inv.normal().float_apply(op, lhs.var(), rhs.var());
+    } else {
+      ikos_unreachable("unexpected arguments");
     }
-    this->_inv.normal().float_assign(lhs.var(),rhs);
+//    this->_inv.normal().float_assign(lhs.var(),rhs);
   }
 
   /// \brief Execute a conversion from floating point to integer
@@ -1324,22 +1335,51 @@ private:
     }
   }
 
-  /// \brief Execute a floating point binary operation
+  /// \brief Execute a floating point binary operation. By zoush99
   void exec_float_bin_operation(const ScalarLit& lhs,
+                                const FloatBinaryOperator op,
                                 const ScalarLit& left,
                                 const ScalarLit& right) {
     ikos_assert_msg(lhs.is_floating_point_var(),
                     "left hand side is not a floating point variable");
-
     // TODO(marthaud): add floating point reasoning
+      if (left.is_floating_point()) {
+        if (right.is_floating_point()) {
+          this->_inv.normal().float_assign(lhs.var(), left.floating_point());
+          this->_inv.normal().float_apply(op,
+                                        lhs.var(),
+                                        lhs.var(),
+                                        right.floating_point());
+        } else if (right.is_floating_point_var()) {
+          this->_inv.normal().float_apply(op,
+                                        lhs.var(),
+                                        left.floating_point(),
+                                        right.var());
+        } else {
+          ikos_unreachable("unexpected right operand");
+        }
+      } else if (left.is_floating_point_var()) {
+        if (right.is_floating_point()) {
+          this->_inv.normal().float_apply(op,
+                                        lhs.var(),
+                                        left.var(),
+                                        right.floating_point());
+        } else if (right.is_floating_point_var()) {
+          this->_inv.normal().float_apply(op, lhs.var(), left.var(), right.var());
+        } else {
+          ikos_unreachable("unexpected right operand");
+        }
+      } else {
+        ikos_unreachable("unexpected left operand");
+      }
 
-    if (left.is_floating_point_var()) {
-      this->_inv.normal().uninit_assert_initialized(left.var());
-    }
-    if (right.is_floating_point_var()) {
-      this->_inv.normal().uninit_assert_initialized(right.var());
-    }
-    this->_inv.normal().float_assign_nondet(lhs.var());
+//    if (left.is_floating_point_var()) {
+//      this->_inv.normal().uninit_assert_initialized(left.var());
+//    }
+//    if (right.is_floating_point_var()) {
+//      this->_inv.normal().uninit_assert_initialized(right.var());
+//    }
+//    this->_inv.normal().float_assign_nondet(lhs.var());
   }
 
   /// \brief Execute a vector binary operation
@@ -1458,16 +1498,38 @@ private:
     }
   }
 
-  /// \brief Execute a floating point comparison
-  void exec_float_comparison(const ScalarLit& left, const ScalarLit& right) {
+  /// \brief Execute a floating point comparison. By zoush99
+  void exec_float_comparison(FloatPredicate pred,
+                             const ScalarLit& left,
+                             const ScalarLit& right) {
     // TODO(marthaud): add floating point reasoning
-
-    if (left.is_floating_point_var()) {
-      this->_inv.normal().uninit_assert_initialized(left.var());
+    if (left.is_floating_point()) {
+      if (right.is_floating_point()) {
+        if (!compare(pred, left.floating_point(), right.floating_point())) {
+          this->_inv.set_normal_flow_to_bottom();
+        }
+      } else if (right.is_floating_point_var()) {
+        this->_inv.normal().float_add(pred, left.floating_point(), right.var());
+      } else {
+        ikos_unreachable("unexpected right operand");
+      }
+    } else if (left.is_floating_point_var()) {
+      if (right.is_floating_point()) {
+        this->_inv.normal().float_add(pred, left.var(), right.floating_point());
+      } else if (right.is_floating_point()) {
+        this->_inv.normal().add_add(pred, left.var(), right.var());
+      } else {
+        ikos_unreachable("unexpected right operand");
+      }
+    } else {
+      ikos_unreachable("unexpected left operand");
     }
-    if (right.is_floating_point_var()) {
-      this->_inv.normal().uninit_assert_initialized(right.var());
-    }
+//    if (left.is_floating_point_var()) {
+//      this->_inv.normal().uninit_assert_initialized(left.var());
+//    }
+//    if (right.is_floating_point_var()) {
+//      this->_inv.normal().uninit_assert_initialized(right.var());
+//    }
   }
 
   /// \brief Execute a pointer comparison

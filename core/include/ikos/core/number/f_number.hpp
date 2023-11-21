@@ -243,6 +243,16 @@ public:
     return *this;
   }
 
+  /// \brief Unary minus
+  FNumber operator-() {
+    mpfr_t f;
+    mpfr_init2(f,this->_prec);
+    mpfr_neg(f,this->_n,MPFR_RNDN);
+    FNumber F(f,MPFR_RNDN);
+    mpfr_clear(f);
+    return F;
+  }
+
   /// \brief Addition assignment
   // This operation assumes that the accuracies are all equal,
   // otherwise it converts them to high accuracy. By zoush99
@@ -457,11 +467,34 @@ public:
   /// {@
   /// \brief Addition of unary arithmetic operations
   /// \todo(zoush99)
-  FNumber& trunc();
 
-  FNumber& ext();
+  /// \brief Absolute value
+  FNumber& absolute(){
+    mpfr_t f;
+    mpfr_init2(f,this->_prec);
+    mpfr_abs(f,this->_n,MPFR_RNDN);
+    this->setFN(f,this->_prec,MPFR_RNDN);
+    mpfr_clear(f);
+    return *this;
+  }
 
-  FNumber& signcast();
+  /// \brief Switching from high precision to low precision
+  FNumber& trunc(int prec) const{
+      ikos_assert(this->_prec>prec);
+  }
+
+  /// \brief Switching from low precision to high precision
+  FNumber& ext(int prec) const{
+      ikos_assert(this->_prec<prec);
+  }
+
+  /// \brief Change the floating point sign
+  FNumber& signcast(){
+      FNumber F(this->_n,MPFR_RNDN);
+      F=-F;
+      this->setFN(F._n,this->_prec,MPFR_RNDN);
+      return *this;
+  }
 
   FNumber& cast();
 
