@@ -26,7 +26,6 @@
 #include <ikos/core/number/z_number.hpp>
 #include <ikos/core/support/assert.hpp>
 
-
 namespace ikos {
 namespace core {
 
