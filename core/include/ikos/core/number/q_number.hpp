@@ -388,6 +388,8 @@ public:
 
   friend std::istream& operator>>(std::istream& i, QNumber& n);
 
+  friend class FNumber;
+  friend class ZNumber;
 }; // end class QNumber
 
 /// \name Binary Operators

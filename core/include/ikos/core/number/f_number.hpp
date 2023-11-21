@@ -26,6 +26,7 @@
 #include <ikos/core/number/z_number.hpp>
 #include <ikos/core/support/assert.hpp>
 
+
 namespace ikos {
 namespace core {
 
@@ -508,12 +509,12 @@ public:
 /// {@
 /// \brief Transform between floating point and integer. By zoush99
 
-ikos::core::MachineInt& applyfltoin(FNumber& n){
-  mpz_t res;
-  mpz_init(res);
-  mpfr_get_z(res,n.FNvalue(),MPFR_RNDN);
-  ZNumber Z();
-}
+//ikos::core::MachineInt& applyfltoin(FNumber& n){
+//  mpz_t res;
+//  mpz_init(res);
+//  mpfr_get_z(res,n.FNvalue(),MPFR_RNDN);
+//}
+
 
 FNumber& applyintofl(ikos::core::MachineInt& n){
 
