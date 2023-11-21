@@ -58,9 +58,9 @@
 #include <boost/functional/hash.hpp>
 
 #include <ikos/core/number/exception.hpp>
+#include <ikos/core/number/f_number.hpp>
 #include <ikos/core/number/supported_integral.hpp>
 #include <ikos/core/support/assert.hpp>
-#include "f_number.hpp"
 
 namespace ikos {
 namespace core {

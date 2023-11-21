@@ -64,6 +64,12 @@ enum class UnaryOperator {
   Cast,
 };
 
+/// \brief Transform between floating point and integer. By zoush99
+enum class Transf{
+  FlToIn, // Floating point to integer
+  InToFl, // Integer to floating point
+};
+
 /// \brief Binary arithmetic operations
 enum class BinaryOperator {
   /// \brief Addition
@@ -144,7 +150,7 @@ enum class Predicate {
 };
 
 /// \todo(Addition of unary arithmetic operations) By zoush99
-///// \brief Apply a floating point unary operator on the given operands
+/// \brief Apply a floating point unary operator on the given operands
 template < typename T >
 T apply_unary_operator(UnaryOperator op,
                        const T& operand) {
@@ -161,6 +167,20 @@ T apply_unary_operator(UnaryOperator op,
       ikos_unreachable("unreachable");
   }
 }
+
+/// \brief Transform between floating point and integer. By zoush99
+template <typename T,typename F>
+F apply_trans_operator(Transf op, const T& operand){
+  switch (op) {
+    case Transf::FlToIn:
+      return operand.applyfltoin(operand);
+    case Transf::InToFl:
+      return operand.applyintofl(operand);
+    default:
+      ikos_unreachable("unreachable");
+  }
+}
+
 
 /// \brief Get a textual representation of the given binary operator
 inline const char* bin_operator_text(BinaryOperator op) {

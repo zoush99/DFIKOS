@@ -21,6 +21,7 @@
 #include <boost/functional/hash.hpp>
 
 #include <ikos/core/number/exception.hpp>
+#include <ikos/core/number/machine_int.hpp>
 #include <ikos/core/number/supported_integral_float.hpp>
 #include <ikos/core/number/z_number.hpp>
 #include <ikos/core/support/assert.hpp>
@@ -479,14 +480,14 @@ public:
   }
 
   /// \brief Switching from high precision to low precision
-  FNumber& trunc(int prec) const{
-      ikos_assert(this->_prec>prec);
-  }
+//  FNumber& trunc(int prec) const{
+//      ikos_assert(this->_prec>prec);
+//  }
 
   /// \brief Switching from low precision to high precision
-  FNumber& ext(int prec) const{
-      ikos_assert(this->_prec<prec);
-  }
+//  FNumber& ext(int prec) const{
+//      ikos_assert(this->_prec<prec);
+//  }
 
   /// \brief Change the floating point sign
   FNumber& signcast(){
@@ -496,13 +497,29 @@ public:
       return *this;
   }
 
-  FNumber& cast();
+//  FNumber& cast();
 
   /// @}
+
   friend class QNumber;
   friend class ZNumber;
 }; // end class FNumber
 
+/// {@
+/// \brief Transform between floating point and integer. By zoush99
+
+ikos::core::MachineInt& applyfltoin(FNumber& n){
+  mpz_t res;
+  mpz_init(res);
+  mpfr_get_z(res,n.FNvalue(),MPFR_RNDN);
+  ZNumber Z();
+}
+
+FNumber& applyintofl(ikos::core::MachineInt& n){
+
+}
+
+/// @}
 /// \brief Addition
 inline FNumber operator+(const FNumber& lhs, const FNumber& rhs) {
   if(lhs.FNprec()==rhs.FNprec()){ // left=right

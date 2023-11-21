@@ -1032,13 +1032,12 @@ private:
   }
 
   /// \brief Execute a floating point conversion
-  /// \todo (By zoush99)
   // Modified by zoush99
   void exec_float_conv(FloatUnaryOperator op,const ScalarLit& lhs, const ScalarLit& rhs) {
     ikos_assert_msg(lhs.is_floating_point_var(),
                     "left hand side is not a floating point variable");
 
-    if (rhs.is_floating_point_var()) {
+    if (rhs.is_floating_point()) {
       auto type = cast< ar::FloatType >(lhs.var()->type());
       this->_inv.normal()
           .float_assign(lhs.var(),
@@ -1052,17 +1051,26 @@ private:
 //    this->_inv.normal().float_assign(lhs.var(),rhs);
   }
 
+  /// \todo (By zoush99)
   /// \brief Execute a conversion from floating point to integer
   void exec_float_to_int_conv(const ScalarLit& lhs, const ScalarLit& rhs) {
     ikos_assert_msg(lhs.is_machine_int_var(),
                     "left hand side is not an integer variable");
+    if(rhs.is_floating_point()){
+      auto type = cast< ar::IntegerType >(lhs.var()->type());
+      this->_inv.normal().int_assign(lhs.var(),core::numeric::);  // floating point->integer
+    }else if(rhs.is_floating_point_var()){
 
-    if (rhs.is_floating_point_var()) {
-      this->_inv.normal().uninit_assert_initialized(rhs.var());
+    }else{
+      ikos_unreachable("unexpected arguments");
     }
-    this->_inv.normal().int_assign_nondet(lhs.var());
+//    if (rhs.is_floating_point_var()) {
+//      this->_inv.normal().uninit_assert_initialized(rhs.var());
+//    }
+//    this->_inv.normal().int_assign_nondet(lhs.var());
   }
 
+  /// \todo (By zoush99)
   /// \brief Execute a conversion from integer to floating point
   void exec_int_to_float_conv(const ScalarLit& lhs, const ScalarLit& rhs) {
     ikos_assert_msg(lhs.is_floating_point_var(),
@@ -1517,7 +1525,7 @@ private:
       if (right.is_floating_point()) {
         this->_inv.normal().float_add(pred, left.var(), right.floating_point());
       } else if (right.is_floating_point()) {
-        this->_inv.normal().add_add(pred, left.var(), right.var());
+        this->_inv.normal().float_add(pred, left.var(), right.var());
       } else {
         ikos_unreachable("unexpected right operand");
       }
