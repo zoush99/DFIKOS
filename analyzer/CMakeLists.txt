@@ -296,6 +296,7 @@ target_link_libraries(ikos-analyzer
   ${Boost_LIBRARIES}
   ${GMP_LIB}
   ${GMPXX_LIB}
+  ${MPFR_LIB} # By zoush99
   ${TBB_LIBRARIES}
   ${AR_LIB}
 )

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "frontend/llvm/test/regression/pass",
+		"source" : "frontend/llvm/test/regression/pass"
+	}
+}

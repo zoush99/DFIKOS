@@ -1,0 +1,4135 @@
+{
+	"entries" : 
+	[
+		{
+			"name" : "APPEND_GIT_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Append the current git commit to the version number"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "APRON_APRON_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to apron library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/apron/lib/libapron.so"
+		},
+		{
+			"name" : "APRON_BOX_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to apron boxMPQ library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/apron/lib/libboxMPQ.so"
+		},
+		{
+			"name" : "APRON_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to apron include directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/local/apron/include"
+		},
+		{
+			"name" : "APRON_OCT_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to apron octMPQ library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/apron/lib/liboctMPQ.so"
+		},
+		{
+			"name" : "APRON_PKGRID_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to apron ap_pkgrid library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/apron/lib/libap_pkgrid.so"
+		},
+		{
+			"name" : "APRON_POLKA_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to apron polkaMPQ library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/apron/lib/libpolkaMPQ.so"
+		},
+		{
+			"name" : "APRON_PPL_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to apron ap_ppl library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/apron/lib/libap_ppl.so"
+		},
+		{
+			"name" : "APRON_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to apron install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/local/apron"
+		},
+		{
+			"name" : "BASH_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to bash binary"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/bash"
+		},
+		{
+			"name" : "Boost_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Boost."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0"
+		},
+		{
+			"name" : "CLANGXX_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to clang++ binary"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/llvm-14/bin/clang++"
+		},
+		{
+			"name" : "CLANG_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to clang binary"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/llvm-14/bin/clang"
+		},
+		{
+			"name" : "CMAKE_ADDR2LINE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/addr2line"
+		},
+		{
+			"name" : "CMAKE_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/ar"
+		},
+		{
+			"name" : "CMAKE_BUILD_TYPE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
+				}
+			],
+			"type" : "STRING",
+			"value" : "Debug"
+		},
+		{
+			"name" : "CMAKE_CACHEFILE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "This is the directory where this CMakeCache.txt was created"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/zou/Documents/DFIKOS/cmake-build-debug"
+		},
+		{
+			"name" : "CMAKE_CACHE_MAJOR_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Major version of cmake used to create the current loaded cache"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "3"
+		},
+		{
+			"name" : "CMAKE_CACHE_MINOR_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Minor version of cmake used to create the current loaded cache"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "26"
+		},
+		{
+			"name" : "CMAKE_CACHE_PATCH_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Patch version of cmake used to create the current loaded cache"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "4"
+		},
+		{
+			"name" : "CMAKE_CODEBLOCKS_COMPILER_ID",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Id string of the compiler for the CodeBlocks IDE. Automatically detected when left empty"
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_CODEBLOCKS_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The CodeBlocks executable"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "CMAKE_CODEBLOCKS_EXECUTABLE-NOTFOUND"
+		},
+		{
+			"name" : "CMAKE_CODEBLOCKS_MAKE_ARGUMENTS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Additional command line arguments when CodeBlocks invokes make. Enter e.g. -j<some_number> to get parallel builds"
+				}
+			],
+			"type" : "STRING",
+			"value" : "-j10"
+		},
+		{
+			"name" : "CMAKE_COLOR_DIAGNOSTICS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable colored diagnostics throughout."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
+		},
+		{
+			"name" : "CMAKE_COLOR_MAKEFILE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "(This variable does not exist and should not be used)"
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_COMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to CMake executable."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake"
+		},
+		{
+			"name" : "CMAKE_CPACK_COMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to cpack program executable."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cpack"
+		},
+		{
+			"name" : "CMAKE_CTEST_COMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to ctest program executable."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/ctest"
+		},
+		{
+			"name" : "CMAKE_CXX_ARCHIVE_CREATE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "archive create command"
+				}
+			],
+			"type" : "STRING",
+			"value" : "<CMAKE_AR> Dqc <TARGET> <LINK_FLAGS> <OBJECTS>"
+		},
+		{
+			"name" : "CMAKE_CXX_ARCHIVE_FINISH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "ranlib command"
+				}
+			],
+			"type" : "STRING",
+			"value" : "<CMAKE_RANLIB> -D <TARGET>"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "CXX compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/c++"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ar-9"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ranlib-9"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-g"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-Os -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O3 -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O2 -g -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_C_ARCHIVE_CREATE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "archive create command"
+				}
+			],
+			"type" : "STRING",
+			"value" : "<CMAKE_AR> Dqc <TARGET> <LINK_FLAGS> <OBJECTS>"
+		},
+		{
+			"name" : "CMAKE_C_ARCHIVE_FINISH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "ranlib command"
+				}
+			],
+			"type" : "STRING",
+			"value" : "<CMAKE_RANLIB> -D <TARGET>"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/cc"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ar-9"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ranlib-9"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-g"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-Os -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O3 -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O2 -g -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_DLLTOOL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "CMAKE_DLLTOOL-NOTFOUND"
+		},
+		{
+			"name" : "CMAKE_EXECUTABLE_FORMAT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Executable file format"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "ELF"
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable/Disable output of compile commands during generation."
+				}
+			],
+			"type" : "BOOL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXTRA_GENERATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of external makefile project generator."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "CodeBlocks"
+		},
+		{
+			"name" : "CMAKE_EXTRA_GENERATOR_CXX_SYSTEM_DEFINED_MACROS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "CXX compiler system defined macros"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "__STDC__;1;__STDC_VERSION__;201710L;__STDC_UTF_16__;1;__STDC_UTF_32__;1;__STDC_HOSTED__;1;__GNUC__;9;__GNUC_MINOR__;4;__GNUC_PATCHLEVEL__;0;__VERSION__;\"9.4.0\";__ATOMIC_RELAXED;0;__ATOMIC_SEQ_CST;5;__ATOMIC_ACQUIRE;2;__ATOMIC_RELEASE;3;__ATOMIC_ACQ_REL;4;__ATOMIC_CONSUME;1;__pic__;2;__PIC__;2;__pie__;2;__PIE__;2;__FINITE_MATH_ONLY__;0;_LP64;1;__LP64__;1;__SIZEOF_INT__;4;__SIZEOF_LONG__;8;__SIZEOF_LONG_LONG__;8;__SIZEOF_SHORT__;2;__SIZEOF_FLOAT__;4;__SIZEOF_DOUBLE__;8;__SIZEOF_LONG_DOUBLE__;16;__SIZEOF_SIZE_T__;8;__CHAR_BIT__;8;__BIGGEST_ALIGNMENT__;16;__ORDER_LITTLE_ENDIAN__;1234;__ORDER_BIG_ENDIAN__;4321;__ORDER_PDP_ENDIAN__;3412;__BYTE_ORDER__;__ORDER_LITTLE_ENDIAN__;__FLOAT_WORD_ORDER__;__ORDER_LITTLE_ENDIAN__;__SIZEOF_POINTER__;8;__SIZE_TYPE__;long unsigned int;__PTRDIFF_TYPE__;long int;__WCHAR_TYPE__;int;__WINT_TYPE__;unsigned int;__INTMAX_TYPE__;long int;__UINTMAX_TYPE__;long unsigned int;__CHAR16_TYPE__;short unsigned int;__CHAR32_TYPE__;unsigned int;__SIG_ATOMIC_TYPE__;int;__INT8_TYPE__;signed char;__INT16_TYPE__;short int;__INT32_TYPE__;int;__INT64_TYPE__;long int;__UINT8_TYPE__;unsigned char;__UINT16_TYPE__;short unsigned int;__UINT32_TYPE__;unsigned int;__UINT64_TYPE__;long unsigned int;__INT_LEAST8_TYPE__;signed char;__INT_LEAST16_TYPE__;short int;__INT_LEAST32_TYPE__;int;__INT_LEAST64_TYPE__;long int;__UINT_LEAST8_TYPE__;unsigned char;__UINT_LEAST16_TYPE__;short unsigned int;__UINT_LEAST32_TYPE__;unsigned int;__UINT_LEAST64_TYPE__;long unsigned int;__INT_FAST8_TYPE__;signed char;__INT_FAST16_TYPE__;long int;__INT_FAST32_TYPE__;long int;__INT_FAST64_TYPE__;long int;__UINT_FAST8_TYPE__;unsigned char;__UINT_FAST16_TYPE__;long unsigned int;__UINT_FAST32_TYPE__;long unsigned int;__UINT_FAST64_TYPE__;long unsigned int;__INTPTR_TYPE__;long int;__UINTPTR_TYPE__;long unsigned int;__has_include(STR);__has_include__(STR);__has_include_next(STR);__has_include_next__(STR);__GXX_ABI_VERSION;1013;__SCHAR_MAX__;0x7f;__SHRT_MAX__;0x7fff;__INT_MAX__;0x7fffffff;__LONG_MAX__;0x7fffffffffffffffL;__LONG_LONG_MAX__;0x7fffffffffffffffLL;__WCHAR_MAX__;0x7fffffff;__WCHAR_MIN__;(-__WCHAR_MAX__ - 1);__WINT_MAX__;0xffffffffU;__WINT_MIN__;0U;__PTRDIFF_MAX__;0x7fffffffffffffffL;__SIZE_MAX__;0xffffffffffffffffUL;__SCHAR_WIDTH__;8;__SHRT_WIDTH__;16;__INT_WIDTH__;32;__LONG_WIDTH__;64;__LONG_LONG_WIDTH__;64;__WCHAR_WIDTH__;32;__WINT_WIDTH__;32;__PTRDIFF_WIDTH__;64;__SIZE_WIDTH__;64;__INTMAX_MAX__;0x7fffffffffffffffL;__INTMAX_C(c);c ## L;__UINTMAX_MAX__;0xffffffffffffffffUL;__UINTMAX_C(c);c ## UL;__INTMAX_WIDTH__;64;__SIG_ATOMIC_MAX__;0x7fffffff;__SIG_ATOMIC_MIN__;(-__SIG_ATOMIC_MAX__ - 1);__SIG_ATOMIC_WIDTH__;32;__INT8_MAX__;0x7f;__INT16_MAX__;0x7fff;__INT32_MAX__;0x7fffffff;__INT64_MAX__;0x7fffffffffffffffL;__UINT8_MAX__;0xff;__UINT16_MAX__;0xffff;__UINT32_MAX__;0xffffffffU;__UINT64_MAX__;0xffffffffffffffffUL;__INT_LEAST8_MAX__;0x7f;__INT8_C(c);c;__INT_LEAST8_WIDTH__;8;__INT_LEAST16_MAX__;0x7fff;__INT16_C(c);c;__INT_LEAST16_WIDTH__;16;__INT_LEAST32_MAX__;0x7fffffff;__INT32_C(c);c;__INT_LEAST32_WIDTH__;32;__INT_LEAST64_MAX__;0x7fffffffffffffffL;__INT64_C(c);c ## L;__INT_LEAST64_WIDTH__;64;__UINT_LEAST8_MAX__;0xff;__UINT8_C(c);c;__UINT_LEAST16_MAX__;0xffff;__UINT16_C(c);c;__UINT_LEAST32_MAX__;0xffffffffU;__UINT32_C(c);c ## U;__UINT_LEAST64_MAX__;0xffffffffffffffffUL;__UINT64_C(c);c ## UL;__INT_FAST8_MAX__;0x7f;__INT_FAST8_WIDTH__;8;__INT_FAST16_MAX__;0x7fffffffffffffffL;__INT_FAST16_WIDTH__;64;__INT_FAST32_MAX__;0x7fffffffffffffffL;__INT_FAST32_WIDTH__;64;__INT_FAST64_MAX__;0x7fffffffffffffffL;__INT_FAST64_WIDTH__;64;__UINT_FAST8_MAX__;0xff;__UINT_FAST16_MAX__;0xffffffffffffffffUL;__UINT_FAST32_MAX__;0xffffffffffffffffUL;__UINT_FAST64_MAX__;0xffffffffffffffffUL;__INTPTR_MAX__;0x7fffffffffffffffL;__INTPTR_WIDTH__;64;__UINTPTR_MAX__;0xffffffffffffffffUL;__GCC_IEC_559;2;__GCC_IEC_559_COMPLEX;2;__FLT_EVAL_METHOD__;0;__FLT_EVAL_METHOD_TS_18661_3__;0;__DEC_EVAL_METHOD__;2;__FLT_RADIX__;2;__FLT_MANT_DIG__;24;__FLT_DIG__;6;__FLT_MIN_EXP__;(-125);__FLT_MIN_10_EXP__;(-37);__FLT_MAX_EXP__;128;__FLT_MAX_10_EXP__;38;__FLT_DECIMAL_DIG__;9;__FLT_MAX__;3.40282346638528859811704183484516925e+38F;__FLT_MIN__;1.17549435082228750796873653722224568e-38F;__FLT_EPSILON__;1.19209289550781250000000000000000000e-7F;__FLT_DENORM_MIN__;1.40129846432481707092372958328991613e-45F;__FLT_HAS_DENORM__;1;__FLT_HAS_INFINITY__;1;__FLT_HAS_QUIET_NAN__;1;__DBL_MANT_DIG__;53;__DBL_DIG__;15;__DBL_MIN_EXP__;(-1021);__DBL_MIN_10_EXP__;(-307);__DBL_MAX_EXP__;1024;__DBL_MAX_10_EXP__;308;__DBL_DECIMAL_DIG__;17;__DBL_MAX__;((double)1.79769313486231570814527423731704357e+308L);__DBL_MIN__;((double)2.22507385850720138309023271733240406e-308L);__DBL_EPSILON__;((double)2.22044604925031308084726333618164062e-16L);__DBL_DENORM_MIN__;((double)4.94065645841246544176568792868221372e-324L);__DBL_HAS_DENORM__;1;__DBL_HAS_INFINITY__;1;__DBL_HAS_QUIET_NAN__;1;__LDBL_MANT_DIG__;64;__LDBL_DIG__;18;__LDBL_MIN_EXP__;(-16381);__LDBL_MIN_10_EXP__;(-4931);__LDBL_MAX_EXP__;16384;__LDBL_MAX_10_EXP__;4932;__DECIMAL_DIG__;21;__LDBL_DECIMAL_DIG__;21;__LDBL_MAX__;1.18973149535723176502126385303097021e+4932L;__LDBL_MIN__;3.36210314311209350626267781732175260e-4932L;__LDBL_EPSILON__;1.08420217248550443400745280086994171e-19L;__LDBL_DENORM_MIN__;3.64519953188247460252840593361941982e-4951L;__LDBL_HAS_DENORM__;1;__LDBL_HAS_INFINITY__;1;__LDBL_HAS_QUIET_NAN__;1;__FLT32_MANT_DIG__;24;__FLT32_DIG__;6;__FLT32_MIN_EXP__;(-125);__FLT32_MIN_10_EXP__;(-37);__FLT32_MAX_EXP__;128;__FLT32_MAX_10_EXP__;38;__FLT32_DECIMAL_DIG__;9;__FLT32_MAX__;3.40282346638528859811704183484516925e+38F32;__FLT32_MIN__;1.17549435082228750796873653722224568e-38F32;__FLT32_EPSILON__;1.19209289550781250000000000000000000e-7F32;__FLT32_DENORM_MIN__;1.40129846432481707092372958328991613e-45F32;__FLT32_HAS_DENORM__;1;__FLT32_HAS_INFINITY__;1;__FLT32_HAS_QUIET_NAN__;1;__FLT64_MANT_DIG__;53;__FLT64_DIG__;15;__FLT64_MIN_EXP__;(-1021);__FLT64_MIN_10_EXP__;(-307);__FLT64_MAX_EXP__;1024;__FLT64_MAX_10_EXP__;308;__FLT64_DECIMAL_DIG__;17;__FLT64_MAX__;1.79769313486231570814527423731704357e+308F64;__FLT64_MIN__;2.22507385850720138309023271733240406e-308F64;__FLT64_EPSILON__;2.22044604925031308084726333618164062e-16F64;__FLT64_DENORM_MIN__;4.94065645841246544176568792868221372e-324F64;__FLT64_HAS_DENORM__;1;__FLT64_HAS_INFINITY__;1;__FLT64_HAS_QUIET_NAN__;1;__FLT128_MANT_DIG__;113;__FLT128_DIG__;33;__FLT128_MIN_EXP__;(-16381);__FLT128_MIN_10_EXP__;(-4931);__FLT128_MAX_EXP__;16384;__FLT128_MAX_10_EXP__;4932;__FLT128_DECIMAL_DIG__;36;__FLT128_MAX__;1.18973149535723176508575932662800702e+4932F128;__FLT128_MIN__;3.36210314311209350626267781732175260e-4932F128;__FLT128_EPSILON__;1.92592994438723585305597794258492732e-34F128;__FLT128_DENORM_MIN__;6.47517511943802511092443895822764655e-4966F128;__FLT128_HAS_DENORM__;1;__FLT128_HAS_INFINITY__;1;__FLT128_HAS_QUIET_NAN__;1;__FLT32X_MANT_DIG__;53;__FLT32X_DIG__;15;__FLT32X_MIN_EXP__;(-1021);__FLT32X_MIN_10_EXP__;(-307);__FLT32X_MAX_EXP__;1024;__FLT32X_MAX_10_EXP__;308;__FLT32X_DECIMAL_DIG__;17;__FLT32X_MAX__;1.79769313486231570814527423731704357e+308F32x;__FLT32X_MIN__;2.22507385850720138309023271733240406e-308F32x;__FLT32X_EPSILON__;2.22044604925031308084726333618164062e-16F32x;__FLT32X_DENORM_MIN__;4.94065645841246544176568792868221372e-324F32x;__FLT32X_HAS_DENORM__;1;__FLT32X_HAS_INFINITY__;1;__FLT32X_HAS_QUIET_NAN__;1;__FLT64X_MANT_DIG__;64;__FLT64X_DIG__;18;__FLT64X_MIN_EXP__;(-16381);__FLT64X_MIN_10_EXP__;(-4931);__FLT64X_MAX_EXP__;16384;__FLT64X_MAX_10_EXP__;4932;__FLT64X_DECIMAL_DIG__;21;__FLT64X_MAX__;1.18973149535723176502126385303097021e+4932F64x;__FLT64X_MIN__;3.36210314311209350626267781732175260e-4932F64x;__FLT64X_EPSILON__;1.08420217248550443400745280086994171e-19F64x;__FLT64X_DENORM_MIN__;3.64519953188247460252840593361941982e-4951F64x;__FLT64X_HAS_DENORM__;1;__FLT64X_HAS_INFINITY__;1;__FLT64X_HAS_QUIET_NAN__;1;__DEC32_MANT_DIG__;7;__DEC32_MIN_EXP__;(-94);__DEC32_MAX_EXP__;97;__DEC32_MIN__;1E-95DF;__DEC32_MAX__;9.999999E96DF;__DEC32_EPSILON__;1E-6DF;__DEC32_SUBNORMAL_MIN__;0.000001E-95DF;__DEC64_MANT_DIG__;16;__DEC64_MIN_EXP__;(-382);__DEC64_MAX_EXP__;385;__DEC64_MIN__;1E-383DD;__DEC64_MAX__;9.999999999999999E384DD;__DEC64_EPSILON__;1E-15DD;__DEC64_SUBNORMAL_MIN__;0.000000000000001E-383DD;__DEC128_MANT_DIG__;34;__DEC128_MIN_EXP__;(-6142);__DEC128_MAX_EXP__;6145;__DEC128_MIN__;1E-6143DL;__DEC128_MAX__;9.999999999999999999999999999999999E6144DL;__DEC128_EPSILON__;1E-33DL;__DEC128_SUBNORMAL_MIN__;0.000000000000000000000000000000001E-6143DL;__REGISTER_PREFIX__; ;__USER_LABEL_PREFIX__; ;__GNUC_STDC_INLINE__;1;__NO_INLINE__;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8;1;__GCC_ATOMIC_BOOL_LOCK_FREE;2;__GCC_ATOMIC_CHAR_LOCK_FREE;2;__GCC_ATOMIC_CHAR16_T_LOCK_FREE;2;__GCC_ATOMIC_CHAR32_T_LOCK_FREE;2;__GCC_ATOMIC_WCHAR_T_LOCK_FREE;2;__GCC_ATOMIC_SHORT_LOCK_FREE;2;__GCC_ATOMIC_INT_LOCK_FREE;2;__GCC_ATOMIC_LONG_LOCK_FREE;2;__GCC_ATOMIC_LLONG_LOCK_FREE;2;__GCC_ATOMIC_TEST_AND_SET_TRUEVAL;1;__GCC_ATOMIC_POINTER_LOCK_FREE;2;__HAVE_SPECULATION_SAFE_VALUE;1;__GCC_HAVE_DWARF2_CFI_ASM;1;__PRAGMA_REDEFINE_EXTNAME;1;__SSP_STRONG__;3;__SIZEOF_INT128__;16;__SIZEOF_WCHAR_T__;4;__SIZEOF_WINT_T__;4;__SIZEOF_PTRDIFF_T__;8;__amd64;1;__amd64__;1;__x86_64;1;__x86_64__;1;__SIZEOF_FLOAT80__;16;__SIZEOF_FLOAT128__;16;__ATOMIC_HLE_ACQUIRE;65536;__ATOMIC_HLE_RELEASE;131072;__GCC_ASM_FLAG_OUTPUTS__;1;__k8;1;__k8__;1;__code_model_small__;1;__MMX__;1;__SSE__;1;__SSE2__;1;__FXSR__;1;__SSE_MATH__;1;__SSE2_MATH__;1;__SEG_FS;1;__SEG_GS;1;__CET__;3;__gnu_linux__;1;__linux;1;__linux__;1;linux;1;__unix;1;__unix__;1;unix;1;__ELF__;1;__DECIMAL_BID_FORMAT__;1;_STDC_PREDEF_H;1;__STDC_IEC_559__;1;__STDC_IEC_559_COMPLEX__;1;__STDC_ISO_10646__;201706L;__STDC__;1;__cplusplus;201402L;__STDC_UTF_16__;1;__STDC_UTF_32__;1;__STDC_HOSTED__;1;__GNUC__;9;__GNUC_MINOR__;4;__GNUC_PATCHLEVEL__;0;__VERSION__;\"9.4.0\";__ATOMIC_RELAXED;0;__ATOMIC_SEQ_CST;5;__ATOMIC_ACQUIRE;2;__ATOMIC_RELEASE;3;__ATOMIC_ACQ_REL;4;__ATOMIC_CONSUME;1;__pic__;2;__PIC__;2;__pie__;2;__PIE__;2;__FINITE_MATH_ONLY__;0;_LP64;1;__LP64__;1;__SIZEOF_INT__;4;__SIZEOF_LONG__;8;__SIZEOF_LONG_LONG__;8;__SIZEOF_SHORT__;2;__SIZEOF_FLOAT__;4;__SIZEOF_DOUBLE__;8;__SIZEOF_LONG_DOUBLE__;16;__SIZEOF_SIZE_T__;8;__CHAR_BIT__;8;__BIGGEST_ALIGNMENT__;16;__ORDER_LITTLE_ENDIAN__;1234;__ORDER_BIG_ENDIAN__;4321;__ORDER_PDP_ENDIAN__;3412;__BYTE_ORDER__;__ORDER_LITTLE_ENDIAN__;__FLOAT_WORD_ORDER__;__ORDER_LITTLE_ENDIAN__;__SIZEOF_POINTER__;8;__GNUG__;9;__SIZE_TYPE__;long unsigned int;__PTRDIFF_TYPE__;long int;__WCHAR_TYPE__;int;__WINT_TYPE__;unsigned int;__INTMAX_TYPE__;long int;__UINTMAX_TYPE__;long unsigned int;__CHAR16_TYPE__;short unsigned int;__CHAR32_TYPE__;unsigned int;__SIG_ATOMIC_TYPE__;int;__INT8_TYPE__;signed char;__INT16_TYPE__;short int;__INT32_TYPE__;int;__INT64_TYPE__;long int;__UINT8_TYPE__;unsigned char;__UINT16_TYPE__;short unsigned int;__UINT32_TYPE__;unsigned int;__UINT64_TYPE__;long unsigned int;__INT_LEAST8_TYPE__;signed char;__INT_LEAST16_TYPE__;short int;__INT_LEAST32_TYPE__;int;__INT_LEAST64_TYPE__;long int;__UINT_LEAST8_TYPE__;unsigned char;__UINT_LEAST16_TYPE__;short unsigned int;__UINT_LEAST32_TYPE__;unsigned int;__UINT_LEAST64_TYPE__;long unsigned int;__INT_FAST8_TYPE__;signed char;__INT_FAST16_TYPE__;long int;__INT_FAST32_TYPE__;long int;__INT_FAST64_TYPE__;long int;__UINT_FAST8_TYPE__;unsigned char;__UINT_FAST16_TYPE__;long unsigned int;__UINT_FAST32_TYPE__;long unsigned int;__UINT_FAST64_TYPE__;long unsigned int;__INTPTR_TYPE__;long int;__UINTPTR_TYPE__;long unsigned int;__has_include(STR);__has_include__(STR);__has_include_next(STR);__has_include_next__(STR);__GXX_WEAK__;1;__DEPRECATED;1;__GXX_RTTI;1;__cpp_rtti;199711;__GXX_EXPERIMENTAL_CXX0X__;1;__cpp_binary_literals;201304;__cpp_hex_float;201603;__cpp_runtime_arrays;198712;__cpp_unicode_characters;200704;__cpp_raw_strings;200710;__cpp_unicode_literals;200710;__cpp_user_defined_literals;200809;__cpp_lambdas;200907;__cpp_range_based_for;200907;__cpp_static_assert;200410;__cpp_decltype;200707;__cpp_attributes;200809;__cpp_rvalue_reference;200610;__cpp_rvalue_references;200610;__cpp_variadic_templates;200704;__cpp_initializer_lists;200806;__cpp_delegating_constructors;200604;__cpp_nsdmi;200809;__cpp_inheriting_constructors;201511;__cpp_ref_qualifiers;200710;__cpp_alias_templates;200704;__cpp_return_type_deduction;201304;__cpp_init_captures;201304;__cpp_generic_lambdas;201304;__cpp_constexpr;201304;__cpp_decltype_auto;201304;__cpp_aggregate_nsdmi;201304;__cpp_variable_templates;201304;__cpp_digit_separators;201309;__cpp_sized_deallocation;201309;__cpp_threadsafe_static_init;200806;__EXCEPTIONS;1;__cpp_exceptions;199711;__GXX_ABI_VERSION;1013;__SCHAR_MAX__;0x7f;__SHRT_MAX__;0x7fff;__INT_MAX__;0x7fffffff;__LONG_MAX__;0x7fffffffffffffffL;__LONG_LONG_MAX__;0x7fffffffffffffffLL;__WCHAR_MAX__;0x7fffffff;__WCHAR_MIN__;(-__WCHAR_MAX__ - 1);__WINT_MAX__;0xffffffffU;__WINT_MIN__;0U;__PTRDIFF_MAX__;0x7fffffffffffffffL;__SIZE_MAX__;0xffffffffffffffffUL;__SCHAR_WIDTH__;8;__SHRT_WIDTH__;16;__INT_WIDTH__;32;__LONG_WIDTH__;64;__LONG_LONG_WIDTH__;64;__WCHAR_WIDTH__;32;__WINT_WIDTH__;32;__PTRDIFF_WIDTH__;64;__SIZE_WIDTH__;64;__GLIBCXX_TYPE_INT_N_0;__int128;__GLIBCXX_BITSIZE_INT_N_0;128;__INTMAX_MAX__;0x7fffffffffffffffL;__INTMAX_C(c);c ## L;__UINTMAX_MAX__;0xffffffffffffffffUL;__UINTMAX_C(c);c ## UL;__INTMAX_WIDTH__;64;__SIG_ATOMIC_MAX__;0x7fffffff;__SIG_ATOMIC_MIN__;(-__SIG_ATOMIC_MAX__ - 1);__SIG_ATOMIC_WIDTH__;32;__INT8_MAX__;0x7f;__INT16_MAX__;0x7fff;__INT32_MAX__;0x7fffffff;__INT64_MAX__;0x7fffffffffffffffL;__UINT8_MAX__;0xff;__UINT16_MAX__;0xffff;__UINT32_MAX__;0xffffffffU;__UINT64_MAX__;0xffffffffffffffffUL;__INT_LEAST8_MAX__;0x7f;__INT8_C(c);c;__INT_LEAST8_WIDTH__;8;__INT_LEAST16_MAX__;0x7fff;__INT16_C(c);c;__INT_LEAST16_WIDTH__;16;__INT_LEAST32_MAX__;0x7fffffff;__INT32_C(c);c;__INT_LEAST32_WIDTH__;32;__INT_LEAST64_MAX__;0x7fffffffffffffffL;__INT64_C(c);c ## L;__INT_LEAST64_WIDTH__;64;__UINT_LEAST8_MAX__;0xff;__UINT8_C(c);c;__UINT_LEAST16_MAX__;0xffff;__UINT16_C(c);c;__UINT_LEAST32_MAX__;0xffffffffU;__UINT32_C(c);c ## U;__UINT_LEAST64_MAX__;0xffffffffffffffffUL;__UINT64_C(c);c ## UL;__INT_FAST8_MAX__;0x7f;__INT_FAST8_WIDTH__;8;__INT_FAST16_MAX__;0x7fffffffffffffffL;__INT_FAST16_WIDTH__;64;__INT_FAST32_MAX__;0x7fffffffffffffffL;__INT_FAST32_WIDTH__;64;__INT_FAST64_MAX__;0x7fffffffffffffffL;__INT_FAST64_WIDTH__;64;__UINT_FAST8_MAX__;0xff;__UINT_FAST16_MAX__;0xffffffffffffffffUL;__UINT_FAST32_MAX__;0xffffffffffffffffUL;__UINT_FAST64_MAX__;0xffffffffffffffffUL;__INTPTR_MAX__;0x7fffffffffffffffL;__INTPTR_WIDTH__;64;__UINTPTR_MAX__;0xffffffffffffffffUL;__GCC_IEC_559;2;__GCC_IEC_559_COMPLEX;2;__FLT_EVAL_METHOD__;0;__FLT_EVAL_METHOD_TS_18661_3__;0;__DEC_EVAL_METHOD__;2;__FLT_RADIX__;2;__FLT_MANT_DIG__;24;__FLT_DIG__;6;__FLT_MIN_EXP__;(-125);__FLT_MIN_10_EXP__;(-37);__FLT_MAX_EXP__;128;__FLT_MAX_10_EXP__;38;__FLT_DECIMAL_DIG__;9;__FLT_MAX__;3.40282346638528859811704183484516925e+38F;__FLT_MIN__;1.17549435082228750796873653722224568e-38F;__FLT_EPSILON__;1.19209289550781250000000000000000000e-7F;__FLT_DENORM_MIN__;1.40129846432481707092372958328991613e-45F;__FLT_HAS_DENORM__;1;__FLT_HAS_INFINITY__;1;__FLT_HAS_QUIET_NAN__;1;__DBL_MANT_DIG__;53;__DBL_DIG__;15;__DBL_MIN_EXP__;(-1021);__DBL_MIN_10_EXP__;(-307);__DBL_MAX_EXP__;1024;__DBL_MAX_10_EXP__;308;__DBL_DECIMAL_DIG__;17;__DBL_MAX__;double(1.79769313486231570814527423731704357e+308L);__DBL_MIN__;double(2.22507385850720138309023271733240406e-308L);__DBL_EPSILON__;double(2.22044604925031308084726333618164062e-16L);__DBL_DENORM_MIN__;double(4.94065645841246544176568792868221372e-324L);__DBL_HAS_DENORM__;1;__DBL_HAS_INFINITY__;1;__DBL_HAS_QUIET_NAN__;1;__LDBL_MANT_DIG__;64;__LDBL_DIG__;18;__LDBL_MIN_EXP__;(-16381);__LDBL_MIN_10_EXP__;(-4931);__LDBL_MAX_EXP__;16384;__LDBL_MAX_10_EXP__;4932;__DECIMAL_DIG__;21;__LDBL_DECIMAL_DIG__;21;__LDBL_MAX__;1.18973149535723176502126385303097021e+4932L;__LDBL_MIN__;3.36210314311209350626267781732175260e-4932L;__LDBL_EPSILON__;1.08420217248550443400745280086994171e-19L;__LDBL_DENORM_MIN__;3.64519953188247460252840593361941982e-4951L;__LDBL_HAS_DENORM__;1;__LDBL_HAS_INFINITY__;1;__LDBL_HAS_QUIET_NAN__;1;__FLT32_MANT_DIG__;24;__FLT32_DIG__;6;__FLT32_MIN_EXP__;(-125);__FLT32_MIN_10_EXP__;(-37);__FLT32_MAX_EXP__;128;__FLT32_MAX_10_EXP__;38;__FLT32_DECIMAL_DIG__;9;__FLT32_MAX__;3.40282346638528859811704183484516925e+38F32;__FLT32_MIN__;1.17549435082228750796873653722224568e-38F32;__FLT32_EPSILON__;1.19209289550781250000000000000000000e-7F32;__FLT32_DENORM_MIN__;1.40129846432481707092372958328991613e-45F32;__FLT32_HAS_DENORM__;1;__FLT32_HAS_INFINITY__;1;__FLT32_HAS_QUIET_NAN__;1;__FLT64_MANT_DIG__;53;__FLT64_DIG__;15;__FLT64_MIN_EXP__;(-1021);__FLT64_MIN_10_EXP__;(-307);__FLT64_MAX_EXP__;1024;__FLT64_MAX_10_EXP__;308;__FLT64_DECIMAL_DIG__;17;__FLT64_MAX__;1.79769313486231570814527423731704357e+308F64;__FLT64_MIN__;2.22507385850720138309023271733240406e-308F64;__FLT64_EPSILON__;2.22044604925031308084726333618164062e-16F64;__FLT64_DENORM_MIN__;4.94065645841246544176568792868221372e-324F64;__FLT64_HAS_DENORM__;1;__FLT64_HAS_INFINITY__;1;__FLT64_HAS_QUIET_NAN__;1;__FLT128_MANT_DIG__;113;__FLT128_DIG__;33;__FLT128_MIN_EXP__;(-16381);__FLT128_MIN_10_EXP__;(-4931);__FLT128_MAX_EXP__;16384;__FLT128_MAX_10_EXP__;4932;__FLT128_DECIMAL_DIG__;36;__FLT128_MAX__;1.18973149535723176508575932662800702e+4932F128;__FLT128_MIN__;3.36210314311209350626267781732175260e-4932F128;__FLT128_EPSILON__;1.92592994438723585305597794258492732e-34F128;__FLT128_DENORM_MIN__;6.47517511943802511092443895822764655e-4966F128;__FLT128_HAS_DENORM__;1;__FLT128_HAS_INFINITY__;1;__FLT128_HAS_QUIET_NAN__;1;__FLT32X_MANT_DIG__;53;__FLT32X_DIG__;15;__FLT32X_MIN_EXP__;(-1021);__FLT32X_MIN_10_EXP__;(-307);__FLT32X_MAX_EXP__;1024;__FLT32X_MAX_10_EXP__;308;__FLT32X_DECIMAL_DIG__;17;__FLT32X_MAX__;1.79769313486231570814527423731704357e+308F32x;__FLT32X_MIN__;2.22507385850720138309023271733240406e-308F32x;__FLT32X_EPSILON__;2.22044604925031308084726333618164062e-16F32x;__FLT32X_DENORM_MIN__;4.94065645841246544176568792868221372e-324F32x;__FLT32X_HAS_DENORM__;1;__FLT32X_HAS_INFINITY__;1;__FLT32X_HAS_QUIET_NAN__;1;__FLT64X_MANT_DIG__;64;__FLT64X_DIG__;18;__FLT64X_MIN_EXP__;(-16381);__FLT64X_MIN_10_EXP__;(-4931);__FLT64X_MAX_EXP__;16384;__FLT64X_MAX_10_EXP__;4932;__FLT64X_DECIMAL_DIG__;21;__FLT64X_MAX__;1.18973149535723176502126385303097021e+4932F64x;__FLT64X_MIN__;3.36210314311209350626267781732175260e-4932F64x;__FLT64X_EPSILON__;1.08420217248550443400745280086994171e-19F64x;__FLT64X_DENORM_MIN__;3.64519953188247460252840593361941982e-4951F64x;__FLT64X_HAS_DENORM__;1;__FLT64X_HAS_INFINITY__;1;__FLT64X_HAS_QUIET_NAN__;1;__DEC32_MANT_DIG__;7;__DEC32_MIN_EXP__;(-94);__DEC32_MAX_EXP__;97;__DEC32_MIN__;1E-95DF;__DEC32_MAX__;9.999999E96DF;__DEC32_EPSILON__;1E-6DF;__DEC32_SUBNORMAL_MIN__;0.000001E-95DF;__DEC64_MANT_DIG__;16;__DEC64_MIN_EXP__;(-382);__DEC64_MAX_EXP__;385;__DEC64_MIN__;1E-383DD;__DEC64_MAX__;9.999999999999999E384DD;__DEC64_EPSILON__;1E-15DD;__DEC64_SUBNORMAL_MIN__;0.000000000000001E-383DD;__DEC128_MANT_DIG__;34;__DEC128_MIN_EXP__;(-6142);__DEC128_MAX_EXP__;6145;__DEC128_MIN__;1E-6143DL;__DEC128_MAX__;9.999999999999999999999999999999999E6144DL;__DEC128_EPSILON__;1E-33DL;__DEC128_SUBNORMAL_MIN__;0.000000000000000000000000000000001E-6143DL;__REGISTER_PREFIX__; ;__USER_LABEL_PREFIX__; ;__GNUC_STDC_INLINE__;1;__NO_INLINE__;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8;1;__GCC_ATOMIC_BOOL_LOCK_FREE;2;__GCC_ATOMIC_CHAR_LOCK_FREE;2;__GCC_ATOMIC_CHAR16_T_LOCK_FREE;2;__GCC_ATOMIC_CHAR32_T_LOCK_FREE;2;__GCC_ATOMIC_WCHAR_T_LOCK_FREE;2;__GCC_ATOMIC_SHORT_LOCK_FREE;2;__GCC_ATOMIC_INT_LOCK_FREE;2;__GCC_ATOMIC_LONG_LOCK_FREE;2;__GCC_ATOMIC_LLONG_LOCK_FREE;2;__GCC_ATOMIC_TEST_AND_SET_TRUEVAL;1;__GCC_ATOMIC_POINTER_LOCK_FREE;2;__HAVE_SPECULATION_SAFE_VALUE;1;__GCC_HAVE_DWARF2_CFI_ASM;1;__PRAGMA_REDEFINE_EXTNAME;1;__SSP_STRONG__;3;__SIZEOF_INT128__;16;__SIZEOF_WCHAR_T__;4;__SIZEOF_WINT_T__;4;__SIZEOF_PTRDIFF_T__;8;__amd64;1;__amd64__;1;__x86_64;1;__x86_64__;1;__SIZEOF_FLOAT80__;16;__SIZEOF_FLOAT128__;16;__ATOMIC_HLE_ACQUIRE;65536;__ATOMIC_HLE_RELEASE;131072;__GCC_ASM_FLAG_OUTPUTS__;1;__k8;1;__k8__;1;__code_model_small__;1;__MMX__;1;__SSE__;1;__SSE2__;1;__FXSR__;1;__SSE_MATH__;1;__SSE2_MATH__;1;__SEG_FS;1;__SEG_GS;1;__CET__;3;__gnu_linux__;1;__linux;1;__linux__;1;linux;1;__unix;1;__unix__;1;unix;1;__ELF__;1;__DECIMAL_BID_FORMAT__;1;_GNU_SOURCE;1;_STDC_PREDEF_H;1;__STDC_IEC_559__;1;__STDC_IEC_559_COMPLEX__;1;__STDC_ISO_10646__;201706L"
+		},
+		{
+			"name" : "CMAKE_EXTRA_GENERATOR_CXX_SYSTEM_INCLUDE_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "CXX compiler system include directories"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/include/c++/9;/usr/include/x86_64-linux-gnu/c++/9;/usr/include/c++/9/backward;/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include"
+		},
+		{
+			"name" : "CMAKE_EXTRA_GENERATOR_C_SYSTEM_DEFINED_MACROS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "C compiler system defined macros"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "__STDC__;1;__STDC_VERSION__;201710L;__STDC_UTF_16__;1;__STDC_UTF_32__;1;__STDC_HOSTED__;1;__GNUC__;9;__GNUC_MINOR__;4;__GNUC_PATCHLEVEL__;0;__VERSION__;\"9.4.0\";__ATOMIC_RELAXED;0;__ATOMIC_SEQ_CST;5;__ATOMIC_ACQUIRE;2;__ATOMIC_RELEASE;3;__ATOMIC_ACQ_REL;4;__ATOMIC_CONSUME;1;__pic__;2;__PIC__;2;__pie__;2;__PIE__;2;__FINITE_MATH_ONLY__;0;_LP64;1;__LP64__;1;__SIZEOF_INT__;4;__SIZEOF_LONG__;8;__SIZEOF_LONG_LONG__;8;__SIZEOF_SHORT__;2;__SIZEOF_FLOAT__;4;__SIZEOF_DOUBLE__;8;__SIZEOF_LONG_DOUBLE__;16;__SIZEOF_SIZE_T__;8;__CHAR_BIT__;8;__BIGGEST_ALIGNMENT__;16;__ORDER_LITTLE_ENDIAN__;1234;__ORDER_BIG_ENDIAN__;4321;__ORDER_PDP_ENDIAN__;3412;__BYTE_ORDER__;__ORDER_LITTLE_ENDIAN__;__FLOAT_WORD_ORDER__;__ORDER_LITTLE_ENDIAN__;__SIZEOF_POINTER__;8;__SIZE_TYPE__;long unsigned int;__PTRDIFF_TYPE__;long int;__WCHAR_TYPE__;int;__WINT_TYPE__;unsigned int;__INTMAX_TYPE__;long int;__UINTMAX_TYPE__;long unsigned int;__CHAR16_TYPE__;short unsigned int;__CHAR32_TYPE__;unsigned int;__SIG_ATOMIC_TYPE__;int;__INT8_TYPE__;signed char;__INT16_TYPE__;short int;__INT32_TYPE__;int;__INT64_TYPE__;long int;__UINT8_TYPE__;unsigned char;__UINT16_TYPE__;short unsigned int;__UINT32_TYPE__;unsigned int;__UINT64_TYPE__;long unsigned int;__INT_LEAST8_TYPE__;signed char;__INT_LEAST16_TYPE__;short int;__INT_LEAST32_TYPE__;int;__INT_LEAST64_TYPE__;long int;__UINT_LEAST8_TYPE__;unsigned char;__UINT_LEAST16_TYPE__;short unsigned int;__UINT_LEAST32_TYPE__;unsigned int;__UINT_LEAST64_TYPE__;long unsigned int;__INT_FAST8_TYPE__;signed char;__INT_FAST16_TYPE__;long int;__INT_FAST32_TYPE__;long int;__INT_FAST64_TYPE__;long int;__UINT_FAST8_TYPE__;unsigned char;__UINT_FAST16_TYPE__;long unsigned int;__UINT_FAST32_TYPE__;long unsigned int;__UINT_FAST64_TYPE__;long unsigned int;__INTPTR_TYPE__;long int;__UINTPTR_TYPE__;long unsigned int;__has_include(STR);__has_include__(STR);__has_include_next(STR);__has_include_next__(STR);__GXX_ABI_VERSION;1013;__SCHAR_MAX__;0x7f;__SHRT_MAX__;0x7fff;__INT_MAX__;0x7fffffff;__LONG_MAX__;0x7fffffffffffffffL;__LONG_LONG_MAX__;0x7fffffffffffffffLL;__WCHAR_MAX__;0x7fffffff;__WCHAR_MIN__;(-__WCHAR_MAX__ - 1);__WINT_MAX__;0xffffffffU;__WINT_MIN__;0U;__PTRDIFF_MAX__;0x7fffffffffffffffL;__SIZE_MAX__;0xffffffffffffffffUL;__SCHAR_WIDTH__;8;__SHRT_WIDTH__;16;__INT_WIDTH__;32;__LONG_WIDTH__;64;__LONG_LONG_WIDTH__;64;__WCHAR_WIDTH__;32;__WINT_WIDTH__;32;__PTRDIFF_WIDTH__;64;__SIZE_WIDTH__;64;__INTMAX_MAX__;0x7fffffffffffffffL;__INTMAX_C(c);c ## L;__UINTMAX_MAX__;0xffffffffffffffffUL;__UINTMAX_C(c);c ## UL;__INTMAX_WIDTH__;64;__SIG_ATOMIC_MAX__;0x7fffffff;__SIG_ATOMIC_MIN__;(-__SIG_ATOMIC_MAX__ - 1);__SIG_ATOMIC_WIDTH__;32;__INT8_MAX__;0x7f;__INT16_MAX__;0x7fff;__INT32_MAX__;0x7fffffff;__INT64_MAX__;0x7fffffffffffffffL;__UINT8_MAX__;0xff;__UINT16_MAX__;0xffff;__UINT32_MAX__;0xffffffffU;__UINT64_MAX__;0xffffffffffffffffUL;__INT_LEAST8_MAX__;0x7f;__INT8_C(c);c;__INT_LEAST8_WIDTH__;8;__INT_LEAST16_MAX__;0x7fff;__INT16_C(c);c;__INT_LEAST16_WIDTH__;16;__INT_LEAST32_MAX__;0x7fffffff;__INT32_C(c);c;__INT_LEAST32_WIDTH__;32;__INT_LEAST64_MAX__;0x7fffffffffffffffL;__INT64_C(c);c ## L;__INT_LEAST64_WIDTH__;64;__UINT_LEAST8_MAX__;0xff;__UINT8_C(c);c;__UINT_LEAST16_MAX__;0xffff;__UINT16_C(c);c;__UINT_LEAST32_MAX__;0xffffffffU;__UINT32_C(c);c ## U;__UINT_LEAST64_MAX__;0xffffffffffffffffUL;__UINT64_C(c);c ## UL;__INT_FAST8_MAX__;0x7f;__INT_FAST8_WIDTH__;8;__INT_FAST16_MAX__;0x7fffffffffffffffL;__INT_FAST16_WIDTH__;64;__INT_FAST32_MAX__;0x7fffffffffffffffL;__INT_FAST32_WIDTH__;64;__INT_FAST64_MAX__;0x7fffffffffffffffL;__INT_FAST64_WIDTH__;64;__UINT_FAST8_MAX__;0xff;__UINT_FAST16_MAX__;0xffffffffffffffffUL;__UINT_FAST32_MAX__;0xffffffffffffffffUL;__UINT_FAST64_MAX__;0xffffffffffffffffUL;__INTPTR_MAX__;0x7fffffffffffffffL;__INTPTR_WIDTH__;64;__UINTPTR_MAX__;0xffffffffffffffffUL;__GCC_IEC_559;2;__GCC_IEC_559_COMPLEX;2;__FLT_EVAL_METHOD__;0;__FLT_EVAL_METHOD_TS_18661_3__;0;__DEC_EVAL_METHOD__;2;__FLT_RADIX__;2;__FLT_MANT_DIG__;24;__FLT_DIG__;6;__FLT_MIN_EXP__;(-125);__FLT_MIN_10_EXP__;(-37);__FLT_MAX_EXP__;128;__FLT_MAX_10_EXP__;38;__FLT_DECIMAL_DIG__;9;__FLT_MAX__;3.40282346638528859811704183484516925e+38F;__FLT_MIN__;1.17549435082228750796873653722224568e-38F;__FLT_EPSILON__;1.19209289550781250000000000000000000e-7F;__FLT_DENORM_MIN__;1.40129846432481707092372958328991613e-45F;__FLT_HAS_DENORM__;1;__FLT_HAS_INFINITY__;1;__FLT_HAS_QUIET_NAN__;1;__DBL_MANT_DIG__;53;__DBL_DIG__;15;__DBL_MIN_EXP__;(-1021);__DBL_MIN_10_EXP__;(-307);__DBL_MAX_EXP__;1024;__DBL_MAX_10_EXP__;308;__DBL_DECIMAL_DIG__;17;__DBL_MAX__;((double)1.79769313486231570814527423731704357e+308L);__DBL_MIN__;((double)2.22507385850720138309023271733240406e-308L);__DBL_EPSILON__;((double)2.22044604925031308084726333618164062e-16L);__DBL_DENORM_MIN__;((double)4.94065645841246544176568792868221372e-324L);__DBL_HAS_DENORM__;1;__DBL_HAS_INFINITY__;1;__DBL_HAS_QUIET_NAN__;1;__LDBL_MANT_DIG__;64;__LDBL_DIG__;18;__LDBL_MIN_EXP__;(-16381);__LDBL_MIN_10_EXP__;(-4931);__LDBL_MAX_EXP__;16384;__LDBL_MAX_10_EXP__;4932;__DECIMAL_DIG__;21;__LDBL_DECIMAL_DIG__;21;__LDBL_MAX__;1.18973149535723176502126385303097021e+4932L;__LDBL_MIN__;3.36210314311209350626267781732175260e-4932L;__LDBL_EPSILON__;1.08420217248550443400745280086994171e-19L;__LDBL_DENORM_MIN__;3.64519953188247460252840593361941982e-4951L;__LDBL_HAS_DENORM__;1;__LDBL_HAS_INFINITY__;1;__LDBL_HAS_QUIET_NAN__;1;__FLT32_MANT_DIG__;24;__FLT32_DIG__;6;__FLT32_MIN_EXP__;(-125);__FLT32_MIN_10_EXP__;(-37);__FLT32_MAX_EXP__;128;__FLT32_MAX_10_EXP__;38;__FLT32_DECIMAL_DIG__;9;__FLT32_MAX__;3.40282346638528859811704183484516925e+38F32;__FLT32_MIN__;1.17549435082228750796873653722224568e-38F32;__FLT32_EPSILON__;1.19209289550781250000000000000000000e-7F32;__FLT32_DENORM_MIN__;1.40129846432481707092372958328991613e-45F32;__FLT32_HAS_DENORM__;1;__FLT32_HAS_INFINITY__;1;__FLT32_HAS_QUIET_NAN__;1;__FLT64_MANT_DIG__;53;__FLT64_DIG__;15;__FLT64_MIN_EXP__;(-1021);__FLT64_MIN_10_EXP__;(-307);__FLT64_MAX_EXP__;1024;__FLT64_MAX_10_EXP__;308;__FLT64_DECIMAL_DIG__;17;__FLT64_MAX__;1.79769313486231570814527423731704357e+308F64;__FLT64_MIN__;2.22507385850720138309023271733240406e-308F64;__FLT64_EPSILON__;2.22044604925031308084726333618164062e-16F64;__FLT64_DENORM_MIN__;4.94065645841246544176568792868221372e-324F64;__FLT64_HAS_DENORM__;1;__FLT64_HAS_INFINITY__;1;__FLT64_HAS_QUIET_NAN__;1;__FLT128_MANT_DIG__;113;__FLT128_DIG__;33;__FLT128_MIN_EXP__;(-16381);__FLT128_MIN_10_EXP__;(-4931);__FLT128_MAX_EXP__;16384;__FLT128_MAX_10_EXP__;4932;__FLT128_DECIMAL_DIG__;36;__FLT128_MAX__;1.18973149535723176508575932662800702e+4932F128;__FLT128_MIN__;3.36210314311209350626267781732175260e-4932F128;__FLT128_EPSILON__;1.92592994438723585305597794258492732e-34F128;__FLT128_DENORM_MIN__;6.47517511943802511092443895822764655e-4966F128;__FLT128_HAS_DENORM__;1;__FLT128_HAS_INFINITY__;1;__FLT128_HAS_QUIET_NAN__;1;__FLT32X_MANT_DIG__;53;__FLT32X_DIG__;15;__FLT32X_MIN_EXP__;(-1021);__FLT32X_MIN_10_EXP__;(-307);__FLT32X_MAX_EXP__;1024;__FLT32X_MAX_10_EXP__;308;__FLT32X_DECIMAL_DIG__;17;__FLT32X_MAX__;1.79769313486231570814527423731704357e+308F32x;__FLT32X_MIN__;2.22507385850720138309023271733240406e-308F32x;__FLT32X_EPSILON__;2.22044604925031308084726333618164062e-16F32x;__FLT32X_DENORM_MIN__;4.94065645841246544176568792868221372e-324F32x;__FLT32X_HAS_DENORM__;1;__FLT32X_HAS_INFINITY__;1;__FLT32X_HAS_QUIET_NAN__;1;__FLT64X_MANT_DIG__;64;__FLT64X_DIG__;18;__FLT64X_MIN_EXP__;(-16381);__FLT64X_MIN_10_EXP__;(-4931);__FLT64X_MAX_EXP__;16384;__FLT64X_MAX_10_EXP__;4932;__FLT64X_DECIMAL_DIG__;21;__FLT64X_MAX__;1.18973149535723176502126385303097021e+4932F64x;__FLT64X_MIN__;3.36210314311209350626267781732175260e-4932F64x;__FLT64X_EPSILON__;1.08420217248550443400745280086994171e-19F64x;__FLT64X_DENORM_MIN__;3.64519953188247460252840593361941982e-4951F64x;__FLT64X_HAS_DENORM__;1;__FLT64X_HAS_INFINITY__;1;__FLT64X_HAS_QUIET_NAN__;1;__DEC32_MANT_DIG__;7;__DEC32_MIN_EXP__;(-94);__DEC32_MAX_EXP__;97;__DEC32_MIN__;1E-95DF;__DEC32_MAX__;9.999999E96DF;__DEC32_EPSILON__;1E-6DF;__DEC32_SUBNORMAL_MIN__;0.000001E-95DF;__DEC64_MANT_DIG__;16;__DEC64_MIN_EXP__;(-382);__DEC64_MAX_EXP__;385;__DEC64_MIN__;1E-383DD;__DEC64_MAX__;9.999999999999999E384DD;__DEC64_EPSILON__;1E-15DD;__DEC64_SUBNORMAL_MIN__;0.000000000000001E-383DD;__DEC128_MANT_DIG__;34;__DEC128_MIN_EXP__;(-6142);__DEC128_MAX_EXP__;6145;__DEC128_MIN__;1E-6143DL;__DEC128_MAX__;9.999999999999999999999999999999999E6144DL;__DEC128_EPSILON__;1E-33DL;__DEC128_SUBNORMAL_MIN__;0.000000000000000000000000000000001E-6143DL;__REGISTER_PREFIX__; ;__USER_LABEL_PREFIX__; ;__GNUC_STDC_INLINE__;1;__NO_INLINE__;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4;1;__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8;1;__GCC_ATOMIC_BOOL_LOCK_FREE;2;__GCC_ATOMIC_CHAR_LOCK_FREE;2;__GCC_ATOMIC_CHAR16_T_LOCK_FREE;2;__GCC_ATOMIC_CHAR32_T_LOCK_FREE;2;__GCC_ATOMIC_WCHAR_T_LOCK_FREE;2;__GCC_ATOMIC_SHORT_LOCK_FREE;2;__GCC_ATOMIC_INT_LOCK_FREE;2;__GCC_ATOMIC_LONG_LOCK_FREE;2;__GCC_ATOMIC_LLONG_LOCK_FREE;2;__GCC_ATOMIC_TEST_AND_SET_TRUEVAL;1;__GCC_ATOMIC_POINTER_LOCK_FREE;2;__HAVE_SPECULATION_SAFE_VALUE;1;__GCC_HAVE_DWARF2_CFI_ASM;1;__PRAGMA_REDEFINE_EXTNAME;1;__SSP_STRONG__;3;__SIZEOF_INT128__;16;__SIZEOF_WCHAR_T__;4;__SIZEOF_WINT_T__;4;__SIZEOF_PTRDIFF_T__;8;__amd64;1;__amd64__;1;__x86_64;1;__x86_64__;1;__SIZEOF_FLOAT80__;16;__SIZEOF_FLOAT128__;16;__ATOMIC_HLE_ACQUIRE;65536;__ATOMIC_HLE_RELEASE;131072;__GCC_ASM_FLAG_OUTPUTS__;1;__k8;1;__k8__;1;__code_model_small__;1;__MMX__;1;__SSE__;1;__SSE2__;1;__FXSR__;1;__SSE_MATH__;1;__SSE2_MATH__;1;__SEG_FS;1;__SEG_GS;1;__CET__;3;__gnu_linux__;1;__linux;1;__linux__;1;linux;1;__unix;1;__unix__;1;unix;1;__ELF__;1;__DECIMAL_BID_FORMAT__;1;_STDC_PREDEF_H;1;__STDC_IEC_559__;1;__STDC_IEC_559_COMPLEX__;1;__STDC_ISO_10646__;201706L"
+		},
+		{
+			"name" : "CMAKE_EXTRA_GENERATOR_C_SYSTEM_INCLUDE_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "C compiler system include directories"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include"
+		},
+		{
+			"name" : "CMAKE_FIND_PACKAGE_REDIRECTS_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake."
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/cmake-build-debug/CMakeFiles/pkgRedirects"
+		},
+		{
+			"name" : "CMAKE_GENERATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of generator."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "Unix Makefiles"
+		},
+		{
+			"name" : "CMAKE_GENERATOR_INSTANCE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Generator instance identifier."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_GENERATOR_PLATFORM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of generator platform."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_GENERATOR_TOOLSET",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of generator toolset."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_HAVE_LIBC_PTHREAD",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CMAKE_HAVE_LIBC_PTHREAD"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_HAVE_PTHREADS_CREATE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Have library pthreads"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_HAVE_PTHREAD_CREATE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Have library pthread"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_HOME_DIRECTORY",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Source directory with the top level CMakeLists.txt file for this project"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/zou/Documents/DFIKOS"
+		},
+		{
+			"name" : "CMAKE_INSTALL_BINDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "User executables (bin)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "bin"
+		},
+		{
+			"name" : "CMAKE_INSTALL_DATADIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only architecture-independent data (DATAROOTDIR)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_DATAROOTDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only architecture-independent data root (share)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "share"
+		},
+		{
+			"name" : "CMAKE_INSTALL_DOCDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Documentation root (DATAROOTDIR/doc/PROJECT_NAME)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C header files (include)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "include"
+		},
+		{
+			"name" : "CMAKE_INSTALL_INFODIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Info documentation (DATAROOTDIR/info)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Object code libraries (lib)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "lib"
+		},
+		{
+			"name" : "CMAKE_INSTALL_LIBEXECDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Program executables (libexec)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "libexec"
+		},
+		{
+			"name" : "CMAKE_INSTALL_LOCALEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Locale-dependent data (DATAROOTDIR/locale)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_LOCALSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Modifiable single-machine data (var)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "var"
+		},
+		{
+			"name" : "CMAKE_INSTALL_MANDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Man documentation (DATAROOTDIR/man)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_OLDINCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C header files for non-gcc (/usr/include)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include"
+		},
+		{
+			"name" : "CMAKE_INSTALL_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/home/zou/Documents/DFIKOS/install"
+		},
+		{
+			"name" : "CMAKE_INSTALL_RUNSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Run-time variable data (LOCALSTATEDIR/run)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_SBINDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "System admin executables (sbin)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "sbin"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SHAREDSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Modifiable architecture-independent data (com)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "com"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SO_NO_EXE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Install .so files without execute permission."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SYSCONFDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only single-machine data (etc)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "etc"
+		},
+		{
+			"name" : "CMAKE_LINKER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/ld"
+		},
+		{
+			"name" : "CMAKE_MAKE_PROGRAM",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/make"
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_NM",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/nm"
+		},
+		{
+			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "number of local generators"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "9"
+		},
+		{
+			"name" : "CMAKE_OBJCOPY",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/objcopy"
+		},
+		{
+			"name" : "CMAKE_OBJDUMP",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/objdump"
+		},
+		{
+			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Platform information initialized"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_PROJECT_DESCRIPTION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_PROJECT_HOMEPAGE_URL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_PROJECT_NAME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ikos"
+		},
+		{
+			"name" : "CMAKE_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/ranlib"
+		},
+		{
+			"name" : "CMAKE_READELF",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/readelf"
+		},
+		{
+			"name" : "CMAKE_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to CMake installation."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/share/cmake-3.26"
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SKIP_INSTALL_RPATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "If set, runtime paths are not added when installing shared libraries, but are added when building."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "NO"
+		},
+		{
+			"name" : "CMAKE_SKIP_RPATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "If set, runtime paths are not added when using shared libraries."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "NO"
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STRIP",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/strip"
+		},
+		{
+			"name" : "CMAKE_UNAME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "uname command"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/bin/uname"
+		},
+		{
+			"name" : "CMAKE_VERBOSE_MAKEFILE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "If this value is on, makefiles will be generated without the .SILENT directive, and all commands will be echoed to the console during the make.  This is useful for debugging only. With Visual Studio IDE projects all commands are done without /nologo."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "FALSE"
+		},
+		{
+			"name" : "COMPILE_RESULT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Result of TRY_COMPILE"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
+		},
+		{
+			"name" : "CUSTOM_BOOST_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to custom boost installation"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CXX_SUPPORTS_CLASS_MEMACCESS_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_CLASS_MEMACCESS_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CXX_SUPPORTS_CXX14",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_CXX14"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_FPIC",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_FPIC"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_FVISIBILITY_INLINES_HIDDEN",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_FVISIBILITY_INLINES_HIDDEN"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_MISLEADING_INDENTATION_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_MISLEADING_INDENTATION_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_NOEXCEPT_TYPE_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_NOEXCEPT_TYPE_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_PESSIMIZING_MOVE_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_PESSIMIZING_MOVE_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_REDUNDANT_MOVE_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_REDUNDANT_MOVE_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_STRING_CONVERSION_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_STRING_CONVERSION_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_WALL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_WALL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_WERROR_DATE_TIME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_WERROR_DATE_TIME"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CXX_SUPPORTS_WEXTRA",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_WEXTRA"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_WNO_MAYBE_UNINITIALIZED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_WNO_MAYBE_UNINITIALIZED"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_WNO_REDUNDANT_MOVE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_WNO_REDUNDANT_MOVE"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_SUPPORTS_WNO_UNUSED_LOCAL_TYPEDEFS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_SUPPORTS_WNO_UNUSED_LOCAL_TYPEDEFS"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test CXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "C_SUPPORTS_FNO_SEMANTIC_INTERPOSITION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "C_SUPPORTS_FPIC",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_SUPPORTS_FPIC"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "C_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "C_SUPPORTS_MISLEADING_INDENTATION_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_SUPPORTS_MISLEADING_INDENTATION_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "C_SUPPORTS_STRING_CONVERSION_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_SUPPORTS_STRING_CONVERSION_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "C_SUPPORTS_WERROR_DATE_TIME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_SUPPORTS_WERROR_DATE_TIME"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "C_WCOMMENT_ALLOWS_LINE_WRAP",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test C_WCOMMENT_ALLOWS_LINE_WRAP"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "DOXYGEN_DOT_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dot tool for use with Doxygen"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/dot"
+		},
+		{
+			"name" : "DOXYGEN_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Doxygen documentation generation tool (https://www.doxygen.nl)"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/doxygen"
+		},
+		{
+			"name" : "ENABLE_ASSERTIONS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable assertions"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
+		},
+		{
+			"name" : "FFI_HEADER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "ffi.h"
+		},
+		{
+			"name" : "FFI_INCLUDE_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include/x86_64-linux-gnu"
+		},
+		{
+			"name" : "FFI_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libffi.so"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_APRON",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding APRON"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/local/apron/include][/usr/local/apron/lib/libapron.so][/usr/local/apron/lib/libboxMPQ.so][/usr/local/apron/lib/liboctMPQ.so][/usr/local/apron/lib/libpolkaMPQ.so][/usr/local/apron/lib/libap_ppl.so][/usr/local/apron/lib/libap_pkgrid.so][TRUE][TRUE][TRUE][v()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Clang",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Clang"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/lib/llvm-14/bin/clang][/usr/lib/llvm-14/bin/clang++][14.0.6][v14.0.6()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Doxygen",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Doxygen"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/bin/doxygen][cfound components: doxygen dot ][v1.8.17()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_FFI",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding FFI"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/lib/x86_64-linux-gnu/libffi.so][1][v()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_GMP",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding GMP"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/include/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libgmp.so][/usr/include][/usr/lib/x86_64-linux-gnu/libgmpxx.so][v6.2.0()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_LLVM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding LLVM"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/lib/llvm-14][/usr/lib/llvm-14/include][/usr/lib/llvm-14/bin][/usr/lib/llvm-14/lib][/usr/lib/llvm-14/lib/cmake/llvm][14.0.6][v14.0.6()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_LibXml2",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding LibXml2"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/lib/x86_64-linux-gnu/libxml2.so][/usr/include/libxml2][v2.9.10()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_MPFR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding MPFR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/local/include][/usr/local/lib/libmpfr.so][4.2.0][TRUE][v4.2.0()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PPL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding PPL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/include/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libppl.so][/usr/lib/x86_64-linux-gnu/libppl_c.so][TRUE][v1.2()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding PythonInterp"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/bin/python][v2.7.18()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_SQLite3",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding SQLite3"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/include][/usr/lib/x86_64-linux-gnu/libsqlite3.so][v3.31.1()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_TBB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding TBB"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/local/tbb/include][/usr/local/lib/libtbb.so][c ][v12100(2)]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Terminfo",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Terminfo"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/lib/x86_64-linux-gnu/libtinfo.so][1][v()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Threads"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[TRUE][v()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_ZLIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding ZLIB"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][c ][v1.2.11()]"
+		},
+		{
+			"name" : "FORCE_UPDATE_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Force the update of the version on every build"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "GMPXX_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to gmpxx include directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include"
+		},
+		{
+			"name" : "GMPXX_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to gmpxx library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libgmpxx.so"
+		},
+		{
+			"name" : "GMP_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to gmp include directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include/x86_64-linux-gnu"
+		},
+		{
+			"name" : "GMP_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to gmp library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libgmp.so"
+		},
+		{
+			"name" : "GMP_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to gmp install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "HAVE_FFI_CALL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test HAVE_FFI_CALL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "HAVE_FFI_FFI_H",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "(This variable does not exist and should not be used)"
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : ""
+		},
+		{
+			"name" : "HAVE_FFI_H",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "IKOS_LINK_LLVM_DYLIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Link IKOS against the libLLVM dynamic library"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LIBXML2_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include/libxml2"
+		},
+		{
+			"name" : "LIBXML2_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libxml2.so"
+		},
+		{
+			"name" : "LIBXML2_XMLLINT_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "LIBXML2_XMLLINT_EXECUTABLE-NOTFOUND"
+		},
+		{
+			"name" : "LLVM_BUILD_INSTRUMENTED",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Build LLVM and tools with PGO instrumentation. May be specified as IR or Frontend"
+				}
+			],
+			"type" : "STRING",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_BUILD_INSTRUMENTED_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Build LLVM and tools with Code Coverage instrumentation"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_CMAKE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to llvm cmake directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/llvm-14/lib/cmake/llvm"
+		},
+		{
+			"name" : "LLVM_CONFIG_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to llvm-config binary"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/llvm-14/bin/llvm-config"
+		},
+		{
+			"name" : "LLVM_ENABLE_IDE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Disable optional build system features that cause problems for IDE generators"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_ENABLE_IR_PGO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Build LLVM and tools with IR PGO instrumentation (deprecated)"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_ENABLE_LTO",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Build LLVM with LTO. May be specified as Thin or Full to use a particular kind of LTO"
+				}
+			],
+			"type" : "STRING",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_EXPORT_SYMBOLS_FOR_PLUGINS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Export symbols from LLVM tools so that plugins can import them"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_FILE_CHECK_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to FileCheck binary"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/llvm-14/bin/FileCheck"
+		},
+		{
+			"name" : "LLVM_FORCE_ENABLE_STATS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable statistics collection for builds that wouldn't normally enable it"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to llvm include directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/llvm-14/include"
+		},
+		{
+			"name" : "LLVM_LIBRARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to llvm library directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/llvm-14/lib"
+		},
+		{
+			"name" : "LLVM_LINKER_DETECTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "YES"
+		},
+		{
+			"name" : "LLVM_LINKER_IS_GNULD",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "YES"
+		},
+		{
+			"name" : "LLVM_PARALLEL_COMPILE_JOBS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Define the maximum number of concurrent compilation jobs (Ninja only)."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "LLVM_PARALLEL_LINK_JOBS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Define the maximum number of concurrent link jobs (Ninja only)."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "LLVM_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to llvm install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/llvm-14"
+		},
+		{
+			"name" : "LLVM_SOURCE_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Use prefix for sources"
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "LLVM_TOOLS_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to llvm binary directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/llvm-14/bin"
+		},
+		{
+			"name" : "LLVM_USE_NEWPM",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Build LLVM using the experimental new pass manager"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_USE_RELATIVE_PATHS_IN_DEBUG_INFO",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Use relative paths in debug info"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_USE_RELATIVE_PATHS_IN_FILES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Use relative paths in sources and debug info"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "LLVM_VP_COUNTERS_PER_SITE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value profile counters to use per site for IR PGO with Clang"
+				}
+			],
+			"type" : "STRING",
+			"value" : "1.5"
+		},
+		{
+			"name" : "MPFR_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to mpfr include directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/local/include"
+		},
+		{
+			"name" : "MPFR_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to mpfr library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/lib/libmpfr.so"
+		},
+		{
+			"name" : "MPFR_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to mpfr install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_CFLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "-I/usr/include/libxml2"
+		},
+		{
+			"name" : "PC_LIBXML_CFLAGS_I",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_CFLAGS_OTHER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_FOUND",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "PC_LIBXML_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/include"
+		},
+		{
+			"name" : "PC_LIBXML_INCLUDE_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/include/libxml2"
+		},
+		{
+			"name" : "PC_LIBXML_LDFLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "-L/usr/lib/x86_64-linux-gnu;-lxml2"
+		},
+		{
+			"name" : "PC_LIBXML_LDFLAGS_OTHER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/lib/x86_64-linux-gnu"
+		},
+		{
+			"name" : "PC_LIBXML_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "xml2"
+		},
+		{
+			"name" : "PC_LIBXML_LIBRARY_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/lib/x86_64-linux-gnu"
+		},
+		{
+			"name" : "PC_LIBXML_LIBS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_LIBS_L",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_LIBS_OTHER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_LIBS_PATHS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_MODULE_NAME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "libxml-2.0"
+		},
+		{
+			"name" : "PC_LIBXML_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_CFLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "-I/usr/include/libxml2"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_CFLAGS_I",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_CFLAGS_OTHER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_INCLUDE_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/include/libxml2"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LDFLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "-L/usr/lib/x86_64-linux-gnu;-lxml2;-licui18n;-licuuc;-licudata;-lz;-llzma;-lm"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LDFLAGS_OTHER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "xml2;icui18n;icuuc;icudata;z;lzma;m"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBRARY_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/lib/x86_64-linux-gnu"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBS_L",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBS_OTHER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBS_PATHS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "2.9.10"
+		},
+		{
+			"name" : "PC_LIBXML_libxml-2.0_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_libxml-2.0_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_libxml-2.0_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_libxml-2.0_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PKG_CONFIG_ARGN",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Arguments to supply to pkg-config"
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "PKG_CONFIG_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "pkg-config executable"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/pkg-config"
+		},
+		{
+			"name" : "PPL_CONFIG_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to ppl-config binary"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/ppl-config"
+		},
+		{
+			"name" : "PPL_C_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to ppl_c library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libppl_c.so"
+		},
+		{
+			"name" : "PPL_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to ppl include directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include/x86_64-linux-gnu"
+		},
+		{
+			"name" : "PPL_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to ppl library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libppl.so"
+		},
+		{
+			"name" : "PPL_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to ppl install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "PYTHON_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/python"
+		},
+		{
+			"name" : "ProcessorCount_cmd_nproc",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/nproc"
+		},
+		{
+			"name" : "ProcessorCount_cmd_sysctl",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/sbin/sysctl"
+		},
+		{
+			"name" : "RUN_RESULT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Result of try_run()"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "0"
+		},
+		{
+			"name" : "SQLITE3_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to sqlite3 include directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include"
+		},
+		{
+			"name" : "SQLITE3_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to sqlite3 library"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libsqlite3.so"
+		},
+		{
+			"name" : "SQLITE3_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to sqlite3 install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "TBB_INCLUDE_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/local/tbb/include"
+		},
+		{
+			"name" : "TBB_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "(This variable does not exist and should not be used)"
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : ""
+		},
+		{
+			"name" : "TBB_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to tbb install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "TBB_tbb_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "(This variable does not exist and should not be used)"
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : ""
+		},
+		{
+			"name" : "TBB_tbb_LIBRARY_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "TBB_tbb_LIBRARY_DEBUG-NOTFOUND"
+		},
+		{
+			"name" : "TBB_tbb_LIBRARY_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/lib/libtbb.so"
+		},
+		{
+			"name" : "Terminfo_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libtinfo.so"
+		},
+		{
+			"name" : "Terminfo_LINKABLE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Test Terminfo_LINKABLE"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "USE_SANITIZER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Define the sanitizer used to build binaries and tests"
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "ZLIB_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include"
+		},
+		{
+			"name" : "ZLIB_LIBRARY_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "ZLIB_LIBRARY_DEBUG-NOTFOUND"
+		},
+		{
+			"name" : "ZLIB_LIBRARY_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libz.so"
+		},
+		{
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "linker supports push/pop state"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
+		},
+		{
+			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "CMAKE_INSTALL_PREFIX during last run"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/zou/Documents/DFIKOS/install"
+		},
+		{
+			"name" : "__pkg_config_arguments_PC_LIBXML",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "QUIET;libxml-2.0"
+		},
+		{
+			"name" : "__pkg_config_checked_PC_LIBXML",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "boost_atomic_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for boost_atomic."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0"
+		},
+		{
+			"name" : "boost_filesystem_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for boost_filesystem."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0"
+		},
+		{
+			"name" : "boost_headers_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for boost_headers."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0"
+		},
+		{
+			"name" : "boost_system_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for boost_system."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0"
+		},
+		{
+			"name" : "boost_thread_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for boost_thread."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0"
+		},
+		{
+			"name" : "boost_unit_test_framework_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for boost_unit_test_framework."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0"
+		},
+		{
+			"name" : "ikos-abstract-representation_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/cmake-build-debug/ar"
+		},
+		{
+			"name" : "ikos-abstract-representation_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "ikos-abstract-representation_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/ar"
+		},
+		{
+			"name" : "ikos-analyzer_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer"
+		},
+		{
+			"name" : "ikos-analyzer_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "ikos-analyzer_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/analyzer"
+		},
+		{
+			"name" : "ikos-ar_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;/usr/lib/x86_64-linux-gnu/libgmp.so;general;/usr/lib/x86_64-linux-gnu/libgmpxx.so;general;/usr/local/lib/libmpfr.so;"
+		},
+		{
+			"name" : "ikos-core_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/cmake-build-debug/core"
+		},
+		{
+			"name" : "ikos-core_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "ikos-core_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/core"
+		},
+		{
+			"name" : "ikos-frontend-llvm_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm"
+		},
+		{
+			"name" : "ikos-frontend-llvm_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "ikos-frontend-llvm_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/frontend/llvm"
+		},
+		{
+			"name" : "ikos-llvm-to-ar_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;LLVMCore;general;LLVMSupport;general;LLVMTransformUtils;general;ikos-ar;general;Boost::filesystem;general;Boost::system;general;/usr/lib/x86_64-linux-gnu/libgmp.so;general;/usr/lib/x86_64-linux-gnu/libgmpxx.so;"
+		},
+		{
+			"name" : "ikos-pp-lib_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;LLVMCore;general;LLVMSupport;general;LLVMTransformUtils;"
+		},
+		{
+			"name" : "ikos_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS/cmake-build-debug"
+		},
+		{
+			"name" : "ikos_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "ikos_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/zou/Documents/DFIKOS"
+		},
+		{
+			"name" : "macos_signposts_available",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Have symbol os_signpost_interval_begin"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "pkgcfg_lib_PC_LIBXML_xml2",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libxml2.so"
+		},
+		{
+			"name" : "prefix_result",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/lib/x86_64-linux-gnu"
+		}
+	],
+	"kind" : "cache",
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

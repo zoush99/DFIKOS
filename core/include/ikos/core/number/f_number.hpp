@@ -38,6 +38,7 @@ enum Fpre {
   ld = 113  // 128 bits
 };
 
+class ZNumber;
 /// \brief Class for unlimited precision floating point number
 class FNumber {
 private:
@@ -515,19 +516,19 @@ public:
 //  FNumber& cast();
 
   /// \todo(bugs here!!!) By zoush99
-//  MachineInt& applyfltoin(FNumber& n){
-//    mpz_t res;
-//    mpz_init(res);
-//    mpfr_get_z(res,n.FNvalue(),MPFR_RNDN);
-//    ZNumber Z(res);
-//  }
+  MachineInt& applyfltoin(FNumber& n){
+    mpz_t res;
+    mpz_init(res);
+    mpfr_get_z(res,n.FNvalue(),MPFR_RNDN);
+//    ikos::core::ZNumber f(res);
+  }
 //
 //
 //  FNumber& applyintofl(MachineInt& n){
 //
 //
   /// @}
-  ZNumber f(1);
+
   friend class QNumber;
   friend class ZNumber;
 }; // end class FNumber

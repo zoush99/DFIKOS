@@ -1,0 +1,2688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ikos-core"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\core\;CMake Files\core\doc\;CMake Files\core\doc\doxygen\;CMake Files\core\test\;CMake Files\core\test\unit\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_thread-1.71.0\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_atomic-1.71.0\;CMake Files\..\..\..\..\usr\lib\llvm-14\;CMake Files\..\..\..\..\usr\lib\llvm-14\lib\;CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\;CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\core\;CMake Files\cmake-build-debug\ar\;CMake Files\cmake-build-debug\frontend\;CMake Files\cmake-build-debug\frontend\llvm\;CMake Files\cmake-build-debug\analyzer\;CMake Files\ar\;CMake Files\ar\doc\;CMake Files\ar\doc\doxygen\;CMake Files\frontend\;CMake Files\frontend\llvm\;CMake Files\frontend\llvm\test\;CMake Files\frontend\llvm\test\regression\;CMake Files\frontend\llvm\test\regression\pass\;CMake Files\frontend\llvm\test\regression\import\;CMake Files\analyzer\;CMake Files\analyzer\python\;CMake Files\analyzer\script\;CMake Files\analyzer\doc\;CMake Files\analyzer\doc\doxygen\;CMake Files\analyzer\test\;CMake Files\analyzer\test\regression\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="build-core-tests">
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 build-core-tests"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="doxygen-core">
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 doxygen-core"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-adt-patricia_tree-map">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-adt-patricia_tree-map" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-adt-patricia_tree-map"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-adt-patricia_tree-map/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-adt-patricia_tree-map" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-adt-patricia_tree-map/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-adt-patricia_tree-set">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-adt-patricia_tree-set" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-adt-patricia_tree-set"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-adt-patricia_tree-set/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-adt-patricia_tree-set" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-adt-patricia_tree-set/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-number-z_number">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-number-z_number" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-number-z_number"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-number-z_number/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-number-z_number" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-number-z_number/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-number-q_number">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-number-q_number" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-number-q_number"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-number-q_number/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-number-q_number" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-number-q_number/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-number-f_number">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-number-f_number" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-number-f_number"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-number-f_number/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-number-f_number" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-number-f_number/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-number-machine_int">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-number-machine_int" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-number-machine_int"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-number-machine_int/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-number-machine_int" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-number-machine_int/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-constant">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-constant" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-constant"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-constant/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-constant" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-constant/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-interval">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-interval"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-interval/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-interval/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-gauge">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-gauge" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-gauge"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-gauge/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-gauge" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-gauge/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-machine_int-interval">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-machine_int-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-machine_int-interval"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-machine_int-interval/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-machine_int-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-machine_int-interval/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-machine_int-constant">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-machine_int-constant" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-machine_int-constant"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-machine_int-constant/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-machine_int-constant" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-machine_int-constant/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-machine_int-congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-machine_int-congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-machine_int-congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-machine_int-congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-machine_int-congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-machine_int-congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-machine_int-interval_congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-machine_int-interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-machine_int-interval_congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-machine_int-interval_congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-machine_int-interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-machine_int-interval_congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-discrete_domain">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-discrete_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-discrete_domain"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-discrete_domain/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-discrete_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-discrete_domain/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-constant">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-constant" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-constant"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-constant/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-constant" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-constant/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-interval">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-interval"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-interval/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-interval/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-interval_congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-interval_congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-interval_congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-interval_congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-dbm">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-dbm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-dbm"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-dbm/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-dbm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-dbm/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-octagon">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-octagon" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-octagon"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-octagon/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-octagon" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-octagon/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-gauge">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-gauge" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-gauge"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-gauge/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-gauge" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-gauge/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-gauge_interval_congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-gauge_interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-gauge_interval_congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-gauge_interval_congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-gauge_interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-gauge_interval_congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-union">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-union" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-union"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-union/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-union" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-union/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-var_packing_domain">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-var_packing_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-var_packing_domain"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-var_packing_domain/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-var_packing_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-var_packing_domain/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-var_packing_dbm">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-var_packing_dbm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-var_packing_dbm"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-var_packing_dbm/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-var_packing_dbm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-var_packing_dbm/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-var_packing_dbm_congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-var_packing_dbm_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-var_packing_dbm_congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-var_packing_dbm_congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-var_packing_dbm_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-var_packing_dbm_congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-apron-interval">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-apron-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-apron-interval"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-apron-interval/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-apron-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-apron-interval/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-apron-polka_polyhedra">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-apron-polka_polyhedra" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-apron-polka_polyhedra"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-apron-polka_polyhedra/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-apron-polka_polyhedra" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-apron-polka_polyhedra/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-apron-ppl_linear_congruences">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-apron-ppl_linear_congruences" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-apron-ppl_linear_congruences"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-apron-ppl_linear_congruences/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-apron-ppl_linear_congruences" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-apron-ppl_linear_congruences/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-interval">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-interval"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-interval/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-interval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-interval/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-interval_congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-interval_congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-interval_congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-interval_congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-numeric_domain_adapter">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-numeric_domain_adapter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-numeric_domain_adapter"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-numeric_domain_adapter/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-numeric_domain_adapter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-numeric_domain_adapter/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-polymorphic_domain">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-polymorphic_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-polymorphic_domain"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-machine_int-polymorphic_domain/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-machine_int-polymorphic_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-machine_int-polymorphic_domain/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-pointer-solver">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-pointer-solver" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-pointer-solver"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-pointer-solver/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-pointer-solver" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-pointer-solver/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-nullity-separate_domain">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-nullity-separate_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-nullity-separate_domain"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-nullity-separate_domain/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-nullity-separate_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-nullity-separate_domain/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-uninitialized-separate_domain">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-uninitialized-separate_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-uninitialized-separate_domain"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-uninitialized-separate_domain/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-uninitialized-separate_domain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-uninitialized-separate_domain/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-memory-partitioning">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-memory-partitioning" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-memory-partitioning"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-domain-memory-partitioning/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-domain-memory-partitioning" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-domain-memory-partitioning/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-example-muzq">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-example-muzq" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-example-muzq"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-example-muzq/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-example-muzq" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-example-muzq/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-fixpoint-wpo">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-fixpoint-wpo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-fixpoint-wpo"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-fixpoint-wpo/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-fixpoint-wpo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-fixpoint-wpo/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/adt/patricia_tree/map.cpp">
+			<Option target="test-core-adt-patricia_tree-map"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/adt/patricia_tree/set.cpp">
+			<Option target="test-core-adt-patricia_tree-set"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/discrete_domain.cpp">
+			<Option target="test-core-domain-discrete_domain"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/machine_int/congruence.cpp">
+			<Option target="test-core-domain-machine_int-congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/machine_int/interval.cpp">
+			<Option target="test-core-domain-machine_int-interval"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/machine_int/interval_congruence.cpp">
+			<Option target="test-core-domain-machine_int-interval_congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/machine_int/numeric_domain_adapter.cpp">
+			<Option target="test-core-domain-machine_int-numeric_domain_adapter"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/machine_int/polymorphic_domain.cpp">
+			<Option target="test-core-domain-machine_int-polymorphic_domain"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/memory/partitioning.cpp">
+			<Option target="test-core-domain-memory-partitioning"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/nullity/separate_domain.cpp">
+			<Option target="test-core-domain-nullity-separate_domain"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/apron/interval.cpp">
+			<Option target="test-core-domain-numeric-apron-interval"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/apron/pkgrid_polyhedra_lin_congruences.cpp">
+			<Option target="test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/apron/polka_polyhedra.cpp">
+			<Option target="test-core-domain-numeric-apron-polka_polyhedra"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/apron/ppl_linear_congruences.cpp">
+			<Option target="test-core-domain-numeric-apron-ppl_linear_congruences"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/congruence.cpp">
+			<Option target="test-core-domain-numeric-congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/constant.cpp">
+			<Option target="test-core-domain-numeric-constant"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/dbm.cpp">
+			<Option target="test-core-domain-numeric-dbm"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/gauge.cpp">
+			<Option target="test-core-domain-numeric-gauge"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/gauge_interval_congruence.cpp">
+			<Option target="test-core-domain-numeric-gauge_interval_congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/interval.cpp">
+			<Option target="test-core-domain-numeric-interval"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/interval_congruence.cpp">
+			<Option target="test-core-domain-numeric-interval_congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/octagon.cpp">
+			<Option target="test-core-domain-numeric-octagon"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/union.cpp">
+			<Option target="test-core-domain-numeric-union"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/var_packing_dbm.cpp">
+			<Option target="test-core-domain-numeric-var_packing_dbm"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/var_packing_dbm_congruence.cpp">
+			<Option target="test-core-domain-numeric-var_packing_dbm_congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/var_packing_domain.cpp">
+			<Option target="test-core-domain-numeric-var_packing_domain"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/pointer/solver.cpp">
+			<Option target="test-core-domain-pointer-solver"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/domain/uninitialized/separate_domain.cpp">
+			<Option target="test-core-domain-uninitialized-separate_domain"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/example/muzq.cpp">
+			<Option target="test-core-example-muzq"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/fixpoint/wpo.cpp">
+			<Option target="test-core-fixpoint-wpo"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/number/f_number.cpp">
+			<Option target="test-core-number-f_number"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/number/machine_int.cpp">
+			<Option target="test-core-number-machine_int"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/number/q_number.cpp">
+			<Option target="test-core-number-q_number"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/number/z_number.cpp">
+			<Option target="test-core-number-z_number"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/machine_int/congruence.cpp">
+			<Option target="test-core-value-machine_int-congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/machine_int/constant.cpp">
+			<Option target="test-core-value-machine_int-constant"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/machine_int/interval.cpp">
+			<Option target="test-core-value-machine_int-interval"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/machine_int/interval_congruence.cpp">
+			<Option target="test-core-value-machine_int-interval_congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/congruence.cpp">
+			<Option target="test-core-value-numeric-congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/constant.cpp">
+			<Option target="test-core-value-numeric-constant"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/gauge.cpp">
+			<Option target="test-core-value-numeric-gauge"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval.cpp">
+			<Option target="test-core-value-numeric-interval"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/AddFlagUtils.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindAPRON.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindAR.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindBoost.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindClang.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindCore.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindFrontendLLVM.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindGMP.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindLLVM.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindMPFR.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindPPL.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindSQLite3.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/FindTBB.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake/HandleOptions.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/doc/doxygen/Doxyfile.in">
+			<Option virtualFolder="CMake Files\core\doc\doxygen\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\test\unit\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0/boost_filesystem-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0/boost_filesystem-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0/libboost_filesystem-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0/libboost_filesystem-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0/boost_thread-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_thread-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0/boost_thread-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_thread-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0/libboost_thread-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_thread-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0/libboost_thread-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_thread-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0/boost_atomic-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_atomic-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0/boost_atomic-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_atomic-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0/libboost_atomic-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_atomic-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0/libboost_atomic-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_atomic-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/AddLLVM.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/CheckCompilerVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/DetermineGCCCompatible.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/FindFFI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/FindTerminfo.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/HandleLLVMOptions.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/HandleLLVMStdlib.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/LLVM-Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/LLVMCheckLinkerFlag.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/LLVMConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/LLVMDistributionSupport.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/LLVMExports-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/LLVMExports.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/../../../../usr/lib/llvm-14/lib/cmake/llvm/LLVMProcessSources.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\llvm-14\lib\cmake\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/core/FindGMPVersion.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\core\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/core/FindMPFRVersion.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\core\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/core/FindPPLVersion.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\core\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/ar/FindGMPVersion.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\ar\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/FindGMPVersion.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\frontend\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindGMPVersion.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\analyzer\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindMPFRVersion.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\analyzer\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindPPLVersion.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\analyzer\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindSQLite3Version.c">
+			<Option virtualFolder="CMake Files\cmake-build-debug\analyzer\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/ar/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ar\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/ar/doc/doxygen/Doxyfile.in">
+			<Option virtualFolder="CMake Files\ar\doc\doxygen\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/frontend/llvm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\frontend\llvm\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/frontend/llvm/test/regression/pass/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\frontend\llvm\test\regression\pass\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/frontend/llvm/test/regression/import/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\frontend\llvm\test\regression\import\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\analyzer\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/python/settings.cmake.in">
+			<Option virtualFolder="CMake Files\analyzer\python\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/python/setup.py.in">
+			<Option virtualFolder="CMake Files\analyzer\python\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/script/ikos-config.py.in">
+			<Option virtualFolder="CMake Files\analyzer\script\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/script/ikos-report.py.in">
+			<Option virtualFolder="CMake Files\analyzer\script\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/script/ikos-scan-c++.py.in">
+			<Option virtualFolder="CMake Files\analyzer\script\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/script/ikos-scan-cc.py.in">
+			<Option virtualFolder="CMake Files\analyzer\script\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/script/ikos-scan-extract.py.in">
+			<Option virtualFolder="CMake Files\analyzer\script\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/script/ikos-scan.py.in">
+			<Option virtualFolder="CMake Files\analyzer\script\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/script/ikos-view.py.in">
+			<Option virtualFolder="CMake Files\analyzer\script\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/script/ikos.py.in">
+			<Option virtualFolder="CMake Files\analyzer\script\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/doc/doxygen/Doxyfile.in">
+			<Option virtualFolder="CMake Files\analyzer\doc\doxygen\"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/analyzer/test/regression/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\analyzer\test\regression\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
