@@ -444,6 +444,20 @@ public:
   /// {@
   /// \brief The information about class FNumber
 
+  /// \brief whether equals to 0
+  bool is_zero() const{
+    if(mpfr_cmp_d(this->_n,0)==0)
+      return true;
+    else
+      return false;
+  }
+
+  /// \brief return 0
+  static FNumber& zero(){
+    FNumber f(0);
+    return f;
+  }
+
   /// \brief Get the internal value of FNumber
   const mpfr_t& FNvalue() const { return this->_n; }
 
@@ -516,9 +530,9 @@ public:
 //}
 
 
-FNumber& applyintofl(ikos::core::MachineInt& n){
-
-}
+//FNumber& applyintofl(ikos::core::MachineInt& n){
+//
+//}
 
 /// @}
 /// \brief Addition

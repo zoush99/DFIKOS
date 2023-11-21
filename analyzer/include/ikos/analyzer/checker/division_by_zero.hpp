@@ -52,6 +52,7 @@ namespace analyzer {
 class DivisionByZeroChecker final : public Checker {
 private:
   using IntInterval = core::machine_int::Interval;
+  using FloatInterval=core::numeric::FInterval;
 
 public:
   /// \brief Constructor

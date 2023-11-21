@@ -131,11 +131,11 @@ public:
       std::is_nothrow_move_constructible< Number >::value) = default;
 
   /// \brief Copy assignment operator
-  Interval& operator=(const Interval&) noexcept(
+  Interval& operator=(const Interval&) noexcept(  // Modified by zoush99
       std::is_nothrow_copy_assignable< Number >::value) = default;
 
   /// \brief Move assignment operator
-  Interval& operator=(Interval&&) noexcept(
+  Interval& operator=(Interval&&) noexcept( // Modified by zoush99
       std::is_nothrow_move_assignable< Number >::value) = default;
 
   /// \brief Destructor
@@ -815,6 +815,9 @@ using ZInterval = Interval< ZNumber >;
 
 /// \brief Interval on unlimited precision rationals
 using QInterval = Interval< QNumber >;
+
+/// \brief Interval on unlimited precision floating point numbers
+using FInterval=Interval<FNumber>;
 
 } // end namespace numeric
 } // end namespace core

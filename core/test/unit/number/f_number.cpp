@@ -26,6 +26,7 @@ BOOST_AUTO_TEST_CASE(test_f_number) {
   BOOST_CHECK(F(1)+F(2)==F(3));
   BOOST_CHECK(-F(1)==F(-1));
   BOOST_CHECK(F(-1).absolute()==F(1));
+  BOOST_CHECK(true==F(1).is_zero());
 
   BOOST_CHECK(F(1).signcast()==F(-1));
 }

@@ -81,6 +81,7 @@ void DivisionByZeroChecker::check(ar::Statement* stmt,
   }
 }
 
+/// \todo(bugs here!!!) zoush99
 DivisionByZeroChecker::CheckResult DivisionByZeroChecker::check_division(
     ar::BinaryOperation* stmt, const value::AbstractDomain& inv) {
   if (inv.is_normal_flow_bottom()) {
@@ -103,16 +104,23 @@ DivisionByZeroChecker::CheckResult DivisionByZeroChecker::check_division(
   }
 
   auto divisor = IntInterval::bottom(1, Signed);
+  auto fdivisor=FloatInterval::bottom();
+
   if (lit.is_machine_int()) {
     divisor = IntInterval(lit.machine_int());
   } else if (lit.is_machine_int_var()) {
     divisor = inv.normal().int_to_interval(lit.var());
-  } else {
+  }else if(lit.is_floating_point()){ // By zoush99
+    fdivisor = FloatInterval(lit.floating_point());
+  }else if(lit.is_floating_point_var()){  // By zoush99
+    fdivisor = inv.normal().float_to_interval(lit.var());
+  }else {
     log::error("unexpected operand to binary operation");
     return {CheckKind::UnexpectedOperand, Result::Error, {}};
   }
 
   boost::optional< MachineInt > d = divisor.singleton();
+  boost::optional <FNumber> fd=fdivisor.singleton();
 
   if (d && (*d).is_zero()) {
     // The second operand is definitely 0
@@ -120,21 +128,41 @@ DivisionByZeroChecker::CheckResult DivisionByZeroChecker::check_division(
       *msg << ": ∀d ∈ divisor, d == 0\n";
     }
     return {CheckKind::DivisionByZero, Result::Error, {}};
-  } else if (divisor.contains(
+  }
+
+  else if (divisor.contains(
                  MachineInt::zero(divisor.bit_width(), divisor.sign()))) {
     // The second operand may be 0
     if (auto msg = this->display_division_check(Result::Warning, stmt)) {
       *msg << ": ∃d ∈ divisor, d == 0\n";
     }
     return {CheckKind::DivisionByZero, Result::Warning, to_json(divisor)};
-  } else {
+  }
+
+  else if(fd && (*fd).is_zero()){
+    // The second operand is definitely 0
+    if (auto msg = this->display_division_check(Result::Error, stmt)) {
+      *msg << ": ∀d ∈ divisor, d == 0\n";
+    }
+    return {CheckKind::DivisionByZero, Result::Error, {}};
+  }
+
+  else if(fdivisor.contains(FNumber::zero())){  // By zoush99
+    // The second operand may be 0
+    if (auto msg = this->display_division_check(Result::Warning, stmt)) {
+      *msg << ": ∃d ∈ divisor, d == 0\n";
+    }
+    return {CheckKind::DivisionByZero, Result::Warning, to_json(divisor)};
+  }
+
+  else {
     // The second operand cannot be definitely 0
-    if (auto msg = this->display_division_check(Result::Ok, stmt)) {
+    if (auto msg = this->display_division_check(Result::Ok, stmt)) {  // By zoush99
       *msg << ": ∀d ∈ divisor, d != 0\n";
     }
     return {CheckKind::DivisionByZero, Result::Ok, {}};
   }
-}
+  }
 
 llvm::Optional< LogMessage > DivisionByZeroChecker::display_division_check(
     Result result, ar::BinaryOperation* stmt) const {
