@@ -459,7 +459,7 @@ public:
 
   /// \brief whether equals to 0
   bool is_zero() const {
-    if (mpfr_cmp_d(this->_n, 0) == 0)
+    if (!mpfr_cmp_d(this->_n, 0))
       return true;
     else
       return false;

@@ -224,19 +224,6 @@ doxygen-core/fast:
 .PHONY : doxygen-core/fast
 
 #=============================================================================
-# Target rules for targets named test-f_number-hpp
-
-# Build rule for target.
-test-f_number-hpp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-f_number-hpp
-.PHONY : test-f_number-hpp
-
-# fast build rule for target.
-test-f_number-hpp/fast:
-	$(MAKE) $(MAKESILENT) -f core/CMakeFiles/test-f_number-hpp.dir/build.make core/CMakeFiles/test-f_number-hpp.dir/build
-.PHONY : test-f_number-hpp/fast
-
-#=============================================================================
 # Target rules for targets named test-core-adt-patricia_tree-map
 
 # Build rule for target.
@@ -1037,7 +1024,6 @@ help:
 	@echo "... test-core-value-numeric-constant"
 	@echo "... test-core-value-numeric-gauge"
 	@echo "... test-core-value-numeric-interval"
-	@echo "... test-f_number-hpp"
 .PHONY : help
 
 
