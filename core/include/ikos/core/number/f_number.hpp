@@ -542,7 +542,6 @@ public:
   }
 
   /// @}
-
   friend class QNumber;
   friend class ZNumber;
 }; // end class FNumber

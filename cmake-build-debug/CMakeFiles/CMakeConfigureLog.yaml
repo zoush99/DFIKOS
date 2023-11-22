@@ -10063,3 +10063,2201 @@ events:
         1.2
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "core/CMakeLists.txt:90 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c97e5/fast && /usr/bin/make  -f CMakeFiles/cmTC_c97e5.dir/build.make CMakeFiles/cmTC_c97e5.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_c97e5.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_c97e5.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindGMPVersion.c
+        Linking C executable cmTC_c97e5
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c97e5.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c97e5.dir/FindGMPVersion.c.o -o cmTC_c97e5  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0e985/fast && /usr/bin/make  -f CMakeFiles/cmTC_0e985.dir/build.make CMakeFiles/cmTC_0e985.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_0e985.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_0e985.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindMPFRVersion.c
+        Linking C executable cmTC_0e985
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e985.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_0e985.dir/FindMPFRVersion.c.o -o cmTC_0e985  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9ed61/fast && /usr/bin/make  -f CMakeFiles/cmTC_9ed61.dir/build.make CMakeFiles/cmTC_9ed61.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_9ed61.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_9ed61.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindPPLVersion.c
+        Linking C executable cmTC_9ed61
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9ed61.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_9ed61.dir/FindPPLVersion.c.o -o cmTC_9ed61  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "ar/CMakeLists.txt:89 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/ar/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fdeae/fast && /usr/bin/make  -f CMakeFiles/cmTC_fdeae.dir/build.make CMakeFiles/cmTC_fdeae.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_fdeae.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_fdeae.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/ar/FindGMPVersion.c
+        Linking C executable cmTC_fdeae
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdeae.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_fdeae.dir/FindGMPVersion.c.o -o cmTC_fdeae  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "frontend/llvm/CMakeLists.txt:93 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/frontend/llvm/../../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1e309/fast && /usr/bin/make  -f CMakeFiles/cmTC_1e309.dir/build.make CMakeFiles/cmTC_1e309.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_1e309.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_1e309.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/FindGMPVersion.c
+        Linking C executable cmTC_1e309
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e309.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_1e309.dir/FindGMPVersion.c.o -o cmTC_1e309  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "analyzer/CMakeLists.txt:95 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_19289/fast && /usr/bin/make  -f CMakeFiles/cmTC_19289.dir/build.make CMakeFiles/cmTC_19289.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_19289.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_19289.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindGMPVersion.c
+        Linking C executable cmTC_19289
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19289.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_19289.dir/FindGMPVersion.c.o -o cmTC_19289  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindSQLite3.cmake:72 (try_run)"
+      - "analyzer/CMakeLists.txt:102 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_39831/fast && /usr/bin/make  -f CMakeFiles/cmTC_39831.dir/build.make CMakeFiles/cmTC_39831.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_39831.dir/FindSQLite3Version.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_39831.dir/FindSQLite3Version.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindSQLite3Version.c
+        Linking C executable cmTC_39831
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39831.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_39831.dir/FindSQLite3Version.c.o -o cmTC_39831  /usr/lib/x86_64-linux-gnu/libsqlite3.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        3.31.1
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7da61/fast && /usr/bin/make  -f CMakeFiles/cmTC_7da61.dir/build.make CMakeFiles/cmTC_7da61.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_7da61.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_7da61.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindMPFRVersion.c
+        Linking C executable cmTC_7da61
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7da61.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_7da61.dir/FindMPFRVersion.c.o -o cmTC_7da61  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4b0ef/fast && /usr/bin/make  -f CMakeFiles/cmTC_4b0ef.dir/build.make CMakeFiles/cmTC_4b0ef.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_4b0ef.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_4b0ef.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindPPLVersion.c
+        Linking C executable cmTC_4b0ef
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b0ef.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_4b0ef.dir/FindPPLVersion.c.o -o cmTC_4b0ef  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "core/CMakeLists.txt:90 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1c0fe/fast && /usr/bin/make  -f CMakeFiles/cmTC_1c0fe.dir/build.make CMakeFiles/cmTC_1c0fe.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_1c0fe.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_1c0fe.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindGMPVersion.c
+        Linking C executable cmTC_1c0fe
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c0fe.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_1c0fe.dir/FindGMPVersion.c.o -o cmTC_1c0fe  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_89c55/fast && /usr/bin/make  -f CMakeFiles/cmTC_89c55.dir/build.make CMakeFiles/cmTC_89c55.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_89c55.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_89c55.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindMPFRVersion.c
+        Linking C executable cmTC_89c55
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89c55.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_89c55.dir/FindMPFRVersion.c.o -o cmTC_89c55  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f8973/fast && /usr/bin/make  -f CMakeFiles/cmTC_f8973.dir/build.make CMakeFiles/cmTC_f8973.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_f8973.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_f8973.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindPPLVersion.c
+        Linking C executable cmTC_f8973
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8973.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_f8973.dir/FindPPLVersion.c.o -o cmTC_f8973  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "ar/CMakeLists.txt:89 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/ar/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_76de7/fast && /usr/bin/make  -f CMakeFiles/cmTC_76de7.dir/build.make CMakeFiles/cmTC_76de7.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_76de7.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_76de7.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/ar/FindGMPVersion.c
+        Linking C executable cmTC_76de7
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76de7.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_76de7.dir/FindGMPVersion.c.o -o cmTC_76de7  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "frontend/llvm/CMakeLists.txt:93 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/frontend/llvm/../../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_90af6/fast && /usr/bin/make  -f CMakeFiles/cmTC_90af6.dir/build.make CMakeFiles/cmTC_90af6.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_90af6.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_90af6.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/FindGMPVersion.c
+        Linking C executable cmTC_90af6
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90af6.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_90af6.dir/FindGMPVersion.c.o -o cmTC_90af6  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "analyzer/CMakeLists.txt:95 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d4628/fast && /usr/bin/make  -f CMakeFiles/cmTC_d4628.dir/build.make CMakeFiles/cmTC_d4628.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_d4628.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_d4628.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindGMPVersion.c
+        Linking C executable cmTC_d4628
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4628.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_d4628.dir/FindGMPVersion.c.o -o cmTC_d4628  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindSQLite3.cmake:72 (try_run)"
+      - "analyzer/CMakeLists.txt:102 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_46458/fast && /usr/bin/make  -f CMakeFiles/cmTC_46458.dir/build.make CMakeFiles/cmTC_46458.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_46458.dir/FindSQLite3Version.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_46458.dir/FindSQLite3Version.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindSQLite3Version.c
+        Linking C executable cmTC_46458
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46458.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_46458.dir/FindSQLite3Version.c.o -o cmTC_46458  /usr/lib/x86_64-linux-gnu/libsqlite3.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        3.31.1
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_89318/fast && /usr/bin/make  -f CMakeFiles/cmTC_89318.dir/build.make CMakeFiles/cmTC_89318.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_89318.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_89318.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindMPFRVersion.c
+        Linking C executable cmTC_89318
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89318.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_89318.dir/FindMPFRVersion.c.o -o cmTC_89318  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_aebf6/fast && /usr/bin/make  -f CMakeFiles/cmTC_aebf6.dir/build.make CMakeFiles/cmTC_aebf6.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_aebf6.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_aebf6.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindPPLVersion.c
+        Linking C executable cmTC_aebf6
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aebf6.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_aebf6.dir/FindPPLVersion.c.o -o cmTC_aebf6  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "core/CMakeLists.txt:90 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_907f0/fast && /usr/bin/make  -f CMakeFiles/cmTC_907f0.dir/build.make CMakeFiles/cmTC_907f0.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_907f0.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_907f0.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindGMPVersion.c
+        Linking C executable cmTC_907f0
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_907f0.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_907f0.dir/FindGMPVersion.c.o -o cmTC_907f0  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f9d84/fast && /usr/bin/make  -f CMakeFiles/cmTC_f9d84.dir/build.make CMakeFiles/cmTC_f9d84.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_f9d84.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_f9d84.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindMPFRVersion.c
+        Linking C executable cmTC_f9d84
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9d84.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_f9d84.dir/FindMPFRVersion.c.o -o cmTC_f9d84  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_14682/fast && /usr/bin/make  -f CMakeFiles/cmTC_14682.dir/build.make CMakeFiles/cmTC_14682.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_14682.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_14682.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindPPLVersion.c
+        Linking C executable cmTC_14682
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14682.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_14682.dir/FindPPLVersion.c.o -o cmTC_14682  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "ar/CMakeLists.txt:89 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/ar/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3c381/fast && /usr/bin/make  -f CMakeFiles/cmTC_3c381.dir/build.make CMakeFiles/cmTC_3c381.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_3c381.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_3c381.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/ar/FindGMPVersion.c
+        Linking C executable cmTC_3c381
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c381.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_3c381.dir/FindGMPVersion.c.o -o cmTC_3c381  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "frontend/llvm/CMakeLists.txt:93 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/frontend/llvm/../../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_40c7e/fast && /usr/bin/make  -f CMakeFiles/cmTC_40c7e.dir/build.make CMakeFiles/cmTC_40c7e.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_40c7e.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_40c7e.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/FindGMPVersion.c
+        Linking C executable cmTC_40c7e
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40c7e.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_40c7e.dir/FindGMPVersion.c.o -o cmTC_40c7e  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "analyzer/CMakeLists.txt:95 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_247b5/fast && /usr/bin/make  -f CMakeFiles/cmTC_247b5.dir/build.make CMakeFiles/cmTC_247b5.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_247b5.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_247b5.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindGMPVersion.c
+        Linking C executable cmTC_247b5
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_247b5.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_247b5.dir/FindGMPVersion.c.o -o cmTC_247b5  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindSQLite3.cmake:72 (try_run)"
+      - "analyzer/CMakeLists.txt:102 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_40055/fast && /usr/bin/make  -f CMakeFiles/cmTC_40055.dir/build.make CMakeFiles/cmTC_40055.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_40055.dir/FindSQLite3Version.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_40055.dir/FindSQLite3Version.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindSQLite3Version.c
+        Linking C executable cmTC_40055
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40055.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_40055.dir/FindSQLite3Version.c.o -o cmTC_40055  /usr/lib/x86_64-linux-gnu/libsqlite3.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        3.31.1
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a00b2/fast && /usr/bin/make  -f CMakeFiles/cmTC_a00b2.dir/build.make CMakeFiles/cmTC_a00b2.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_a00b2.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_a00b2.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindMPFRVersion.c
+        Linking C executable cmTC_a00b2
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a00b2.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_a00b2.dir/FindMPFRVersion.c.o -o cmTC_a00b2  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_29f52/fast && /usr/bin/make  -f CMakeFiles/cmTC_29f52.dir/build.make CMakeFiles/cmTC_29f52.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_29f52.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_29f52.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindPPLVersion.c
+        Linking C executable cmTC_29f52
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29f52.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_29f52.dir/FindPPLVersion.c.o -o cmTC_29f52  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "core/CMakeLists.txt:90 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2fab5/fast && /usr/bin/make  -f CMakeFiles/cmTC_2fab5.dir/build.make CMakeFiles/cmTC_2fab5.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_2fab5.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_2fab5.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindGMPVersion.c
+        Linking C executable cmTC_2fab5
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2fab5.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_2fab5.dir/FindGMPVersion.c.o -o cmTC_2fab5  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c93e2/fast && /usr/bin/make  -f CMakeFiles/cmTC_c93e2.dir/build.make CMakeFiles/cmTC_c93e2.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_c93e2.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_c93e2.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindMPFRVersion.c
+        Linking C executable cmTC_c93e2
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c93e2.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c93e2.dir/FindMPFRVersion.c.o -o cmTC_c93e2  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_21e38/fast && /usr/bin/make  -f CMakeFiles/cmTC_21e38.dir/build.make CMakeFiles/cmTC_21e38.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_21e38.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_21e38.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindPPLVersion.c
+        Linking C executable cmTC_21e38
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21e38.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_21e38.dir/FindPPLVersion.c.o -o cmTC_21e38  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "ar/CMakeLists.txt:89 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/ar/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_29740/fast && /usr/bin/make  -f CMakeFiles/cmTC_29740.dir/build.make CMakeFiles/cmTC_29740.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_29740.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_29740.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/ar/FindGMPVersion.c
+        Linking C executable cmTC_29740
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29740.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_29740.dir/FindGMPVersion.c.o -o cmTC_29740  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "frontend/llvm/CMakeLists.txt:93 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/frontend/llvm/../../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ce7d8/fast && /usr/bin/make  -f CMakeFiles/cmTC_ce7d8.dir/build.make CMakeFiles/cmTC_ce7d8.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_ce7d8.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_ce7d8.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/FindGMPVersion.c
+        Linking C executable cmTC_ce7d8
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ce7d8.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_ce7d8.dir/FindGMPVersion.c.o -o cmTC_ce7d8  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "analyzer/CMakeLists.txt:95 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3a611/fast && /usr/bin/make  -f CMakeFiles/cmTC_3a611.dir/build.make CMakeFiles/cmTC_3a611.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_3a611.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_3a611.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindGMPVersion.c
+        Linking C executable cmTC_3a611
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a611.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_3a611.dir/FindGMPVersion.c.o -o cmTC_3a611  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindSQLite3.cmake:72 (try_run)"
+      - "analyzer/CMakeLists.txt:102 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7bd09/fast && /usr/bin/make  -f CMakeFiles/cmTC_7bd09.dir/build.make CMakeFiles/cmTC_7bd09.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_7bd09.dir/FindSQLite3Version.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_7bd09.dir/FindSQLite3Version.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindSQLite3Version.c
+        Linking C executable cmTC_7bd09
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7bd09.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_7bd09.dir/FindSQLite3Version.c.o -o cmTC_7bd09  /usr/lib/x86_64-linux-gnu/libsqlite3.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        3.31.1
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_70e66/fast && /usr/bin/make  -f CMakeFiles/cmTC_70e66.dir/build.make CMakeFiles/cmTC_70e66.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_70e66.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_70e66.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindMPFRVersion.c
+        Linking C executable cmTC_70e66
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70e66.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_70e66.dir/FindMPFRVersion.c.o -o cmTC_70e66  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_abb19/fast && /usr/bin/make  -f CMakeFiles/cmTC_abb19.dir/build.make CMakeFiles/cmTC_abb19.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_abb19.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_abb19.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindPPLVersion.c
+        Linking C executable cmTC_abb19
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abb19.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_abb19.dir/FindPPLVersion.c.o -o cmTC_abb19  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "core/CMakeLists.txt:90 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fdb31/fast && /usr/bin/make  -f CMakeFiles/cmTC_fdb31.dir/build.make CMakeFiles/cmTC_fdb31.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_fdb31.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_fdb31.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindGMPVersion.c
+        Linking C executable cmTC_fdb31
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdb31.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_fdb31.dir/FindGMPVersion.c.o -o cmTC_fdb31  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_90028/fast && /usr/bin/make  -f CMakeFiles/cmTC_90028.dir/build.make CMakeFiles/cmTC_90028.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_90028.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_90028.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindMPFRVersion.c
+        Linking C executable cmTC_90028
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90028.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_90028.dir/FindMPFRVersion.c.o -o cmTC_90028  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4f2bd/fast && /usr/bin/make  -f CMakeFiles/cmTC_4f2bd.dir/build.make CMakeFiles/cmTC_4f2bd.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_4f2bd.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_4f2bd.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindPPLVersion.c
+        Linking C executable cmTC_4f2bd
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f2bd.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_4f2bd.dir/FindPPLVersion.c.o -o cmTC_4f2bd  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "ar/CMakeLists.txt:89 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/ar/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_444d3/fast && /usr/bin/make  -f CMakeFiles/cmTC_444d3.dir/build.make CMakeFiles/cmTC_444d3.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_444d3.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_444d3.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/ar/FindGMPVersion.c
+        Linking C executable cmTC_444d3
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_444d3.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_444d3.dir/FindGMPVersion.c.o -o cmTC_444d3  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "frontend/llvm/CMakeLists.txt:93 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/frontend/llvm/../../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f230f/fast && /usr/bin/make  -f CMakeFiles/cmTC_f230f.dir/build.make CMakeFiles/cmTC_f230f.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_f230f.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_f230f.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/FindGMPVersion.c
+        Linking C executable cmTC_f230f
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f230f.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_f230f.dir/FindGMPVersion.c.o -o cmTC_f230f  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "analyzer/CMakeLists.txt:95 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_24e87/fast && /usr/bin/make  -f CMakeFiles/cmTC_24e87.dir/build.make CMakeFiles/cmTC_24e87.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_24e87.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_24e87.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindGMPVersion.c
+        Linking C executable cmTC_24e87
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24e87.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_24e87.dir/FindGMPVersion.c.o -o cmTC_24e87  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindSQLite3.cmake:72 (try_run)"
+      - "analyzer/CMakeLists.txt:102 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e3a73/fast && /usr/bin/make  -f CMakeFiles/cmTC_e3a73.dir/build.make CMakeFiles/cmTC_e3a73.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_e3a73.dir/FindSQLite3Version.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_e3a73.dir/FindSQLite3Version.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindSQLite3Version.c
+        Linking C executable cmTC_e3a73
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3a73.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_e3a73.dir/FindSQLite3Version.c.o -o cmTC_e3a73  /usr/lib/x86_64-linux-gnu/libsqlite3.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        3.31.1
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_49789/fast && /usr/bin/make  -f CMakeFiles/cmTC_49789.dir/build.make CMakeFiles/cmTC_49789.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_49789.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_49789.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindMPFRVersion.c
+        Linking C executable cmTC_49789
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49789.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_49789.dir/FindMPFRVersion.c.o -o cmTC_49789  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_29d57/fast && /usr/bin/make  -f CMakeFiles/cmTC_29d57.dir/build.make CMakeFiles/cmTC_29d57.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_29d57.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_29d57.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindPPLVersion.c
+        Linking C executable cmTC_29d57
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29d57.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_29d57.dir/FindPPLVersion.c.o -o cmTC_29d57  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "core/CMakeLists.txt:90 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a45fc/fast && /usr/bin/make  -f CMakeFiles/cmTC_a45fc.dir/build.make CMakeFiles/cmTC_a45fc.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_a45fc.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_a45fc.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindGMPVersion.c
+        Linking C executable cmTC_a45fc
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a45fc.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_a45fc.dir/FindGMPVersion.c.o -o cmTC_a45fc  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f0563/fast && /usr/bin/make  -f CMakeFiles/cmTC_f0563.dir/build.make CMakeFiles/cmTC_f0563.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_f0563.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_f0563.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindMPFRVersion.c
+        Linking C executable cmTC_f0563
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0563.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_f0563.dir/FindMPFRVersion.c.o -o cmTC_f0563  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bd77a/fast && /usr/bin/make  -f CMakeFiles/cmTC_bd77a.dir/build.make CMakeFiles/cmTC_bd77a.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_bd77a.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_bd77a.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindPPLVersion.c
+        Linking C executable cmTC_bd77a
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd77a.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_bd77a.dir/FindPPLVersion.c.o -o cmTC_bd77a  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "ar/CMakeLists.txt:89 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/ar/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_479f2/fast && /usr/bin/make  -f CMakeFiles/cmTC_479f2.dir/build.make CMakeFiles/cmTC_479f2.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_479f2.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_479f2.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/ar/FindGMPVersion.c
+        Linking C executable cmTC_479f2
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_479f2.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_479f2.dir/FindGMPVersion.c.o -o cmTC_479f2  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "frontend/llvm/CMakeLists.txt:93 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/frontend/llvm/../../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7da98/fast && /usr/bin/make  -f CMakeFiles/cmTC_7da98.dir/build.make CMakeFiles/cmTC_7da98.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_7da98.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_7da98.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/FindGMPVersion.c
+        Linking C executable cmTC_7da98
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7da98.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_7da98.dir/FindGMPVersion.c.o -o cmTC_7da98  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "analyzer/CMakeLists.txt:95 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8c3b4/fast && /usr/bin/make  -f CMakeFiles/cmTC_8c3b4.dir/build.make CMakeFiles/cmTC_8c3b4.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_8c3b4.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_8c3b4.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindGMPVersion.c
+        Linking C executable cmTC_8c3b4
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c3b4.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_8c3b4.dir/FindGMPVersion.c.o -o cmTC_8c3b4  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindSQLite3.cmake:72 (try_run)"
+      - "analyzer/CMakeLists.txt:102 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_35801/fast && /usr/bin/make  -f CMakeFiles/cmTC_35801.dir/build.make CMakeFiles/cmTC_35801.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_35801.dir/FindSQLite3Version.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_35801.dir/FindSQLite3Version.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindSQLite3Version.c
+        Linking C executable cmTC_35801
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35801.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_35801.dir/FindSQLite3Version.c.o -o cmTC_35801  /usr/lib/x86_64-linux-gnu/libsqlite3.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        3.31.1
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_66ff5/fast && /usr/bin/make  -f CMakeFiles/cmTC_66ff5.dir/build.make CMakeFiles/cmTC_66ff5.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_66ff5.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_66ff5.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindMPFRVersion.c
+        Linking C executable cmTC_66ff5
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66ff5.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_66ff5.dir/FindMPFRVersion.c.o -o cmTC_66ff5  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_156fe/fast && /usr/bin/make  -f CMakeFiles/cmTC_156fe.dir/build.make CMakeFiles/cmTC_156fe.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_156fe.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_156fe.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindPPLVersion.c
+        Linking C executable cmTC_156fe
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_156fe.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_156fe.dir/FindPPLVersion.c.o -o cmTC_156fe  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "core/CMakeLists.txt:90 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_25935/fast && /usr/bin/make  -f CMakeFiles/cmTC_25935.dir/build.make CMakeFiles/cmTC_25935.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_25935.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_25935.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindGMPVersion.c
+        Linking C executable cmTC_25935
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25935.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_25935.dir/FindGMPVersion.c.o -o cmTC_25935  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_378ed/fast && /usr/bin/make  -f CMakeFiles/cmTC_378ed.dir/build.make CMakeFiles/cmTC_378ed.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_378ed.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_378ed.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindMPFRVersion.c
+        Linking C executable cmTC_378ed
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_378ed.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_378ed.dir/FindMPFRVersion.c.o -o cmTC_378ed  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "core/CMakeLists.txt:99 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/core/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_acaf5/fast && /usr/bin/make  -f CMakeFiles/cmTC_acaf5.dir/build.make CMakeFiles/cmTC_acaf5.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_acaf5.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_acaf5.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/core/FindPPLVersion.c
+        Linking C executable cmTC_acaf5
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acaf5.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_acaf5.dir/FindPPLVersion.c.o -o cmTC_acaf5  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/core/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "ar/CMakeLists.txt:89 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/ar/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_51893/fast && /usr/bin/make  -f CMakeFiles/cmTC_51893.dir/build.make CMakeFiles/cmTC_51893.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_51893.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_51893.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/ar/FindGMPVersion.c
+        Linking C executable cmTC_51893
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51893.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_51893.dir/FindGMPVersion.c.o -o cmTC_51893  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/ar/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "frontend/llvm/CMakeLists.txt:93 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/frontend/llvm/../../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_aab54/fast && /usr/bin/make  -f CMakeFiles/cmTC_aab54.dir/build.make CMakeFiles/cmTC_aab54.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_aab54.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_aab54.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/FindGMPVersion.c
+        Linking C executable cmTC_aab54
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aab54.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_aab54.dir/FindGMPVersion.c.o -o cmTC_aab54  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/frontend/llvm/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindGMP.cmake:88 (try_run)"
+      - "analyzer/CMakeLists.txt:95 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_740c7/fast && /usr/bin/make  -f CMakeFiles/cmTC_740c7.dir/build.make CMakeFiles/cmTC_740c7.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_740c7.dir/FindGMPVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_740c7.dir/FindGMPVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindGMPVersion.c
+        Linking C executable cmTC_740c7
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_740c7.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_740c7.dir/FindGMPVersion.c.o -o cmTC_740c7  /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        6.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindSQLite3.cmake:72 (try_run)"
+      - "analyzer/CMakeLists.txt:102 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a3f84/fast && /usr/bin/make  -f CMakeFiles/cmTC_a3f84.dir/build.make CMakeFiles/cmTC_a3f84.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_a3f84.dir/FindSQLite3Version.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_a3f84.dir/FindSQLite3Version.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindSQLite3Version.c
+        Linking C executable cmTC_a3f84
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3f84.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_a3f84.dir/FindSQLite3Version.c.o -o cmTC_a3f84  /usr/lib/x86_64-linux-gnu/libsqlite3.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        3.31.1
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindMPFR.cmake:73 (try_run)"
+      - "cmake/FindAPRON.cmake:59 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9434a/fast && /usr/bin/make  -f CMakeFiles/cmTC_9434a.dir/build.make CMakeFiles/cmTC_9434a.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_9434a.dir/FindMPFRVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_9434a.dir/FindMPFRVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindMPFRVersion.c
+        Linking C executable cmTC_9434a
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9434a.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_9434a.dir/FindMPFRVersion.c.o -o cmTC_9434a  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmpfr.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        4.2.0
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "cmake/FindPPL.cmake:113 (try_run)"
+      - "cmake/FindAPRON.cmake:60 (find_package)"
+      - "analyzer/CMakeLists.txt:105 (find_package)"
+    directories:
+      source: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+      binary: "/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/zou/Documents/DFIKOS/cmake;/home/zou/Documents/DFIKOS/analyzer/../cmake"
+    buildResult:
+      variable: "COMPILE_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp
+        
+        Run Build Command(s):/home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e8dd4/fast && /usr/bin/make  -f CMakeFiles/cmTC_e8dd4.dir/build.make CMakeFiles/cmTC_e8dd4.dir/build
+        make[1]: Entering directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_e8dd4.dir/FindPPLVersion.c.o
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_e8dd4.dir/FindPPLVersion.c.o -c /home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/FindPPLVersion.c
+        Linking C executable cmTC_e8dd4
+        /home/zou/Documents/clion/clion-2023.2.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8dd4.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_e8dd4.dir/FindPPLVersion.c.o -o cmTC_e8dd4  /usr/lib/x86_64-linux-gnu/libppl_c.so /usr/lib/x86_64-linux-gnu/libgmp.so 
+        make[1]: Leaving directory '/home/zou/Documents/DFIKOS/cmake-build-debug/analyzer/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT"
+      cached: true
+      stdout: |
+        1.2
+      exitCode: 0
+...
