@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o"
-  "CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o.d"
+  "CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o"
+  "CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o.d"
   "test-f_number-hpp"
   "test-f_number-hpp.pdb"
 )

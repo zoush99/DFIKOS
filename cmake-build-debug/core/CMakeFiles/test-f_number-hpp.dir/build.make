@@ -69,28 +69,28 @@ include core/CMakeFiles/test-f_number-hpp.dir/progress.make
 # Include the compile flags for this target's objects.
 include core/CMakeFiles/test-f_number-hpp.dir/flags.make
 
-core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o: core/CMakeFiles/test-f_number-hpp.dir/flags.make
-core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o: /home/zou/Documents/DFIKOS/core/zoush99test/test-f_number-hpp.cpp
-core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o: core/CMakeFiles/test-f_number-hpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zou/Documents/DFIKOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o"
-	cd /home/zou/Documents/DFIKOS/cmake-build-debug/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o -MF CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o.d -o CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o -c /home/zou/Documents/DFIKOS/core/zoush99test/test-f_number-hpp.cpp
+core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o: core/CMakeFiles/test-f_number-hpp.dir/flags.make
+core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o: /home/zou/Documents/DFIKOS/core/zoush99test/number/test-f_number-hpp.cpp
+core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o: core/CMakeFiles/test-f_number-hpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zou/Documents/DFIKOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o"
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o -MF CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o.d -o CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o -c /home/zou/Documents/DFIKOS/core/zoush99test/number/test-f_number-hpp.cpp
 
-core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.i"
-	cd /home/zou/Documents/DFIKOS/cmake-build-debug/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zou/Documents/DFIKOS/core/zoush99test/test-f_number-hpp.cpp > CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.i
+core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.i"
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zou/Documents/DFIKOS/core/zoush99test/number/test-f_number-hpp.cpp > CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.i
 
-core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.s"
-	cd /home/zou/Documents/DFIKOS/cmake-build-debug/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zou/Documents/DFIKOS/core/zoush99test/test-f_number-hpp.cpp -o CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.s
+core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.s"
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zou/Documents/DFIKOS/core/zoush99test/number/test-f_number-hpp.cpp -o CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.s
 
 # Object files for target test-f_number-hpp
 test__f_number__hpp_OBJECTS = \
-"CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o"
+"CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o"
 
 # External object files for target test-f_number-hpp
 test__f_number__hpp_EXTERNAL_OBJECTS =
 
-core/test-f_number-hpp: core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o
+core/test-f_number-hpp: core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o
 core/test-f_number-hpp: core/CMakeFiles/test-f_number-hpp.dir/build.make
 core/test-f_number-hpp: core/CMakeFiles/test-f_number-hpp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zou/Documents/DFIKOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test-f_number-hpp"

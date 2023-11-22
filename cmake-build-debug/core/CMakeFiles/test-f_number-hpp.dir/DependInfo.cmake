@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zou/Documents/DFIKOS/core/zoush99test/test-f_number-hpp.cpp" "core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o" "gcc" "core/CMakeFiles/test-f_number-hpp.dir/zoush99test/test-f_number-hpp.cpp.o.d"
+  "/home/zou/Documents/DFIKOS/core/zoush99test/number/test-f_number-hpp.cpp" "core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o" "gcc" "core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

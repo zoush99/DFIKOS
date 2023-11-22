@@ -636,8 +636,11 @@ core/test/unit/CMakeFiles/test-core-number-q_number.dir/number/q_number.cpp.o: \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/exception.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/support/assert.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/support/compiler.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/f_number.hpp \
  /usr/local/include/mpf2mpfr.h /usr/local/include/mpfr.h \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/machine_int.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/compatibility.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/support/assert.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/support/compiler.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/signedness.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral_float.hpp
