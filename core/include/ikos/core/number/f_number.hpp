@@ -19,11 +19,11 @@
 #include <mpfr.h>
 
 #include <boost/functional/hash.hpp>
-
 #include <ikos/core/number/exception.hpp>
 #include <ikos/core/number/machine_int.hpp>
 #include <ikos/core/number/supported_integral_float.hpp>
 #include <ikos/core/number/z_number.hpp>
+
 #include <ikos/core/support/assert.hpp>
 
 namespace ikos {
@@ -37,7 +37,6 @@ enum Fpre {
   ld = 113  // 128 bits
 };
 
-class ZNumber;
 /// \brief Class for unlimited precision floating point number
 class FNumber {
 private:
@@ -46,7 +45,6 @@ private:
   mpfr_rnd_t _rnd;   // round mode of FNumber.
 
 public:
-
   /// \brief Create a FNumber from a string representation
   ///
   /// Interpret the null-terminated string `str` in the given base.
@@ -55,17 +53,17 @@ public:
   /// an exception NumberError.
   ///
   /// The base may vary from 2 to 36.
-  static FNumber from_string(const char* str, int base=10){
-    try{
+  static FNumber from_string(const char* str, int base = 10) {
+    try {
       mpfr_t strF;
-      mpfr_init2(strF,Fpre::dou);  // 53 bits
-      mpfr_set_str(strF,str,base,MPFR_RNDN);
-      FNumber F(strF,MPFR_RNDN);
-      F._prec=Fpre::dou;
-      F._rnd=MPFR_RNDN;
+      mpfr_init2(strF, Fpre::dou); // 53 bits
+      mpfr_set_str(strF, str, base, MPFR_RNDN);
+      FNumber F(strF, MPFR_RNDN);
+      F._prec = Fpre::dou;
+      F._rnd = MPFR_RNDN;
       mpfr_clear(strF);
       return F;
-    }catch (std::invalid_argument&){
+    } catch (std::invalid_argument&) {
       std::ostringstream buf;
       buf << "FNumber: invalid conversion from string '" << str << "'";
       throw NumberError(buf.str());
@@ -80,17 +78,17 @@ public:
   /// an exception NumberError.
   ///
   /// The base may vary from 2 to 36.
-  static FNumber from_string(const std::string& str,int base=10){
+  static FNumber from_string(const std::string& str, int base = 10) {
     try {
       mpfr_t strF;
-      mpfr_init2(strF,Fpre::dou);  // 53 bits
-      mpfr_set_str(strF,str.c_str(),base,MPFR_RNDN);
-      FNumber F(strF,MPFR_RNDN);
-      F._prec=Fpre::dou;
-      F._rnd=MPFR_RNDN;
+      mpfr_init2(strF, Fpre::dou); // 53 bits
+      mpfr_set_str(strF, str.c_str(), base, MPFR_RNDN);
+      FNumber F(strF, MPFR_RNDN);
+      F._prec = Fpre::dou;
+      F._rnd = MPFR_RNDN;
       mpfr_clear(strF);
       return F;
-    }catch (std::invalid_argument&){
+    } catch (std::invalid_argument&) {
       std::ostringstream buf;
       buf << "FNumber: invalid conversion from string '" << str << "'";
       throw NumberError(buf.str());
@@ -100,10 +98,14 @@ public:
   /// \brief Tranform a FNumber to a string representation
   ///
   /// The base may vary from 2 to 36.
-  std::string to_string(int base=10) const {
+  std::string to_string(int base = 10) const {
     int size = mpfr_snprintf(nullptr, 0, "%.*Rg", base, this->_n);
     char* buffer = new char[size + 1];
-    mpfr_snprintf(buffer, size + 1, "%.*Rg", base, this->_n); // %e, %f, %.10Rf et al.
+    mpfr_snprintf(buffer,
+                  size + 1,
+                  "%.*Rg",
+                  base,
+                  this->_n); // %e, %f, %.10Rf et al.
     std::string result(buffer);
     delete[] buffer;
     return result;
@@ -128,20 +130,20 @@ public:
     this->_rnd = f._rnd;
   }
 
-    /// \brief Move constructor
-    FNumber(FNumber&& f){
-    if(this!=&f){
-      mpfr_swap(this->_n,f._n);
-      this->_prec=f._prec;
-      this->_rnd=f._rnd;
+  /// \brief Move constructor
+  FNumber(FNumber&& f) {
+    if (this != &f) {
+      mpfr_swap(this->_n, f._n);
+      this->_prec = f._prec;
+      this->_rnd = f._rnd;
       // Getting rid of pointing relationships
-      mpfr_init2(f._n,Fpre::fl);
-      f._prec=0;
-      f._rnd=MPFR_RNDN;
+      mpfr_init2(f._n, Fpre::fl);
+      f._prec = 0;
+      f._rnd = MPFR_RNDN;
     }
-    }
+  }
 
-        /// \brief Create a FNumber from a mpft_t
+  /// \brief Create a FNumber from a mpft_t
   explicit FNumber(const mpfr_t m, mpfr_rnd_t r) {
     mpfr_init2(this->_n, mpfr_get_prec(m));
     mpfr_set(this->_n, m, r);
@@ -156,22 +158,33 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   explicit FNumber(T n) {
-    if (std::is_same< T, int >::value) { // int type->float
+    if (std::is_same< T, float >::value) { // float type
       mpfr_init2(this->_n, Fpre::fl);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
       this->_prec = Fpre::fl;
-    }else if (std::is_same< T, float >::value) { // float type
-      mpfr_init2(this->_n, Fpre::fl);
-      mpfr_set_flt(this->_n,n, MPFR_RNDN);
-      this->_prec = Fpre::fl;
     } else if (std::is_same< T, double >::value) { // double type
       mpfr_init2(this->_n, Fpre::dou);
-      mpfr_set_d(this->_n,n, MPFR_RNDN);
+      mpfr_set_d(this->_n, n, MPFR_RNDN);
       this->_prec = Fpre::dou;
-    } else { // long double type
+    } else if (std::is_same< T, long double >::value) { // long double type
       mpfr_init2(this->_n, Fpre::ld);
       mpfr_set_ld(this->_n, n, MPFR_RNDN);
       this->_prec = Fpre::ld;
+    } else if (std::is_same< T, int >::value) { // int type -> float
+      mpfr_init2(this->_n, Fpre::fl);
+      mpfr_set_flt(this->_n, n, MPFR_RNDN);
+      this->_prec = Fpre::fl;
+    } else if (std::is_same< T, long int >::value) { // long int -> double
+      mpfr_init2(this->_n, Fpre::dou);
+      mpfr_set_flt(this->_n, n, MPFR_RNDN);
+      this->_prec = Fpre::dou;
+    } else if (std::is_same< T, long long int >::value) { // long long int ->
+                                                          // long double
+      mpfr_init2(this->_n, Fpre::ld);
+      mpfr_set_flt(this->_n, n, MPFR_RNDN);
+      this->_prec = Fpre::ld;
+    } else {
+      ikos_unreachable("unreachable");
     }
     this->_rnd = MPFR_RNDN;
   }
@@ -202,8 +215,8 @@ public:
 
   /// \brief Move assignment
   /// \todo(zoush99)
-  FNumber& operator=(FNumber&& f){
-    if(this!=&f){
+  FNumber& operator=(FNumber&& f) {
+    if (this != &f) {
       // Move the resource from f to this object
       mpfr_swap(this->_n, f._n);
 
@@ -212,13 +225,13 @@ public:
       this->_rnd = f._rnd;
 
       // Reset the original object to a valid but unspecified state
-      mpfr_init2(f._n,Fpre::fl);   // Ensure the original object doesn't own the resource anymore
-      f._prec = 0;      // Reset other members as needed
+      mpfr_init2(f._n, Fpre::fl); // Ensure the original object doesn't own the
+                                  // resource anymore
+      f._prec = 0;                // Reset other members as needed
       f._rnd = MPFR_RNDN;
     }
     return *this;
   }
-
 
   /// \brief Assignments for floating point types
   template < typename T,
@@ -228,7 +241,7 @@ public:
       mpfr_init2(this->_n, Fpre::fl);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
       this->_prec = Fpre::fl;
-    }else if (std::is_same< T, float >::value) { // float type
+    } else if (std::is_same< T, float >::value) { // float type
       mpfr_init2(this->_n, Fpre::fl);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
       this->_prec = Fpre::fl;
@@ -248,9 +261,9 @@ public:
   /// \brief Unary minus
   FNumber operator-() {
     mpfr_t f;
-    mpfr_init2(f,this->_prec);
-    mpfr_neg(f,this->_n,MPFR_RNDN);
-    FNumber F(f,MPFR_RNDN);
+    mpfr_init2(f, this->_prec);
+    mpfr_neg(f, this->_n, MPFR_RNDN);
+    FNumber F(f, MPFR_RNDN);
     mpfr_clear(f);
     return F;
   }
@@ -445,15 +458,15 @@ public:
   /// \brief The information about class FNumber
 
   /// \brief whether equals to 0
-  bool is_zero() const{
-    if(mpfr_cmp_d(this->_n,0)==0)
+  bool is_zero() const {
+    if (mpfr_cmp_d(this->_n, 0) == 0)
       return true;
     else
       return false;
   }
 
   /// \brief return 0
-  static FNumber& zero(){
+  static FNumber& zero() {
     FNumber f(0);
     return f;
   }
@@ -462,21 +475,17 @@ public:
   const mpfr_t& FNvalue() const { return this->_n; }
 
   /// \brief Get the precision of FNumber
-  const mpfr_prec_t& FNprec() const{
-    return this->_prec;
-  }
+  const mpfr_prec_t& FNprec() const { return this->_prec; }
 
   /// \brief Get the round mode of FNumber
-  const mpfr_rnd_t& FNrnd() const{
-    return this->_rnd;
-  }
+  const mpfr_rnd_t& FNrnd() const { return this->_rnd; }
 
   /// \brief Change the infomation of FNumber
-  void setFN(mpfr_t m,mpfr_prec_t p,mpfr_rnd_t r){
-    mpfr_set_prec(this->_n,p);
-    mpfr_set(this->_n,m,MPFR_RNDN);
-    this->_prec=p;
-    this->_rnd=r;
+  void setFN(mpfr_t m, mpfr_prec_t p, mpfr_rnd_t r) {
+    mpfr_set_prec(this->_n, p);
+    mpfr_set(this->_n, m, MPFR_RNDN);
+    this->_prec = p;
+    this->_rnd = r;
   }
 
   /// @}
@@ -485,47 +494,52 @@ public:
   /// \todo(zoush99)
 
   /// \brief Absolute value
-  FNumber& absolute(){
+  FNumber& absolute() {
     mpfr_t f;
-    mpfr_init2(f,this->_prec);
-    mpfr_abs(f,this->_n,MPFR_RNDN);
-    this->setFN(f,this->_prec,MPFR_RNDN);
+    mpfr_init2(f, this->_prec);
+    mpfr_abs(f, this->_n, MPFR_RNDN);
+    this->setFN(f, this->_prec, MPFR_RNDN);
     mpfr_clear(f);
     return *this;
   }
 
   /// \brief Switching from high precision to low precision
-//  FNumber& trunc(int prec) const{
-//      ikos_assert(this->_prec>prec);
-//  }
+  //  FNumber& trunc(int prec) const{
+  //      ikos_assert(this->_prec>prec);
+  //  }
 
   /// \brief Switching from low precision to high precision
-//  FNumber& ext(int prec) const{
-//      ikos_assert(this->_prec<prec);
-//  }
+  //  FNumber& ext(int prec) const{
+  //      ikos_assert(this->_prec<prec);
+  //  }
 
   /// \brief Change the floating point sign
-  FNumber& signcast(){
-      FNumber F(this->_n,MPFR_RNDN);
-      F=-F;
-      this->setFN(F._n,this->_prec,MPFR_RNDN);
-      return *this;
+  FNumber& signcast() {
+    FNumber F(this->_n, MPFR_RNDN);
+    F = -F;
+    this->setFN(F._n, this->_prec, MPFR_RNDN);
+    return *this;
   }
 
-//  FNumber& cast();
+  //  FNumber& cast();
 
   /// \todo(bugs here!!!) By zoush99
-  MachineInt& applyfltoin(FNumber& n){
-    mpz_t res;
-    mpz_init(res);
-    mpfr_get_z(res,n.FNvalue(),MPFR_RNDN);
-//    ikos::core::ZNumber f(res);
+  template < typename T,
+             class = std::enable_if_t< IsSupportedIntegral< T >::value > >
+  T toInteger() const{
+    switch (this->_prec) {
+      case Fpre::fl: // float -> int
+        return (
+            static_cast< int >(mpfr_get_flt(this->_n, MPFR_RNDN))); // Truncate
+      case Fpre::dou: // double -> int
+        return (static_cast< int >(mpfr_get_d(this->_n, MPFR_RNDN)));
+      case Fpre::ld: // long double -> long int
+        return (static_cast< long int >(mpfr_get_ld(this->_n, MPFR_RNDN)));
+      default:
+        ikos_unreachable("unreachable");
+    }
   }
-//
-//
-//  FNumber& applyintofl(MachineInt& n){
-//
-//
+
   /// @}
 
   friend class QNumber;
@@ -538,18 +552,17 @@ public:
 /// @}
 /// \brief Addition
 inline FNumber operator+(const FNumber& lhs, const FNumber& rhs) {
-  if(lhs.FNprec()==rhs.FNprec()){ // left=right
+  if (lhs.FNprec() == rhs.FNprec()) { // left=right
     FNumber _tempF(lhs);
-    _tempF+=rhs;
+    _tempF += rhs;
     return _tempF;
-  }
-  else if(lhs.FNprec()<rhs.FNprec()){  // left<right
+  } else if (lhs.FNprec() < rhs.FNprec()) { // left<right
     FNumber _tempF(rhs);
-    _tempF+=lhs;
+    _tempF += lhs;
     return _tempF;
-  }else{  // left>right
+  } else { // left>right
     FNumber _tempF(lhs);
-    _tempF+=rhs;
+    _tempF += rhs;
     return _tempF;
   }
 }
@@ -559,33 +572,32 @@ template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator+(T lhs, const FNumber& rhs) {
   FNumber _tempF(lhs);
-  _tempF=_tempF+rhs;
+  _tempF = _tempF + rhs;
   return _tempF;
 }
 
 /// \brief Addition with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
-inline FNumber operator+(const FNumber& lhs,T rhs) {
+inline FNumber operator+(const FNumber& lhs, T rhs) {
   FNumber _tempF(rhs);
-  _tempF=_tempF+lhs;
+  _tempF = _tempF + lhs;
   return _tempF;
 }
 
 /// \brief Subtraction
 inline FNumber operator-(const FNumber& lhs, const FNumber& rhs) {
-  if(lhs.FNprec()==rhs.FNprec()){ // left=right
+  if (lhs.FNprec() == rhs.FNprec()) { // left=right
     FNumber _tempF(lhs);
-    _tempF-=rhs;
+    _tempF -= rhs;
     return _tempF;
-  }
-  else if(lhs.FNprec()<rhs.FNprec()){  // left<right
+  } else if (lhs.FNprec() < rhs.FNprec()) { // left<right
     FNumber _tempF(lhs);
-    _tempF-=rhs;
+    _tempF -= rhs;
     return _tempF;
-  }else{  // left>right
+  } else { // left>right
     FNumber _tempF(lhs);
-    _tempF-=rhs;
+    _tempF -= rhs;
     return _tempF;
   }
 }
@@ -595,33 +607,32 @@ template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator-(T lhs, const FNumber& rhs) {
   FNumber _tempF(lhs);
-  _tempF=_tempF-rhs;
+  _tempF = _tempF - rhs;
   return _tempF;
 }
 
 /// \brief Subtraction with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
-inline FNumber operator-(const FNumber& lhs,T rhs) {
+inline FNumber operator-(const FNumber& lhs, T rhs) {
   FNumber _tempF(rhs);
-  _tempF=lhs-_tempF;
+  _tempF = lhs - _tempF;
   return _tempF;
 }
 
 /// \brief Multiplication
 inline FNumber operator*(const FNumber& lhs, const FNumber& rhs) {
-  if(lhs.FNprec()==rhs.FNprec()){ // left=right
+  if (lhs.FNprec() == rhs.FNprec()) { // left=right
     FNumber _tempF(lhs);
-    _tempF*=rhs;
+    _tempF *= rhs;
     return _tempF;
-  }
-  else if(lhs.FNprec()<rhs.FNprec()){  // left<right
+  } else if (lhs.FNprec() < rhs.FNprec()) { // left<right
     FNumber _tempF(rhs);
-    _tempF*=lhs;
+    _tempF *= lhs;
     return _tempF;
-  }else{  // left>right
+  } else { // left>right
     FNumber _tempF(lhs);
-    _tempF*=rhs;
+    _tempF *= rhs;
     return _tempF;
   }
 }
@@ -631,34 +642,33 @@ template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator*(T lhs, const FNumber& rhs) {
   FNumber _tempF(lhs);
-  _tempF=_tempF*rhs;
+  _tempF = _tempF * rhs;
   return _tempF;
 }
 
 /// \brief Multiplication with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
-inline FNumber operator*(const FNumber& lhs,T rhs) {
+inline FNumber operator*(const FNumber& lhs, T rhs) {
   FNumber _tempF(rhs);
-  _tempF=_tempF*lhs;
+  _tempF = _tempF * lhs;
   return _tempF;
 }
 
 /// \brief Division
 inline FNumber operator/(const FNumber& lhs, const FNumber& rhs) {
   ikos_assert_msg(!mpfr_zero_p(rhs.FNvalue()), "division by zero");
-  if(lhs.FNprec()==rhs.FNprec()){ // left=right
+  if (lhs.FNprec() == rhs.FNprec()) { // left=right
     FNumber _tempF(lhs);
-    _tempF/=rhs;
+    _tempF /= rhs;
     return _tempF;
-  }
-  else if(lhs.FNprec()<rhs.FNprec()){  // left<right
+  } else if (lhs.FNprec() < rhs.FNprec()) { // left<right
     FNumber _tempF(lhs);
-    _tempF/=rhs;
+    _tempF /= rhs;
     return _tempF;
-  }else{  // left>right
+  } else { // left>right
     FNumber _tempF(lhs);
-    _tempF/=rhs;
+    _tempF /= rhs;
     return _tempF;
   }
 }
@@ -668,16 +678,16 @@ template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber operator/(T lhs, const FNumber& rhs) {
   FNumber _tempF(lhs);
-  _tempF=_tempF/rhs;
+  _tempF = _tempF / rhs;
   return _tempF;
 }
 
 /// \brief Division with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
-inline FNumber operator/(const FNumber& lhs,T rhs) {
+inline FNumber operator/(const FNumber& lhs, T rhs) {
   FNumber _tempF(rhs);
-  _tempF=lhs/_tempF;
+  _tempF = lhs / _tempF;
   return _tempF;
 }
 
@@ -817,131 +827,134 @@ inline bool operator>=(T lhs, const FNumber& rhs) {
 // All by zoush99
 
 /// \brief Return the logarithm of the given number. log2(antilogarithm)
-inline FNumber log2(const FNumber& antilogarithm){
+inline FNumber log2(const FNumber& antilogarithm) {
   mpfr_t n;
-  mpfr_init2(n,antilogarithm.FNprec());
-  mpfr_log2(n,antilogarithm.FNvalue(),MPFR_RNDN);
-  FNumber f(n,MPFR_RNDN);
-  mpfr_clear(n);  // clear temporary variables. By zoush99
+  mpfr_init2(n, antilogarithm.FNprec());
+  mpfr_log2(n, antilogarithm.FNvalue(), MPFR_RNDN);
+  FNumber f(n, MPFR_RNDN);
+  mpfr_clear(n); // clear temporary variables. By zoush99
   return f;
 }
 
 /// \brief Return the natural logarithm of the given number. ln(antilogarithm)
-inline FNumber ln(const FNumber& antilogarithm){
+inline FNumber ln(const FNumber& antilogarithm) {
   mpfr_t n;
-  mpfr_init2(n,antilogarithm.FNprec());
-  mpfr_log(n,antilogarithm.FNvalue(),MPFR_RNDN);
-  FNumber f(n,MPFR_RNDN);
-  mpfr_clear(n);  // clear temporary variables. By zoush99
+  mpfr_init2(n, antilogarithm.FNprec());
+  mpfr_log(n, antilogarithm.FNvalue(), MPFR_RNDN);
+  FNumber f(n, MPFR_RNDN);
+  mpfr_clear(n); // clear temporary variables. By zoush99
   return f;
 }
 
 /// \brief Return the logarithm of the given number. log10(antilogarithm)
-inline FNumber log10(const FNumber& antilogarithm){
+inline FNumber log10(const FNumber& antilogarithm) {
   mpfr_t n;
-  mpfr_init2(n,antilogarithm.FNprec());
-  mpfr_log10(n,antilogarithm.FNvalue(),MPFR_RNDN);
-  FNumber f(n,MPFR_RNDN);
+  mpfr_init2(n, antilogarithm.FNprec());
+  mpfr_log10(n, antilogarithm.FNvalue(), MPFR_RNDN);
+  FNumber f(n, MPFR_RNDN);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the exponential of the given number. 2(exponent)
-inline FNumber exp2(const FNumber& exponent){
+inline FNumber exp2(const FNumber& exponent) {
   mpfr_t n;
-  mpfr_init2(n,exponent.FNprec()); // default
-  mpfr_exp2(n,exponent.FNvalue(),MPFR_RNDN);
-  FNumber f(n,MPFR_RNDN);
+  mpfr_init2(n, exponent.FNprec()); // default
+  mpfr_exp2(n, exponent.FNvalue(), MPFR_RNDN);
+  FNumber f(n, MPFR_RNDN);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the exponential of the given number. e(exponent)
-inline FNumber exp(const FNumber& exponent){
+inline FNumber exp(const FNumber& exponent) {
   mpfr_t n;
-  mpfr_init2(n,exponent.FNprec());
-  mpfr_exp(n,exponent.FNvalue(),MPFR_RNDN);
-  FNumber f(n,MPFR_RNDN);
+  mpfr_init2(n, exponent.FNprec());
+  mpfr_exp(n, exponent.FNvalue(), MPFR_RNDN);
+  FNumber f(n, MPFR_RNDN);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the exponential of the given number. 10(exponent)
-inline FNumber exp10(const FNumber& exponent){
+inline FNumber exp10(const FNumber& exponent) {
   mpfr_t n;
-  mpfr_init2(n,exponent.FNprec());
-  mpfr_exp10(n,exponent.FNvalue(),MPFR_RNDN);
-  FNumber f(n,MPFR_RNDN);
+  mpfr_init2(n, exponent.FNprec());
+  mpfr_exp10(n, exponent.FNvalue(), MPFR_RNDN);
+  FNumber f(n, MPFR_RNDN);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the power of the given number. base**(exponent)
-inline FNumber pow(FNumber& base,FNumber& exponent){
+inline FNumber pow(FNumber& base, FNumber& exponent) {
   mpfr_t n;
-  mpfr_init2(n,exponent.FNprec());
-  mpfr_pow(n,base.FNvalue(),exponent.FNvalue(),MPFR_RNDN);  // Result difference between mpfr_powr? By zoush99
-  FNumber f(n,MPFR_RNDN);
+  mpfr_init2(n, exponent.FNprec());
+  mpfr_pow(n,
+           base.FNvalue(),
+           exponent.FNvalue(),
+           MPFR_RNDN); // Result difference between mpfr_powr? By zoush99
+  FNumber f(n, MPFR_RNDN);
   mpfr_clear(n);
   return f;
 }
 
 /// \brief Return the sin of the given curve number. sin(n): sin(pi/3)
-inline FNumber sin(FNumber& f){
+inline FNumber sin(FNumber& f) {
   mpfr_t n;
-  mpfr_init2(n,f.FNprec());
-  mpfr_sin(n,f.FNvalue(),MPFR_RNDN);
-  FNumber e(n,MPFR_RNDN);
+  mpfr_init2(n, f.FNprec());
+  mpfr_sin(n, f.FNvalue(), MPFR_RNDN);
+  FNumber e(n, MPFR_RNDN);
   mpfr_clear(n);
   return e;
 }
 
 /// \brief Return the cos of the given curve number. cos(n): cos(pi/3)
-inline FNumber cos(FNumber& f){
+inline FNumber cos(FNumber& f) {
   mpfr_t n;
-  mpfr_init2(n,f.FNprec());
-  mpfr_cos(n,f.FNvalue(),MPFR_RNDN);
-  FNumber e(n,MPFR_RNDN);
+  mpfr_init2(n, f.FNprec());
+  mpfr_cos(n, f.FNvalue(), MPFR_RNDN);
+  FNumber e(n, MPFR_RNDN);
   mpfr_clear(n);
   return e;
 }
 
 /// \brief Return the tan of the given curve number. tan(n): tan(pi/3)
-inline FNumber tan(FNumber& f){
+inline FNumber tan(FNumber& f) {
   mpfr_t n;
-  mpfr_init2(n,f.FNprec());
-  mpfr_tan(n,f.FNvalue(),MPFR_RNDN);
-  FNumber e(n,MPFR_RNDN);
+  mpfr_init2(n, f.FNprec());
+  mpfr_tan(n, f.FNvalue(), MPFR_RNDN);
+  FNumber e(n, MPFR_RNDN);
   mpfr_clear(n);
   return e;
 }
 
 /// \brirf Return the sin of the given degree number. sin(n): sin(120)
-inline FNumber sinu(FNumber& f){
+inline FNumber sinu(FNumber& f) {
   mpfr_t n;
-  mpfr_init2(n,f.FNprec());
-  mpfr_sinu(n,f.FNvalue(),360,MPFR_RNDN);
-  FNumber e(n,MPFR_RNDN);
+  mpfr_init2(n, f.FNprec());
+  mpfr_sinu(n, f.FNvalue(), 360, MPFR_RNDN);
+  FNumber e(n, MPFR_RNDN);
   mpfr_clear(n);
   return e;
 }
 
 /// \brirf Return the cos of the given degree number. cos(n): cos(120)
-inline FNumber cosu(FNumber& f){
+inline FNumber cosu(FNumber& f) {
   mpfr_t n;
-  mpfr_init2(n,f.FNprec());
-  mpfr_cosu(n,f.FNvalue(),360,MPFR_RNDN);
-  FNumber e(n,MPFR_RNDN);
+  mpfr_init2(n, f.FNprec());
+  mpfr_cosu(n, f.FNvalue(), 360, MPFR_RNDN);
+  FNumber e(n, MPFR_RNDN);
   mpfr_clear(n);
   return e;
 }
 
 /// \brirf Return the tan of the given degree number. tan(n): tan(120)
-inline FNumber tanu(FNumber& f){
+inline FNumber tanu(FNumber& f) {
   mpfr_t n;
-  mpfr_init2(n,f.FNprec());
-  mpfr_tanu(n,f.FNvalue(),360,MPFR_RNDN);
-  FNumber e(n,MPFR_RNDN);
+  mpfr_init2(n, f.FNprec());
+  mpfr_tanu(n, f.FNvalue(), 360, MPFR_RNDN);
+  FNumber e(n, MPFR_RNDN);
   mpfr_clear(n);
   return e;
 }
@@ -957,19 +970,18 @@ inline FNumber tanu(FNumber& f){
 /// \brief Return the value of pi
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
-inline FNumber retPi(T f){
+inline FNumber retPi(T f) {
   FNumber Pi(f);
   mpfr_t n;
-  mpfr_init2(n,Pi.FNprec());
-  mpfr_const_pi(n,MPFR_RNDN);
-  Pi.setFN(n,Pi.FNprec(),MPFR_RNDN);
+  mpfr_init2(n, Pi.FNprec());
+  mpfr_const_pi(n, MPFR_RNDN);
+  Pi.setFN(n, Pi.FNprec(), MPFR_RNDN);
   mpfr_clear(n);
   return Pi;
 }
 
 /// \todo(zoush99)
 /// transform from ZNumber to FNumber
-
 
 /// @}
 /// \name Input / Output

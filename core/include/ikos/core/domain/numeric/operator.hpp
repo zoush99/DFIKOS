@@ -169,18 +169,15 @@ T apply_unary_operator(UnaryOperator op,
 }
 
 /// \brief Transform between floating point and integer. By zoush99
-template <typename T,typename F>
-F apply_trans_operator(Transf op, const T& operand){
-  switch (op) {
-    case Transf::FlToIn:
-      return operand.applyfltoin(operand);
-    case Transf::InToFl:
-      return operand.applyintofl(operand);
-    default:
-      ikos_unreachable("unreachable");
-  }
+template <typename T>
+T apply_trans_to_finteger(const FNumber& operand){  // FNumber -> integer
+      return operand.toInteger<T>();
 }
-
+/// \todo(By zoush99)
+template <typename T>
+T apply_trans_to_zinteger(const ZNumber& operand){  // ZNumber -> integer
+      return operand.to<T>();
+}
 
 /// \brief Get a textual representation of the given binary operator
 inline const char* bin_operator_text(BinaryOperator op) {
