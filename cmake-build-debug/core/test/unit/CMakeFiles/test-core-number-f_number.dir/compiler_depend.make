@@ -686,11 +686,13 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
   /usr/include/boost/core/swap.hpp \
   /usr/include/boost/test/tree/global_fixture.hpp \
   /usr/include/boost/test/tools/output_test_stream.hpp \
-  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/q_number.hpp \
+  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/f_number.hpp \
   /usr/include/gmpxx.h \
   /usr/include/c++/9/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/float.h \
   /usr/include/x86_64-linux-gnu/gmp.h \
+  /usr/local/include/mpf2mpfr.h \
+  /usr/local/include/mpfr.h \
   /usr/include/boost/functional/hash.hpp \
   /usr/include/boost/container_hash/hash.hpp \
   /usr/include/boost/container_hash/detail/hash_float.hpp \
@@ -722,30 +724,26 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
   /usr/include/c++/9/complex \
   /home/zou/Documents/DFIKOS/core/include/ikos/core/number/exception.hpp \
   /home/zou/Documents/DFIKOS/core/include/ikos/core/exception.hpp \
-  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp \
-  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp \
-  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/f_number.hpp \
-  /usr/local/include/mpf2mpfr.h \
-  /usr/local/include/mpfr.h \
   /home/zou/Documents/DFIKOS/core/include/ikos/core/number/machine_int.hpp \
   /home/zou/Documents/DFIKOS/core/include/ikos/core/number/compatibility.hpp \
   /home/zou/Documents/DFIKOS/core/include/ikos/core/support/assert.hpp \
   /home/zou/Documents/DFIKOS/core/include/ikos/core/support/compiler.hpp \
   /home/zou/Documents/DFIKOS/core/include/ikos/core/number/signedness.hpp \
-  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral_float.hpp
+  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp \
+  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp \
+  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral_float.hpp \
+  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/q_number.hpp
 
+
+/home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp:
+
+/home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp:
 
 /home/zou/Documents/DFIKOS/core/include/ikos/core/number/signedness.hpp:
 
 /home/zou/Documents/DFIKOS/core/include/ikos/core/support/compiler.hpp:
 
 /home/zou/Documents/DFIKOS/core/include/ikos/core/number/machine_int.hpp:
-
-/usr/local/include/mpf2mpfr.h:
-
-/home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp:
-
-/home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp:
 
 /home/zou/Documents/DFIKOS/core/include/ikos/core/number/exception.hpp:
 
@@ -760,6 +758,10 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
 /usr/include/boost/detail/container_fwd.hpp:
 
 /usr/include/c++/9/typeindex:
+
+/usr/include/boost/integer/static_log2.hpp:
+
+/usr/include/boost/container_hash/detail/limits.hpp:
 
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
@@ -1097,10 +1099,6 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
 
 /usr/include/boost/mpl/aux_/config/integral.hpp:
 
-/usr/local/include/mpfr.h:
-
-/usr/include/wchar.h:
-
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/boost/mpl/aux_/template_arity.hpp:
@@ -1399,8 +1397,6 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
 
 /usr/include/boost/mpl/list/list10.hpp:
 
-/usr/include/boost/integer/static_log2.hpp:
-
 /usr/include/boost/preprocessor/control/detail/while.hpp:
 
 /usr/include/boost/config/workaround.hpp:
@@ -1682,8 +1678,6 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
 /usr/include/c++/9/bits/invoke.h:
 
 /usr/include/boost/mpl/aux_/value_wknd.hpp:
-
-/usr/include/boost/container_hash/detail/limits.hpp:
 
 /usr/include/c++/9/bits/shared_ptr_base.h:
 
@@ -2125,6 +2119,10 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
 
+/home/zou/Documents/DFIKOS/core/include/ikos/core/number/q_number.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
+
 /usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
 
 /usr/include/boost/mpl/aux_/full_lambda.hpp:
@@ -2159,10 +2157,6 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
 
 /usr/include/boost/core/swap.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
-
-/home/zou/Documents/DFIKOS/core/include/ikos/core/number/q_number.hpp:
-
 /usr/include/gmpxx.h:
 
 /usr/include/c++/9/cfloat:
@@ -2170,6 +2164,12 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: /
 /usr/lib/gcc/x86_64-linux-gnu/9/include/float.h:
 
 /usr/include/x86_64-linux-gnu/gmp.h:
+
+/usr/local/include/mpf2mpfr.h:
+
+/usr/include/wchar.h:
+
+/usr/local/include/mpfr.h:
 
 /usr/include/boost/functional/hash.hpp:
 

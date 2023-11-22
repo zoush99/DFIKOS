@@ -606,11 +606,11 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: \
  /usr/include/boost/swap.hpp /usr/include/boost/core/swap.hpp \
  /usr/include/boost/test/tree/global_fixture.hpp \
  /usr/include/boost/test/tools/output_test_stream.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/q_number.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/f_number.hpp \
  /usr/include/gmpxx.h /usr/include/c++/9/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/float.h \
- /usr/include/x86_64-linux-gnu/gmp.h \
- /usr/include/boost/functional/hash.hpp \
+ /usr/include/x86_64-linux-gnu/gmp.h /usr/local/include/mpf2mpfr.h \
+ /usr/local/include/mpfr.h /usr/include/boost/functional/hash.hpp \
  /usr/include/boost/container_hash/hash.hpp \
  /usr/include/boost/container_hash/detail/hash_float.hpp \
  /usr/include/boost/container_hash/detail/float_functions.hpp \
@@ -634,13 +634,12 @@ core/test/unit/CMakeFiles/test-core-number-f_number.dir/number/f_number.cpp.o: \
  /usr/include/c++/9/complex \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/exception.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/exception.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/f_number.hpp \
- /usr/local/include/mpf2mpfr.h /usr/local/include/mpfr.h \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/machine_int.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/compatibility.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/support/assert.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/support/compiler.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/signedness.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral_float.hpp
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral_float.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/q_number.hpp

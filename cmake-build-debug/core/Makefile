@@ -199,44 +199,6 @@ doxygen-core/fast:
 	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/doxygen-core.dir/build.make core/CMakeFiles/doxygen-core.dir/build
 .PHONY : doxygen-core/fast
 
-# Convenience name for target.
-core/CMakeFiles/test-f_number-hpp.dir/rule:
-	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/CMakeFiles/test-f_number-hpp.dir/rule
-.PHONY : core/CMakeFiles/test-f_number-hpp.dir/rule
-
-# Convenience name for target.
-test-f_number-hpp: core/CMakeFiles/test-f_number-hpp.dir/rule
-.PHONY : test-f_number-hpp
-
-# fast build rule for target.
-test-f_number-hpp/fast:
-	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/test-f_number-hpp.dir/build.make core/CMakeFiles/test-f_number-hpp.dir/build
-.PHONY : test-f_number-hpp/fast
-
-zoush99test/number/test-f_number-hpp.o: zoush99test/number/test-f_number-hpp.cpp.o
-.PHONY : zoush99test/number/test-f_number-hpp.o
-
-# target to build an object file
-zoush99test/number/test-f_number-hpp.cpp.o:
-	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/test-f_number-hpp.dir/build.make core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.o
-.PHONY : zoush99test/number/test-f_number-hpp.cpp.o
-
-zoush99test/number/test-f_number-hpp.i: zoush99test/number/test-f_number-hpp.cpp.i
-.PHONY : zoush99test/number/test-f_number-hpp.i
-
-# target to preprocess a source file
-zoush99test/number/test-f_number-hpp.cpp.i:
-	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/test-f_number-hpp.dir/build.make core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.i
-.PHONY : zoush99test/number/test-f_number-hpp.cpp.i
-
-zoush99test/number/test-f_number-hpp.s: zoush99test/number/test-f_number-hpp.cpp.s
-.PHONY : zoush99test/number/test-f_number-hpp.s
-
-# target to generate assembly for a file
-zoush99test/number/test-f_number-hpp.cpp.s:
-	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/test-f_number-hpp.dir/build.make core/CMakeFiles/test-f_number-hpp.dir/zoush99test/number/test-f_number-hpp.cpp.s
-.PHONY : zoush99test/number/test-f_number-hpp.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,10 +214,6 @@ help:
 	@echo "... test"
 	@echo "... build-core-tests"
 	@echo "... doxygen-core"
-	@echo "... test-f_number-hpp"
-	@echo "... zoush99test/number/test-f_number-hpp.o"
-	@echo "... zoush99test/number/test-f_number-hpp.i"
-	@echo "... zoush99test/number/test-f_number-hpp.s"
 .PHONY : help
 
 
