@@ -86,10 +86,12 @@ public:
 
   using FloatLineaExpression=LinearExpression<FNumber,VariableRef>; // By zoush99
   using FloatBinaryOperator=numeric::BinaryOperator;
-//  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating ponit unary operator
+  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating ponit unary operator
   using FloatInterval = machine_int::Interval;
-  using FloatCongruence = machine_int::Congruence;
-  using FloatIntervalCongruence = machine_int::IntervalCongruence;
+//  using FloatCongruence = machine_int::Congruence;
+//  using FloatIntervalCongruence = machine_int::IntervalCongruence;
+  using FloatPredicate = numeric::Predicate;
+
 
 
 
@@ -424,9 +426,9 @@ public:
     this->_scalar.float_assign(x, e);
   }
 
-//  void float_apply(IntUnaryOperator op, VariableRef x, VariableRef y) override {
-//    this->_scalar.float_apply(op, x, y);
-//  }
+  void float_apply(FloatUnaryOperator op, VariableRef x, VariableRef y) override {
+    this->_scalar.float_apply(op, x, y);
+  }
 
   void float_apply(FloatBinaryOperator op,
                  VariableRef x,
@@ -449,7 +451,7 @@ public:
     this->_scalar.float_apply(op, x, y, z);
   }
 
-  void float_add(IntPredicate pred, VariableRef x, VariableRef y) override {
+  void float_add(FloatPredicate pred, VariableRef x, VariableRef y) override {
     this->_scalar.float_add(pred, x, y);
   }
 

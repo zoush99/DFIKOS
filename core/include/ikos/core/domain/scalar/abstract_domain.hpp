@@ -603,6 +603,9 @@ public:
   /// \brief Assign `x` to a non deterministic value
   virtual void scalar_assign_nondet(VariableRef x) = 0;
 
+  /// \brief Assign '(int)x = (fl)f'. By zoush99
+
+
   /// \brief Assign `x = ptr-to-int p`
   virtual void scalar_pointer_to_int(VariableRef x,
                                      VariableRef p,
