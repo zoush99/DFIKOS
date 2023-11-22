@@ -1040,7 +1040,7 @@ private:
                     "left hand side is not a floating point variable");
 
     if (rhs.is_floating_point()) {
-      auto type = cast< ar::FloatType >(lhs.var()->type());
+//      auto type = cast< ar::FloatType >(lhs.var()->type());
       this->_inv.normal()
           .float_assign(lhs.var(),
                         core::numeric::
@@ -1056,7 +1056,7 @@ private:
 
   /// \todo (By zoush99)
   /// \brief Execute a conversion from floating point to integer
-  void exec_float_to_int_conv(const ScalarLit& lhs, const ScalarLit& rhs) {
+  void exec_float_to_int_conv(const ScalarLit& lhs, const ScalarLit& rhs) { // floating point -> int
     ikos_assert_msg(lhs.is_machine_int_var(),
                     "left hand side is not an integer variable");
     if (rhs.is_floating_point()) {
@@ -1066,7 +1066,7 @@ private:
           .int_assign(lhs.var(),
                       _tempInt); // floating point->integer
     } else if (rhs.is_floating_point_var()) {
-      this->_inv.normal();
+      this->_inv.normal().float_apply(FloatUnaryOperator::FtoInteger,lhs.var(),rhs.var());
     } else {
       ikos_unreachable("unexpected arguments");
     }
@@ -1078,14 +1078,23 @@ private:
 
   /// \todo (By zoush99)
   /// \brief Execute a conversion from integer to floating point
-  void exec_int_to_float_conv(const ScalarLit& lhs, const ScalarLit& rhs) {
+  void exec_int_to_float_conv(const ScalarLit& lhs, const ScalarLit& rhs) { // int -> floating point
     ikos_assert_msg(lhs.is_floating_point_var(),
                     "left hand side is not a floating point variable");
-
-    if (rhs.is_machine_int_var()) {
-      this->_inv.normal().uninit_assert_initialized(rhs.var());
+    if (rhs.is_machine_int()) {
+//      auto type = cast< ar::FloatType >(lhs.var()->type());
+      FNumber _tempFlo(rhs.floating_point().toInteger<int>());
+      this->_inv.normal()
+          .float_assign(lhs.var(),_tempFlo);
+    } else if (rhs.is_machine_int_var()) {
+      this->_inv.normal().float_apply(FloatUnaryOperator::ZtoInteger,lhs.var(),rhs.var());
+    } else {
+      ikos_unreachable("unexpected arguments");
     }
-    this->_inv.normal().float_assign_nondet(lhs.var());
+//    if (rhs.is_machine_int_var()) {
+//      this->_inv.normal().uninit_assert_initialized(rhs.var());
+//    }
+//    this->_inv.normal().float_assign_nondet(lhs.var());
   }
 
   /// \brief Execute a conversion from pointer to integer

@@ -101,7 +101,7 @@ public:
 
   using FloatLinearExpression=LinearExpression<FNumber,VariableRef>; // By zoush99
   using FloatBinaryOperator=numeric::BinaryOperator;
-//  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating point unary operator
+  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating point unary operator
   using FloatInterval = numeric::Interval<FNumber>;
   using FloatCongruence = numeric::Congruence<FNumber>;
   using FloatIntervalCongruence = numeric::IntervalCongruence<FNumber>;
@@ -336,7 +336,7 @@ public:
   virtual void float_assign(VariableRef x, const FloatLinearExpression& e) = 0;
 
 //  /// \brief Apply `x = op y`
-//  virtual void float_apply(FloatUnaryOperator op, VariableRef x, VariableRef y) = 0;
+  virtual void float_apply(FloatUnaryOperator op, VariableRef x, VariableRef y) = 0;
 
   /// \brief Apply `x = y op z`
   virtual void float_apply(FloatBinaryOperator op,

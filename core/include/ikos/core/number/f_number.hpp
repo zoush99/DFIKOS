@@ -524,6 +524,7 @@ public:
   //  FNumber& cast();
 
   /// \todo(bugs here!!!) By zoush99
+  // T: (int, long int et al.), F: FNumber
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegral< T >::value > >
   T toInteger() const{

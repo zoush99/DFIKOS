@@ -45,7 +45,7 @@
 
 #include <type_traits>
 
-#include <ikos/core/number/f_number.hpp>  // By zoush99
+#include <ikos/core/number/f_number.hpp> // By zoush99
 #include <ikos/core/number/q_number.hpp>
 #include <ikos/core/number/z_number.hpp>
 
@@ -62,10 +62,12 @@ enum class UnaryOperator {
   Ext,
   SignCast, // Realization
   Cast,
+  FtoInteger, // Realization
+  ZtoInteger, // Realization
 };
 
 /// \brief Transform between floating point and integer. By zoush99
-enum class Transf{
+enum class Transf {
   FlToIn, // Floating point to integer
   InToFl, // Integer to floating point
 };
@@ -85,7 +87,8 @@ enum class BinaryOperator {
   ///
   /// On integers (Z), this is the integer division with rounding towards zero.
   /// On rationals (Q), this is the exact division.
-  /// On floating point number(F), this is the float division with rounding towards nearest. By zoush99
+  /// On floating point number(F), this is the float division with rounding
+  /// towards nearest. By zoush99
   Div,
 
   /// \brief Remainder
@@ -152,31 +155,42 @@ enum class Predicate {
 /// \todo(Addition of unary arithmetic operations) By zoush99
 /// \brief Apply a floating point unary operator on the given operands
 template < typename T >
-T apply_unary_operator(UnaryOperator op,
-                       const T& operand) {
+T apply_unary_operator(UnaryOperator op, const T& operand) {
   switch (op) {
-//    case UnaryOperator::Trunc:
-//      return operand.trunc(result_bit_width);
-//    case UnaryOperator::Ext:
-//      return operand.ext(result_bit_width);
+      //    case UnaryOperator::Trunc:
+      //      return operand.trunc(result_bit_width);
+      //    case UnaryOperator::Ext:
+      //      return operand.ext(result_bit_width);
     case UnaryOperator::SignCast:
       return operand.signcast();
-//    case UnaryOperator::Cast:
-//      return operand.cast(result_bit_width, result_sign);
+      //    case UnaryOperator::Cast:
+      //      return operand.cast(result_bit_width, result_sign);
+  }
+}
+
+/// \brief Apply a floating point transformation between different types
+template <typename T,typename F>  // T: (FNumber, ZNumber), F: (int, long int et al.)
+F apply_trans_to_integer(UnaryOperator op, const T& operand){
+  switch (op) {
+    case UnaryOperator::FtoInteger:               // FNumber
+      return operand.template toInteger< F >(); // Member variable
+    case UnaryOperator::ZtoInteger:               // ZNumber
+      return operand.template to< F >();
     default:
       ikos_unreachable("unreachable");
   }
 }
 
 /// \brief Transform between floating point and integer. By zoush99
-template <typename T>
-T apply_trans_to_finteger(const FNumber& operand){  // FNumber -> integer
-      return operand.toInteger<T>();
+template < typename T >
+T apply_trans_to_finteger(const FNumber& operand) { // FNumber -> integer
+  return operand.toInteger< T >();
 }
+
 /// \todo(By zoush99)
-template <typename T>
-T apply_trans_to_zinteger(const ZNumber& operand){  // ZNumber -> integer
-      return operand.to<T>();
+template < typename T >
+T apply_trans_to_zinteger(const ZNumber& operand) { // ZNumber -> integer
+  return operand.to< T >();
 }
 
 /// \brief Get a textual representation of the given binary operator
@@ -228,7 +242,7 @@ namespace detail {
 template < typename T >
 struct ApplyBinOperator<
     T,
-    std::enable_if_t< std::is_same< typename T::NumberT, ZNumber >::value > >{
+    std::enable_if_t< std::is_same< typename T::NumberT, ZNumber >::value > > {
   inline T operator()(BinaryOperator op, const T& lhs, const T& rhs) const {
     switch (op) {
       case BinaryOperator::Add:
