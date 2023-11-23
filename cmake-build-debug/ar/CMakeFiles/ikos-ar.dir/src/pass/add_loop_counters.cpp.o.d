@@ -567,12 +567,15 @@ ar/CMakeFiles/ikos-ar.dir/src/pass/add_loop_counters.cpp.o: \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
  /usr/include/c++/9/bitset /usr/include/c++/9/complex \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/exception.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral_float.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/machine_int.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/compatibility.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/support/assert.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/support/compiler.hpp \
  /usr/include/c++/9/cassert \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/signedness.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/z_number.hpp \
+ /home/zou/Documents/DFIKOS/core/include/ikos/core/number/supported_integral_float.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/number/q_number.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/semantic/dumpable.hpp \
  /home/zou/Documents/DFIKOS/core/include/ikos/core/support/mpl.hpp \
@@ -584,9 +587,6 @@ ar/CMakeFiles/ikos-ar.dir/src/pass/add_loop_counters.cpp.o: \
  /home/zou/Documents/DFIKOS/ar/include/ikos/ar/semantic/data_layout.hpp \
  /home/zou/Documents/DFIKOS/ar/include/ikos/ar/support/assert.hpp \
  /home/zou/Documents/DFIKOS/ar/include/ikos/ar/support/number.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/machine_int.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/compatibility.hpp \
- /home/zou/Documents/DFIKOS/core/include/ikos/core/number/signedness.hpp \
  /home/zou/Documents/DFIKOS/ar/include/ikos/ar/semantic/intrinsic.hpp \
  /home/zou/Documents/DFIKOS/ar/include/ikos/ar/semantic/symbol_table.hpp \
  /home/zou/Documents/DFIKOS/ar/include/ikos/ar/support/iterator.hpp \

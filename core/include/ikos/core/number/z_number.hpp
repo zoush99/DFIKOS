@@ -54,7 +54,8 @@
 #include <utility>
 
 #include <gmpxx.h>
-
+#include <mpf2mpfr.h>
+#include <mpfr.h>
 #include <boost/functional/hash.hpp>
 
 #include <ikos/core/number/exception.hpp>
@@ -287,7 +288,7 @@ struct MpzTo< long long >
 } // end namespace detail
 
 /// \brief Class for unlimited precision integers
-class ZNumber{  // By zoush99
+class ZNumber { // By zoush99
 private:
   mpz_class _n;
 
@@ -1160,7 +1161,8 @@ inline std::istream& operator>>(std::istream& i, ZNumber& n) {
 /// @}
 
 /// \brief Return the hash of a ZNumber
-// I can't understand what this function does, so I'll come back to it later. zoush99
+// I can't understand what this function does, so I'll come back to it later.
+// zoush99
 inline std::size_t hash_value(const ZNumber& n) {
   const mpz_class& m = n.mpz();
   std::size_t result = 0;

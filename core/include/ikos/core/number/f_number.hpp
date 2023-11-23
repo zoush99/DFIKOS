@@ -506,7 +506,7 @@ public:
 
   //  FNumber& cast();
 
-  /// \todo(bugs here!!!) By zoush99
+  /// \brief Transform FNumber to integer
   // T: (int, long int et al.), F: FNumber
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegral< T >::value > >
@@ -522,6 +522,15 @@ public:
       default:
         ikos_unreachable("unreachable");
     }
+  }
+
+  /// \brief Transform FNumber to ZNumber
+  ZNumber toZNumber() const{
+    mpz_t _Ztemp;
+    mpfr_get_z(_Ztemp,this->_n,MPFR_RNDN);
+    mpz_class _Zclass(_Ztemp);
+    ZNumber _ZNum(_Zclass);
+    return _ZNum;
   }
 
   /// @}

@@ -64,6 +64,7 @@ using UninitializedAbstractDomain =
 /// \brief Nullity abstract domain
 using NullityAbstractDomain = core::nullity::SeparateDomain< Variable* >;
 
+/// \todo (By zoush99)
 /// \brief Scalar abstract domain
 using ScalarAbstractDomain =
     core::scalar::CompositeDomain< Variable*,

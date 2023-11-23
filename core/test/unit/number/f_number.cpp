@@ -114,6 +114,10 @@ BOOST_AUTO_TEST_CASE(test_f_number) {
   BOOST_CHECK(F(1.2).toInteger< int >() == 1);
   BOOST_CHECK(F(0.9).toInteger< int >() == 0);
 
+  // toZNumber
+  BOOST_CHECK(F(1).toZNumber()==Z(1));
+  BOOST_CHECK(F(1.2).toZNumber()==Z(1));
+
   // addition, subtraction, multiplicatoin, division,
   BOOST_CHECK(F(1) + F(2) == F(3));
   BOOST_CHECK(F(4) - F(2) == F(2));
