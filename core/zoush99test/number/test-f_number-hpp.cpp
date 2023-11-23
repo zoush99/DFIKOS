@@ -124,7 +124,7 @@ void testMathFunction(){
 //  sin(FNu).display();
 //  cos(FNu).display();
 //  tan(FNu).display();
-  ikos::core::retPi(f).display();
+  ikos::core::retPi<float>().display();
   FNu.display();
 }
 

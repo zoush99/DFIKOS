@@ -55,13 +55,13 @@ public:
   /// The base may vary from 2 to 36.
   static FNumber from_string(const char* str, int base = 10) {
     try {
-      mpfr_t strF;
-      mpfr_init2(strF, Fpre::dou); // 53 bits
-      mpfr_set_str(strF, str, base, MPFR_RNDN);
-      FNumber F(strF, MPFR_RNDN);
+      mpfr_t _strF;
+      mpfr_init2(_strF, Fpre::dou); // 53 bits
+      mpfr_set_str(_strF, str, base, MPFR_RNDN);
+      FNumber F(_strF, MPFR_RNDN);
       F._prec = Fpre::dou;
       F._rnd = MPFR_RNDN;
-      mpfr_clear(strF);
+      mpfr_clear(_strF);
       return F;
     } catch (std::invalid_argument&) {
       std::ostringstream buf;
@@ -80,13 +80,13 @@ public:
   /// The base may vary from 2 to 36.
   static FNumber from_string(const std::string& str, int base = 10) {
     try {
-      mpfr_t strF;
-      mpfr_init2(strF, Fpre::dou); // 53 bits
-      mpfr_set_str(strF, str.c_str(), base, MPFR_RNDN);
-      FNumber F(strF, MPFR_RNDN);
+      mpfr_t _strF;
+      mpfr_init2(_strF, Fpre::dou); // 53 bits
+      mpfr_set_str(_strF, str.c_str(), base, MPFR_RNDN);
+      FNumber F(_strF, MPFR_RNDN);
       F._prec = Fpre::dou;
       F._rnd = MPFR_RNDN;
-      mpfr_clear(strF);
+      mpfr_clear(_strF);
       return F;
     } catch (std::invalid_argument&) {
       std::ostringstream buf;
@@ -237,11 +237,7 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator=(T n) {
-    if (std::is_same< T, int >::value) { // int type->float
-      mpfr_init2(this->_n, Fpre::fl);
-      mpfr_set_flt(this->_n, n, MPFR_RNDN);
-      this->_prec = Fpre::fl;
-    } else if (std::is_same< T, float >::value) { // float type
+    if (std::is_same< T, float >::value) { // float type
       mpfr_init2(this->_n, Fpre::fl);
       mpfr_set_flt(this->_n, n, MPFR_RNDN);
       this->_prec = Fpre::fl;
@@ -249,10 +245,25 @@ public:
       mpfr_init2(this->_n, Fpre::dou);
       mpfr_set_d(this->_n, n, MPFR_RNDN);
       this->_prec = Fpre::dou;
-    } else { // long double type
+    } else if (std::is_same< T, long double >::value) { // long double type
       mpfr_init2(this->_n, Fpre::ld);
       mpfr_set_ld(this->_n, n, MPFR_RNDN);
       this->_prec = Fpre::ld;
+    } else if (std::is_same< T, int >::value) { // int type -> float
+      mpfr_init2(this->_n, Fpre::fl);
+      mpfr_set_flt(this->_n, n, MPFR_RNDN);
+      this->_prec = Fpre::fl;
+    } else if (std::is_same< T, long int >::value) { // long int -> double
+      mpfr_init2(this->_n, Fpre::dou);
+      mpfr_set_flt(this->_n, n, MPFR_RNDN);
+      this->_prec = Fpre::dou;
+    } else if (std::is_same< T, long long int >::value) { // long long int ->
+                                                          // long double
+      mpfr_init2(this->_n, Fpre::ld);
+      mpfr_set_flt(this->_n, n, MPFR_RNDN);
+      this->_prec = Fpre::ld;
+    } else {
+      ikos_unreachable("unreachable");
     }
     this->_rnd = MPFR_RNDN;
     return *this;
@@ -302,15 +313,8 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator+=(T x) {
-    FNumber f(x);
-    mpfr_t _temp;
-    mpfr_init2(_temp, this->_prec);
-    mpfr_set(_temp, this->_n, MPFR_RNDN);
-    FNumber t(_temp, MPFR_RNDN);
-    t += f;
-    this->_prec = t._prec;
-    mpfr_set(this->_n, t._n, MPFR_RNDN);
-    mpfr_clear(_temp);
+    FNumber _f(x);
+    *this += _f;
     return *this;
   }
 
@@ -348,15 +352,8 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator-=(T x) {
-    FNumber f(x);
-    mpfr_t _temp;
-    mpfr_init2(_temp, this->_prec);
-    mpfr_set(_temp, this->_n, MPFR_RNDN);
-    FNumber t(_temp, MPFR_RNDN);
-    t -= f;
-    this->_prec = t._prec;
-    mpfr_set(this->_n, t._n, MPFR_RNDN);
-    mpfr_clear(_temp);
+    FNumber _f(x);
+    *this -= _f;
     return *this;
   }
   /// \brief Multiplication assignment
@@ -393,15 +390,8 @@ public:
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator*=(T x) {
-    FNumber f(x);
-    mpfr_t _temp;
-    mpfr_init2(_temp, this->_prec);
-    mpfr_set(_temp, this->_n, MPFR_RNDN);
-    FNumber t(_temp, MPFR_RNDN);
-    t *= f;
-    this->_prec = t._prec;
-    mpfr_set(this->_n, t._n, MPFR_RNDN);
-    mpfr_clear(_temp);
+    FNumber _f(x);
+    *this *= _f;
     return *this;
   }
 
@@ -441,15 +431,8 @@ public:
              class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
   FNumber& operator/=(T x) {
     ikos_assert_msg(x != 0, "division by zero");
-    FNumber f(x);
-    mpfr_t _temp;
-    mpfr_init2(_temp, this->_prec);
-    mpfr_set(_temp, this->_n, MPFR_RNDN);
-    FNumber t(_temp, MPFR_RNDN);
-    t /= f;
-    this->_prec = t._prec;
-    mpfr_set(this->_n, t._n, MPFR_RNDN);
-    mpfr_clear(_temp);
+    FNumber _f(x);
+    *this /= _f;
     return *this;
   }
 
@@ -466,9 +449,9 @@ public:
   }
 
   /// \brief return 0
-  static FNumber& zero() {
-    FNumber f(0);
-    return f;
+  static FNumber zero() {
+    FNumber _f(0);
+    return _f;
   }
 
   /// \brief Get the internal value of FNumber
@@ -495,11 +478,11 @@ public:
 
   /// \brief Absolute value
   FNumber& absolute() {
-    mpfr_t f;
-    mpfr_init2(f, this->_prec);
-    mpfr_abs(f, this->_n, MPFR_RNDN);
-    this->setFN(f, this->_prec, MPFR_RNDN);
-    mpfr_clear(f);
+    mpfr_t _m;
+    mpfr_init2(_m, this->_prec);
+    mpfr_abs(_m, this->_n, MPFR_RNDN);
+    this->setFN(_m, this->_prec, MPFR_RNDN);
+    mpfr_clear(_m);
     return *this;
   }
 
@@ -527,7 +510,7 @@ public:
   // T: (int, long int et al.), F: FNumber
   template < typename T,
              class = std::enable_if_t< IsSupportedIntegral< T >::value > >
-  T toInteger() const{
+  T toInteger() const {
     switch (this->_prec) {
       case Fpre::fl: // float -> int
         return (
@@ -704,16 +687,16 @@ inline bool operator==(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator==(const FNumber& lhs, T rhs) {
-  FNumber rhsFN(rhs);
-  return mpfr_equal_p(lhs.FNvalue(), rhsFN.FNvalue());
+  FNumber _rhsFN(rhs);
+  return mpfr_equal_p(lhs.FNvalue(), _rhsFN.FNvalue());
 }
 
 /// \brief Equality operator with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator==(T lhs, const FNumber& rhs) {
-  FNumber lhsFN(lhs);
-  return mpfr_equal_p(rhs.FNvalue(), lhsFN.FNvalue());
+  FNumber _lhsFN(lhs);
+  return mpfr_equal_p(rhs.FNvalue(), _lhsFN.FNvalue());
 }
 
 /// \brief Inequality operator
@@ -725,16 +708,16 @@ inline bool operator!=(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator!=(const FNumber& lhs, T rhs) {
-  FNumber rhsFN(rhs);
-  return mpfr_lessgreater_p(lhs.FNvalue(), rhsFN.FNvalue());
+  FNumber _rhsFN(rhs);
+  return mpfr_lessgreater_p(lhs.FNvalue(), _rhsFN.FNvalue());
 }
 
 /// \brief Inequality operator with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator!=(T lhs, const FNumber& rhs) {
-  FNumber lhsFN(lhs);
-  return mpfr_lessgreater_p(rhs.FNvalue(), lhsFN.FNvalue());
+  FNumber _lhsFN(lhs);
+  return mpfr_lessgreater_p(rhs.FNvalue(), _lhsFN.FNvalue());
 }
 
 /// \brief Less than comparison
@@ -746,16 +729,16 @@ inline bool operator<(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator<(const FNumber& lhs, T rhs) {
-  FNumber rhsFN(rhs);
-  return mpfr_less_p(lhs.FNvalue(), rhsFN.FNvalue());
+  FNumber _rhsFN(rhs);
+  return mpfr_less_p(lhs.FNvalue(), _rhsFN.FNvalue());
 }
 
 /// \brief Less than comparison with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator<(T lhs, const FNumber& rhs) {
-  FNumber lhsFN(lhs);
-  return mpfr_less_p(lhsFN.FNvalue(), rhs.FNvalue());
+  FNumber _lhsFN(lhs);
+  return mpfr_less_p(_lhsFN.FNvalue(), rhs.FNvalue());
 }
 
 /// \brief Less or equal comparison
@@ -767,16 +750,16 @@ inline bool operator<=(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator<=(const FNumber& lhs, T rhs) {
-  FNumber rhsFN(rhs);
-  return mpfr_less_p(lhs.FNvalue(), rhsFN.FNvalue());
+  FNumber _rhsFN(rhs);
+  return mpfr_less_p(lhs.FNvalue(), _rhsFN.FNvalue());
 }
 
 /// \brief Less or equal comparison with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator<=(T lhs, const FNumber& rhs) {
-  FNumber lhsFN(lhs);
-  return mpfr_lessequal_p(lhsFN.FNvalue(), rhs.FNvalue());
+  FNumber _lhsFN(lhs);
+  return mpfr_lessequal_p(_lhsFN.FNvalue(), rhs.FNvalue());
 }
 
 /// \brief Greater than comparison
@@ -788,16 +771,16 @@ inline bool operator>(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator>(const FNumber& lhs, T rhs) {
-  FNumber rhsFN(rhs);
-  return mpfr_greater_p(lhs.FNvalue(), rhsFN.FNvalue());
+  FNumber _rhsFN(rhs);
+  return mpfr_greater_p(lhs.FNvalue(), _rhsFN.FNvalue());
 }
 
 /// \brief Greater than comparison with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator>(T lhs, const FNumber& rhs) {
-  FNumber lhsFN(lhs);
-  return mpfr_greater_p(lhsFN.FNvalue(), rhs.FNvalue());
+  FNumber _lhsFN(lhs);
+  return mpfr_greater_p(_lhsFN.FNvalue(), rhs.FNvalue());
 }
 
 /// \brief Greater or equal comparison
@@ -809,16 +792,16 @@ inline bool operator>=(const FNumber& lhs, const FNumber& rhs) {
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator>=(const FNumber& lhs, T rhs) {
-  FNumber rhsFN(rhs);
-  return mpfr_greaterequal_p(lhs.FNvalue(), rhsFN.FNvalue());
+  FNumber _rhsFN(rhs);
+  return mpfr_greaterequal_p(lhs.FNvalue(), _rhsFN.FNvalue());
 }
 
 /// \brief Greater or equal comparison with floating point types
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline bool operator>=(T lhs, const FNumber& rhs) {
-  FNumber lhsFN(lhs);
-  return mpfr_greaterequal_p(lhsFN.FNvalue(), rhs.FNvalue());
+  FNumber _lhsFN(lhs);
+  return mpfr_greaterequal_p(_lhsFN.FNvalue(), rhs.FNvalue());
 }
 
 /// @}
@@ -886,8 +869,9 @@ inline FNumber exp10(const FNumber& exponent) {
   return f;
 }
 
+/// \todo bugs here!!!
 /// \brief Return the power of the given number. base**(exponent)
-inline FNumber pow(FNumber& base, FNumber& exponent) {
+inline FNumber pow(const FNumber& base, const FNumber& exponent) {
   mpfr_t n;
   mpfr_init2(n, exponent.FNprec());
   mpfr_pow(n,
@@ -900,7 +884,7 @@ inline FNumber pow(FNumber& base, FNumber& exponent) {
 }
 
 /// \brief Return the sin of the given curve number. sin(n): sin(pi/3)
-inline FNumber sin(FNumber& f) {
+inline FNumber sin(const FNumber& f) {
   mpfr_t n;
   mpfr_init2(n, f.FNprec());
   mpfr_sin(n, f.FNvalue(), MPFR_RNDN);
@@ -910,7 +894,7 @@ inline FNumber sin(FNumber& f) {
 }
 
 /// \brief Return the cos of the given curve number. cos(n): cos(pi/3)
-inline FNumber cos(FNumber& f) {
+inline FNumber cos(const FNumber& f) {
   mpfr_t n;
   mpfr_init2(n, f.FNprec());
   mpfr_cos(n, f.FNvalue(), MPFR_RNDN);
@@ -920,7 +904,7 @@ inline FNumber cos(FNumber& f) {
 }
 
 /// \brief Return the tan of the given curve number. tan(n): tan(pi/3)
-inline FNumber tan(FNumber& f) {
+inline FNumber tan(const FNumber& f) {
   mpfr_t n;
   mpfr_init2(n, f.FNprec());
   mpfr_tan(n, f.FNvalue(), MPFR_RNDN);
@@ -930,7 +914,7 @@ inline FNumber tan(FNumber& f) {
 }
 
 /// \brirf Return the sin of the given degree number. sin(n): sin(120)
-inline FNumber sinu(FNumber& f) {
+inline FNumber sinu(const FNumber& f) {
   mpfr_t n;
   mpfr_init2(n, f.FNprec());
   mpfr_sinu(n, f.FNvalue(), 360, MPFR_RNDN);
@@ -940,7 +924,7 @@ inline FNumber sinu(FNumber& f) {
 }
 
 /// \brirf Return the cos of the given degree number. cos(n): cos(120)
-inline FNumber cosu(FNumber& f) {
+inline FNumber cosu(const FNumber& f) {
   mpfr_t n;
   mpfr_init2(n, f.FNprec());
   mpfr_cosu(n, f.FNvalue(), 360, MPFR_RNDN);
@@ -950,7 +934,7 @@ inline FNumber cosu(FNumber& f) {
 }
 
 /// \brirf Return the tan of the given degree number. tan(n): tan(120)
-inline FNumber tanu(FNumber& f) {
+inline FNumber tanu(const FNumber& f) {
   mpfr_t n;
   mpfr_init2(n, f.FNprec());
   mpfr_tanu(n, f.FNvalue(), 360, MPFR_RNDN);
@@ -970,7 +954,8 @@ inline FNumber tanu(FNumber& f) {
 /// \brief Return the value of pi
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
-inline FNumber retPi(T f) {
+inline FNumber retPi() {
+  T f=1;
   FNumber Pi(f);
   mpfr_t n;
   mpfr_init2(n, Pi.FNprec());
