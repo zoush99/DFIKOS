@@ -180,7 +180,6 @@ public:
 
   // I'll have to add it. By zoush99
   /// \brief Create a constant floating point literal
-  /// \todo(bugs here!!!)
   static Literal floating_point(FNumber v) {
     return Literal(Lit(FloatingPointLit{std::move(v)}));
   }
@@ -317,8 +316,7 @@ private:
       return lit.value;
     }
 
-    const MachineInt& operator()(const FloatingPointLit& lit) const { // By zoush99
-
+    const MachineInt& operator()(const FloatingPointLit& lit) const {
       ikos_unreachable("trying to call machine_int() on a floating point");
     }
 
@@ -364,7 +362,7 @@ public:
 private:
   /// \brief Visitor that returns the floating point
   struct GetFloatingPoint : public boost::static_visitor< const FNumber& > {
-    const FNumber& operator()(const MachineIntLit& lit) const { // By zoush99
+    const FNumber& operator()(const MachineIntLit& lit) const {
       ikos_unreachable("trying to call floating_point() on a machine integer");
     }
 

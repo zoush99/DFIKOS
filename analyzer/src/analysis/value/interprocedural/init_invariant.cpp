@@ -40,7 +40,7 @@
  * UNILATERAL TERMINATION OF THIS AGREEMENT.
  *
  ******************************************************************************/
-
+/// \brief Need modification
 #include <ikos/analyzer/analysis/literal.hpp>
 #include <ikos/analyzer/analysis/value/interprocedural/init_invariant.hpp>
 #include <ikos/analyzer/util/log.hpp>
@@ -60,27 +60,49 @@ AbstractDomain init_main_invariant(Context& ctx,
     log::warning("unexpected type for first argument of main");
     return inv;
   }
-  if (!argv.is_pointer_var()) {
+  if (!argc.is_floating_point_var()) {  // By zoush99
     log::warning("unexpected type for second argument of main");
+    return inv;
+  }
+  if (!argv.is_pointer_var()) {
+    log::warning("unexpected type for third argument of main");
     return inv;
   }
 
   // Set argc
-  auto argc_type = cast< ar::IntegerType >(main->param(0)->type());
-  if (ctx.opts.argc) {
-    // Add `argc = ctx.opts.argc`
-    inv.normal().int_assign(argc.var(),
-                            MachineInt(*ctx.opts.argc,
-                                       argc_type->bit_width(),
-                                       argc_type->sign()));
-  } else {
-    // Add `argc >= 0`
-    inv.normal().int_assign_nondet(argc.var());
-    inv.normal().int_add(core::machine_int::Predicate::GE,
-                         argc.var(),
-                         MachineInt::zero(argc_type->bit_width(),
-                                          argc_type->sign()));
+  if(main->param(0)->type()->is_float()){
+    auto argc_type = cast< ar::FloatType >(main->param(0)->type());
+    if (ctx.opts.argc) {
+      // Add `argc = ctx.opts.argc`
+      inv.normal().int_assign(argc.var(),MachineInt(*ctx.opts.argc,
+                                                       argc_type->bit_width(),
+                                                       argc_type->sign()));
+      /// \todo bugs here!!!
+    } else {
+      // Add `argc >= 0`
+      inv.normal().float_assign_nondet(argc.var());
+      inv.normal().float_add(core::numeric::Predicate::GE,
+                           argc.var(),
+                           FNumber::zero());
+    }
   }
+
+    // Default method
+    auto argc_type = cast< ar::IntegerType >(main->param(0)->type());
+    if (ctx.opts.argc) {
+      // Add `argc = ctx.opts.argc`
+      inv.normal().int_assign(argc.var(),
+                              MachineInt(*ctx.opts.argc,
+                                         argc_type->bit_width(),
+                                         argc_type->sign()));
+    } else {
+      // Add `argc >= 0`
+      inv.normal().int_assign_nondet(argc.var());
+      inv.normal().int_add(core::machine_int::Predicate::GE,
+                           argc.var(),
+                           MachineInt::zero(argc_type->bit_width(),
+                                            argc_type->sign()));
+    }
 
   // Set argv
   ArgvMemoryLocation* argv_mem_loc = ctx.mem_factory->get_argv();

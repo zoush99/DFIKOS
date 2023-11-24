@@ -62,8 +62,8 @@ enum class UnaryOperator {
   Ext,
   SignCast, // Realization
   Cast,
-  FtoInteger, // Realization
-  ZtoInteger, // Realization
+  FtoInteger,
+  ZtoInteger,
 };
 
 /// \brief Transform between floating point and integer. By zoush99
@@ -172,25 +172,13 @@ T apply_unary_operator(UnaryOperator op, const T& operand) {
 template <typename T,typename F>  // T: (FNumber, ZNumber), F: (int, long int et al.)
 F apply_trans_to_integer(UnaryOperator op, const T& operand){
   switch (op) {
-    case UnaryOperator::FtoInteger:               // FNumber
+    case UnaryOperator::FtoInteger:             // FNumber
       return operand.template toInteger< F >(); // Member variable
     case UnaryOperator::ZtoInteger:               // ZNumber
       return operand.template to< F >();
     default:
       ikos_unreachable("unreachable");
   }
-}
-
-/// \brief Transform between floating point and integer. By zoush99
-template < typename T >
-T apply_trans_to_finteger(const FNumber& operand) { // FNumber -> integer
-  return operand.toInteger< T >();
-}
-
-/// \todo(By zoush99)
-template < typename T >
-T apply_trans_to_zinteger(const ZNumber& operand) { // ZNumber -> integer
-  return operand.to< T >();
 }
 
 /// \brief Get a textual representation of the given binary operator

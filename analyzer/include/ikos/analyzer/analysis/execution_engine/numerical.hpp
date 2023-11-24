@@ -1061,7 +1061,7 @@ private:
                     "left hand side is not an integer variable");
     if (rhs.is_floating_point()) {
       auto type = cast< ar::IntegerType >(lhs.var()->type());
-      MachineInt _tempInt(rhs.floating_point().toInteger<int>(),type->bit_width(), type->sign());
+      MachineInt _tempInt(rhs.floating_point().toZNumber(),type->bit_width(), type->sign());
       this->_inv.normal()
           .int_assign(lhs.var(),
                       _tempInt); // floating point->integer
@@ -1083,7 +1083,7 @@ private:
                     "left hand side is not a floating point variable");
     if (rhs.is_machine_int()) {
 //      auto type = cast< ar::FloatType >(lhs.var()->type());
-      FNumber _tempFlo(rhs.floating_point().toInteger<int>());
+      FNumber _tempFlo(rhs.machine_int().to<int>());
       this->_inv.normal()
           .float_assign(lhs.var(),_tempFlo);
     } else if (rhs.is_machine_int_var()) {
@@ -1521,6 +1521,7 @@ private:
     }
   }
 
+  /// \todo to be done!!!
   /// \brief Execute a floating point comparison. By zoush99
   void exec_float_comparison(FloatPredicate pred,
                              const ScalarLit& left,

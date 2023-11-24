@@ -59,7 +59,7 @@
 #include <ikos/core/value/machine_int/interval_congruence.hpp>
 #include <ikos/core/value/nullity.hpp>
 #include <ikos/core/value/numeric/interval.hpp> // By zoush99
-//#include <ikos/core/value/numeric/interval_congruence.hpp>  // By zoush99
+#include <ikos/core/value/numeric/interval_congruence.hpp>  // By zoush99
 #include <ikos/core/value/pointer/pointer.hpp>
 #include <ikos/core/value/pointer/pointer_set.hpp>
 #include <ikos/core/value/pointer/points_to_set.hpp>
