@@ -1130,7 +1130,7 @@ inline ZNumber lcm(const ZNumber& a, const ZNumber& b) {
 /// \brief Run Euclid's algorithm
 ///
 /// Compute `g = gcd(a, b)` and `u`, `v` such that `g = a*u + b*v`
-//
+///
 /// The value in `g` is always positive, even if one or both of `a` and `b` are
 /// negative (or zero if both inputs are zero).
 inline void gcd_extended(

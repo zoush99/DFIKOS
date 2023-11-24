@@ -525,15 +525,28 @@ public:
   }
 
   /// \brief Transform FNumber to ZNumber
-  ZNumber toZNumber() const{
+  ZNumber toZNumber() const {
     mpz_t _Ztemp;
-    mpfr_get_z(_Ztemp,this->_n,MPFR_RNDN);
+    mpfr_get_z(_Ztemp, this->_n, MPFR_RNDN);
     mpz_class _Zclass(_Ztemp);
     ZNumber _ZNum(_Zclass);
     return _ZNum;
   }
 
   /// @}
+
+  friend FNumber mod(const FNumber&, const FNumber&);
+
+  friend FNumber gcd(const FNumber&, const FNumber&);
+
+  friend FNumber lcm(const FNumber&, const FNumber&);
+
+  /// \todo bugs here!!!
+  friend void gcd_extended(
+      const FNumber&, const FNumber&, FNumber&, FNumber&, FNumber&);
+
+  //  friend std::istream& operator>>(std::istream& i, ZNumber& n);
+
   friend class QNumber;
   friend class ZNumber;
 }; // end class FNumber
@@ -813,6 +826,104 @@ inline bool operator>=(T lhs, const FNumber& rhs) {
   return mpfr_greaterequal_p(_lhsFN.FNvalue(), rhs.FNvalue());
 }
 
+/// \brief Return the smaller of the given numbers
+inline const FNumber& min(const FNumber& a, const FNumber& b) {
+  return (a < b) ? a : b;
+}
+
+/// \brief Return the smaller of the given numbers
+inline const FNumber& min(const FNumber& a,
+                          const FNumber& b,
+                          const FNumber& c) {
+  return min(min(a, b), c);
+}
+
+/// \brief Return the smaller of the given numbers
+inline const FNumber& min(const FNumber& a,
+                          const FNumber& b,
+                          const FNumber& c,
+                          const FNumber& d) {
+  return min(min(min(a, b), c), d);
+}
+
+/// \brief Return the greater of the given numbers
+inline const FNumber& max(const FNumber& a, const FNumber& b) {
+  return (a < b) ? b : a;
+}
+
+/// \brief Return the greater of the given numbers
+inline const FNumber& max(const FNumber& a,
+                          const FNumber& b,
+                          const FNumber& c) {
+  return max(max(a, b), c);
+}
+
+/// \brief Return the greater of the given numbers
+inline const FNumber& max(const FNumber& a,
+                          const FNumber& b,
+                          const FNumber& c,
+                          const FNumber& d) {
+  return max(max(max(a, b), c), d);
+}
+
+/// \brief Integer floating point number
+inline FNumber mod(const FNumber& lhs, const FNumber& rhs) {
+  ZNumber z(mod(lhs.toZNumber(), rhs.toZNumber()));
+  FNumber f(z.to< int >());
+  return f;
+}
+
+/// \brief Absolute value
+inline FNumber abs(const FNumber& n) {
+  mpfr_t _m;
+  mpfr_init2(_m, n.FNprec());
+  mpfr_abs(_m, n.FNvalue(), MPFR_RNDN);
+  FNumber m(_m, MPFR_RNDN);
+  mpfr_clear(_m);
+  return m;
+}
+
+/// \brief Return the greatest common divisor of the given numbers
+///
+/// The result is always positive even if one or both input operands are
+/// negative. Except if both inputs are zero; then this function defines
+/// `gcd(0, 0) = 0`.
+inline FNumber gcd(const FNumber& lhs, const FNumber& rhs) {
+  ZNumber z(gcd(lhs.toZNumber(), rhs.toZNumber()));
+  FNumber f(z.to< int >());
+  return f;
+}
+
+/// \brief Return the greatest common divisor of the given numbers
+inline FNumber gcd(const FNumber& a, const FNumber& b, const FNumber& c) {
+  return gcd(gcd(a, b), c);
+}
+
+/// \brief Return the least common multiple of the given numbers
+inline FNumber lcm(const FNumber& lhs, const FNumber& rhs) {
+  ZNumber z(lcm(lhs.toZNumber(), rhs.toZNumber()));
+  FNumber f(z.to< int >());
+  return f;
+}
+
+/// \todo bugs here!!!
+/// \brief Run Euclid's algorithm
+///
+/// Compute `g = gcd(a, b)` and `u`, `v` such that `g = a*u + b*v`
+//
+/// The value in `g` is always positive, even if one or both of `a` and `b` are
+/// negative (or zero if both inputs are zero).
+//inline void gcd_extended(
+//    const FNumber& a, const FNumber& b, FNumber& g, FNumber& u, FNumber& v) {
+//  const ZNumber A = a.toZNumber();
+//  const ZNumber B = b.toZNumber();
+//  mpz_gcdext(g.toZNumber().mpz().get_mpz_t(),
+//             u.toZNumber().mpz().get_mpz_t(),
+//             v.toZNumber().mpz().get_mpz_t(),
+//             A.mpz().get_mpz_t(),
+//             B.mpz().get_mpz_t());
+//}
+
 /// @}
 /// \name Mathematical function
 /// @{
@@ -964,7 +1075,7 @@ inline FNumber tanu(const FNumber& f) {
 template < typename T,
            class = std::enable_if_t< IsSupportedIntegralFloat< T >::value > >
 inline FNumber retPi() {
-  T f=1;
+  T f = 1;
   FNumber Pi(f);
   mpfr_t n;
   mpfr_init2(n, Pi.FNprec());

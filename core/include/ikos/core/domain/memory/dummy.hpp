@@ -407,7 +407,7 @@ public:
 
   /// \brief By zoush99
   void float_assign(VariableRef x, const FNumber& n) override {
-    this->_scalar.int_assign(x, n);
+    this->_scalar.float_assign(x, n);
   }
 
   void float_assign_undef(VariableRef x) override {

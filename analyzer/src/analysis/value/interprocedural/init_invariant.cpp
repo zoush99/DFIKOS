@@ -85,8 +85,7 @@ AbstractDomain init_main_invariant(Context& ctx,
                            argc.var(),
                            FNumber::zero());
     }
-  }
-
+  }else{
     // Default method
     auto argc_type = cast< ar::IntegerType >(main->param(0)->type());
     if (ctx.opts.argc) {
@@ -103,6 +102,7 @@ AbstractDomain init_main_invariant(Context& ctx,
                            MachineInt::zero(argc_type->bit_width(),
                                             argc_type->sign()));
     }
+  }
 
   // Set argv
   ArgvMemoryLocation* argv_mem_loc = ctx.mem_factory->get_argv();
