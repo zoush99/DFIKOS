@@ -48,7 +48,7 @@
  * UNILATERAL TERMINATION OF THIS AGREEMENT.
  *
  ******************************************************************************/
-
+/// \brief Need modification
 #pragma once
 
 #include <type_traits>
@@ -734,7 +734,7 @@ public:
   /// @}
   /// \name Implement floating point abstract domain methods
   /// @{
-
+  /// \todo(need to be done)
   void float_assign_undef(VariableRef x) override {
     this->_scalar.float_assign_undef(x);
   }

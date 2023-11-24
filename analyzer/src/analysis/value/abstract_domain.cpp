@@ -40,7 +40,7 @@
  * UNILATERAL TERMINATION OF THIS AGREEMENT.
  *
  ******************************************************************************/
-
+/// \brief Need modification
 #include <ikos/core/domain/lifetime/separate_domain.hpp>
 #include <ikos/core/domain/memory/partitioning.hpp>
 #include <ikos/core/domain/memory/value.hpp>

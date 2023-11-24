@@ -51,7 +51,7 @@
 #pragma once
 
 #include <ikos/core/number/dummy_number.hpp>
-#include <ikos/core/number/f_number.hpp>  // By zoush99
+#include <ikos/core/number/f_number.hpp> // By zoush99
 #include <ikos/core/number/machine_int.hpp>
 #include <ikos/core/number/signedness.hpp>
 #include <ikos/core/number/supported_integral.hpp>
@@ -77,7 +77,7 @@ using ZNumber = ikos::core::ZNumber;
 using MachineInt = ikos::core::MachineInt;
 
 // Floating point data types are not taken into account. By zoush99
-using FNumber=ikos::core::FNumber;
+using FNumber = ikos::core::FNumber;
 
 } // end namespace analyzer
 } // end namespace ikos

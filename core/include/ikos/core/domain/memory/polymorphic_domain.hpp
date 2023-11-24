@@ -44,7 +44,7 @@
  * UNILATERAL TERMINATION OF THIS AGREEMENT.
  *
  ******************************************************************************/
-
+/// \brief Need modification
 #pragma once
 
 #include <memory>
@@ -378,7 +378,7 @@ private:
     /// @}
     /// \name Floating point abstract domain methods
     /// @{
-
+    /// \todo(need to be done)
     /// \brief Assign `x = undefined`
     virtual void float_assign_undef(VariableRef x) = 0;
 
@@ -1097,7 +1097,7 @@ private:
     /// @}
     /// \name Floating point abstract domain methods
     /// @{
-
+    /// \todo(need to be done)
     void float_assign_undef(VariableRef x) override {
       this->_inv.float_assign_undef(x);
     }

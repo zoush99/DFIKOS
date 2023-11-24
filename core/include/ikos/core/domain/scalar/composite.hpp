@@ -40,7 +40,7 @@
  * UNILATERAL TERMINATION OF THIS AGREEMENT.
  *
  ******************************************************************************/
-
+/// \brief Need modification
 #pragma once
 
 #include <ikos/core/domain/machine_int/abstract_domain.hpp>

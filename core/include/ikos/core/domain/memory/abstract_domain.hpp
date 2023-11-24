@@ -40,7 +40,7 @@
  * UNILATERAL TERMINATION OF THIS AGREEMENT.
  *
  ******************************************************************************/
-
+/// \brief No modification needed
 #pragma once
 
 #include <boost/optional.hpp>
