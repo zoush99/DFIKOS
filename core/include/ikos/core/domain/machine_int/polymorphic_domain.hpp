@@ -68,6 +68,7 @@ class PolymorphicDomain final
                                           PolymorphicDomain< VariableRef > > {
 public:
   using LinearExpressionT = LinearExpression< MachineInt, VariableRef >;
+  using LinearExpressionF = LinearExpression< FNumber, VariableRef >; // By zoush99
   using VariableTrait = machine_int::VariableTraits< VariableRef >;
 
 private:
@@ -150,6 +151,10 @@ private:
     virtual void widen_threshold_with(const PolymorphicBase& other,
                                       const MachineInt& threshold) = 0;
 
+    /// \brief Perform the widening of two abstract values with a threshold
+    virtual void widen_threshold_with(const PolymorphicBase& other,
+                                      const FNumber& threshold) = 0;
+
     /// \brief Perform the intersection of two abstract values
     virtual void meet_with(const PolymorphicBase& other) = 0;
 
@@ -159,6 +164,10 @@ private:
     /// \brief Perform the narrowing of two abstract values with a threshold
     virtual void narrow_threshold_with(const PolymorphicBase& other,
                                        const MachineInt& threshold) = 0;
+
+    /// \brief Perform the narrowing of two abstract values with a threshold
+    virtual void narrow_threshold_with(const PolymorphicBase& other,
+                                       const FNumber& threshold) = 0;
 
     /// \brief Perform the union of two abstract values
     virtual std::unique_ptr< PolymorphicBase > join(
@@ -181,6 +190,10 @@ private:
     virtual std::unique_ptr< PolymorphicBase > widening_threshold(
         const PolymorphicBase& other, const MachineInt& threshold) const = 0;
 
+    /// \brief Perform the widening of two abstract values with a threshold
+    virtual std::unique_ptr< PolymorphicBase > widening_threshold(
+        const PolymorphicBase& other, const FNumber& threshold) const = 0;
+
     /// \brief Perform the intersection of two abstract values
     virtual std::unique_ptr< PolymorphicBase > meet(
         const PolymorphicBase& other) const = 0;
@@ -193,6 +206,10 @@ private:
     virtual std::unique_ptr< PolymorphicBase > narrowing_threshold(
         const PolymorphicBase& other, const MachineInt& threshold) const = 0;
 
+    /// \brief Perform the narrowing of two abstract values with a threshold
+    virtual std::unique_ptr< PolymorphicBase > narrowing_threshold(
+        const PolymorphicBase& other, const FNumber& threshold) const = 0;
+
     /// @}
     /// \name Machine integer abstract domain methods
     /// @{
@@ -200,11 +217,17 @@ private:
     /// \brief Assign `x = n`
     virtual void assign(VariableRef x, const MachineInt& n) = 0;
 
+    /// \brief Assign `x = n`
+    virtual void assign(VariableRef x, const FNumber& n) = 0;
+
     /// \brief Assign `x = y`
     virtual void assign(VariableRef x, VariableRef y) = 0;
 
     /// \brief Assign `x = e`
     virtual void assign(VariableRef x, const LinearExpressionT& e) = 0;
+
+    /// \brief Assign `x = e`
+    virtual void assign(VariableRef x, const LinearExpressionF& e) = 0;
 
     /// \brief Apply `x = op y`
     virtual void apply(UnaryOperator op, VariableRef x, VariableRef y) = 0;
@@ -224,7 +247,19 @@ private:
     /// \brief Apply `x = y op z`
     virtual void apply(BinaryOperator op,
                        VariableRef x,
+                       VariableRef y,
+                       const FNumber& z) = 0;
+
+    /// \brief Apply `x = y op z`
+    virtual void apply(BinaryOperator op,
+                       VariableRef x,
                        const MachineInt& y,
+                       VariableRef z) = 0;
+
+    /// \brief Apply `x = y op z`
+    virtual void apply(BinaryOperator op,
+                       VariableRef x,
+                       const FNumber& y,
                        VariableRef z) = 0;
 
     // \brief Add the constraint `x pred y`
@@ -234,7 +269,13 @@ private:
     virtual void add(Predicate pred, VariableRef x, const MachineInt& y) = 0;
 
     // \brief Add the constraint `x pred y`
+    virtual void add(Predicate pred, VariableRef x, const FNumber& y) = 0;
+
+    // \brief Add the constraint `x pred y`
     virtual void add(Predicate pred, const MachineInt& x, VariableRef y) = 0;
+
+    // \brief Add the constraint `x pred y`
+    virtual void add(Predicate pred, const FNumber& x, VariableRef y) = 0;
 
     /// \brief Set the interval value of a variable
     virtual void set(VariableRef x, const Interval& value) = 0;
@@ -262,6 +303,9 @@ private:
 
     /// \brief Projection to an interval
     virtual Interval to_interval(const LinearExpressionT& e) const = 0;
+
+    /// \brief Projection to an interval
+    virtual Interval to_interval(const LinearExpressionF& e) const = 0;
 
     /// \brief Projection to a congruence
     virtual Congruence to_congruence(VariableRef x) const = 0;
@@ -413,6 +457,15 @@ private:
                                       threshold);
     }
 
+    void widen_threshold_with(const PolymorphicBase& other,
+                              const FNumber& threshold) override {
+      this->assert_compatible(other);
+      this->_inv.widen_threshold_with(static_cast< const PolymorphicDerivedT& >(
+                                          other)
+                                          ._inv,
+                                      threshold);
+    }
+
     void meet_with(const PolymorphicBase& other) override {
       this->assert_compatible(other);
       this->_inv.meet_with(
@@ -427,6 +480,16 @@ private:
 
     void narrow_threshold_with(const PolymorphicBase& other,
                                const MachineInt& threshold) override {
+      this->assert_compatible(other);
+      this->_inv
+          .narrow_threshold_with(static_cast< const PolymorphicDerivedT& >(
+                                     other)
+                                     ._inv,
+                                 threshold);
+    }
+
+    void narrow_threshold_with(const PolymorphicBase& other,
+                               const FNumber& threshold) override {
       this->assert_compatible(other);
       this->_inv
           .narrow_threshold_with(static_cast< const PolymorphicDerivedT& >(
@@ -475,6 +538,18 @@ private:
                                   threshold));
     }
 
+    std::unique_ptr< PolymorphicBase > widening_threshold(
+        const PolymorphicBase& other,
+        const FNumber& threshold) const override {
+      this->assert_compatible(other);
+      return std::make_unique< PolymorphicDerivedT >(
+          this->_inv
+              .widening_threshold(static_cast< const PolymorphicDerivedT& >(
+                                      other)
+                                      ._inv,
+                                  threshold));
+    }
+
     std::unique_ptr< PolymorphicBase > meet(
         const PolymorphicBase& other) const override {
       this->assert_compatible(other);
@@ -501,6 +576,18 @@ private:
                                    threshold));
     }
 
+    std::unique_ptr< PolymorphicBase > narrowing_threshold(
+        const PolymorphicBase& other,
+        const FNumber& threshold) const override {
+      this->assert_compatible(other);
+      return std::make_unique< PolymorphicDerivedT >(
+          this->_inv
+              .narrowing_threshold(static_cast< const PolymorphicDerivedT& >(
+                                       other)
+                                       ._inv,
+                                   threshold));
+    }
+
     /// @}
     /// \name Machine integer abstract domain methods
     /// @{
@@ -509,11 +596,19 @@ private:
       this->_inv.assign(x, n);
     }
 
+    void assign(VariableRef x, const FNumber& n) override {
+      this->_inv.assign(x, n);
+    }
+
     void assign(VariableRef x, VariableRef y) override {
       this->_inv.assign(x, y);
     }
 
     void assign(VariableRef x, const LinearExpressionT& e) override {
+      this->_inv.assign(x, e);
+    }
+
+    void assign(VariableRef x, const LinearExpressionF& e) override {
       this->_inv.assign(x, e);
     }
 
@@ -537,7 +632,21 @@ private:
 
     void apply(BinaryOperator op,
                VariableRef x,
+               VariableRef y,
+               const FNumber& z) override {
+      this->_inv.apply(op, x, y, z);
+    }
+
+    void apply(BinaryOperator op,
+               VariableRef x,
                const MachineInt& y,
+               VariableRef z) override {
+      this->_inv.apply(op, x, y, z);
+    }
+
+    void apply(BinaryOperator op,
+               VariableRef x,
+               const FNumber& y,
                VariableRef z) override {
       this->_inv.apply(op, x, y, z);
     }
@@ -550,7 +659,15 @@ private:
       this->_inv.add(pred, x, y);
     }
 
+    void add(Predicate pred, VariableRef x, const FNumber& y) override {
+      this->_inv.add(pred, x, y);
+    }
+
     void add(Predicate pred, const MachineInt& x, VariableRef y) override {
+      this->_inv.add(pred, x, y);
+    }
+
+    void add(Predicate pred, const FNumber& x, VariableRef y) override {
       this->_inv.add(pred, x, y);
     }
 
@@ -585,6 +702,10 @@ private:
     }
 
     Interval to_interval(const LinearExpressionT& e) const override {
+      return this->_inv.to_interval(e);
+    }
+
+    Interval to_interval(const LinearExpressionF& e) const override {
       return this->_inv.to_interval(e);
     }
 
@@ -723,6 +844,11 @@ public:
     this->_ptr->widen_threshold_with(*other._ptr, threshold);
   }
 
+  void widen_threshold_with(const PolymorphicDomain& other,
+                            const FNumber& threshold) override {
+    this->_ptr->widen_threshold_with(*other._ptr, threshold);
+  }
+
   void meet_with(const PolymorphicDomain& other) override {
     this->_ptr->meet_with(*other._ptr);
   }
@@ -733,6 +859,11 @@ public:
 
   void narrow_threshold_with(const PolymorphicDomain& other,
                              const MachineInt& threshold) override {
+    this->_ptr->narrow_threshold_with(*other._ptr, threshold);
+  }
+
+  void narrow_threshold_with(const PolymorphicDomain& other,
+                             const FNumber& threshold) override {
     this->_ptr->narrow_threshold_with(*other._ptr, threshold);
   }
 
@@ -759,6 +890,13 @@ public:
         this->_ptr->widening_threshold(*other._ptr, threshold));
   }
 
+  PolymorphicDomain widening_threshold(
+      const PolymorphicDomain& other,
+      const FNumber& threshold) const override {
+    return PolymorphicDomain(
+        this->_ptr->widening_threshold(*other._ptr, threshold));
+  }
+
   PolymorphicDomain meet(const PolymorphicDomain& other) const override {
     return PolymorphicDomain(this->_ptr->meet(*other._ptr));
   }
@@ -774,6 +912,13 @@ public:
         this->_ptr->narrowing_threshold(*other._ptr, threshold));
   }
 
+  PolymorphicDomain narrowing_threshold(
+      const PolymorphicDomain& other,
+      const FNumber& threshold) const override {
+    return PolymorphicDomain(
+        this->_ptr->narrowing_threshold(*other._ptr, threshold));
+  }
+
   /// @}
   /// \name Machine integer abstract domain methods
   /// @{
@@ -782,11 +927,19 @@ public:
     this->_ptr->assign(x, n);
   }
 
+  void assign(VariableRef x, const FNumber& n) override {
+    this->_ptr->assign(x, n);
+  }
+
   void assign(VariableRef x, VariableRef y) override {
     this->_ptr->assign(x, y);
   }
 
   void assign(VariableRef x, const LinearExpressionT& e) override {
+    this->_ptr->assign(x, e);
+  }
+
+  void assign(VariableRef x, const LinearExpressionF& e) override {
     this->_ptr->assign(x, e);
   }
 
@@ -810,7 +963,21 @@ public:
 
   void apply(BinaryOperator op,
              VariableRef x,
+             VariableRef y,
+             const FNumber& z) override {
+    this->_ptr->apply(op, x, y, z);
+  }
+
+  void apply(BinaryOperator op,
+             VariableRef x,
              const MachineInt& y,
+             VariableRef z) override {
+    this->_ptr->apply(op, x, y, z);
+  }
+
+  void apply(BinaryOperator op,
+             VariableRef x,
+             const FNumber& y,
              VariableRef z) override {
     this->_ptr->apply(op, x, y, z);
   }
@@ -823,7 +990,15 @@ public:
     this->_ptr->add(pred, x, y);
   }
 
+  void add(Predicate pred, VariableRef x, const FNumber& y) override {
+    this->_ptr->add(pred, x, y);
+  }
+
   void add(Predicate pred, const MachineInt& x, VariableRef y) override {
+    this->_ptr->add(pred, x, y);
+  }
+
+  void add(Predicate pred, const FNumber& x, VariableRef y) override {
     this->_ptr->add(pred, x, y);
   }
 
@@ -858,6 +1033,10 @@ public:
   }
 
   Interval to_interval(const LinearExpressionT& e) const override {
+    return this->_ptr->to_interval(e);
+  }
+
+  Interval to_interval(const LinearExpressionF& e) const override {
     return this->_ptr->to_interval(e);
   }
 
