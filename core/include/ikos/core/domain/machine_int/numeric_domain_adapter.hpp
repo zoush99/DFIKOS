@@ -47,6 +47,7 @@
 
 #include <ikos/core/domain/machine_int/abstract_domain.hpp>
 #include <ikos/core/domain/numeric/abstract_domain.hpp>
+#include <ikos/core/number/f_number.hpp>  // By zoush99
 #include <ikos/core/number/machine_int.hpp>
 #include <ikos/core/number/z_number.hpp>
 #include <ikos/core/semantic/machine_int/variable.hpp>

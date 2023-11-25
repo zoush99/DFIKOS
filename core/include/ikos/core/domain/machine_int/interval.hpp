@@ -83,7 +83,7 @@ private:
 
 public:
   using LinearExpressionT = LinearExpression< MachineInt, VariableRef >;
-//  using LinearExpressionF = LinearExpression< FNumber, VariableRef >; // By zoush99
+  using LinearExpressionF = LinearExpression< FNumber, VariableRef >; // By zoush99
   using Iterator = typename SeparateDomainT::Iterator;
 
 private:

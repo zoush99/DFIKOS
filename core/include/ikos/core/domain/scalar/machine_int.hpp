@@ -87,7 +87,11 @@ public:
   using PointsToSetT = PointsToSet< MemoryLocationRef >;
   using PointerAbsValueT = PointerAbsValue< MemoryLocationRef >;
   using PointerSetT = PointerSet< MemoryLocationRef >;
-
+  using FloatLinearExpression=LinearExpression<FNumber,VariableRef>;  // By zoush99
+  using FloatInterval = numeric::Interval<FNumber>; // By zoush99
+  using FloatUnaryOperator = numeric::UnaryOperator;  // By zoush99
+  using FloatBinaryOperator = numeric::BinaryOperator;  // By zoush99
+  using FloatPredicate = numeric::Predicate;  // By zoush99
 private:
   using IntVariableTrait = machine_int::VariableTraits< VariableRef >;
   using ScalarVariableTrait = scalar::VariableTraits< VariableRef >;
@@ -801,30 +805,332 @@ public:
   /// \name Implement floating point abstract domain methods
   /// @{
 
+//  void float_assign_undef(VariableRef x) override {
+//    ikos_assert(ScalarVariableTrait::is_float(x));
+//
+//    this->_uninitialized.assign_uninitialized(x);
+//  }
+//
+//  void float_assign_nondet(VariableRef x) override {
+//    ikos_assert(ScalarVariableTrait::is_float(x));
+//
+//    this->_uninitialized.assign_initialized(x);
+//  }
+//
+//  void float_assign(VariableRef x, VariableRef y) override {
+//    ikos_assert(ScalarVariableTrait::is_float(x));
+//    ikos_assert(ScalarVariableTrait::is_float(y));
+//
+//    this->_uninitialized.assign(x, y);
+//  }
+//
+//  void float_forget(VariableRef x) override {
+//    ikos_assert(ScalarVariableTrait::is_float(x));
+//
+//    this->_uninitialized.forget(x);
+//  }
+
+
+  void float_assign(VariableRef x, const FNumber& n) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assign_initialized(x);
+    this->_integer.assign(x, n);
+  }
+
   void float_assign_undef(VariableRef x) override {
     ikos_assert(ScalarVariableTrait::is_float(x));
 
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
     this->_uninitialized.assign_uninitialized(x);
+    this->_integer.forget(x);
   }
 
   void float_assign_nondet(VariableRef x) override {
     ikos_assert(ScalarVariableTrait::is_float(x));
 
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
     this->_uninitialized.assign_initialized(x);
+    this->_integer.forget(x);
   }
 
   void float_assign(VariableRef x, VariableRef y) override {
     ikos_assert(ScalarVariableTrait::is_float(x));
     ikos_assert(ScalarVariableTrait::is_float(y));
 
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
     this->_uninitialized.assign(x, y);
+    this->_integer.assign(x, y);
   }
+
+  void float_assign(VariableRef x, const IntLinearExpression& e) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    for (const auto& term : e) {
+      ikos_assert(ScalarVariableTrait::is_float(term.first));
+      this->_uninitialized.assert_initialized(term.first);
+    }
+
+    if (this->_uninitialized.is_bottom()) {
+      this->set_to_bottom();
+      return;
+    }
+
+    this->_uninitialized.assign_initialized(x);
+    this->_integer.assign(x, e);
+  }
+
+  void float_apply(FloatUnaryOperator op, VariableRef x, VariableRef y) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+    ikos_assert(ScalarVariableTrait::is_float(y));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assert_initialized(y);
+
+    if (this->_uninitialized.is_bottom()) {
+      this->set_to_bottom();
+      return;
+    }
+
+    this->_uninitialized.assign_initialized(x);
+    this->_integer.apply(op, x, y);
+  }
+
+  void float_apply(FloatBinaryOperator op,
+                 VariableRef x,
+                 VariableRef y,
+                 VariableRef z) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+    ikos_assert(ScalarVariableTrait::is_float(y));
+    ikos_assert(ScalarVariableTrait::is_float(z));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assert_initialized(y);
+    this->_uninitialized.assert_initialized(z);
+
+    if (this->_uninitialized.is_bottom()) {
+      this->set_to_bottom();
+      return;
+    }
+
+    this->_uninitialized.assign_initialized(x);
+    this->_integer.apply(op, x, y, z);
+  }
+
+  void float_apply(FloatBinaryOperator op,
+                 VariableRef x,
+                 VariableRef y,
+                 const MachineInt& z) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+    ikos_assert(ScalarVariableTrait::is_float(y));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assert_initialized(y);
+
+    if (this->_uninitialized.is_bottom()) {
+      this->set_to_bottom();
+      return;
+    }
+
+    this->_uninitialized.assign_initialized(x);
+    this->_integer.apply(op, x, y, z);
+  }
+
+  void float_apply(FloatBinaryOperator op,
+                 VariableRef x,
+                 const FNumber& y,
+                 VariableRef z) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+    ikos_assert(ScalarVariableTrait::is_float(z));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assert_initialized(z);
+
+    if (this->_uninitialized.is_bottom()) {
+      this->set_to_bottom();
+      return;
+    }
+
+    this->_uninitialized.assign_initialized(x);
+    this->_integer.apply(op, x, y, z);
+  }
+
+  void float_add(FloatPredicate pred, VariableRef x, VariableRef y) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+    ikos_assert(ScalarVariableTrait::is_float(y));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assert_initialized(x);
+    this->_uninitialized.assert_initialized(y);
+
+    if (this->_uninitialized.is_bottom()) {
+      this->set_to_bottom();
+      return;
+    }
+
+    this->_integer.add(pred, x, y);
+  }
+
+  void float_add(FloatPredicate pred, VariableRef x, const FNumber& y) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assert_initialized(x);
+
+    if (this->_uninitialized.is_bottom()) {
+      this->set_to_bottom();
+      return;
+    }
+
+    this->_integer.add(pred, x, y);
+  }
+
+  void float_add(FloatPredicate pred, const FNumber& x, VariableRef y) override {
+    ikos_assert(ScalarVariableTrait::is_float(y));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assert_initialized(y);
+
+    if (this->_uninitialized.is_bottom()) {
+      this->set_to_bottom();
+      return;
+    }
+
+    this->_integer.add(pred, x, y);
+  }
+
+  void float_set(VariableRef x, const FloatInterval& value) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
+    this->_uninitialized.assign_initialized(x);
+    this->_integer.set(x, value);
+  }
+
+//  void float_set(VariableRef x, const IntCongruence& value) override {
+//    ikos_assert(ScalarVariableTrait::is_int(x));
+//
+//    if (this->is_bottom_fast()) {
+//      return;
+//    }
+//
+//    this->_uninitialized.assign_initialized(x);
+//    this->_integer.set(x, value);
+//  }
+
+//  void int_set(VariableRef x, const IntIntervalCongruence& value) override {
+//    ikos_assert(ScalarVariableTrait::is_int(x));
+//
+//    if (this->is_bottom_fast()) {
+//      return;
+//    }
+//
+//    this->_uninitialized.assign_initialized(x);
+//    this->_integer.set(x, value);
+//  }
+
+  void float_refine(VariableRef x, const FloatInterval& value) override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+
+    this->_integer.refine(x, value);
+  }
+
+//  void int_refine(VariableRef x, const IntCongruence& value) override {
+//    ikos_assert(ScalarVariableTrait::is_int(x));
+//
+//    this->_integer.refine(x, value);
+//  }
+
+//  void int_refine(VariableRef x, const IntIntervalCongruence& value) override {
+//    ikos_assert(ScalarVariableTrait::is_int(x));
+//
+//    this->_integer.refine(x, value);
+//  }
 
   void float_forget(VariableRef x) override {
     ikos_assert(ScalarVariableTrait::is_float(x));
 
+    if (this->is_bottom_fast()) {
+      return;
+    }
+
     this->_uninitialized.forget(x);
+    this->_integer.forget(x);
   }
+
+  FloatInterval float_to_interval(VariableRef x) const override {
+    ikos_assert(ScalarVariableTrait::is_float(x));
+
+    return this->_integer.to_interval(x);
+  }
+
+  FloatInterval float_to_interval(const FloatLinearExpression& e) const override {
+    return this->_integer.to_interval(e);
+  }
+
+//  IntCongruence int_to_congruence(VariableRef x) const override {
+//    ikos_assert(ScalarVariableTrait::is_int(x));
+//
+//    return this->_integer.to_congruence(x);
+//  }
+
+//  IntCongruence int_to_congruence(const IntLinearExpression& e) const override {
+//    return this->_integer.to_congruence(e);
+//  }
+
+//  IntIntervalCongruence int_to_interval_congruence(
+//      VariableRef x) const override {
+//    ikos_assert(ScalarVariableTrait::is_int(x));
+//
+//    return this->_integer.to_interval_congruence(x);
+//  }
+
+//  IntIntervalCongruence int_to_interval_congruence(
+//      const IntLinearExpression& e) const override {
+//    return this->_integer.to_interval_congruence(e);
+//  }
+
 
   /// @}
   /// \name Implement nullity abstract domain methods
