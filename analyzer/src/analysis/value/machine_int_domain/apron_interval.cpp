@@ -56,8 +56,11 @@ namespace value {
 #ifdef HAS_APRON
 namespace {
 
+//using RuntimeNumericDomain = core::numeric::
+//    ApronDomain< core::numeric::apron::Interval, ZNumber, Variable* >;
+// By zoush99
 using RuntimeNumericDomain = core::numeric::
-    ApronDomain< core::numeric::apron::Interval, ZNumber, Variable* >;
+    ApronDomain< core::numeric::apron::Interval, FNumber, Variable* >;
 using RuntimeMachineIntDomain =
     core::machine_int::NumericDomainAdapter< Variable*, RuntimeNumericDomain >;
 
