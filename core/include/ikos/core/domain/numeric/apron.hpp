@@ -89,6 +89,14 @@ inline ap_texpr0_t* binop_expr< QNumber >(ap_texpr_op_t op,
   return ap_texpr0_binop(op, l, r, AP_RTYPE_REAL, AP_RDIR_NEAREST);
 }
 
+/// \todo here!!!
+//template <>
+//inline ap_texpr0_t* binop_expr< FNumber >(ap_texpr_op_t op,
+//                                          ap_texpr0_t* l,
+//                                          ap_texpr0_t* r) {
+//  return ap_texpr0_binop(op, l, r, AP_RTYPE_REAL, AP_RDIR_NEAREST);
+//}
+
 /// \brief Conversion from ikos::ZNumber to ap_scalar_t*
 inline ap_scalar_t* to_ap_scalar(const ZNumber& n) {
   mpq_class e(n.mpz());
@@ -101,6 +109,8 @@ inline ap_scalar_t* to_ap_scalar(const QNumber& n) {
   return ap_scalar_alloc_set_mpq(e.get_mpq_t());
 }
 
+/// \todo here!!!
+
 /// \brief Conversion from ikos::ZNumber to ap_texpr0_t*
 inline ap_texpr0_t* to_ap_expr(const ZNumber& n) {
   mpq_class e(n.mpz());
@@ -112,6 +122,8 @@ inline ap_texpr0_t* to_ap_expr(const QNumber& q) {
   mpq_class e(q.mpq());
   return ap_texpr0_cst_scalar_mpq(e.get_mpq_t());
 }
+
+/// \todo here!!!
 
 /// \brief Conversion from ap_scalar_t* to ikos::ZNumber/QNumber
 template < typename Number >
@@ -137,6 +149,8 @@ inline QNumber to_ikos_number(ap_scalar_t* scalar, bool /*round_upper*/) {
 
   return QNumber(mpq_class(scalar->val.mpq));
 }
+
+/// \todo here!!!
 
 /// \brief Conversion from ap_coeff_t* to ikos::ZNumber/QNumber
 template < typename Number >

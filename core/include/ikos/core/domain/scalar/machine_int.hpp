@@ -1059,7 +1059,7 @@ public:
 //    this->_integer.set(x, value);
 //  }
 
-//  void int_set(VariableRef x, const IntIntervalCongruence& value) override {
+//  void float_set(VariableRef x, const IntIntervalCongruence& value) override {
 //    ikos_assert(ScalarVariableTrait::is_int(x));
 //
 //    if (this->is_bottom_fast()) {

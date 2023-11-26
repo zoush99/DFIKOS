@@ -513,6 +513,8 @@ inline Interval< QNumber > operator/(const Interval< QNumber >& lhs,
   }
 }
 
+/// \todo here!!!
+
 /// \brief Remainder of intervals
 inline Interval< ZNumber > operator%(const Interval< ZNumber >& lhs,
                                      const Interval< ZNumber >& rhs) {
