@@ -352,19 +352,6 @@ public:
     }
   }
 
-  void narrow_threshold_with(const MachineIntDomain& other,
-                             const FNumber& threshold) override {
-    this->normalize();
-    if (this->is_bottom()) {
-      return;
-    } else if (other.is_bottom()) {
-      this->set_to_bottom();
-    } else {
-      this->_uninitialized.narrow_with(other._uninitialized);
-      this->_integer.narrow_threshold_with(other._integer, threshold);
-    }
-  }
-
   // By zoush99
   void narrow_threshold_with(const MachineIntDomain& other,
                              const FNumber& threshold) override {

@@ -90,12 +90,12 @@ inline ap_texpr0_t* binop_expr< QNumber >(ap_texpr_op_t op,
 }
 
 /// \todo here!!!
-//template <>
-//inline ap_texpr0_t* binop_expr< FNumber >(ap_texpr_op_t op,
-//                                          ap_texpr0_t* l,
-//                                          ap_texpr0_t* r) {
-//  return ap_texpr0_binop(op, l, r, AP_RTYPE_REAL, AP_RDIR_NEAREST);
-//}
+template <>
+inline ap_texpr0_t* binop_expr< FNumber >(ap_texpr_op_t op,
+                                          ap_texpr0_t* l,
+                                          ap_texpr0_t* r) {
+  return ap_texpr0_binop(op, l, r, AP_RTYPE_DOUBLE, AP_RDIR_NEAREST);
+}
 
 /// \brief Conversion from ikos::ZNumber to ap_scalar_t*
 inline ap_scalar_t* to_ap_scalar(const ZNumber& n) {
@@ -110,6 +110,13 @@ inline ap_scalar_t* to_ap_scalar(const QNumber& n) {
 }
 
 /// \todo here!!!
+/// \brief Conversion from ikos::FNumber to ap_scalar_t*
+inline ap_scalar_t* to_ap_scalar(const FNumber& n) {
+  mpfr_t e;
+  mpfr_init2(e,Fpre::dou);
+  mpfr_set(e,n.FNvalue(),MPFR_RNDN);
+  return ap_scalar_alloc_set_mpfr(e);
+}
 
 /// \brief Conversion from ikos::ZNumber to ap_texpr0_t*
 inline ap_texpr0_t* to_ap_expr(const ZNumber& n) {
@@ -124,6 +131,13 @@ inline ap_texpr0_t* to_ap_expr(const QNumber& q) {
 }
 
 /// \todo here!!!
+/// \brief Conversion from ikos::FNumber to ap_texpr0_t*
+inline ap_texpr0_t* to_ap_expr(const FNumber& f) {
+  mpfr_t e;
+  mpfr_init2(e,Fpre::dou);
+  mpfr_set(e,f.FNvalue(),MPFR_RNDN);
+  return ap_texpr0_cst_scalar_mpfr(e);
+}
 
 /// \brief Conversion from ap_scalar_t* to ikos::ZNumber/QNumber
 template < typename Number >
@@ -151,6 +165,13 @@ inline QNumber to_ikos_number(ap_scalar_t* scalar, bool /*round_upper*/) {
 }
 
 /// \todo here!!!
+template <>
+inline FNumber to_ikos_number(ap_scalar_t* scalar, bool /*round_upper*/) {
+  ikos_assert(ap_scalar_infty(scalar) == 0);
+  ikos_assert(scalar->discr == AP_SCALAR_MPQ);
+
+  return FNumber(scalar->val.mpfr,MPFR_RNDN);
+}
 
 /// \brief Conversion from ap_coeff_t* to ikos::ZNumber/QNumber
 template < typename Number >
