@@ -302,6 +302,19 @@ public:
     }
   }
 
+  void widen_threshold_with(const MachineIntDomain& other,
+                            const FNumber& threshold) override {
+    this->normalize();
+    if (this->is_bottom()) {
+      this->operator=(other);
+    } else if (other.is_bottom()) {
+      return;
+    } else {
+      this->_uninitialized.widen_with(other._uninitialized);
+      this->_integer.widen_threshold_with(other._integer, threshold);
+    }
+  }
+
   void meet_with(const MachineIntDomain& other) override {
     this->normalize();
     if (this->is_bottom()) {
@@ -328,6 +341,19 @@ public:
 
   void narrow_threshold_with(const MachineIntDomain& other,
                              const MachineInt& threshold) override {
+    this->normalize();
+    if (this->is_bottom()) {
+      return;
+    } else if (other.is_bottom()) {
+      this->set_to_bottom();
+    } else {
+      this->_uninitialized.narrow_with(other._uninitialized);
+      this->_integer.narrow_threshold_with(other._integer, threshold);
+    }
+  }
+
+  void narrow_threshold_with(const MachineIntDomain& other,
+                             const FNumber& threshold) override {
     this->normalize();
     if (this->is_bottom()) {
       return;

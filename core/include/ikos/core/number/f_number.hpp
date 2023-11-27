@@ -270,13 +270,11 @@ public:
   }
 
   /// \brief Unary minus
+  /// Modified!
   FNumber operator-() {
-    mpfr_t f;
-    mpfr_init2(f, this->_prec);
-    mpfr_neg(f, this->_n, MPFR_RNDN);
-    FNumber F(f, MPFR_RNDN);
-    mpfr_clear(f);
-    return F;
+    FNumber _f(*this);
+    mpfr_neg(_f._n, this->_n, MPFR_RNDN);
+    return _f;
   }
 
   /// \brief Addition assignment
@@ -525,7 +523,7 @@ public:
   }
 
   /// \brief Transform FNumber to ZNumber
-  ZNumber toZNumber() const {
+  ZNumber to_z_number() const {
     mpz_t _Ztemp;
     mpfr_get_z(_Ztemp, this->_n, MPFR_RNDN);
     mpz_class _Zclass(_Ztemp);
@@ -868,7 +866,7 @@ inline const FNumber& max(const FNumber& a,
 
 /// \brief Integer floating point number
 inline FNumber mod(const FNumber& lhs, const FNumber& rhs) {
-  ZNumber z(mod(lhs.toZNumber(), rhs.toZNumber()));
+  ZNumber z(mod(lhs.to_z_number(), rhs.to_z_number()));
   FNumber f(z.to< int >());
   return f;
 }
@@ -889,7 +887,7 @@ inline FNumber abs(const FNumber& n) {
 /// negative. Except if both inputs are zero; then this function defines
 /// `gcd(0, 0) = 0`.
 inline FNumber gcd(const FNumber& lhs, const FNumber& rhs) {
-  ZNumber z(gcd(lhs.toZNumber(), rhs.toZNumber()));
+  ZNumber z(gcd(lhs.to_z_number(), rhs.to_z_number()));
   FNumber f(z.to< int >());
   return f;
 }
@@ -901,7 +899,7 @@ inline FNumber gcd(const FNumber& a, const FNumber& b, const FNumber& c) {
 
 /// \brief Return the least common multiple of the given numbers
 inline FNumber lcm(const FNumber& lhs, const FNumber& rhs) {
-  ZNumber z(lcm(lhs.toZNumber(), rhs.toZNumber()));
+  ZNumber z(lcm(lhs.to_z_number(), rhs.to_z_number()));
   FNumber f(z.to< int >());
   return f;
 }

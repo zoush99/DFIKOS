@@ -95,6 +95,13 @@ public:
   using ZCongruence = numeric::Congruence< ZNumber >;
   using ZIntervalCongruence = numeric::IntervalCongruence< ZNumber >;
 
+//  using FBinaryOperator = numeric::BinaryOperator;  // By zoush99
+//  using FVariableExpression = VariableExpression< FNumber, VariableRef >; // By zoush99
+//  using FLinearExpression = LinearExpression< FNumber, VariableRef >; // By zoush99
+//  using FInterval = numeric::Interval< FNumber >; // By zoush99
+//  using FCongruence = numeric::Congruence< FNumber >;
+//  using FIntervalCongruence = numeric::IntervalCongruence< FNumber >;
+
 private:
   NumDomain _inv;
 
@@ -171,6 +178,8 @@ public:
                             const MachineInt& threshold) override {
     this->_inv.widen_threshold_with(other._inv, threshold.to_z_number());
   }
+
+  /// \todo bugs here!!!
 
   void meet_with(const NumericDomainAdapter& other) override {
     this->_inv.meet_with(other._inv);

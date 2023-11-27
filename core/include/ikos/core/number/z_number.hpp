@@ -53,10 +53,10 @@
 #include <type_traits>
 #include <utility>
 
+#include <boost/functional/hash.hpp>
 #include <gmpxx.h>
 #include <mpf2mpfr.h>
 #include <mpfr.h>
-#include <boost/functional/hash.hpp>
 
 #include <ikos/core/number/exception.hpp>
 #include <ikos/core/number/f_number.hpp>
@@ -652,6 +652,10 @@ public:
   /// The base can vary from 2 to 36, or from -2 to -36
   std::string str(int base = 10) const { return this->_n.get_str(base); }
 
+  /// \todo here!!!
+//  FNumber to_f_number() const{
+//
+//  }
   /// @}
 
   friend ZNumber mod(const ZNumber&, const ZNumber&);
