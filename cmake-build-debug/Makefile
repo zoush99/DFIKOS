@@ -588,6 +588,19 @@ test-core-domain-numeric-apron-interval/fast:
 .PHONY : test-core-domain-numeric-apron-interval/fast
 
 #=============================================================================
+# Target rules for targets named test-core-domain-numeric-apron-interval_f
+
+# Build rule for target.
+test-core-domain-numeric-apron-interval_f: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-core-domain-numeric-apron-interval_f
+.PHONY : test-core-domain-numeric-apron-interval_f
+
+# fast build rule for target.
+test-core-domain-numeric-apron-interval_f/fast:
+	$(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/build
+.PHONY : test-core-domain-numeric-apron-interval_f/fast
+
+#=============================================================================
 # Target rules for targets named test-core-domain-numeric-apron-polka_polyhedra
 
 # Build rule for target.
@@ -993,6 +1006,7 @@ help:
 	@echo "... test-core-domain-memory-partitioning"
 	@echo "... test-core-domain-nullity-separate_domain"
 	@echo "... test-core-domain-numeric-apron-interval"
+	@echo "... test-core-domain-numeric-apron-interval_f"
 	@echo "... test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences"
 	@echo "... test-core-domain-numeric-apron-polka_polyhedra"
 	@echo "... test-core-domain-numeric-apron-ppl_linear_congruences"

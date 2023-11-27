@@ -271,7 +271,7 @@ public:
 
   /// \brief Unary minus
   /// Modified!
-  const FNumber operator-() const{
+  const FNumber operator-() const {
     FNumber _f(*this);
     mpfr_neg(_f._n, this->_n, MPFR_RNDN);
     return _f;
@@ -543,7 +543,7 @@ public:
   friend void gcd_extended(
       const FNumber&, const FNumber&, FNumber&, FNumber&, FNumber&);
 
-//  friend std::istream& operator>>(std::istream& i, FNumber& n);
+  //  friend std::istream& operator>>(std::istream& i, FNumber& n);
 
   //  friend std::istream& operator>>(std::istream& i, ZNumber& n);
 
@@ -913,16 +913,16 @@ inline FNumber lcm(const FNumber& lhs, const FNumber& rhs) {
 //
 /// The value in `g` is always positive, even if one or both of `a` and `b` are
 /// negative (or zero if both inputs are zero).
-//inline void gcd_extended(
-//    const FNumber& a, const FNumber& b, FNumber& g, FNumber& u, FNumber& v) {
-//  const ZNumber A = a.toZNumber();
-//  const ZNumber B = b.toZNumber();
-//  mpz_gcdext(g.toZNumber().mpz().get_mpz_t(),
-//             u.toZNumber().mpz().get_mpz_t(),
-//             v.toZNumber().mpz().get_mpz_t(),
-//             A.mpz().get_mpz_t(),
-//             B.mpz().get_mpz_t());
-//}
+// inline void gcd_extended(
+//     const FNumber& a, const FNumber& b, FNumber& g, FNumber& u, FNumber& v) {
+//   const ZNumber A = a.toZNumber();
+//   const ZNumber B = b.toZNumber();
+//   mpz_gcdext(g.toZNumber().mpz().get_mpz_t(),
+//              u.toZNumber().mpz().get_mpz_t(),
+//              v.toZNumber().mpz().get_mpz_t(),
+//              A.mpz().get_mpz_t(),
+//              B.mpz().get_mpz_t());
+// }
 
 /// @}
 /// \name Mathematical function
@@ -1085,9 +1085,6 @@ inline FNumber retPi() {
   return Pi;
 }
 
-/// \todo(zoush99)
-/// transform from ZNumber to FNumber
-
 /// @}
 /// \name Input / Output
 /// @{
@@ -1100,7 +1097,7 @@ inline std::ostream& operator<<(std::ostream& o, const FNumber& n) {
 
 /// \brief Read a FNumber from a stream, in base 10
 inline std::istream& operator>>(std::istream& i, FNumber& n) {
-  double _d= mpfr_get_d(n.FNvalue(),MPFR_RNDN);
+  double _d = mpfr_get_d(n.FNvalue(), MPFR_RNDN);
   i >> _d;
   return i;
 }

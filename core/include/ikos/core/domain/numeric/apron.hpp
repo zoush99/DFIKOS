@@ -1087,7 +1087,7 @@ public:
     ap_tcons0_array_clear(&ap_csts);
   }
 
-  void set(VariableRef x, const IntervalT& value) override {
+  void set(VariableRef x, const IntervalT& value) override{
     if (this->is_bottom()) {
       return;
     } else if (value.is_bottom()) {
@@ -1099,25 +1099,29 @@ public:
   }
 
   void set(VariableRef x, const CongruenceT& value) override {
-    if (this->is_bottom()) {
-      return;
-    } else if (value.is_bottom()) {
-      this->set_to_bottom();
-    } else {
-      this->forget(x);
-      this->refine(x, value);
+    if(std::is_same<Number,ZNumber>::value){
+      if (this->is_bottom()) {
+        return;
+      } else if (value.is_bottom()) {
+        this->set_to_bottom();
+      } else {
+        this->forget(x);
+        this->refine(x, value);
+      }
     }
   }
 
   void set(VariableRef x, const IntervalCongruenceT& value) override {
-    if (this->is_bottom()) {
-      return;
-    } else if (value.is_bottom()) {
-      this->set_to_bottom();
-    } else {
-      this->forget(x);
-      this->refine(x, value.interval());
-      this->refine(x, value.congruence());
+    if (std::is_same< Number, ZNumber >::value) {
+      if (this->is_bottom()) {
+        return;
+      } else if (value.is_bottom()) {
+        this->set_to_bottom();
+      } else {
+        this->forget(x);
+        this->refine(x, value.interval());
+        this->refine(x, value.congruence());
+      }
     }
   }
 
@@ -1134,34 +1138,38 @@ public:
   }
 
   void refine(VariableRef x, const CongruenceT& value) override {
-    if (this->is_bottom()) {
-      return;
-    } else if (value.is_bottom()) {
-      this->set_to_bottom();
-    } else if (value.is_top()) {
-      return;
-    } else if (value.singleton()) {
-      this->add(VariableExprT(x) == *value.singleton());
-    } else {
-      std::lock_guard< std::mutex > lock(this->_mutex);
-      ap_tcons0_array_t csts = ap_tcons0_array_make(1);
-      csts.p[0] =
-          ap_tcons0_make(AP_CONS_EQMOD,
-                         this->to_ap_expr(VariableExprT(x) - value.residue()),
-                         apron::to_ap_scalar(value.modulus()));
-      ap_abstract0_meet_tcons_array(manager(), true, this->_inv.get(), &csts);
-      ap_tcons0_array_clear(&csts);
+    if (std::is_same< Number, ZNumber >::value) {
+      if (this->is_bottom()) {
+        return;
+      } else if (value.is_bottom()) {
+        this->set_to_bottom();
+      } else if (value.is_top()) {
+        return;
+      } else if (value.singleton()) {
+        this->add(VariableExprT(x) == *value.singleton());
+      } else {
+        std::lock_guard< std::mutex > lock(this->_mutex);
+        ap_tcons0_array_t csts = ap_tcons0_array_make(1);
+        csts.p[0] =
+            ap_tcons0_make(AP_CONS_EQMOD,
+                           this->to_ap_expr(VariableExprT(x) - value.residue()),
+                           apron::to_ap_scalar(value.modulus()));
+        ap_abstract0_meet_tcons_array(manager(), true, this->_inv.get(), &csts);
+        ap_tcons0_array_clear(&csts);
+      }
     }
   }
 
   void refine(VariableRef x, const IntervalCongruenceT& value) override {
-    if (this->is_bottom()) {
-      return;
-    } else if (value.is_bottom()) {
-      this->set_to_bottom();
-    } else {
-      this->refine(x, value.interval());
-      this->refine(x, value.congruence());
+    if (std::is_same< Number, ZNumber >::value) {
+      if (this->is_bottom()) {
+        return;
+      } else if (value.is_bottom()) {
+        this->set_to_bottom();
+      } else {
+        this->refine(x, value.interval());
+        this->refine(x, value.congruence());
+      }
     }
   }
 
@@ -1225,32 +1233,40 @@ public:
   }
 
   CongruenceT to_congruence(VariableRef) const override {
-    if (this->is_bottom()) {
-      return CongruenceT::bottom();
-    }
+    if (std::is_same< Number, ZNumber >::value) {
+      if (this->is_bottom()) {
+        return CongruenceT::bottom();
+      }
 
-    return CongruenceT::top();
+      return CongruenceT::top();
+    }
   }
 
   CongruenceT to_congruence(const LinearExpressionT& e) const override {
-    return Parent::to_congruence(e);
+    if (std::is_same< Number, ZNumber >::value) {
+      return Parent::to_congruence(e);
+    }
   }
 
   IntervalCongruenceT to_interval_congruence(VariableRef x) const override {
-    if (this->is_bottom()) {
-      return IntervalCongruenceT::bottom();
-    }
+    if (std::is_same< Number, ZNumber >::value) {
+      if (this->is_bottom()) {
+        return IntervalCongruenceT::bottom();
+      }
 
-    return IntervalCongruenceT(this->to_interval(x), this->to_congruence(x));
+      return IntervalCongruenceT(this->to_interval(x), this->to_congruence(x));
+    }
   }
 
   IntervalCongruenceT to_interval_congruence(
       const LinearExpressionT& e) const override {
-    if (this->is_bottom()) {
-      return IntervalCongruenceT::bottom();
-    }
+    if (std::is_same< Number, ZNumber >::value) {
+      if (this->is_bottom()) {
+        return IntervalCongruenceT::bottom();
+      }
 
-    return IntervalCongruenceT(this->to_interval(e), this->to_congruence(e));
+      return IntervalCongruenceT(this->to_interval(e), this->to_congruence(e));
+    }
   }
 
   LinearConstraintSystemT to_linear_constraint_system() const override {

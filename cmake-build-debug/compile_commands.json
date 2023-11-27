@@ -169,6 +169,12 @@
 },
 {
   "directory": "/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -I/home/zou/Documents/DFIKOS/core/include -isystem /usr/local/tbb/include -isystem /usr/local/apron/include -g -fdiagnostics-color=always   -std=c++1y -fvisibility-inlines-hidden -Wall -Wextra -Wno-maybe-uninitialized -Wno-redundant-move -o CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/domain/numeric/apron/interval_f.cpp.o -c /home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/apron/interval_f.cpp",
+  "file": "/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/apron/interval_f.cpp",
+  "output": "core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/domain/numeric/apron/interval_f.cpp.o"
+},
+{
+  "directory": "/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit",
   "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -I/home/zou/Documents/DFIKOS/core/include -isystem /usr/local/tbb/include -isystem /usr/local/apron/include -g -fdiagnostics-color=always   -std=c++1y -fvisibility-inlines-hidden -Wall -Wextra -Wno-maybe-uninitialized -Wno-redundant-move -o CMakeFiles/test-core-domain-numeric-apron-polka_polyhedra.dir/domain/numeric/apron/polka_polyhedra.cpp.o -c /home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/apron/polka_polyhedra.cpp",
   "file": "/home/zou/Documents/DFIKOS/core/test/unit/domain/numeric/apron/polka_polyhedra.cpp",
   "output": "core/test/unit/CMakeFiles/test-core-domain-numeric-apron-polka_polyhedra.dir/domain/numeric/apron/polka_polyhedra.cpp.o"

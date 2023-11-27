@@ -221,7 +221,7 @@ struct ApplyBinOperator {};
 /// \brief Apply an arithmetic binary operator on the given operands
 template < typename T >
 inline T apply_bin_operator(BinaryOperator op, const T& lhs, const T& rhs) {
-  return detail::ApplyBinOperator< T >()(op, lhs, rhs);
+    return detail::ApplyBinOperator< T >()(op, lhs, rhs);
 }
 
 namespace detail {
