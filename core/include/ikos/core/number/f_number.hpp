@@ -1100,7 +1100,8 @@ inline std::ostream& operator<<(std::ostream& o, const FNumber& n) {
 
 /// \brief Read a FNumber from a stream, in base 10
 inline std::istream& operator>>(std::istream& i, FNumber& n) {
-  i >> n.to_string();
+  double _d= mpfr_get_d(n.FNvalue(),MPFR_RNDN);
+  i >> _d;
   return i;
 }
 

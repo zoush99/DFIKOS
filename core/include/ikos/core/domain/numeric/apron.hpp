@@ -1097,6 +1097,7 @@ public:
       this->refine(x, value);
     }
   }
+/*
 
   void set(VariableRef x, const CongruenceT& value) override {
     if (this->is_bottom()) {
@@ -1120,6 +1121,7 @@ public:
       this->refine(x, value.congruence());
     }
   }
+*/
 
   void refine(VariableRef x, const IntervalT& value) override {
     if (this->is_bottom()) {
@@ -1132,6 +1134,7 @@ public:
       this->add(within_interval(x, value));
     }
   }
+/*
 
   void refine(VariableRef x, const CongruenceT& value) override {
     if (this->is_bottom()) {
@@ -1164,6 +1167,7 @@ public:
       this->refine(x, value.congruence());
     }
   }
+*/
 
   void forget(VariableRef x) override {
     std::lock_guard< std::mutex > lock(this->_mutex);
@@ -1223,6 +1227,7 @@ public:
   IntervalT to_interval(const LinearExpressionT& e) const override {
     return Parent::to_interval(e);
   }
+/*
 
   CongruenceT to_congruence(VariableRef) const override {
     if (this->is_bottom()) {
@@ -1252,6 +1257,7 @@ public:
 
     return IntervalCongruenceT(this->to_interval(e), this->to_congruence(e));
   }
+*/
 
   LinearConstraintSystemT to_linear_constraint_system() const override {
     std::lock_guard< std::mutex > lock(this->_mutex);
