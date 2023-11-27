@@ -61,6 +61,17 @@ using IntervalCongruence = ikos::core::numeric::IntervalCongruence< ZNumber >;
 using ApronDomain = ikos::core::numeric::
     ApronDomain< ikos::core::numeric::apron::Interval, ZNumber, Variable >;
 
+// By zoush99
+using FNumber = ikos::core::FNumber;
+//using VariableFactory = ikos::core::example::VariableFactory;
+using VariableExprF = ikos::core::VariableExpression< FNumber, Variable >;
+using BoundF = ikos::core::FBound;
+using IntervalF = ikos::core::numeric::FInterval;
+//using Congruence = ikos::core::numeric::ZCongruence;
+//using IntervalCongruence = ikos::core::numeric::IntervalCongruence< ZNumber >;
+using ApronDomainF = ikos::core::numeric::
+    ApronDomain< ikos::core::numeric::apron::Interval, FNumber, Variable >;
+
 BOOST_AUTO_TEST_CASE(is_top_and_bottom) {
   VariableFactory vfac;
   Variable x(vfac.get("x"));
@@ -527,6 +538,33 @@ BOOST_AUTO_TEST_CASE(set) {
   auto inv = ApronDomain::top();
   inv.set(x, Interval(Bound(1), Bound(2)));
   BOOST_CHECK(inv.to_interval(x) == Interval(Bound(1), Bound(2)));
+
+  inv.set(x, Interval::bottom());
+  BOOST_CHECK(inv.is_bottom());
+
+  inv.set_to_top();
+  inv.set(x, Congruence(1));
+  BOOST_CHECK(inv.to_interval(x) == Interval(1));
+
+  inv.set_to_top();
+  inv.set(x, Congruence(ZNumber(3), ZNumber(1)));
+  BOOST_CHECK(inv.to_interval(x) == Interval::top());
+
+  inv.set_to_top();
+  inv.set(x,
+          IntervalCongruence(Interval(Bound(1), Bound(4)),
+                             Congruence(ZNumber(3), ZNumber(1))));
+  BOOST_CHECK(inv.to_interval(x) == Interval(Bound(1), Bound(4)));
+}
+
+// By zoush99
+BOOST_AUTO_TEST_CASE(fset) {
+  VariableFactory vfac;
+  Variable x(vfac.get("x"));
+
+  auto inv = ApronDomainF::top();
+  inv.set(x, IntervalF(BoundF(1), BoundF(2)));
+  BOOST_CHECK(inv.to_interval(x) == IntervalF(Bound(1), Bound(2)));
 
   inv.set(x, Interval::bottom());
   BOOST_CHECK(inv.is_bottom());

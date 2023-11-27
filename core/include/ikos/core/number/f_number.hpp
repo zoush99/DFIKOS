@@ -271,7 +271,7 @@ public:
 
   /// \brief Unary minus
   /// Modified!
-  FNumber operator-() {
+  const FNumber operator-() const{
     FNumber _f(*this);
     mpfr_neg(_f._n, this->_n, MPFR_RNDN);
     return _f;
@@ -542,6 +542,8 @@ public:
   /// \todo bugs here!!!
   friend void gcd_extended(
       const FNumber&, const FNumber&, FNumber&, FNumber&, FNumber&);
+
+//  friend std::istream& operator>>(std::istream& i, FNumber& n);
 
   //  friend std::istream& operator>>(std::istream& i, ZNumber& n);
 
@@ -1095,6 +1097,13 @@ inline std::ostream& operator<<(std::ostream& o, const FNumber& n) {
   o << n.FNvalue();
   return o;
 }
+
+/// \brief Read a FNumber from a stream, in base 10
+inline std::istream& operator>>(std::istream& i, FNumber& n) {
+  i >> n.to_string();
+  return i;
+}
+
 /// @}
 } // namespace core
 } // namespace ikos

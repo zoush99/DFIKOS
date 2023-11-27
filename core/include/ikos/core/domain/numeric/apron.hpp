@@ -887,6 +887,10 @@ public:
     this->assign(x, LinearExpressionT(n));
   }
 
+  void assign(VariableRef x, float n) override {
+    this->assign(x, LinearExpressionT(n));
+  }
+
   void assign(VariableRef x, const Number& n) override {
     this->assign(x, LinearExpressionT(n));
   }
