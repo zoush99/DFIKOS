@@ -114,8 +114,20 @@ public:
                                     const MachineInt& threshold) = 0;
 
   /// \brief Perform the widening of two abstract values with a threshold
+  virtual void widen_threshold_with(const Derived& other,
+                                    const FNumber& threshold) = 0;
+
+  /// \brief Perform the widening of two abstract values with a threshold
   virtual Derived widening_threshold(const Derived& other,
                                      const MachineInt& threshold) const {
+    Derived tmp(static_cast< const Derived& >(*this));
+    tmp.widen_threshold_with(other, threshold);
+    return tmp;
+  }
+
+  /// \brief Perform the widening of two abstract values with a threshold
+  virtual Derived widening_threshold(const Derived& other,
+                                     const FNumber& threshold) const {
     Derived tmp(static_cast< const Derived& >(*this));
     tmp.widen_threshold_with(other, threshold);
     return tmp;
@@ -126,6 +138,10 @@ public:
                                      const MachineInt& threshold) = 0;
 
   /// \brief Perform the narrowing of two abstract values with a threshold
+  virtual void narrow_threshold_with(const Derived& other,
+                                     const FNumber& threshold) = 0;
+
+  /// \brief Perform the narrowing of two abstract values with a threshold
   virtual Derived narrowing_threshold(const Derived& other,
                                       const MachineInt& threshold) const {
     Derived tmp(static_cast< const Derived& >(*this));
@@ -133,6 +149,13 @@ public:
     return tmp;
   }
 
+  /// \brief Perform the narrowing of two abstract values with a threshold
+  virtual Derived narrowing_threshold(const Derived& other,
+                                      const FNumber& threshold) const {
+    Derived tmp(static_cast< const Derived& >(*this));
+    tmp.narrow_threshold_with(other, threshold);
+    return tmp;
+  }
   /// \name Uninitialized abstract domain methods
   /// @{
 

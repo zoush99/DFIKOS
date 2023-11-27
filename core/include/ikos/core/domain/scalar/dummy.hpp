@@ -73,8 +73,7 @@ public:
   using FloatLinearExpression =
       LinearExpression< FNumber, VariableRef >; // By zoush99
   using FloatBinaryOperator = numeric::BinaryOperator;
-  //  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating point
-  //  unary operator
+  using FloatUnaryOperator = numeric::UnaryOperator;  // Floating point
   using FloatInterval = numeric::Interval< FNumber >;
   using FloatCongruence = numeric::Congruence< FNumber >;
   using FloatIntervalCongruence = numeric::IntervalCongruence< FNumber >;
@@ -146,6 +145,11 @@ public:
     this->join_with(other);
   }
 
+  void widen_threshold_with(const DummyDomain& other,
+                            const FNumber& /*threshold*/) override {
+    this->join_with(other);
+  }
+
   void meet_with(const DummyDomain& other) override {
     this->_is_bottom = (this->_is_bottom || other._is_bottom);
   }
@@ -156,6 +160,11 @@ public:
 
   void narrow_threshold_with(const DummyDomain& other,
                              const MachineInt& /*threshold*/) override {
+    this->meet_with(other);
+  }
+
+  void narrow_threshold_with(const DummyDomain& other,
+                             const FNumber& /*threshold*/) override {
     this->meet_with(other);
   }
 

@@ -339,6 +339,19 @@ public:
     }
   }
 
+  // By zoush99
+  void narrow_threshold_with(const MachineIntDomain& other,
+                             const FNumber& threshold) override {
+    this->normalize();
+    if (this->is_bottom()) {
+      return;
+    } else if (other.is_bottom()) {
+      this->set_to_bottom();
+    } else {
+      this->_uninitialized.narrow_with(other._uninitialized);
+      this->_integer.narrow_threshold_with(other._integer, threshold);
+    }
+  }
   MachineIntDomain join(const MachineIntDomain& other) const override {
     if (this->is_bottom()) {
       return other;
@@ -401,6 +414,22 @@ public:
     }
   }
 
+  // By zoush99
+  MachineIntDomain widening_threshold(
+      const MachineIntDomain& other,
+      const FNumber& threshold) const override {
+    if (this->is_bottom()) {
+      return other;
+    } else if (other.is_bottom()) {
+      return *this;
+    } else {
+      return MachineIntDomain(this->_uninitialized.widening(
+                                  other._uninitialized),
+                              this->_integer.widening_threshold(other._integer,
+                                                                threshold));
+    }
+  }
+
   MachineIntDomain meet(const MachineIntDomain& other) const override {
     if (this->is_bottom()) {
       return *this;
@@ -427,6 +456,22 @@ public:
   MachineIntDomain narrowing_threshold(
       const MachineIntDomain& other,
       const MachineInt& threshold) const override {
+    if (this->is_bottom()) {
+      return *this;
+    } else if (other.is_bottom()) {
+      return other;
+    } else {
+      return MachineIntDomain(this->_uninitialized.narrowing(
+                                  other._uninitialized),
+                              this->_integer.narrowing_threshold(other._integer,
+                                                                 threshold));
+    }
+  }
+
+  // By zoush99
+  MachineIntDomain narrowing_threshold(
+      const MachineIntDomain& other,
+      const FNumber& threshold) const override {
     if (this->is_bottom()) {
       return *this;
     } else if (other.is_bottom()) {
