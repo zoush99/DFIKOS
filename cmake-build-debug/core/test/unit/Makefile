@@ -564,6 +564,20 @@ test-core-domain-numeric-apron-interval/fast:
 .PHONY : test-core-domain-numeric-apron-interval/fast
 
 # Convenience name for target.
+core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/rule:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/rule
+.PHONY : core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/rule
+
+# Convenience name for target.
+test-core-domain-numeric-apron-interval_f: core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/rule
+.PHONY : test-core-domain-numeric-apron-interval_f
+
+# fast build rule for target.
+test-core-domain-numeric-apron-interval_f/fast:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/build
+.PHONY : test-core-domain-numeric-apron-interval_f/fast
+
+# Convenience name for target.
 core/test/unit/CMakeFiles/test-core-domain-numeric-apron-polka_polyhedra.dir/rule:
 	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/test/unit/CMakeFiles/test-core-domain-numeric-apron-polka_polyhedra.dir/rule
 .PHONY : core/test/unit/CMakeFiles/test-core-domain-numeric-apron-polka_polyhedra.dir/rule
@@ -1022,6 +1036,30 @@ domain/numeric/apron/interval.s: domain/numeric/apron/interval.cpp.s
 domain/numeric/apron/interval.cpp.s:
 	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval.dir/build.make core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval.dir/domain/numeric/apron/interval.cpp.s
 .PHONY : domain/numeric/apron/interval.cpp.s
+
+domain/numeric/apron/interval_f.o: domain/numeric/apron/interval_f.cpp.o
+.PHONY : domain/numeric/apron/interval_f.o
+
+# target to build an object file
+domain/numeric/apron/interval_f.cpp.o:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/domain/numeric/apron/interval_f.cpp.o
+.PHONY : domain/numeric/apron/interval_f.cpp.o
+
+domain/numeric/apron/interval_f.i: domain/numeric/apron/interval_f.cpp.i
+.PHONY : domain/numeric/apron/interval_f.i
+
+# target to preprocess a source file
+domain/numeric/apron/interval_f.cpp.i:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/domain/numeric/apron/interval_f.cpp.i
+.PHONY : domain/numeric/apron/interval_f.cpp.i
+
+domain/numeric/apron/interval_f.s: domain/numeric/apron/interval_f.cpp.s
+.PHONY : domain/numeric/apron/interval_f.s
+
+# target to generate assembly for a file
+domain/numeric/apron/interval_f.cpp.s:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-domain-numeric-apron-interval_f.dir/domain/numeric/apron/interval_f.cpp.s
+.PHONY : domain/numeric/apron/interval_f.cpp.s
 
 domain/numeric/apron/pkgrid_polyhedra_lin_congruences.o: domain/numeric/apron/pkgrid_polyhedra_lin_congruences.cpp.o
 .PHONY : domain/numeric/apron/pkgrid_polyhedra_lin_congruences.o
@@ -1791,6 +1829,7 @@ help:
 	@echo "... test-core-domain-memory-partitioning"
 	@echo "... test-core-domain-nullity-separate_domain"
 	@echo "... test-core-domain-numeric-apron-interval"
+	@echo "... test-core-domain-numeric-apron-interval_f"
 	@echo "... test-core-domain-numeric-apron-pkgrid_polyhedra_lin_congruences"
 	@echo "... test-core-domain-numeric-apron-polka_polyhedra"
 	@echo "... test-core-domain-numeric-apron-ppl_linear_congruences"
@@ -1855,6 +1894,9 @@ help:
 	@echo "... domain/numeric/apron/interval.o"
 	@echo "... domain/numeric/apron/interval.i"
 	@echo "... domain/numeric/apron/interval.s"
+	@echo "... domain/numeric/apron/interval_f.o"
+	@echo "... domain/numeric/apron/interval_f.i"
+	@echo "... domain/numeric/apron/interval_f.s"
 	@echo "... domain/numeric/apron/pkgrid_polyhedra_lin_congruences.o"
 	@echo "... domain/numeric/apron/pkgrid_polyhedra_lin_congruences.i"
 	@echo "... domain/numeric/apron/pkgrid_polyhedra_lin_congruences.s"
