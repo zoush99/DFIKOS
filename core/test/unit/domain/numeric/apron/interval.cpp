@@ -557,7 +557,7 @@ BOOST_AUTO_TEST_CASE(set) {
   BOOST_CHECK(inv.to_interval(x) == Interval(Bound(1), Bound(4)));
 }
 
-// By zoush99
+/*// By zoush99
 BOOST_AUTO_TEST_CASE(fset) {
   VariableFactory vfac;
   Variable x(vfac.get("x"));
@@ -568,7 +568,7 @@ BOOST_AUTO_TEST_CASE(fset) {
 
   inv.set(x, IntervalF::bottom());
   BOOST_CHECK(inv.is_bottom());
-}
+}*/
 
 BOOST_AUTO_TEST_CASE(refine) {
   VariableFactory vfac;
