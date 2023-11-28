@@ -135,13 +135,13 @@ public:
   ~Congruence() override = default;
 
   /// \brief Return the modulus
-  const boost::optional< FNumber > modulus() const {
+  ZNumber modulus() const {
     ikos_assert(!this->is_bottom());
     return this->_a;
   }
 
   /// \brief Return the residue
-  const boost::optional< FNumber > residue() const {
+ ZNumber residue() const {
     ikos_assert(!this->is_bottom());
     return this->_b;
   }
