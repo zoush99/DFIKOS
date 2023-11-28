@@ -957,7 +957,7 @@ private:
         t = apron::binop_expr< Number >(AP_TEXPR_DIV, left, right);
       } break;
       case BinaryOperator::Rem: {
-        // XXX(marthaud): AP_TEXPR_MOD is actually a signed remainder..
+        // XXX(marthaud): AP_TEXPR_MOD is actually a signed remainder.
         t = apron::binop_expr< Number >(AP_TEXPR_MOD, left, right);
       } break;
       default: {
@@ -1014,7 +1014,7 @@ public:
       }
 
       IntervalT v_y = this->to_interval(y);
-      boost::optional< Number > n = v_y.mod_to_sub(z);
+      boost::optional< Number > n = v_y.mod_to_sub(z);  /// \todo bugs here!!!
 
       if (n) {
         // Equivalent to x = y - n
@@ -1103,9 +1103,6 @@ public:
   }
 
   void set(VariableRef x, const CongruenceT& value) override {
-    if(std::is_same<Number,FNumber>::value){  // FNumber. By zoush99
-      return;
-    } else{
       if (this->is_bottom()) {
         return;
       } else if (value.is_bottom()) {
@@ -1114,13 +1111,9 @@ public:
         this->forget(x);
         this->refine(x, value);
       }
-    }
   }
 
   void set(VariableRef x, const IntervalCongruenceT& value) override {
-    if (std::is_same< Number, FNumber >::value) {
-      return;
-    }else{
       if (this->is_bottom()) {
         return;
       } else if (value.is_bottom()) {
@@ -1130,7 +1123,6 @@ public:
         this->refine(x, value.interval());
         this->refine(x, value.congruence());
       }
-    }
   }
 
   void refine(VariableRef x, const IntervalT& value) override {
@@ -1146,9 +1138,6 @@ public:
   }
 
   void refine(VariableRef x, const CongruenceT& value) override {
-    if (std::is_same< Number, FNumber >::value) {
-      return;
-    }else{
       if (this->is_bottom()) {
         return;
       } else if (value.is_bottom()) {
@@ -1167,13 +1156,9 @@ public:
         ap_abstract0_meet_tcons_array(manager(), true, this->_inv.get(), &csts);
         ap_tcons0_array_clear(&csts);
       }
-    }
   }
 
   void refine(VariableRef x, const IntervalCongruenceT& value) override {
-    if (std::is_same< Number, FNumber >::value) {
-      return;
-    }else{
       if (this->is_bottom()) {
         return;
       } else if (value.is_bottom()) {
@@ -1182,7 +1167,6 @@ public:
         this->refine(x, value.interval());
         this->refine(x, value.congruence());
       }
-    }
   }
 
   void forget(VariableRef x) override {
@@ -1245,49 +1229,33 @@ public:
   }
 
   CongruenceT to_congruence(VariableRef) const override {
-    if (std::is_same< Number, FNumber >::value) {
-      return;
-    }else{
       if (this->is_bottom()) {
         return CongruenceT::bottom();
       }
 
       return CongruenceT::top();
-    }
   }
 
   CongruenceT to_congruence(const LinearExpressionT& e) const override {
-    if (std::is_same< Number, FNumber >::value) {
-      return;
-    }else{
       return Parent::to_congruence(e);
-    }
   }
 
   IntervalCongruenceT to_interval_congruence(VariableRef x) const override {
-    if (std::is_same< Number, FNumber >::value) {
-      return;
-    }else{
       if (this->is_bottom()) {
         return IntervalCongruenceT::bottom();
       }
 
       return IntervalCongruenceT(this->to_interval(x), this->to_congruence(x));
-    }
   }
 
   IntervalCongruenceT to_interval_congruence(
       const LinearExpressionT& e) const override {
-    if (std::is_same< Number, FNumber >::value) {
-      return;
-    }else{
       if (this->is_bottom()) {
         return IntervalCongruenceT::bottom();
       }
 
       return IntervalCongruenceT(this->to_interval(e), this->to_congruence(e));
     }
-  }
 
   LinearConstraintSystemT to_linear_constraint_system() const override {
     std::lock_guard< std::mutex > lock(this->_mutex);

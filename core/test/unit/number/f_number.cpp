@@ -52,6 +52,8 @@ BOOST_AUTO_TEST_CASE(test_f_number) {
   BOOST_CHECK(F(static_cast< long double >(_f)).FNprec() == 113);
   BOOST_CHECK(F::from_string("3.14",10)==F(3.14));
   BOOST_CHECK(F(10.12).to_string()=="10.12");
+  Z H(3);
+  BOOST_CHECK(F(H)==F(3));
 
   // operator =
   BOOST_CHECK(_F == (_E = _F));
@@ -147,5 +149,10 @@ BOOST_AUTO_TEST_CASE(test_f_number) {
   BOOST_CHECK(cosu(F(60))==0.5);
   BOOST_CHECK(tanu(F(45))==1);
   BOOST_CHECK(ikos::core::retPi<float>()>3.14);
+
+  // to_z_number, from_z_number
+  BOOST_CHECK(F(3.2).to_z_number()==Z(3));
+  Z M(5);
+  BOOST_CHECK(F(3.2).from_z_number(M)==F(5));
 
 }

@@ -355,6 +355,7 @@ public:
   ///
   /// If mod([a, b], n) is equivalent to [a, b] - x, returns x
   /// Otherwise, returns boost::none.
+//  template < typename T=Number,class =std::enable_if_t<std::is_same<T,ZNumber>::value>>
   boost::optional< Number > mod_to_sub(const Number& n) {
     ikos_assert_msg(n != 0, "division by zero");
 
@@ -362,6 +363,7 @@ public:
       return boost::none;
     }
 
+    // By zoush99
     ZNumber lb = *this->_lb.number();
     ZNumber ub = *this->_ub.number();
 
@@ -371,7 +373,6 @@ public:
     if (mod_ub - mod_lb != ub - lb) {
       return boost::none;
     }
-
     return lb - mod_lb;
   }
 
@@ -390,6 +391,9 @@ public:
 
   /// \brief Return true if the interval contains n, float. By zoush99
   bool contains(float n) const { return this->contains(Number(n)); }
+
+  /// \brief Return true if the interval contains n, float. By zoush99
+  bool contains(double n) const { return this->contains(Number(n)); }
 
   /// \brief Return true if the interval contains n
   bool contains(Number n) const {

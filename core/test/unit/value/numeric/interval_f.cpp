@@ -2,7 +2,7 @@
 // Created by zou on 11/28/23.
 //
 
-#define BOOST_TEST_MODULE test_interval
+#define BOOST_TEST_MODULE test_interval_f
 #define BOOST_TEST_DYN_LINK
 #include <boost/mpl/list.hpp>
 #include <boost/optional/optional_io.hpp>

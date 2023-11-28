@@ -667,6 +667,168 @@
 					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="test-core-value-numeric-congruence_f">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-congruence_f" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-congruence_f"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-congruence_f/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-congruence_f" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-congruence_f/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-interval_congruence">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-interval_congruence"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-interval_congruence/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-interval_congruence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-interval_congruence/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-interval_congruence_f">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-interval_congruence_f" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-interval_congruence_f"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test-core-value-numeric-interval_congruence_f/fast">
+				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-interval_congruence_f" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add directory="/home/zou/Documents/DFIKOS/core/include"/>
+					<Add directory="/usr/local/tbb/include"/>
+					<Add directory="/usr/local/apron/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 test-core-value-numeric-interval_congruence_f/fast"/>
+					<CompileFile command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j10 -f &quot;/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="test-core-value-numeric-gauge">
 				<Option output="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit/test-core-value-numeric-gauge" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit"/>
@@ -3405,6 +3567,9 @@
 		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/congruence.cpp">
 			<Option target="test-core-value-numeric-congruence"/>
 		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/congruence_f.cpp">
+			<Option target="test-core-value-numeric-congruence_f"/>
+		</Unit>
 		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/constant.cpp">
 			<Option target="test-core-value-numeric-constant"/>
 		</Unit>
@@ -3413,6 +3578,12 @@
 		</Unit>
 		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval.cpp">
 			<Option target="test-core-value-numeric-interval"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval_congruence.cpp">
+			<Option target="test-core-value-numeric-interval_congruence"/>
+		</Unit>
+		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval_congruence_f.cpp">
+			<Option target="test-core-value-numeric-interval_congruence_f"/>
 		</Unit>
 		<Unit filename="/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval_f.cpp">
 			<Option target="test-core-value-numeric-interval_f"/>

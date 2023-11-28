@@ -95,7 +95,7 @@ public:
     }
   }
 
-  /// \brief Tranform a FNumber to a string representation
+  /// \brief Transform a FNumber to a string representation
   ///
   /// The base may vary from 2 to 36.
   std::string to_string(int base = 10) const {
@@ -186,6 +186,14 @@ public:
     } else {
       ikos_unreachable("unreachable");
     }
+    this->_rnd = MPFR_RNDN;
+  }
+
+  /// \brief Create a FNumber from a ZNumber. By zoush99
+  FNumber(ZNumber& z){
+    mpfr_init2(this->_n, Fpre::dou);
+    mpfr_set_z(this->_n,z._n.get_mpz_t(),MPFR_RNDN);
+    this->_prec=Fpre::dou;
     this->_rnd = MPFR_RNDN;
   }
 
@@ -531,6 +539,15 @@ public:
     return _ZNum;
   }
 
+  /// \brief Transform ZNumber to FNumber
+  FNumber from_z_number(ZNumber& z) const{
+    mpfr_t _f;
+    mpfr_init2(_f,Fpre::dou);
+    mpfr_set_z(_f,z._n.get_mpz_t(),MPFR_RNDN);
+    FNumber _FNum(_f,MPFR_RNDN);
+    mpfr_clear(_f);
+    return _FNum;
+  }
   /// @}
 
   friend FNumber mod(const FNumber&, const FNumber&);

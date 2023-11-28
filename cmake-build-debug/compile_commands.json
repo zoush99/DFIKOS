@@ -61,6 +61,24 @@
 },
 {
   "directory": "/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -I/home/zou/Documents/DFIKOS/core/include -isystem /usr/local/tbb/include -isystem /usr/local/apron/include -g -fdiagnostics-color=always   -std=c++1y -fvisibility-inlines-hidden -Wall -Wextra -Wno-maybe-uninitialized -Wno-redundant-move -o CMakeFiles/test-core-value-numeric-congruence_f.dir/value/numeric/congruence_f.cpp.o -c /home/zou/Documents/DFIKOS/core/test/unit/value/numeric/congruence_f.cpp",
+  "file": "/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/congruence_f.cpp",
+  "output": "core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/value/numeric/congruence_f.cpp.o"
+},
+{
+  "directory": "/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -I/home/zou/Documents/DFIKOS/core/include -isystem /usr/local/tbb/include -isystem /usr/local/apron/include -g -fdiagnostics-color=always   -std=c++1y -fvisibility-inlines-hidden -Wall -Wextra -Wno-maybe-uninitialized -Wno-redundant-move -o CMakeFiles/test-core-value-numeric-interval_congruence.dir/value/numeric/interval_congruence.cpp.o -c /home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval_congruence.cpp",
+  "file": "/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval_congruence.cpp",
+  "output": "core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/value/numeric/interval_congruence.cpp.o"
+},
+{
+  "directory": "/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -I/home/zou/Documents/DFIKOS/core/include -isystem /usr/local/tbb/include -isystem /usr/local/apron/include -g -fdiagnostics-color=always   -std=c++1y -fvisibility-inlines-hidden -Wall -Wextra -Wno-maybe-uninitialized -Wno-redundant-move -o CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/value/numeric/interval_congruence_f.cpp.o -c /home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval_congruence_f.cpp",
+  "file": "/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/interval_congruence_f.cpp",
+  "output": "core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/value/numeric/interval_congruence_f.cpp.o"
+},
+{
+  "directory": "/home/zou/Documents/DFIKOS/cmake-build-debug/core/test/unit",
   "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -I/home/zou/Documents/DFIKOS/core/include -isystem /usr/local/tbb/include -isystem /usr/local/apron/include -g -fdiagnostics-color=always   -std=c++1y -fvisibility-inlines-hidden -Wall -Wextra -Wno-maybe-uninitialized -Wno-redundant-move -o CMakeFiles/test-core-value-numeric-gauge.dir/value/numeric/gauge.cpp.o -c /home/zou/Documents/DFIKOS/core/test/unit/value/numeric/gauge.cpp",
   "file": "/home/zou/Documents/DFIKOS/core/test/unit/value/numeric/gauge.cpp",
   "output": "core/test/unit/CMakeFiles/test-core-value-numeric-gauge.dir/value/numeric/gauge.cpp.o"

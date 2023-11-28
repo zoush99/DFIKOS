@@ -354,6 +354,45 @@ test-core-value-numeric-congruence/fast:
 .PHONY : test-core-value-numeric-congruence/fast
 
 #=============================================================================
+# Target rules for targets named test-core-value-numeric-congruence_f
+
+# Build rule for target.
+test-core-value-numeric-congruence_f: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-core-value-numeric-congruence_f
+.PHONY : test-core-value-numeric-congruence_f
+
+# fast build rule for target.
+test-core-value-numeric-congruence_f/fast:
+	$(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/build
+.PHONY : test-core-value-numeric-congruence_f/fast
+
+#=============================================================================
+# Target rules for targets named test-core-value-numeric-interval_congruence
+
+# Build rule for target.
+test-core-value-numeric-interval_congruence: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-core-value-numeric-interval_congruence
+.PHONY : test-core-value-numeric-interval_congruence
+
+# fast build rule for target.
+test-core-value-numeric-interval_congruence/fast:
+	$(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/build
+.PHONY : test-core-value-numeric-interval_congruence/fast
+
+#=============================================================================
+# Target rules for targets named test-core-value-numeric-interval_congruence_f
+
+# Build rule for target.
+test-core-value-numeric-interval_congruence_f: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test-core-value-numeric-interval_congruence_f
+.PHONY : test-core-value-numeric-interval_congruence_f
+
+# fast build rule for target.
+test-core-value-numeric-interval_congruence_f/fast:
+	$(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/build
+.PHONY : test-core-value-numeric-interval_congruence_f/fast
+
+#=============================================================================
 # Target rules for targets named test-core-value-numeric-gauge
 
 # Build rule for target.
@@ -1048,9 +1087,12 @@ help:
 	@echo "... test-core-value-machine_int-interval"
 	@echo "... test-core-value-machine_int-interval_congruence"
 	@echo "... test-core-value-numeric-congruence"
+	@echo "... test-core-value-numeric-congruence_f"
 	@echo "... test-core-value-numeric-constant"
 	@echo "... test-core-value-numeric-gauge"
 	@echo "... test-core-value-numeric-interval"
+	@echo "... test-core-value-numeric-interval_congruence"
+	@echo "... test-core-value-numeric-interval_congruence_f"
 	@echo "... test-core-value-numeric-interval_f"
 .PHONY : help
 

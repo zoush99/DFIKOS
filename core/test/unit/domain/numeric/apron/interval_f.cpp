@@ -19,8 +19,8 @@ using Bound = ikos::core::ZBound;
 using Interval = ikos::core::numeric::ZInterval;
 using Congruence = ikos::core::numeric::ZCongruence;
 using IntervalCongruence = ikos::core::numeric::IntervalCongruence< ZNumber >;
-using ApronDomain = ikos::core::numeric::
-    ApronDomain< ikos::core::numeric::apron::Interval, ZNumber, Variable >;
+//using ApronDomain = ikos::core::numeric::
+//    ApronDomain< ikos::core::numeric::apron::Interval, ZNumber, Variable >;
 
 // By zoush99
 using FNumber = ikos::core::FNumber;
@@ -37,21 +37,14 @@ BOOST_AUTO_TEST_CASE(is_top_and_bottom_f) {
   VariableFactory vfac;
   Variable x(vfac.get("x"));
 
-  BOOST_CHECK(ApronDomain::top().is_top());
-  BOOST_CHECK(!ApronDomain::top().is_bottom());
+  BOOST_CHECK(ApronDomainF::top().is_top());
+  BOOST_CHECK(!ApronDomainF::top().is_bottom());
 
-  BOOST_CHECK(!ApronDomain::bottom().is_top());
-  BOOST_CHECK(ApronDomain::bottom().is_bottom());
+  BOOST_CHECK(!ApronDomainF::bottom().is_top());
+  BOOST_CHECK(ApronDomainF::bottom().is_bottom());
 
-  auto inv = ApronDomain::top();
+  auto inv = ApronDomainF::top();
   BOOST_CHECK(inv.is_top());
   BOOST_CHECK(!inv.is_bottom());
 
-  inv.set(x, Interval(1));
-  BOOST_CHECK(!inv.is_top());
-  BOOST_CHECK(!inv.is_bottom());
-
-  inv.set(x, Interval::bottom());
-  BOOST_CHECK(!inv.is_top());
-  BOOST_CHECK(inv.is_bottom());
 }

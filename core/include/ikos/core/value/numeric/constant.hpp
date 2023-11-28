@@ -544,6 +544,9 @@ using ZConstant = Constant< ZNumber >;
 /// \brief Constant on unlimited precision rationals
 using QConstant = Constant< QNumber >;
 
+/// \brief Constant on unlimited precision floating point
+using FConstant = Constant< FNumber >;
+
 } // end namespace numeric
 } // end namespace core
 } // end namespace ikos
