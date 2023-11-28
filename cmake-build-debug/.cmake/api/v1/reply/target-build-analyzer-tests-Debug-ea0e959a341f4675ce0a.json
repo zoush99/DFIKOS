@@ -1,0 +1,53 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"analyzer/CMakeLists.txt",
+			"analyzer/test/regression/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 411,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 2,
+				"parent" : 2
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "ikos-analyzer::@69ae72c1b46c7e24f12b"
+		}
+	],
+	"id" : "build-analyzer-tests::@69ae72c1b46c7e24f12b",
+	"name" : "build-analyzer-tests",
+	"paths" : 
+	{
+		"build" : "analyzer",
+		"source" : "analyzer"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

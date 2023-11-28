@@ -176,6 +176,10 @@ public:
 
   void assign(VariableRef x, int n) override { this->_inv.assign(x, n); }
 
+  void assign(VariableRef x, float n) override { this->_inv.assign(x, n); }
+
+  void assign(VariableRef x, double n) override { this->_inv.assign(x, n); }
+
   void assign(VariableRef x, const Number& n) override {
     this->_inv.assign(x, n);
   }

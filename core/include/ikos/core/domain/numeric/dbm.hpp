@@ -867,6 +867,10 @@ private:
 public:
   void assign(VariableRef x, int n) override { this->assign(x, Number(n)); }
 
+  void assign(VariableRef x, float n) override { this->assign(x, Number(n)); }
+
+  void assign(VariableRef x, double n) override { this->assign(x, Number(n)); }
+
   void assign(VariableRef x, const Number& n) override {
     if (this->_is_bottom) {
       return;

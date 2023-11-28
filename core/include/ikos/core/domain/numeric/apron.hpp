@@ -891,6 +891,10 @@ public:
     this->assign(x, LinearExpressionT(n));
   }
 
+  void assign(VariableRef x, double n) override {
+    this->assign(x, LinearExpressionT(n));
+  }
+
   void assign(VariableRef x, const Number& n) override {
     this->assign(x, LinearExpressionT(n));
   }
@@ -1099,7 +1103,9 @@ public:
   }
 
   void set(VariableRef x, const CongruenceT& value) override {
-    if(std::is_same<Number,ZNumber>::value){
+    if(std::is_same<Number,FNumber>::value){  // FNumber. By zoush99
+      return;
+    } else{
       if (this->is_bottom()) {
         return;
       } else if (value.is_bottom()) {
@@ -1112,7 +1118,9 @@ public:
   }
 
   void set(VariableRef x, const IntervalCongruenceT& value) override {
-    if (std::is_same< Number, ZNumber >::value) {
+    if (std::is_same< Number, FNumber >::value) {
+      return;
+    }else{
       if (this->is_bottom()) {
         return;
       } else if (value.is_bottom()) {
@@ -1138,7 +1146,9 @@ public:
   }
 
   void refine(VariableRef x, const CongruenceT& value) override {
-    if (std::is_same< Number, ZNumber >::value) {
+    if (std::is_same< Number, FNumber >::value) {
+      return;
+    }else{
       if (this->is_bottom()) {
         return;
       } else if (value.is_bottom()) {
@@ -1161,7 +1171,9 @@ public:
   }
 
   void refine(VariableRef x, const IntervalCongruenceT& value) override {
-    if (std::is_same< Number, ZNumber >::value) {
+    if (std::is_same< Number, FNumber >::value) {
+      return;
+    }else{
       if (this->is_bottom()) {
         return;
       } else if (value.is_bottom()) {
@@ -1233,7 +1245,9 @@ public:
   }
 
   CongruenceT to_congruence(VariableRef) const override {
-    if (std::is_same< Number, ZNumber >::value) {
+    if (std::is_same< Number, FNumber >::value) {
+      return;
+    }else{
       if (this->is_bottom()) {
         return CongruenceT::bottom();
       }
@@ -1243,13 +1257,17 @@ public:
   }
 
   CongruenceT to_congruence(const LinearExpressionT& e) const override {
-    if (std::is_same< Number, ZNumber >::value) {
+    if (std::is_same< Number, FNumber >::value) {
+      return;
+    }else{
       return Parent::to_congruence(e);
     }
   }
 
   IntervalCongruenceT to_interval_congruence(VariableRef x) const override {
-    if (std::is_same< Number, ZNumber >::value) {
+    if (std::is_same< Number, FNumber >::value) {
+      return;
+    }else{
       if (this->is_bottom()) {
         return IntervalCongruenceT::bottom();
       }
@@ -1260,7 +1278,9 @@ public:
 
   IntervalCongruenceT to_interval_congruence(
       const LinearExpressionT& e) const override {
-    if (std::is_same< Number, ZNumber >::value) {
+    if (std::is_same< Number, FNumber >::value) {
+      return;
+    }else{
       if (this->is_bottom()) {
         return IntervalCongruenceT::bottom();
       }

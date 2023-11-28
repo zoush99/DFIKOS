@@ -143,6 +143,9 @@ public:
   /// \brief Create a constant expression, float. By zoush99
   explicit LinearExpression(float n) : _cst(n) {}
 
+  /// \brief Create a constant expression, float. By zoush99
+  explicit LinearExpression(double n) : _cst(n) {}
+
   /// \brief Create a variable expression
   explicit LinearExpression(VariableRef var) {
     this->_map.emplace(var, Number(1));

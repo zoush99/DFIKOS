@@ -284,6 +284,20 @@ test-core-value-numeric-interval/fast:
 .PHONY : test-core-value-numeric-interval/fast
 
 # Convenience name for target.
+core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/rule:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/rule
+.PHONY : core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/rule
+
+# Convenience name for target.
+test-core-value-numeric-interval_f: core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/rule
+.PHONY : test-core-value-numeric-interval_f
+
+# fast build rule for target.
+test-core-value-numeric-interval_f/fast:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/build
+.PHONY : test-core-value-numeric-interval_f/fast
+
+# Convenience name for target.
 core/test/unit/CMakeFiles/test-core-value-numeric-congruence.dir/rule:
 	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/test/unit/CMakeFiles/test-core-value-numeric-congruence.dir/rule
 .PHONY : core/test/unit/CMakeFiles/test-core-value-numeric-congruence.dir/rule
@@ -1805,6 +1819,30 @@ value/numeric/interval.cpp.s:
 	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval.dir/value/numeric/interval.cpp.s
 .PHONY : value/numeric/interval.cpp.s
 
+value/numeric/interval_f.o: value/numeric/interval_f.cpp.o
+.PHONY : value/numeric/interval_f.o
+
+# target to build an object file
+value/numeric/interval_f.cpp.o:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/value/numeric/interval_f.cpp.o
+.PHONY : value/numeric/interval_f.cpp.o
+
+value/numeric/interval_f.i: value/numeric/interval_f.cpp.i
+.PHONY : value/numeric/interval_f.i
+
+# target to preprocess a source file
+value/numeric/interval_f.cpp.i:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/value/numeric/interval_f.cpp.i
+.PHONY : value/numeric/interval_f.cpp.i
+
+value/numeric/interval_f.s: value/numeric/interval_f.cpp.s
+.PHONY : value/numeric/interval_f.s
+
+# target to generate assembly for a file
+value/numeric/interval_f.cpp.s:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_f.dir/value/numeric/interval_f.cpp.s
+.PHONY : value/numeric/interval_f.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1861,6 +1899,7 @@ help:
 	@echo "... test-core-value-numeric-constant"
 	@echo "... test-core-value-numeric-gauge"
 	@echo "... test-core-value-numeric-interval"
+	@echo "... test-core-value-numeric-interval_f"
 	@echo "... adt/patricia_tree/map.o"
 	@echo "... adt/patricia_tree/map.i"
 	@echo "... adt/patricia_tree/map.s"
@@ -1990,6 +2029,9 @@ help:
 	@echo "... value/numeric/interval.o"
 	@echo "... value/numeric/interval.i"
 	@echo "... value/numeric/interval.s"
+	@echo "... value/numeric/interval_f.o"
+	@echo "... value/numeric/interval_f.i"
+	@echo "... value/numeric/interval_f.s"
 .PHONY : help
 
 

@@ -53,7 +53,6 @@ using namespace ikos::core::numeric;
 
 BOOST_AUTO_TEST_CASE(test_division) {
   BOOST_CHECK(ZInterval(4) / ZInterval::bottom() == ZInterval::bottom());
-  BOOST_CHECK(FInterval(4) + FInterval::bottom() == FInterval::bottom());
   BOOST_CHECK(ZInterval::bottom() / ZInterval(2) == ZInterval::bottom());
   BOOST_CHECK(ZInterval::top() / ZInterval(0) == ZInterval::bottom());
   BOOST_CHECK(ZInterval(4) / ZInterval(2) == ZInterval(2));

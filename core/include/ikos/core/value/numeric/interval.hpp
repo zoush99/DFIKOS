@@ -102,6 +102,9 @@ public:
   /// \brief Create the interval [n, n], float. By zoush99
   explicit Interval(float n) : _lb(n), _ub(n) {}
 
+  /// \brief Create the interval [n, n], float. By zoush99
+  explicit Interval(double n) : _lb(n), _ub(n) {}
+
   /// \brief Create the interval [n, n]
   explicit Interval(const Number& n) : _lb(n), _ub(n) {}
 
@@ -515,33 +518,34 @@ inline Interval< QNumber > operator/(const Interval< QNumber >& lhs,
 
 /// \todo here!!! By zoush99
 /// \brief Divide intervals
-//inline Interval< FNumber > operator/(const Interval< FNumber >& lhs,
-//                                     const Interval< FNumber >& rhs) {
-//  using BoundT = Bound< FNumber >;
-//  using IntervalT = Interval< FNumber >;
-//
-//  if (lhs.is_bottom() || rhs.is_bottom()) {
-//    return IntervalT::bottom();
-//  } else {
-//    if (rhs.contains(0)) {
-//      IntervalT l(rhs.lb(), BoundT(-1));
-//      IntervalT u(BoundT(1), rhs.ub());
-//      return (lhs / l).join(lhs / u);
-//    } else if (lhs.contains(0)) {
-//      IntervalT l(lhs.lb(), BoundT(-1));
-//      IntervalT u(BoundT(1), lhs.ub());
-//      return (l / rhs).join(u / rhs).join(IntervalT(0));
-//    } else {
-//      // Neither the dividend nor the divisor contains 0
-//      /// \todo bugs here!!!
-//      BoundT ll = lhs.lb() / rhs.lb();
-//      BoundT lu = lhs.lb() / rhs.ub();
-//      BoundT ul = lhs.ub() / rhs.lb();
-//      BoundT uu = lhs.ub() / rhs.ub();
-//      return IntervalT(min(ll, lu, ul, uu), max(ll, lu, ul, uu));
-//    }
-//  }
-//}
+inline Interval<FNumber> operator/(const Interval<FNumber>& lhs,const Interval<FNumber>& rhs){
+  using BoundT = Bound< FNumber >;
+  using IntervalT = Interval< FNumber >;
+
+  if (lhs.is_bottom() || rhs.is_bottom()) {
+    return IntervalT::bottom();
+  }else {
+    boost::optional< FNumber > d = rhs.singleton();
+    if (d && *d == 0) {
+      // [_, _] / 0 = ⊥
+      return IntervalT::bottom();
+    }else if (rhs.contains(0)) {
+      boost::optional< FNumber > n = lhs.singleton();
+      if (n && *n == 0) {
+        // 0 / [_, _] = 0
+        return IntervalT(0);
+      } else {
+        return IntervalT::top();
+      }
+    }else {
+      BoundT ll = lhs.lb() / rhs.lb();
+      BoundT lu = lhs.lb() / rhs.ub();
+      BoundT ul = lhs.ub() / rhs.lb();
+      BoundT uu = lhs.ub() / rhs.ub();
+      return IntervalT(min(ll, lu, ul, uu), max(ll, lu, ul, uu));
+    }
+    }
+}
 
 /// \brief Remainder of intervals
 inline Interval< ZNumber > operator%(const Interval< ZNumber >& lhs,

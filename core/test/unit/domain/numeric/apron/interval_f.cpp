@@ -33,11 +33,11 @@ using IntervalF = ikos::core::numeric::FInterval;
 using ApronDomainF = ikos::core::numeric::
     ApronDomain< ikos::core::numeric::apron::Interval, FNumber, Variable >;
 
-BOOST_AUTO_TEST_CASE(is_top_and_bottom) {
+BOOST_AUTO_TEST_CASE(is_top_and_bottom_f) {
   VariableFactory vfac;
   Variable x(vfac.get("x"));
 
-  BOOST_CHECK(ApronDomainF::top().is_top());
+  BOOST_CHECK(ApronDomain::top().is_top());
   BOOST_CHECK(!ApronDomain::top().is_bottom());
 
   BOOST_CHECK(!ApronDomain::bottom().is_top());

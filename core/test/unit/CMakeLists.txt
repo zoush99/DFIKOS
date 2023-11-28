@@ -34,6 +34,7 @@ add_unit_test(number f_number)  # By zoush99
 add_unit_test(number machine_int)
 add_unit_test(value numeric constant)
 add_unit_test(value numeric interval)
+add_unit_test(value numeric interval_f)
 add_unit_test(value numeric congruence)
 add_unit_test(value numeric gauge)
 add_unit_test(value machine_int interval)

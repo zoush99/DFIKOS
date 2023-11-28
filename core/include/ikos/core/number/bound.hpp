@@ -109,6 +109,9 @@ public:
   /// \brief Create a bound, float. By zoush99
   explicit Bound(float n) : _is_infinite(false), _n(n) {}
 
+  /// \brief Create a bound, float. By zoush99
+  explicit Bound(double n) : _is_infinite(false), _n(n) {}
+
   /// \brief Create a bound
   explicit Bound(Number n) : _is_infinite(false), _n(std::move(n)) {}
 
