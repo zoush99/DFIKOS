@@ -995,6 +995,7 @@ public:
     }
   }
 
+  //  template < typename T=Number,class =std::enable_if_t<std::is_same<T,ZNumber>::value>>
   void apply(BinaryOperator op,
              VariableRef x,
              VariableRef y,
@@ -1006,7 +1007,7 @@ public:
     if (is_supported(op)) {
       std::lock_guard< std::mutex > lock(this->_mutex);
       this->apply(op, x, this->to_ap_expr(y), apron::to_ap_expr(z));
-    } else if (op == BinaryOperator::Mod) {
+    } else if ((std::is_same<Number,ZNumber>::value) && (op == BinaryOperator::Mod)) {  // By zoush99
       // Optimized version, because mod is heavily used on machine integers
       if (z == 0) {
         this->set_to_bottom();
@@ -1137,6 +1138,7 @@ public:
     }
   }
 
+  /// \todo bugs here!!!
   void refine(VariableRef x, const CongruenceT& value) override {
       if (this->is_bottom()) {
         return;

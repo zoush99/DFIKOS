@@ -312,6 +312,48 @@ test-core-value-numeric-congruence/fast:
 .PHONY : test-core-value-numeric-congruence/fast
 
 # Convenience name for target.
+core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/rule:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/rule
+.PHONY : core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/rule
+
+# Convenience name for target.
+test-core-value-numeric-congruence_f: core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/rule
+.PHONY : test-core-value-numeric-congruence_f
+
+# fast build rule for target.
+test-core-value-numeric-congruence_f/fast:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/build
+.PHONY : test-core-value-numeric-congruence_f/fast
+
+# Convenience name for target.
+core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/rule:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/rule
+.PHONY : core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/rule
+
+# Convenience name for target.
+test-core-value-numeric-interval_congruence: core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/rule
+.PHONY : test-core-value-numeric-interval_congruence
+
+# fast build rule for target.
+test-core-value-numeric-interval_congruence/fast:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/build
+.PHONY : test-core-value-numeric-interval_congruence/fast
+
+# Convenience name for target.
+core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/rule:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/rule
+.PHONY : core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/rule
+
+# Convenience name for target.
+test-core-value-numeric-interval_congruence_f: core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/rule
+.PHONY : test-core-value-numeric-interval_congruence_f
+
+# fast build rule for target.
+test-core-value-numeric-interval_congruence_f/fast:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/build
+.PHONY : test-core-value-numeric-interval_congruence_f/fast
+
+# Convenience name for target.
 core/test/unit/CMakeFiles/test-core-value-numeric-gauge.dir/rule:
 	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core/test/unit/CMakeFiles/test-core-value-numeric-gauge.dir/rule
 .PHONY : core/test/unit/CMakeFiles/test-core-value-numeric-gauge.dir/rule
@@ -1747,6 +1789,30 @@ value/numeric/congruence.cpp.s:
 	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-congruence.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-congruence.dir/value/numeric/congruence.cpp.s
 .PHONY : value/numeric/congruence.cpp.s
 
+value/numeric/congruence_f.o: value/numeric/congruence_f.cpp.o
+.PHONY : value/numeric/congruence_f.o
+
+# target to build an object file
+value/numeric/congruence_f.cpp.o:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/value/numeric/congruence_f.cpp.o
+.PHONY : value/numeric/congruence_f.cpp.o
+
+value/numeric/congruence_f.i: value/numeric/congruence_f.cpp.i
+.PHONY : value/numeric/congruence_f.i
+
+# target to preprocess a source file
+value/numeric/congruence_f.cpp.i:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/value/numeric/congruence_f.cpp.i
+.PHONY : value/numeric/congruence_f.cpp.i
+
+value/numeric/congruence_f.s: value/numeric/congruence_f.cpp.s
+.PHONY : value/numeric/congruence_f.s
+
+# target to generate assembly for a file
+value/numeric/congruence_f.cpp.s:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-congruence_f.dir/value/numeric/congruence_f.cpp.s
+.PHONY : value/numeric/congruence_f.cpp.s
+
 value/numeric/constant.o: value/numeric/constant.cpp.o
 .PHONY : value/numeric/constant.o
 
@@ -1818,6 +1884,54 @@ value/numeric/interval.s: value/numeric/interval.cpp.s
 value/numeric/interval.cpp.s:
 	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval.dir/value/numeric/interval.cpp.s
 .PHONY : value/numeric/interval.cpp.s
+
+value/numeric/interval_congruence.o: value/numeric/interval_congruence.cpp.o
+.PHONY : value/numeric/interval_congruence.o
+
+# target to build an object file
+value/numeric/interval_congruence.cpp.o:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/value/numeric/interval_congruence.cpp.o
+.PHONY : value/numeric/interval_congruence.cpp.o
+
+value/numeric/interval_congruence.i: value/numeric/interval_congruence.cpp.i
+.PHONY : value/numeric/interval_congruence.i
+
+# target to preprocess a source file
+value/numeric/interval_congruence.cpp.i:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/value/numeric/interval_congruence.cpp.i
+.PHONY : value/numeric/interval_congruence.cpp.i
+
+value/numeric/interval_congruence.s: value/numeric/interval_congruence.cpp.s
+.PHONY : value/numeric/interval_congruence.s
+
+# target to generate assembly for a file
+value/numeric/interval_congruence.cpp.s:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence.dir/value/numeric/interval_congruence.cpp.s
+.PHONY : value/numeric/interval_congruence.cpp.s
+
+value/numeric/interval_congruence_f.o: value/numeric/interval_congruence_f.cpp.o
+.PHONY : value/numeric/interval_congruence_f.o
+
+# target to build an object file
+value/numeric/interval_congruence_f.cpp.o:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/value/numeric/interval_congruence_f.cpp.o
+.PHONY : value/numeric/interval_congruence_f.cpp.o
+
+value/numeric/interval_congruence_f.i: value/numeric/interval_congruence_f.cpp.i
+.PHONY : value/numeric/interval_congruence_f.i
+
+# target to preprocess a source file
+value/numeric/interval_congruence_f.cpp.i:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/value/numeric/interval_congruence_f.cpp.i
+.PHONY : value/numeric/interval_congruence_f.cpp.i
+
+value/numeric/interval_congruence_f.s: value/numeric/interval_congruence_f.cpp.s
+.PHONY : value/numeric/interval_congruence_f.s
+
+# target to generate assembly for a file
+value/numeric/interval_congruence_f.cpp.s:
+	cd /home/zou/Documents/DFIKOS/cmake-build-debug && $(MAKE) $(MAKESILENT) -f core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/build.make core/test/unit/CMakeFiles/test-core-value-numeric-interval_congruence_f.dir/value/numeric/interval_congruence_f.cpp.s
+.PHONY : value/numeric/interval_congruence_f.cpp.s
 
 value/numeric/interval_f.o: value/numeric/interval_f.cpp.o
 .PHONY : value/numeric/interval_f.o
@@ -1896,9 +2010,12 @@ help:
 	@echo "... test-core-value-machine_int-interval"
 	@echo "... test-core-value-machine_int-interval_congruence"
 	@echo "... test-core-value-numeric-congruence"
+	@echo "... test-core-value-numeric-congruence_f"
 	@echo "... test-core-value-numeric-constant"
 	@echo "... test-core-value-numeric-gauge"
 	@echo "... test-core-value-numeric-interval"
+	@echo "... test-core-value-numeric-interval_congruence"
+	@echo "... test-core-value-numeric-interval_congruence_f"
 	@echo "... test-core-value-numeric-interval_f"
 	@echo "... adt/patricia_tree/map.o"
 	@echo "... adt/patricia_tree/map.i"
@@ -2020,6 +2137,9 @@ help:
 	@echo "... value/numeric/congruence.o"
 	@echo "... value/numeric/congruence.i"
 	@echo "... value/numeric/congruence.s"
+	@echo "... value/numeric/congruence_f.o"
+	@echo "... value/numeric/congruence_f.i"
+	@echo "... value/numeric/congruence_f.s"
 	@echo "... value/numeric/constant.o"
 	@echo "... value/numeric/constant.i"
 	@echo "... value/numeric/constant.s"
@@ -2029,6 +2149,12 @@ help:
 	@echo "... value/numeric/interval.o"
 	@echo "... value/numeric/interval.i"
 	@echo "... value/numeric/interval.s"
+	@echo "... value/numeric/interval_congruence.o"
+	@echo "... value/numeric/interval_congruence.i"
+	@echo "... value/numeric/interval_congruence.s"
+	@echo "... value/numeric/interval_congruence_f.o"
+	@echo "... value/numeric/interval_congruence_f.i"
+	@echo "... value/numeric/interval_congruence_f.s"
 	@echo "... value/numeric/interval_f.o"
 	@echo "... value/numeric/interval_f.i"
 	@echo "... value/numeric/interval_f.s"

@@ -135,13 +135,13 @@ public:
   ~Congruence() override = default;
 
   /// \brief Return the modulus
-  const ZNumber& modulus() const {
+  const boost::optional< FNumber > modulus() const {
     ikos_assert(!this->is_bottom());
     return this->_a;
   }
 
   /// \brief Return the residue
-  const ZNumber& residue() const {
+  const boost::optional< FNumber > residue() const {
     ikos_assert(!this->is_bottom());
     return this->_b;
   }
@@ -875,6 +875,17 @@ public:
   Congruence& operator=(Congruence&&) noexcept = default;
 
   ~Congruence() override = default;
+
+//  /// \todo By zoush99
+//  FNumber modulus() const {
+//    ikos_assert(!this->is_bottom());
+//    return this->_cst.number();
+//  }
+//
+//  FNumber residue() const {
+//    ikos_assert(!this->is_bottom());
+//    return this->_cst.number();
+//  }
 
   void normalize() override { this->_cst.normalize(); }
 

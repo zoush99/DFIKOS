@@ -363,7 +363,7 @@ public:
       return boost::none;
     }
 
-    // By zoush99
+    // By zoush99, ZNumber -> Number
     ZNumber lb = *this->_lb.number();
     ZNumber ub = *this->_ub.number();
 
